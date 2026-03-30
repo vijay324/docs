@@ -1,0 +1,37 @@
+---
+title: "Testing and Quality"
+description: "Validation strategy across static checks, test suites, and release gates."
+---
+
+## Frontend checks
+
+```bash
+npm run check
+npm run test:unit
+npm run test:integration
+npm run test:e2e
+```
+
+## Backend checks
+
+```bash
+cd backend
+npm run test:account-locking
+npm run test:jwt
+npm run test:performance
+```
+
+## Security-specific checks
+
+```bash
+npm run verify-csp
+npm run test-middleware-csp
+npm run test-csp-build
+```
+
+## Release quality gate
+
+- Type and lint checks passing.
+- Unit/integration/e2e checks passing.
+- Security verification scripts passing.
+- Manual smoke run on auth + task + attendance + billing entry points.

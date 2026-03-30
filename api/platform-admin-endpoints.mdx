@@ -1,0 +1,32 @@
+---
+title: "Platform-admin Endpoints"
+description: "Global control-plane APIs for organizations, users, subscriptions, and infrastructure."
+---
+
+## Prefix
+
+```txt
+/api/v1/platform-admin/*
+```
+
+## Major endpoint groups
+
+- Auth + 2FA lifecycle
+- Organizations and users
+- Subscriptions and billing visibility
+- Analytics and reporting
+- Contact and feedback operations
+- Infrastructure/system health views
+- Audit data access
+
+## Control-plane guidance
+
+- Restrict API access to designated operators only.
+- Apply network-level controls (allowlists) for privileged routes.
+- Keep action-level permissions explicit and auditable.
+
+## Operational checklist
+
+- Validate 2FA email delivery path.
+- Validate token refresh and logout behavior.
+- Validate audit completeness for sensitive actions.

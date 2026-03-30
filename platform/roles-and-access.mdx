@@ -1,0 +1,30 @@
+---
+title: "Roles and Access"
+description: "Permission model for tenant users and platform super administrators."
+---
+
+## Tenant roles
+
+- **Admin**: organization-level control including billing, member administration, and policies.
+- **Manager**: team-level management across projects, sprints, analytics, and approvals.
+- **Employee**: execution workflows for tasks, attendance, leave, and personal profile.
+
+## Access enforcement
+
+- Route-level guards for authenticated and role-scoped pages.
+- Permission checks in API middleware and selected UI modules.
+- Org membership validation for org-scoped endpoints.
+
+## Platform-admin model
+
+Platform administrators use a dedicated auth and permission stack at `/super-admin/*` and `/api/v1/platform-admin/*`.
+
+Capabilities include:
+- Organization portfolio management
+- User and subscription operations
+- Infrastructure health checks
+- Audit and compliance workflows
+
+<Warning>
+  Platform-admin access should be restricted to trusted operator networks and protected with 2FA.
+</Warning>

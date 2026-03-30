@@ -1,0 +1,28 @@
+---
+title: "Billing and Plans"
+description: "Subscription lifecycle, checkout workflows, and plan-aware feature enforcement."
+---
+
+## Billing architecture
+
+- Polar checkout and subscription APIs are exposed under `/api/v1/checkout/*` and `/api/v1/subscription/*`.
+- Webhook processing for subscription events runs at `/api/v1/webhooks/polar`.
+- Plan state is consumed by tenant settings and platform-admin reporting.
+
+## Tenant experience
+
+- Billing UI is available in `/{orgSlug}/settings/billing`.
+- Plan status and cancellation workflows are role-restricted (admin-first).
+- Checkout success/cancel pages are org-scoped.
+
+## Plan-aware behavior
+
+- Plan enforcement middleware controls selected capabilities and limits.
+- Plan status endpoints expose active tier and applicable constraints.
+- Billing audit data supports operational traceability.
+
+## Operational recommendation
+
+- Verify webhook signature handling in production.
+- Monitor billing retries and failed payment events.
+- Alert on plan downgrade/expiry impact for account owners.

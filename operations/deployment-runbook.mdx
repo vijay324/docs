@@ -1,0 +1,42 @@
+---
+title: "Deployment Runbook"
+description: "Reference rollout procedure for production-like deployments."
+---
+
+## Build
+
+```bash
+npm ci
+npm run build
+cd backend && npm ci && npm run build
+```
+
+## Runtime options
+
+- Vercel split deployment (frontend + backend serverless entry).
+- PM2 + reverse proxy deployment (long-lived backend supports realtime best).
+
+## PM2 baseline
+
+```bash
+mkdir -p backend/logs logs
+pm2 start ops/pm2/ecosystem.config.cjs
+pm2 save
+```
+
+## Reverse proxy
+
+- Configure domain, TLS cert paths, and upstreams in your nginx config.
+- Validate with `nginx -t` before reload.
+
+## Smoke checks
+
+- `GET /health`
+- `GET /api/v1/health`
+- Socket connection on `/socket.io/`
+- App login + core CRUD flow
+
+## Reliability guardrails
+
+- Use canary or staged rollout.
+- Monitor API error rate and p95 latency before full rollout.

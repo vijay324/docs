@@ -1,0 +1,42 @@
+---
+title: "Architecture"
+description: "System architecture across frontend, backend, data services, and realtime infrastructure."
+---
+
+## Runtime topology
+
+<CardGroup cols={2}>
+  <Card title="Frontend" icon="monitor-smartphone">
+    Next.js App Router application with org-scoped routing and protected tenant areas.
+  </Card>
+  <Card title="Backend" icon="server">
+    Express 5 API with REST, GraphQL, Better Auth routes, and middleware-based policy enforcement.
+  </Card>
+  <Card title="Data and cache" icon="database">
+    MongoDB (Mongoose) for persistence, Redis for caching, limits, streams, and security primitives.
+  </Card>
+  <Card title="Storage and integrations" icon="hard-drive">
+    Backblaze B2 (S3-compatible) for attachments, Polar for subscriptions, Gemini for AI services.
+  </Card>
+</CardGroup>
+
+## API surfaces
+
+- `/api/v1/*` for versioned REST.
+- `/api/v1/graphql` for selected aggregated read models.
+- `/api/auth/*` for Better Auth handlers.
+- `/api/v1/o/:orgSlug/*` for org-scoped aliases.
+- `/api/v1/platform-admin/*` for global operations.
+
+## Background processing
+
+- Analytics worker and Redis streams.
+- Sprint scheduler cadence.
+- Subscription reminder job loop.
+- Optional MongoDB change streams for realtime enhancement.
+
+## Observability
+
+- `/health` and `/api/v1/health` health checks.
+- `/metrics` Prometheus endpoint with production token guard.
+- Correlation IDs and structured logs for traceability.

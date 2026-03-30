@@ -1,0 +1,32 @@
+---
+title: "Authentication"
+description: "Session, token, and authorization patterns for tenant and platform APIs."
+---
+
+## Tenant authentication
+
+- Better Auth routes mounted at `/api/auth/*`.
+- Session-centric auth with secure cookie workflows.
+- `requireAuth` middleware resolves user session and organization context.
+
+## Socket authentication
+
+- Socket token endpoint: `GET /api/v1/auth/socket-token`.
+- Token/cookie flows support authenticated realtime subscriptions.
+
+## Platform-admin authentication
+
+- Dedicated login and 2FA endpoints under `/api/v1/platform-admin/*`.
+- Separate auth context from tenant user authentication.
+
+## Authorization principles
+
+- Tenant role checks: `Admin`, `Manager`, `Employee`.
+- Org membership enforcement for org-scoped routes.
+- Platform permissions for global operations.
+
+## Production recommendations
+
+- Use HTTPS-only origins.
+- Rotate secrets regularly (`JWT_SECRET`, auth secrets).
+- Enforce `SECURITY_FAIL_CLOSED` in production.

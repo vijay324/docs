@@ -1,0 +1,35 @@
+---
+title: "Security and Governance"
+description: "Defense-in-depth controls across authentication, transport, and administrative access."
+---
+
+## Security controls
+
+- Helmet security headers and CSP validation workflows.
+- Request sanitization and rate limiting on sensitive surfaces.
+- Correlation IDs and structured logging for incident forensics.
+- Protected metrics and warmup endpoints in production via ops token.
+
+## Authentication model
+
+- Better Auth for tenant users with session-oriented flows.
+- Password reset, social login support, and secure session handling.
+- Device verification and account lock flows for employee safety controls.
+
+## Authorization model
+
+- Role-based permissions for tenant users (`Admin`, `Manager`, `Employee`).
+- Distinct platform-admin permission model for global operations.
+- Org member/admin middleware for scoped API access.
+
+## Governance operations
+
+- Platform-admin console for organizations, users, subscriptions, analytics, and audit.
+- Policy configuration for attendance and leave.
+- Plan enforcement middleware for feature and usage boundaries.
+
+## Security verification baseline
+
+- Run `npm run verify-csp`, `npm run test-middleware-csp`, and `npm run test-csp-build`.
+- Validate HTTPS-only origins and CSRF behavior.
+- Validate rate limiting and blocked-origin behavior before release.

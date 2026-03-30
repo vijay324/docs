@@ -1,0 +1,34 @@
+---
+title: "Security Checklist"
+description: "Operational checklist for secure production releases."
+---
+
+## Transport and origin controls
+
+- Enforce HTTPS-only origins across frontend and backend URLs.
+- Verify strict CORS allowlists.
+- Confirm HSTS and security headers are present.
+
+## Session and CSRF protections
+
+- Validate session cookie behavior (`HttpOnly`, secure in production).
+- Confirm CSRF token requirements on mutating requests.
+- Verify unauthorized requests return `403` where expected.
+
+## Abuse prevention
+
+- Validate auth and API rate limits.
+- Confirm bot and malicious payload protections.
+- Verify lockout and account protection behavior.
+
+## Secrets and token hygiene
+
+- Ensure no JWTs or secrets are exposed in browser storage.
+- Rotate high-impact credentials on a defined cadence.
+- Keep platform-admin and tenant auth secrets isolated.
+
+## Observability and response readiness
+
+- Keep `/metrics` and `/warmup` token-protected.
+- Ensure request ID propagation in logs.
+- Define escalation protocol for 5xx spikes and auth anomalies.

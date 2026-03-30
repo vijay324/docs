@@ -1,0 +1,28 @@
+---
+title: "Webhooks and Realtime"
+description: "Event ingestion and event delivery across billing and collaboration surfaces."
+---
+
+## Webhooks
+
+### Polar webhook endpoint
+
+```txt
+POST /api/v1/webhooks/polar
+```
+
+- Raw body processing is required for signature verification.
+- Endpoint has dedicated CORS and parsing configuration.
+- Health endpoint is available for operational checks.
+
+## Realtime events
+
+- Canonical socket event: `realtime:event`.
+- Envelope fields include event type, event ID, actor, tenant context, timestamp, and idempotency key.
+- Delivery targets include org room and optional project room.
+
+## Integration guidance
+
+- Keep webhook handling idempotent.
+- Log event IDs for replay/debug workflows.
+- Avoid direct coupling between webhook ingestion and user-facing latency paths.

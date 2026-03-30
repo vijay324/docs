@@ -1,0 +1,55 @@
+---
+title: "Use Cases"
+description: "How different teams deploy Flotick to improve throughput, alignment, and operational control."
+---
+
+## Engineering teams
+
+**Primary goals**
+- Improve sprint predictability.
+- Reduce context-switching between board, tasks, and reporting.
+- Keep project health visible in real time.
+
+**Recommended setup**
+1. Configure custom workflow statuses in `/{orgSlug}/settings/workflow`.
+2. Run sprint cadence from `/{orgSlug}/sprints`.
+3. Track active delivery in `/{orgSlug}/board` and `/{orgSlug}/tasks`.
+4. Monitor velocity and burndown in `/{orgSlug}/analytics`.
+
+## Operations and people teams
+
+**Primary goals**
+- Centralize attendance, leave, and compensation.
+- Create policy consistency without manual enforcement overhead.
+
+**Recommended setup**
+1. Configure attendance and leave policies in `/{orgSlug}/settings/policies`.
+2. Roll out check-in/out from `/{orgSlug}/attendance`.
+3. Manage leave request flow in `/{orgSlug}/leave`.
+4. Operate salary structures and runs in `/{orgSlug}/payroll`.
+
+## Multi-department organizations
+
+**Primary goals**
+- Keep one system of record across product, engineering, and HR operations.
+- Align team-level execution with leadership reporting.
+
+**Recommended setup**
+1. Segment ownership by roles (`Admin`, `Manager`, `Employee`).
+2. Use org-wide dashboards for team status and blockers.
+3. Add AI summaries for leadership reporting cadence.
+4. Use platform-admin for portfolio-wide visibility when running multiple orgs.
+
+## SaaS operators and platform owners
+
+**Primary goals**
+- Operate subscriptions, monitor infrastructure, and maintain compliance.
+
+**Recommended setup**
+1. Use `/super-admin/organizations`, `/super-admin/users`, `/super-admin/subscriptions`.
+2. Review `/super-admin/infrastructure` and `/super-admin/audit`.
+3. Enforce 2FA and IP controls for privileged operations.
+
+<Note>
+  Flotick supports both product-delivery and workforce operations in one architecture, eliminating cross-tool reconciliation work.
+</Note>

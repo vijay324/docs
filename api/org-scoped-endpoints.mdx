@@ -1,0 +1,41 @@
+---
+title: "Org-scoped Endpoints"
+description: "Org-prefixed API routes for tenant-safe access patterns."
+---
+
+## Prefix
+
+```txt
+/api/v1/o/:orgSlug/*
+```
+
+## Covered domains
+
+- `dashboard`
+- `projects`
+- `sprints`
+- `tasks`
+- `employees`
+- `analytics`
+- `attendance`
+- `leave`
+- `search`
+- `files`
+- policy and settings aliases
+
+## Why use org-scoped routes
+
+- Enforces explicit tenant context.
+- Simplifies frontend route-to-API alignment.
+- Reduces ambiguity when supporting multi-org users.
+
+## Example pattern
+
+```bash
+GET /api/v1/o/acme/tasks?projectId=...
+Authorization: session cookie or bearer token
+```
+
+<Note>
+  Exact payload schemas vary by domain. Use route-specific handler logic when defining client SDKs.
+</Note>
