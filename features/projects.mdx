@@ -1,26 +1,92 @@
 ---
 title: "Projects"
-description: "Organize work by initiative, owner, and timeline so teams can execute with clarity."
+description: "Top-level containers for sprints, tasks, files, and environment configuration."
 ---
 
-## What it does
+A **Project** in Flotick is the home for a body of work. It owns sprints, tasks, files, and environment variables.
 
-Projects are the main container for team goals, tasks, and sprint execution.
+[IMAGE: Projects list view with health badges and project cards]
 
-## Why it matters
+## Who can do what
 
-- Keeps related work grouped and easy to manage.
-- Improves ownership clarity across teams.
-- Makes reporting and planning more reliable.
+| Action | Member | Manager | Admin |
+| :--- | :---: | :---: | :---: |
+| View public projects | ✅ | ✅ | ✅ |
+| View private projects (when added) | ✅ | ✅ | ✅ |
+| Create projects | — | ✅ | ✅ |
+| Edit project | — | ✅ (managed) | ✅ |
+| Add or remove project members | — | ✅ | ✅ |
+| Archive project | — | — | ✅ |
+| Delete project | — | — | ✅ |
 
-## How to use it effectively
+## Create a project
 
-1. Create one project per initiative or product area.
-2. Assign clear owners and contributors.
-3. Set timeline expectations before tasks are created.
-4. Use project views to track progress and risks.
+<Steps>
+  <Step title="Open the projects page">
+    From the sidebar, click **Projects** then **New project**.
+  </Step>
 
-## Best practices
+  <Step title="Fill the basics">
+    - **Name** and short description
+    - **Visibility** — `Public` (every member) or `Private` (only project members)
+    - **Project lead** — accountable owner
+    - **Start date** and **target date**
+    - **Initial members** to add
+  </Step>
 
-- Avoid oversized projects with unrelated outcomes.
-- Review project health weekly with leads.
+  <Step title="Save">
+    Click **Create**. The project is created with status `Active` and shows up in the list immediately.
+  </Step>
+</Steps>
+
+## Project visibility
+
+- **Public** projects are visible to every member of the organization
+- **Private** projects are visible only to assigned `ProjectMembers` and to Admins
+
+Each project member can have an optional role label (for example, "Lead", "QA") for clarity.
+
+## Project status and health
+
+A project moves through a lifecycle:
+
+| Status | Meaning |
+| :--- | :--- |
+| **Active** | Default state. Work is ongoing. |
+| **On Hold** | Temporarily paused. |
+| **Archived** | Hidden from default lists; data is retained. |
+| **Cancelled** | Permanently stopped. |
+| **Completed** | Successfully finished. |
+
+The **health** indicator is calculated automatically from velocity, target dates, and overdue task count:
+
+- 🟢 **On Track** — pace and quality are good
+- 🟡 **At Risk** — likely to miss the target without intervention
+- 🔴 **Off Track** — significantly behind
+
+## Manage project members
+
+In the project's **Members** tab, add or remove people. Removing a member revokes their access to private project data (tasks, files, environment variables).
+
+## Tabs inside a project
+
+| Tab | What it shows |
+| :--- | :--- |
+| **Overview** | Summary, lead, dates, and health. |
+| **Sprints** | All sprints belonging to this project. |
+| **Tasks** | All tasks in this project. |
+| **Files** | Attachments scoped to this project (see [Files](/features/files)). |
+| **Environments** | Environment variables and secrets (see [Env Storage](/features/env-storage)). |
+| **Members** | The team assigned to this project. |
+| **Settings** | Project-level configuration and danger zone. |
+
+## Archive vs. delete
+
+- **Archive** — hides the project from default views without deleting any data. Great for finished work you want to keep referenceable.
+- **Delete** — soft-deletes the project and cascades to its sprints and tasks. The project shows up in [Trash](/features/trash) for 30 days, where it can be restored.
+
+## Tips
+
+- Pin frequently used projects so they appear at the top of your project list.
+- Use private projects for sensitive work — only assigned project members can see tasks, files, or environment variables.
+- Set realistic target dates: project health degrades as you approach them with open work.

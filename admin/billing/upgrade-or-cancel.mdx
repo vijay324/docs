@@ -1,0 +1,84 @@
+---
+title: "Upgrade or cancel"
+description: "How to upgrade, downgrade, or cancel your Flotick subscription."
+---
+
+Plan changes are quick, secure, and reversible (where applicable). Billing is handled by [Polar](https://polar.sh), which manages payment, invoicing, and webhook events that keep Flotick in sync with your subscription state.
+
+## Upgrade from Free
+
+<Steps>
+  <Step title="Open the pricing page">
+    Either [flotick.com/pricing](https://flotick.com/pricing) or **Admin → Billing** inside your dashboard.
+  </Step>
+
+  <Step title="Pick a plan and cycle">
+    Choose **Pro** or **Max**, and **Monthly** or **Yearly**.
+  </Step>
+
+  <Step title="Pay on the hosted checkout">
+    Flotick redirects you to a hosted Polar checkout. Enter card details and confirm.
+  </Step>
+
+  <Step title="Land back in the dashboard">
+    You return to a confirmation page. Plan limits update within seconds via webhook.
+  </Step>
+</Steps>
+
+## Upgrade Pro to Max (mid-cycle)
+
+<Steps>
+  <Step title="Open billing">
+    From **Admin → Billing**, click **Upgrade**.
+  </Step>
+
+  <Step title="Review proration">
+    Flotick shows the prorated amount you'll be charged today.
+  </Step>
+
+  <Step title="Confirm">
+    Polar processes the upgrade. Flotick receives the webhook and updates your plan.
+  </Step>
+</Steps>
+
+## Downgrade
+
+Downgrades take effect at the **end of the current billing period**. From **Admin → Billing**, pick the lower plan and confirm. You keep current-plan features until period end.
+
+## Cancel
+
+<Steps>
+  <Step title="Click Cancel">
+    From **Admin → Billing**, click **Cancel subscription**.
+  </Step>
+
+  <Step title="Confirm">
+    Polar marks the subscription to end at the current period's end. You retain access until then.
+  </Step>
+
+  <Step title="At period end">
+    Your org downgrades to **Free** automatically. Data is retained.
+  </Step>
+</Steps>
+
+You can re-upgrade at any time before period end to keep your subscription active.
+
+## Failed payments
+
+If a charge fails (expired card, etc.), Flotick:
+
+- Sets your plan status to `past_due`
+- Shows a banner with a link to update your payment method
+- Retries through Polar's standard dunning schedule
+
+After the grace period, the subscription is canceled and the org moves to Free.
+
+## Refunds
+
+Refunds are handled case-by-case. Email [support@flotick.com](mailto:support@flotick.com) with your org slug and the issue.
+
+## Tips
+
+- Yearly plans aren't refunded on downgrade — you keep features until period end.
+- Update your card a couple of weeks before expiry to avoid the dunning queue.
+- Save invoices from the billing portal monthly for your finance records.

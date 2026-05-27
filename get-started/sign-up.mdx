@@ -1,0 +1,79 @@
+---
+title: "Sign up"
+description: "Create a new organization or join an existing one."
+---
+
+Flotick supports two ways to create an account: signing up to start a brand-new organization, or accepting an invitation to join an existing one.
+
+## Start a new organization
+
+Anyone can create an organization. The first user becomes the Admin and is responsible for billing, settings, and inviting their team.
+
+<Steps>
+  <Step title="Open the sign-up page">
+    Visit [app.flotick.com/auth/signup](https://app.flotick.com/auth/signup).
+  </Step>
+
+  <Step title="Choose an authentication method">
+    Pick one:
+
+    - **Email and password** — set a strong password that meets the strength meter
+    - **Google** — sign up with a single click using your Google account
+
+    [IMAGE: Sign-up screen with email and Google options]
+  </Step>
+
+  <Step title="Name your organization">
+    Provide an organization name. Flotick will suggest a URL-safe slug like `acme-co`. You can change the slug if it's already taken or if you prefer something else.
+
+    Your dashboard URL becomes `app.flotick.com/<your-slug>/...` and is visible to your team.
+  </Step>
+
+  <Step title="Verify your device (when prompted)">
+    If sign-in is from a new device, Flotick may send a 6-digit code to your email. Enter it to verify the device and optionally trust it for future sessions.
+  </Step>
+
+  <Step title="Complete onboarding">
+    You land on the [onboarding wizard](/get-started/onboarding). Fill in your profile and basic organization preferences. You can skip optional steps and return later.
+  </Step>
+</Steps>
+
+## Join an existing organization
+
+If your team already uses Flotick, an Admin or Manager will send you an email invitation. See [Accept an invitation](/get-started/accept-invitation).
+
+## Password requirements
+
+Flotick enforces a strong password policy:
+
+- A minimum length and mix of characters indicated by the live strength meter
+- Common and breached passwords are rejected
+- Passwords are hashed with Argon2id before storage
+
+If you forget your password, use [forgot password](https://app.flotick.com/auth/forgot-password). Resetting your password signs you out of every device.
+
+## Two-factor authentication
+
+You can enable TOTP-based two-factor authentication from your [profile](/account/security-and-2fa). Once enabled, sign-in requires a 6-digit code from your authenticator app in addition to your password.
+
+## Single sign-on with Google
+
+Google sign-in is available wherever email sign-up is. You can later link or unlink a Google account from your profile. Unlinking is blocked if it would leave your account with no way to sign in.
+
+## What happens after sign-up
+
+- A free-plan organization is created
+- You become its single **Admin**
+- A pending **member** record is created for every email you invite
+- You're routed to onboarding, then to your new dashboard
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Onboarding" icon="route" href="/get-started/onboarding">
+    Finish your profile and organization setup.
+  </Card>
+  <Card title="Quickstart" icon="rocket" href="/get-started/quickstart">
+    Ship your first task end-to-end.
+  </Card>
+</CardGroup>

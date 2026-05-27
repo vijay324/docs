@@ -1,0 +1,42 @@
+---
+title: "Workflow policy"
+description: "Configure required transitions, WIP limits, and the story-point scale for your organization."
+---
+
+The **Workflow policy** controls how tasks move through statuses across every project in your organization. It's edited from **Settings → Workflow** by Admins.
+
+[IMAGE: Workflow policy editor with required steps and WIP limits]
+
+## What you can configure
+
+| Setting | Default | What it does |
+| :--- | :--- | :--- |
+| **Required transitions** | Through `Review` before `Done` | Force tasks to pass through specified statuses. |
+| **WIP limits** | Off by default | Cap the number of tasks in a column per assignee or globally. |
+| **Story-point scale** | 1, 2, 3, 5, 8, 13 | The values shown in the estimation picker. |
+| **Default task type** | `Task` | What new tasks default to. |
+| **Allow blocked tasks to be edited** | Yes | Whether `Blocked` is a hard or soft state. |
+
+## Required transitions
+
+By default, Flotick won't let a task jump straight from `In Progress` to `Done` — it must pass through `Review`. Tighten or relax this per status. Required transitions are validated server-side, so they apply equally to drag-drop and to API actions.
+
+## WIP limits
+
+A WIP limit caps how many tasks can sit in a column at once. For example, set `In Progress: 3` to encourage finishing before starting new work.
+
+When a column hits its limit, drops into that column are rejected with a clear toast. You can lift WIP limits temporarily for sprints with unusual scope.
+
+## Story-point scale
+
+The scale shown in the estimation picker. Most teams stick to a Fibonacci-like scale (1, 2, 3, 5, 8, 13). Avoid arbitrary continuous values — they hurt comparability.
+
+## Apply changes
+
+Workflow changes take effect on the **next** transition. Existing tasks aren't re-validated retroactively, so changing the rules is safe to do mid-sprint, but new transitions follow the new rules.
+
+## Tips
+
+- Start strict on **required transitions** (so quality steps don't get skipped) and loose on **WIP limits**, then tune based on real bottlenecks.
+- Discuss policy changes with the team — workflow is a team contract.
+- Use **AI Insights** to find the right WIP limit. If `Review` keeps clogging, that's the column that benefits most.

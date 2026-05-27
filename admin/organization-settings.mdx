@@ -1,0 +1,52 @@
+---
+title: "Organization settings"
+description: "Configure your org identity, work mode, and policy hubs."
+---
+
+The **Settings** page at `/<org-slug>/settings` is your control center. It's available to Admins.
+
+[IMAGE: Organization settings page with tabbed sections]
+
+## What you'll find
+
+| Tab | What it controls |
+| :--- | :--- |
+| **Organization** | Name, slug, logo, work mode, contact info. |
+| **Workflow** | Required transitions, WIP limits, story-point scale. See [Workflow policy](/admin/workflow-policy). |
+| **Attendance** | Working hours, weekend rules, late-arrival window. See [Attendance policy](/admin/attendance-policy). |
+| **Leave** | Leave types, balances, accrual, encashment. See [Leave policy](/admin/leave-policy). |
+| **Integrations** | Telegram, billing portal access. See [Integrations](/admin/integrations). |
+| **Departments** | Department hierarchy. See [Departments](/admin/departments). |
+| **Members and roles** | Member list and role management. See [Members and roles](/admin/members-and-roles). |
+| **Billing** | Plan, seat usage, payment method. See [Plans](/admin/billing/plans). |
+| **Danger zone** | Slug change, soft-delete the organization. |
+
+## Organization identity
+
+- **Name** — display name shown across the app
+- **Slug** — the URL identifier; changing it redirects users to the new path
+- **Logo** — uploaded image, shown in the header and emails
+- **Work mode** — `Office`, `Remote`, or `Hybrid`. This is the org's default for new members.
+
+## Slug changes
+
+Slug changes are permitted but careful — changing it updates every dashboard URL for your team. Bookmarks under the old slug redirect automatically to the new one. Communicate slug changes ahead of time.
+
+## Work mode
+
+The org-level work mode is the default for new members and the source of truth for hybrid policy reporting. Individual members can still pick a different work type when they check in for the day.
+
+## Danger zone
+
+- **Slug change** — discussed above
+- **Delete organization** — soft-deletes the org with a 7-day reversible window. After 7 days the deletion proceeds; data is retained per the data retention policy
+
+<Warning>
+Deleting an organization signs out every member and removes access. Restore is only possible within 7 days.
+</Warning>
+
+## Tips
+
+- Keep the org name consistent with how the team refers to itself in the real world — it shows up in emails and exports.
+- The slug is the part of the URL most often shared internally. Keep it short and easy to type.
+- Schedule policy changes (workflow, attendance, leave) for a sprint boundary so the impact is contained.

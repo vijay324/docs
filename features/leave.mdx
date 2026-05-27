@@ -1,21 +1,101 @@
 ---
-title: "Leave Management"
-description: "Handle leave requests and approvals with clarity and fairness."
+title: "Leave"
+description: "Request, track, and approve leave with balances, approval workflow, and attendance integration."
 ---
 
-## What it does
+Flotick's leave module handles the full lifecycle: request, approval, balance tracking, and integration with attendance.
 
-Leave Management lets employees request leave and enables managers/admins to approve or reject quickly.
+[IMAGE: Leave page with Balance, My Requests, and Team Requests tabs]
 
-## Why it matters
+## Leave types
 
-- Prevents scheduling surprises.
-- Makes approval decisions transparent.
-- Keeps leave balances accurate.
+Flotick supports the leave types organizations typically need. Your Admin enables and tunes the ones you use.
 
-## How to use it effectively
+| Code | Name | Typical use |
+| :--- | :--- | :--- |
+| **PL** | Privilege Leave | Earned, planned vacation. |
+| **SL** | Sick Leave | Health-related absence. |
+| **CL** | Casual Leave | Short personal leave. |
+| **EL** | Earned Leave | Accrued time off. |
+| **ML** | Maternity Leave | Childbirth and recovery. |
+| **PTL** | Paternity Leave | New-parent leave. |
+| **CO** | Comp-off | Compensatory off for extra hours. |
+| **LOP** | Loss of Pay | Unpaid leave. |
 
-1. Submit leave as early as possible.
-2. Add clear date range and leave type.
-3. Managers review pending requests daily.
-4. Use upcoming leave views for planning team coverage.
+## Request leave
+
+<Steps>
+  <Step title="Open Leave">
+    From the sidebar, click **Leave** then **Request leave**.
+  </Step>
+
+  <Step title="Pick a type and dates">
+    - Choose a **leave type**
+    - Select start and end dates (multi-day allowed)
+    - Tick **Half day** if applicable, then choose first half or second half
+  </Step>
+
+  <Step title="Add a reason">
+    Brief context helps your approver decide quickly.
+  </Step>
+
+  <Step title="Submit">
+    Your request is created in `Pending`. Your Admin or Manager sees it immediately and is notified by email and (if configured) Telegram.
+
+    [IMAGE: Leave request dialog with type, date range, and reason fields]
+  </Step>
+</Steps>
+
+## Track your balance
+
+The **Balance** tab shows per-type totals for the financial year:
+
+- **Opening** — balance carried in
+- **Accrued** — earned during the period
+- **Used** — already taken
+- **Available** — what you can still take
+- **Encashed** — converted to cash (where enabled)
+- **Lapsed** — expired
+
+[IMAGE: Leave balance card with per-type chips]
+
+## Approval workflow (Manager / Admin)
+
+In the **Team requests** tab, approvers see all pending requests. Each row shows:
+
+- Member, leave type, dates, half-day flag
+- Days requested
+- Available balance for the type
+- Reason
+
+Click **Approve** or **Reject** with an optional review comment. Approval:
+
+- Updates `LeaveRequest.status` to `Approved`
+- Creates or updates **Attendance** rows for each day with status `Leave`
+- Decrements the member's balance and writes an audit transaction
+- Sends a notification to the requester
+
+Rejection releases the balance and records a `LeaveTransaction`.
+
+## Cancel a pending request
+
+You can cancel your own requests while they are still `Pending`. Once approved, cancellation depends on org policy.
+
+## Half days, weekends, and balance checks
+
+The behavior of these is set by your Admin in the [leave policy](/admin/leave-policy):
+
+- **Half-day** counts as 0.5 days against your balance
+- **Weekends** can be excluded from leave day counts
+- **Balance check** can be required (or warning-only) before submission
+- **Overlapping** requests can be allowed or blocked
+
+## Audit trail
+
+Every balance change is logged in `LeaveTransaction` rows visible to Admins. This includes approvals, rejections, manual adjustments, and encashment.
+
+## Tips
+
+- Plan PL early — most policies don't refund a lapsed leave.
+- Use comp-off (`CO`) and not LOP when you've banked extra hours, so your balance reflects reality.
+- If you need to reschedule approved leave, reject the old request and submit a new one.

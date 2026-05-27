@@ -1,0 +1,68 @@
+---
+title: "Notifications"
+description: "Multi-channel notifications for the things you care about, with full per-type control."
+---
+
+Flotick produces notifications for the events you care about: a task assigned to you, a comment that mentions you, an approved leave, a sprint that just started, a high-priority insight, and many more.
+
+[IMAGE: Bell icon with unread count and notification dropdown preview]
+
+## Where notifications appear
+
+| Channel | When | Where to control it |
+| :--- | :--- | :--- |
+| **In-app bell** | Always | The bell icon in the top bar, with the unread count. |
+| **Inbox** | Always | The full list at `/<org-slug>/inbox`. See [Inbox](/features/inbox). |
+| **Live toast** | Always | A short banner pops up when an event arrives. |
+| **Email** | High and Urgent priority | Sent through your account email. |
+| **Telegram** | Selected types you opt in to | Connect from Settings → Integrations. See [Telegram](/features/telegram). |
+
+## Notification priorities
+
+Each notification has a priority that determines how aggressively it's delivered:
+
+- **Low** — informational; in-app only
+- **Normal** — typical events; in-app, toast, and Inbox
+- **High** — important events; also email
+- **Urgent** — critical events; in-app, email, and Telegram (when connected)
+
+## Common notification types
+
+- Task assigned to you, status changed, or commented on
+- Mentions in comments (`@you`)
+- Sprint started, completed, or scope event flagged
+- Leave request submitted, approved, or rejected
+- Payroll run draft ready or finalized
+- AI insight detected (sprint risk, deadline risk, workload imbalance)
+- Member joined, role changed, removed
+- Files shared with you
+
+## Mark as read
+
+- Selecting a notification in the [Inbox](/features/inbox) auto-marks it read after a brief dwell
+- The bell dropdown has a **Mark all read** action
+- Bulk-select rows in the Inbox to mark or delete in batches
+
+## Configure preferences
+
+Open **Profile → Notification preferences** to:
+
+- Toggle each notification type on or off
+- Choose which channels each type uses (in-app, email, Telegram)
+- Mute individual conversations during focus blocks (where supported)
+
+[IMAGE: Notification preferences page with type-by-channel toggles]
+
+## Real-time delivery
+
+Notifications arrive via secure WebSocket the moment they're generated. The bell, the Inbox, and live toasts update without a page refresh.
+
+## Telegram delivery
+
+Once you connect Telegram from settings, you can opt selected types into Telegram delivery. The bot only sends what you've explicitly enabled. See [Telegram](/features/telegram).
+
+## Tips
+
+- If your Inbox is noisy, start by muting the noisiest type (often comment activity on busy projects).
+- Use **email** sparingly — keep it for events you'll act on outside the app.
+- The AI Insights tab in your Inbox surfaces proactive items you can turn into action.

@@ -1,0 +1,50 @@
+---
+title: "Comments"
+description: "Threaded comments on tasks and sprints with mentions, likes, and Markdown."
+---
+
+Flotick comments turn tasks and sprints into a living thread of context. Comments support threading, `@mentions`, likes, and Markdown.
+
+[IMAGE: Threaded comments on a task with replies and likes]
+
+## Where you can comment
+
+- **Tasks** — full threaded comments inside the task detail dialog
+- **Sprints** — sprint-scoped comments for goal discussion and retro notes
+
+## Compose a comment
+
+The comment composer accepts:
+
+- **Markdown** including bold, italic, code, links, and lists
+- **GitHub-flavored Markdown** features like task lists and tables
+- **Mentions** with `@` to autocomplete teammates
+- **Code fences** for snippets
+
+Posting is **rate limited** (about 30 per hour per user) to deter spam and accidental loops.
+
+## Reply and thread
+
+Click **Reply** under any comment to nest a reply. Threads keep the conversation grouped by topic.
+
+## Like a comment
+
+Click the heart icon to like a comment. Likes are visible to the author and other readers — useful for low-noise acknowledgements.
+
+## Edit and delete
+
+You can edit your own comments at any time. The comment shows an `edited` indicator after the first edit. Admins can delete any comment in their organization. Deleted comments leave a small placeholder so the thread structure remains readable.
+
+## Mentions and notifications
+
+`@mention` triggers a notification to the mentioned member, including in their [Inbox](/features/inbox), and through Telegram if they've connected it.
+
+## Encryption
+
+If your organization enables comment encryption, the body is stored encrypted (AES-256-GCM). The `@mentions` and metadata stay queryable for routing notifications.
+
+## Tips
+
+- Use **threads** to keep multi-thread discussions navigable.
+- Lead with a one-line summary; put detail in fenced code or collapsibles.
+- Replace one-word "ok" comments with a 👍 like to reduce noise.

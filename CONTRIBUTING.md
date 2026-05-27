@@ -1,34 +1,58 @@
-> **Customize this file**: Tailor this template to your project by noting specific contribution types you're looking for, adding a Code of Conduct, or adjusting the writing guidelines to match your style.
+# Contribute to the Flotick docs
 
-# Contribute to the documentation
-
-Thank you for your interest in contributing to our documentation! This guide will help you get started.
+We welcome corrections, clarifications, and improvements to the user-facing docs.
 
 ## How to contribute
 
-### Option 1: Edit directly on GitHub
+### Edit on GitHub
 
-1. Navigate to the page you want to edit
-2. Click the "Edit this file" button (the pencil icon)
-3. Make your changes and submit a pull request
+1. Open the page you want to fix and click the pencil icon
+2. Edit the MDX in your fork
+3. Open a pull request with a short summary
 
-### Option 2: Local development
+### Local development
 
 1. Fork and clone this repository
 2. Install the Mintlify CLI: `npm i -g mint`
-3. Create a branch for your changes
-4. Make changes
-5. Navigate to the docs directory and run `mint dev`
-6. Preview your changes at `http://localhost:3000`
-7. Commit your changes and submit a pull request
+3. Create a branch: `git checkout -b fix/typo-in-attendance`
+4. From `docs-main`, run `mint dev`
+5. Preview at `http://localhost:3000`
+6. Commit and open a pull request
 
-For more details on local development, see our [development guide](development.mdx).
+## What we accept
 
-## Writing guidelines
+- Typo and grammar fixes
+- Clarifications for confusing instructions
+- Updated screenshots (replacing `[IMAGE: ...]` placeholders)
+- New how-to guides for real workflows in the product
+- Corrections to feature behavior that's drifted from the docs
 
-- **Use active voice**: "Run the command" not "The command should be run"
-- **Address the reader directly**: Use "you" instead of "the user"
-- **Keep sentences concise**: Aim for one idea per sentence
-- **Lead with the goal**: Start instructions with what the user wants to accomplish
-- **Use consistent terminology**: Don't alternate between synonyms for the same concept
-- **Include examples**: Show, don't just tell
+## What we don't accept (in this repo)
+
+- Internal architecture, API specs, or database schema
+- Pricing details that conflict with `flotick.com/pricing`
+- Documentation for unreleased features
+- Marketing copy or testimonials
+
+## Writing standards
+
+- **Active voice, second person.** "Click **Save**" not "The Save button should be clicked."
+- **One idea per sentence.** Break up compound sentences.
+- **Sentence case for headings.**
+- **Bold UI labels.** Backticks for paths, fields, and statuses.
+- **Lead with the goal.** Start a procedure with what the reader wants to accomplish.
+- **Short paragraphs.** Two to three sentences is plenty.
+
+## Mintlify components to know
+
+- `<Steps>` for numbered procedures
+- `<CardGroup>` and `<Card>` for inline navigation grids
+- `<Tabs>` for parallel tracks (e.g., Admin vs Member views)
+- `<AccordionGroup>` and `<Accordion>` for FAQ-style content
+- `<Note>` and `<Warning>` for callouts
+
+## Reviewing your change
+
+- Run `mint broken-links` to catch broken cross-page links
+- Open every page you've changed and read it top to bottom
+- If you've added a page, also update `docs.json` so it appears in the nav

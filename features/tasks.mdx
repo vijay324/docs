@@ -1,28 +1,127 @@
 ---
 title: "Tasks"
-description: "Track work from idea to completion with clear ownership, priority, and status."
+description: "The atomic unit of work in Flotick — with rich workflow, multiple views, and built-in collaboration."
 ---
 
-## What it does
+Tasks are where the actual work lives. Every project's progress reduces to the state of its tasks.
 
-Tasks capture all actionable work with assignees, priorities, due dates, and progress states.
+[IMAGE: Tasks page with List, Board, and Calendar view tabs]
 
-## Why it matters
+## What a task contains
 
-- Eliminates ambiguity around who is doing what.
-- Increases accountability and execution speed.
-- Makes workload balancing easier for managers.
+| Field | Description |
+| :--- | :--- |
+| **Title** and **description** | Title is plain text; description supports Markdown and is encrypted at rest. |
+| **Type** | `Story`, `Bug`, `Task`, `Epic`, or `Spike`. |
+| **Priority** | `Critical`, `High`, `Medium`, `Low`. |
+| **Status** | The workflow stage (see below). |
+| **Assignee, Reviewer, Tester, Reporter** | Up to four people with different responsibilities. |
+| **Story points** | Estimation in points. |
+| **Estimates and time spent** | Original estimate, remaining estimate, and accumulated time spent. |
+| **Labels** | Free-form text tags. |
+| **Acceptance criteria, considerations** | Long-form fields, encrypted. |
+| **Due date** | Used for deadline alerts and the calendar view. |
+| **Sprint** | Optional sprint membership. |
+| **Files**, **Comments**, **Work logs**, **Links** | Built-in collaboration around the task. |
 
-## How to use it effectively
+## Workflow status
 
-1. Write task titles as clear outcomes.
-2. Assign one accountable owner.
-3. Add due date and priority before moving to active work.
-4. Update status daily so board and dashboard stay trustworthy.
-5. Add comments and attachments to keep context centralized.
+Tasks flow through a default workflow, which Admins can adjust per organization (see [Workflow policy](/admin/workflow-policy)).
 
-## Common mistakes to avoid
+```
+Backlog → Sprint Backlog → Todo → In Progress → Review → Testing → Blocked → Done
+```
 
-- Multiple owners for one task.
-- Vague task names without deliverables.
-- Leaving tasks in stale statuses.
+Drag-and-drop on the board moves a task between columns. Each transition is validated server-side:
+
+- Required transitions (e.g., must pass through `Review` before `Done`) are enforced
+- WIP limits per column are respected — if a column is at capacity, the move is rejected
+- Reaching `Done` triggers a confetti animation in the UI
+
+## Three views
+
+<Tabs>
+  <Tab title="List view">
+    A dense, sortable, filterable table. Best for triage and bulk updates.
+
+    [IMAGE: List view with grouped rows by status]
+  </Tab>
+  <Tab title="Board view">
+    A Kanban with one column per status. Best for daily standups and progress visibility.
+
+    [IMAGE: Kanban board view with cards in columns]
+  </Tab>
+  <Tab title="Calendar view">
+    Tasks placed on a calendar by due date with day, week, and month modes.
+
+    [IMAGE: Calendar view with day, week, month toggle]
+  </Tab>
+</Tabs>
+
+## Create a task
+
+<Steps>
+  <Step title="Open the new task dialog">
+    Click **New task** from any list, board, or project page. The dialog opens immediately.
+  </Step>
+
+  <Step title="Fill the essentials">
+    Title, project, type, and priority are required. Optionally set assignee, reviewer, tester, story points, labels, and due date.
+  </Step>
+
+  <Step title="Save">
+    The task starts in `Backlog`. The assignee sees it on their [Personal Board](/features/personal-board) instantly via real-time updates.
+  </Step>
+</Steps>
+
+## Update a task
+
+Open any card to bring up the **task detail dialog**. From here you can:
+
+- Change status, priority, assignee, and dates
+- Add or update **acceptance criteria** and **considerations**
+- Attach files (drag-drop)
+- Post threaded **comments** and `@mention` teammates
+- Log **work** (hours and description)
+- Add **dependencies** (see [Task dependencies](/features/task-dependencies))
+
+[IMAGE: Task detail dialog with tabs for Details, Comments, Files, Worklog, Links]
+
+## Time tracking
+
+Two ways to log time:
+
+1. **Manual work log** — open the task, choose **Log work**, enter hours and description
+2. **Focus session** — start a [Focus Session](/features/focus-sessions) tied to the task; on stop, Flotick auto-creates a work log
+
+Either way, `Time spent` rolls up automatically.
+
+## History and audit
+
+Every task carries a complete history:
+
+- **Status history** — when the status changed and who changed it
+- **Assignment history** — when the assignee, reviewer, or tester changed
+
+Open the **History** tab on the task to review.
+
+## Encryption
+
+Long-form, sensitive fields are encrypted with AES-256-GCM at rest:
+
+- Description
+- Acceptance criteria
+- Considerations
+- Optionally, comment content
+
+Encrypted fields are decrypted only on read for users with access. They aren't included in full-text search.
+
+## Soft delete
+
+Deleting a task moves it to [Trash](/features/trash) for 30 days. Comments, work logs, history, and links are preserved during the recovery window. After 30 days, hard deletion runs automatically.
+
+## Tips
+
+- Use **labels** for cross-cutting tags (`platform`, `cust:acme`, `tech-debt`) since they're free-form and indexable.
+- Save effort estimates — sprint velocity and AI summaries get sharper with consistent estimation.
+- Promote a task to an **Epic** when scope expands; link sub-tasks to it (see [Task dependencies](/features/task-dependencies)).

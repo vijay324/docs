@@ -1,0 +1,66 @@
+---
+title: "Files"
+description: "Attach files to tasks, sprints, and projects with secure cloud storage."
+---
+
+Flotick stores file attachments in S3-compatible cloud storage and manages them through fast presigned uploads. Use it for designs, specifications, exports, and any artifact that belongs next to your work.
+
+[IMAGE: Files browser with grid view, tag filters, and search]
+
+## Where files live
+
+Files can be attached at three levels:
+
+- **Project** — broad, project-wide artifacts (PRDs, contracts, brand assets)
+- **Sprint** — anything specific to a single sprint (demo recording, retro notes)
+- **Task** — context for a single task (screenshots, repro videos, mockups)
+
+The org-wide **Files** page at `/<org-slug>/files` lets you browse and search across all of them.
+
+## Upload a file
+
+<Steps>
+  <Step title="Open the upload control">
+    Drag-drop a file into a task, sprint, project, or the **Files** page. Or click **Upload**.
+  </Step>
+
+  <Step title="Pick tags (optional)">
+    Tags are free-form. Common patterns: `design`, `spec`, `customer:acme`, `release:2026-q2`.
+  </Step>
+
+  <Step title="Watch the upload">
+    The browser uploads directly to cloud storage using a short-lived presigned URL. Once finished, Flotick records the file's metadata.
+  </Step>
+</Steps>
+
+Maximum file size is **25 MB** by default. Allowed file types are configurable per organization.
+
+## Download or preview
+
+- **Download** generates a one-time, short-lived URL (about 15 minutes) and tracks the count
+- **View** opens the file inline when the type allows
+
+Both respect access rules: a private project file is only accessible to the project's members.
+
+## Tags and search
+
+The browser supports:
+
+- **Search** across filename and tags
+- **Tag filter** with multi-select
+- **Entity filter** — show files attached to projects only, tasks only, etc.
+- **View toggle** — grid or list
+
+## Encryption
+
+Files are encrypted at rest in cloud storage, with per-file key metadata stored alongside the record. Filenames and metadata are kept queryable.
+
+## Soft delete
+
+Deleting a file hides it from lists; the underlying object is retained for compliance. Admins can permanently remove files from [Trash](/features/trash) before the auto-purge window.
+
+## Tips
+
+- Tag aggressively. Cross-tag with project + customer + type for fast retrieval.
+- Replace large attachments with links when possible (Drive, Dropbox) — Flotick is great for shareable, working files but not designed as a long-term archive.
+- Use task attachments for short-lived context (screenshots, exports) and project attachments for canonical references.

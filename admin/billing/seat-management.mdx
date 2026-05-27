@@ -1,0 +1,41 @@
+---
+title: "Seat management"
+description: "How seats are counted, when they're consumed, and how to free up seats."
+---
+
+A **seat** is a slot for a member of your organization. Plans define a maximum number of seats; managing them keeps your bill predictable.
+
+## What counts as a seat
+
+| Status | Counts as a seat? |
+| :--- | :---: |
+| Active member | ✅ |
+| Pending invitation | ✅ |
+| Soft-deleted member (in Trash) | ❌ |
+| Permanently deleted | ❌ |
+
+This means inviting someone immediately consumes a seat — even before they accept.
+
+## Hitting the cap
+
+When you're at the seat cap, the **Invite member** flow returns a clear error. To free a seat:
+
+- **Revoke** unaccepted invitations you no longer need from the **Members** page
+- **Soft-delete** members who have left
+- **Upgrade** to a plan with a higher cap
+
+Soft-deleted members can be restored within 30 days. Restoring puts the seat back in use.
+
+## Plan downgrades and seat counts
+
+If you downgrade to a plan whose cap is below your current member count, the downgrade takes effect at period end. By then, your active member count must be at or under the new cap. Flotick shows a banner reminding you well in advance.
+
+## Auditing seats
+
+The **Members** page shows total active and pending counts. Combine with **Trash → Members** to see who's pending purge.
+
+## Tips
+
+- Audit pending invites monthly. They're the cheapest seats to free.
+- Coordinate seat changes with HR — onboarding and offboarding usually have a tail of pending invites.
+- If you frequently bump against the cap, consider **Yearly** billing on the next plan up — the savings often offset the extra seats.

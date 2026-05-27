@@ -1,24 +1,53 @@
 ---
 title: "AI Insights"
-description: "Use AI to accelerate planning, summarize progress, and surface execution risks."
+description: "Proactive AI alerts about sprint risk, bottlenecks, deadlines, and workload — surfaced in your Inbox."
 ---
 
-## What it does
+While [AI Summaries](/features/ai-summaries) are on-demand, AI Insights are **proactive**. Flotick continuously analyzes your work data and surfaces notable conditions you should look at — sprints trending off-track, recurring bottlenecks, deadline risk, workload imbalance.
 
-AI features help teams create better task/sprint drafts and generate concise progress summaries.
+[IMAGE: AI Insights panel in Inbox with multiple insight cards]
 
-## Why it matters
+## Where to find insights
 
-- Cuts planning overhead.
-- Improves status clarity for managers.
-- Helps teams spot risks sooner.
+Open your [Inbox](/features/inbox) and switch to the **AI Insights** tab.
 
-## How to use it effectively
+## What kinds of insights you'll see
 
-1. Generate first drafts, then edit for clarity and scope.
-2. Use AI summaries for leadership updates.
-3. Validate priorities and due dates before publishing work.
+- **Sprint at risk** — pace below ideal burndown with significant scope remaining
+- **Deadline risk** — multiple tasks approaching due dates without progress
+- **Bottleneck detection** — work piling up at a particular workflow stage (often Review or Testing)
+- **Workload imbalance** — one or two members carrying disproportionate load
+- **Workflow drift** — tasks skipping required transitions repeatedly
 
-## Best practice
+## Each insight is actionable
 
-Treat AI output as a starting point, not a final decision. Human review keeps quality high.
+Every insight card has:
+
+- **Title** and short context
+- **Suggested action** with a one-click button (e.g., "Reassign", "Notify owner", "Open task")
+- **Dismiss** to remove the card with a cooldown before it can re-surface
+
+[IMAGE: Single AI insight card with title, explanation, and action buttons]
+
+## How insights are generated
+
+Two trigger modes:
+
+- **Scheduled** — daily background jobs evaluate your org for the enabled insight types
+- **Event-driven** — a sudden spike in blocked tasks, an unusual scope event, or other signals can trigger an immediate insight
+
+High-priority insights also send a notification to Admins and Managers.
+
+## Plan availability
+
+Some insight types are available on Pro and Max plans. See [Plans](/admin/billing/plans).
+
+## Privacy
+
+Insights are derived from your org's data only. Flotick respects access rules — an insight referencing a private project is only visible to its members and Admins.
+
+## Tips
+
+- Treat insights as conversation starters with leads, not as automated decisions.
+- If an insight fires repeatedly with no action needed, dismiss it; the cooldown will keep it off your screen.
+- Pair Insights with the **AI workflow analytics** views to dig into the underlying signals.

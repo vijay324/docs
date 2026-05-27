@@ -1,0 +1,59 @@
+---
+title: "Task dependencies"
+description: "Express how tasks relate: blocks, relates to, duplicates, parent of, clones, implements."
+---
+
+Task dependencies (also called **task links**) make relationships between tasks explicit so the team can see what's blocking what.
+
+## Supported link types
+
+| Link type | Inverse | Meaning |
+| :--- | :--- | :--- |
+| **blocks** | blocked_by | Task A must finish before Task B can start. |
+| **relates_to** | (symmetric) | Loose relationship — relevant context. |
+| **duplicates** | duplicated_by | Same as another task; usually one is closed. |
+| **parent_of** | child_of | A composes the other into a hierarchy. |
+| **clones** | cloned_by | Created as a copy of another task. |
+| **implements** | implemented_by | Implements a story, spec, or epic. |
+
+Inverse links are created automatically. Adding `A blocks B` also creates `B blocked_by A`.
+
+## Add a dependency
+
+<Steps>
+  <Step title="Open the task">
+    Click any task to open its detail dialog, then go to the **Links** tab.
+  </Step>
+
+  <Step title="Search for the target">
+    Start typing a task title or ID. Results are scoped to your organization and to tasks you can access.
+  </Step>
+
+  <Step title="Pick the link type">
+    Select the relationship from the dropdown.
+  </Step>
+
+  <Step title="Save">
+    Flotick checks for circular dependencies, creates the link, and creates the inverse if applicable.
+
+    [IMAGE: Task detail Links tab showing Blocked by and Blocks sections]
+  </Step>
+</Steps>
+
+## Visualizing blockers
+
+Tasks with active blockers show a small badge on the card and a clear **Blocked by** section in the detail dialog. Clicking a blocker opens that task — useful for tracing dependency chains.
+
+## Cycle prevention
+
+You can't create a circular `blocks` chain. If you try `A blocks B` while `B` already blocks `A` (directly or through a chain), Flotick rejects the request with a clear error.
+
+## Cleaning up
+
+Removing one side of a bidirectional pair removes both. Deleting a task removes all of its links.
+
+## Tips
+
+- Use **blocks** sparingly. Too many cross-task blockers usually mean tasks are too small or scope is unclear.
+- For long-running work, use **parent_of** (Epic → Story → Task) to keep hierarchy readable.
+- The **Sprint Commitment Coach** uses blocker counts to flag risky sprint commitments.

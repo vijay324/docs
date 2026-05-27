@@ -1,21 +1,87 @@
 ---
 title: "Attendance"
-description: "Track daily work presence and time accountability with minimal effort."
+description: "Daily check-in and check-out with live work timer, work descriptions, and team overview."
 ---
 
-## What it does
+Flotick attendance is built around a simple promise: **one record per member per day**. Members check in, check out, and add a brief description of what they worked on. Managers see a live picture of their team.
 
-Attendance captures check-in/check-out times, work type, and daily work logs.
+[IMAGE: Attendance page with table, calendar, and team overview tabs]
 
-## Why it matters
+## Check in
 
-- Improves transparency across teams.
-- Supports payroll readiness and compliance.
-- Creates reliable records for performance discussions.
+<Steps>
+  <Step title="Open the check-in dialog">
+    Click **Check in** in the sidebar or top bar. The dialog appears anywhere in the app.
+  </Step>
 
-## How to use it effectively
+  <Step title="Pick your work type">
+    `Office`, `Remote`, or `Hybrid`. Your default work type comes from your profile.
+  </Step>
 
-1. Check in at start of day.
-2. Select correct work type (office, remote, hybrid).
-3. Check out with a short summary of completed work.
-4. Review attendance history weekly for consistency.
+  <Step title="Confirm the time">
+    Flotick suggests now. Adjust if needed (admins control whether past-date entries are allowed).
+  </Step>
+
+  <Step title="Submit">
+    Your day record is created with status `Checked In`. The **live work timer** starts ticking in the top bar.
+
+    [IMAGE: Check-in dialog with work type selector]
+  </Step>
+</Steps>
+
+## Check out
+
+When you're done for the day, click **Check out**.
+
+- Add a brief **work description** in plain text or Markdown
+- Click **Enhance with AI** to polish the description into a clean recap (see [AI Enhance](/features/ai-enhance))
+- Confirm the time
+
+Your day record updates to `Checked Out` with the duration calculated automatically. **Cross-midnight check-outs are supported** — the duration accounts for the day boundary.
+
+[IMAGE: Check-out dialog with work description and Enhance with AI button]
+
+## Three views
+
+<Tabs>
+  <Tab title="Table">
+    Your full attendance log. Filter by month, status, or work type.
+  </Tab>
+  <Tab title="Calendar">
+    A color-coded calendar:
+    - 🟢 **Checked Out** — completed day
+    - 🟡 **Checked In** — in progress
+    - ⚪ **Pending** — future or unrecorded
+    - 🔵 **Leave** — approved leave day
+  </Tab>
+  <Tab title="Team overview">
+    Managers and Admins see who's checked in, on leave, or absent. Aggregated stats by date range help with capacity planning.
+
+    [IMAGE: Team attendance overview with member status grid]
+  </Tab>
+</Tabs>
+
+## Late arrival and overtime
+
+Both rules are configurable in the [attendance policy](/admin/attendance-policy):
+
+- **Late arrival window** — flag check-ins after a threshold (e.g., 10:00)
+- **Overtime** — durations longer than 8 hours are flagged automatically and feed payroll OT calculation (1.5×)
+
+## Forgotten check-out
+
+If a member forgets to check out, an Admin or Manager can backfill from the **Forgotten attendance** dialog. The action is recorded with the admin as the creator for audit.
+
+## Leave and attendance
+
+When a leave request is approved, Flotick automatically creates or updates the matching attendance rows with status `Leave`. You won't need to back-mark anything — the systems stay in sync.
+
+## Live team picture
+
+The team overview updates in real time as your colleagues check in or out. Useful for stand-ups and same-day capacity questions.
+
+## Tips
+
+- Encourage a daily check-out habit — work descriptions become a great input for the AI weekly summary.
+- Use **work type** consistently to power hybrid policy reporting.
+- If your team doesn't track attendance, ask your Admin to disable it from organization settings — Flotick's other features still work without it.

@@ -1,0 +1,71 @@
+---
+title: "Env Storage"
+description: "Per-project encrypted vault for environment variables and secrets."
+---
+
+Env Storage is a per-project vault for the environment variables your team needs to share. Variables are encrypted at rest and access is scoped to project members.
+
+[IMAGE: Env Storage page with environment tabs and category sections]
+
+## How it's organized
+
+```
+Project
+  ├── Environment (dev / staging / prod / custom)
+  │     ├── Category (database / api / oauth / other / custom)
+  │     │     ├── Variable (key, value, optional secret flag)
+```
+
+## Open Env Storage
+
+Navigate to **Env Storage** from the sidebar. Pick a project (or use a deep link `?projectId=...`). The page shows the project's environments as tabs.
+
+## Add a variable
+
+<Steps>
+  <Step title="Pick the environment">
+    Click the tab for `dev`, `staging`, `prod`, or any custom environment.
+  </Step>
+
+  <Step title="Pick or add a category">
+    Default categories are provided. Add custom categories from the **+ Category** menu.
+  </Step>
+
+  <Step title="Add the variable">
+    Enter `key`, `value`, optional `description`, and tick **Secret** for sensitive values. Secret values are encrypted with AES-256-GCM at rest.
+
+    [IMAGE: Add variable dialog with key, value, description, and Secret toggle]
+  </Step>
+</Steps>
+
+## Edit and delete
+
+Inline edit any row. Use the trash icon to delete with a confirmation. Each change records who changed what (without storing previous values for security).
+
+## Reveal and copy secrets
+
+Secret values are masked by default. Click the eye icon to reveal. Click the copy icon to copy the value to your clipboard.
+
+## Add an environment
+
+Click **New environment** to create a new one (e.g., `qa`, `dr`). Default categories are seeded automatically.
+
+## Compare environments
+
+Use the **Diff** view to compare keys across two environments. Useful for spotting missing prod values before deploys.
+
+## Export and import .env
+
+- **Export** generates a `.env`-format file (decrypted in your session)
+- **Import** parses an uploaded `.env` and creates variables in the chosen environment, with secret-detection heuristics
+
+## Access control
+
+- **Read** — any project member
+- **Write (add, edit, delete)** — project members with manage permission, plus Admins
+
+## Tips
+
+- Use clear naming for environments (`prod`, not `live`) and categories (`stripe`, not `payments`) to keep keys predictable.
+- Mark secrets explicitly. The `Secret` flag drives mask behavior, copy auditing, and export warnings.
+- Treat Env Storage as the source of truth, not your laptop. Reduce drift by running an `Export` after every change cycle.

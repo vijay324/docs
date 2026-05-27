@@ -1,0 +1,106 @@
+---
+title: "FAQ"
+description: "Quick answers to common Flotick questions."
+---
+
+## Accounts and sign-in
+
+<AccordionGroup>
+  <Accordion title="How do I create an account?">
+    Visit [app.flotick.com/auth/signup](https://app.flotick.com/auth/signup) and sign up with email or Google. The first user becomes the Admin of a new organization. To join an existing org, ask an Admin or Manager to invite you. See [Sign up](/get-started/sign-up).
+  </Accordion>
+
+  <Accordion title="I forgot my password.">
+    Use [forgot password](https://app.flotick.com/auth/forgot-password). You'll receive an email with a reset link valid for 15 minutes. Resetting signs you out everywhere.
+  </Accordion>
+
+  <Accordion title="Why am I being asked for a 6-digit code?">
+    Either your account has 2FA enabled, or you're signing in from a new (untrusted) device. Enter the code from your authenticator app or email. See [Security and 2FA](/account/security-and-2fa).
+  </Accordion>
+
+  <Accordion title="My account is locked.">
+    After repeated failed sign-in attempts, accounts lock for 15 to 60 minutes. Wait for the timer, or have an Admin reset your account.
+  </Accordion>
+</AccordionGroup>
+
+## Organizations and members
+
+<AccordionGroup>
+  <Accordion title="Can a user belong to more than one organization?">
+    Each Flotick account is tied to one organization at a time. To work across organizations, you'd need separate sign-ups, each with a unique email.
+  </Accordion>
+
+  <Accordion title="How do I change my organization's slug?">
+    Admins can change the slug from **Settings → Organization**. Bookmarks under the old slug redirect to the new one.
+  </Accordion>
+
+  <Accordion title="Can there be more than one Admin?">
+    Exactly one Admin per organization. Promote a Manager to Admin and the existing Admin becomes a Manager in the same step.
+  </Accordion>
+</AccordionGroup>
+
+## Tasks, sprints, projects
+
+<AccordionGroup>
+  <Accordion title="Why can't I move a task to Done?">
+    Your workflow policy probably requires going through `Review` first. See [Workflow policy](/admin/workflow-policy).
+  </Accordion>
+
+  <Accordion title="Why is the column rejecting my drop?">
+    The column has a WIP limit at capacity. Finish or move out an existing task, or have an Admin lift the limit temporarily.
+  </Accordion>
+
+  <Accordion title="Can I have two active sprints in one project?">
+    No. Only one sprint per project can be active at any time.
+  </Accordion>
+
+  <Accordion title="I deleted something by mistake.">
+    Open [Trash](/features/trash). Items are recoverable for 30 days.
+  </Accordion>
+</AccordionGroup>
+
+## Workforce
+
+<AccordionGroup>
+  <Accordion title="I forgot to check out yesterday.">
+    If your policy allows past-date entries, fix it from your **Attendance** page. Otherwise ask an Admin or Manager to backfill via the **Forgotten attendance** dialog.
+  </Accordion>
+
+  <Accordion title="How does leave affect attendance?">
+    Approved leave automatically creates attendance rows with status `Leave` for each leave date.
+  </Accordion>
+
+  <Accordion title="Can a finalized payroll run be edited?">
+    No. Finalized runs are immutable. Corrections happen in the next month's run.
+  </Accordion>
+</AccordionGroup>
+
+## AI
+
+<AccordionGroup>
+  <Accordion title="Are my data and prompts shared with the AI provider?">
+    Flotick sends only the context required for the chosen template (or the text you select for AI Enhance). Encrypted long-form fields aren't included. We don't store anything additional with the provider; their handling is governed by their own policies.
+  </Accordion>
+
+  <Accordion title="Why does AI sometimes feel slow?">
+    AI summaries stream token-by-token; total time depends on context size and the model's response. Larger orgs or wider scopes take longer.
+  </Accordion>
+</AccordionGroup>
+
+## Billing
+
+<AccordionGroup>
+  <Accordion title="Where do I find invoices?">
+    Open **Admin → Billing → Billing portal**. Invoices live in the hosted Polar portal.
+  </Accordion>
+
+  <Accordion title="Can I switch between USD and INR?">
+    Currency is region-detected. If you need a specific currency that doesn't match your IP, contact [support](/resources/support).
+  </Accordion>
+
+  <Accordion title="What happens when I downgrade?">
+    The downgrade takes effect at the end of the current period. You keep the higher tier until then.
+  </Accordion>
+</AccordionGroup>
+
+Still stuck? See [Support](/resources/support).

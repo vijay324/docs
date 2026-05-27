@@ -1,0 +1,64 @@
+---
+title: "Leave policy"
+description: "Enable leave types, set balances and accrual, and govern half-day, encashment, and overlap rules."
+---
+
+Leave policy lives at **Settings → Leave** and applies to every member.
+
+[IMAGE: Leave policy editor showing per-type configuration]
+
+## Leave types
+
+Pick which leave types your organization uses. Common types:
+
+| Code | Name |
+| :--- | :--- |
+| **PL** | Privilege Leave |
+| **SL** | Sick Leave |
+| **CL** | Casual Leave |
+| **EL** | Earned Leave |
+| **ML** | Maternity Leave |
+| **PTL** | Paternity Leave |
+| **CO** | Comp-off |
+| **LOP** | Loss of Pay |
+
+For each enabled type, configure:
+
+- **Annual balance** (e.g., 12 PL per year)
+- **Accrual rule** — at start of year, monthly, or per quarter
+- **Carry-forward limit** — how much can roll into the next year
+- **Encashment** — whether the type can be encashed and how many days max per year
+- **Half-day allowed** — whether members can request half days
+
+## Behavior switches
+
+| Switch | What it does |
+| :--- | :--- |
+| **Requires balance** | Block submission if requested days exceed balance. |
+| **Allow overlapping requests** | Permit a second request that overlaps an existing one. |
+| **Exclude weekends** | Skip weekends when counting days requested. |
+| **Notice period required** | Enforce a minimum notice for certain leave types. |
+
+## Financial year
+
+Balances are tracked per **financial year** (e.g., `2025-2026`). Configure your org's start month so balances reset correctly.
+
+## Lapse and roll-over
+
+At the end of the financial year, Flotick processes:
+
+- **Carry-forward** up to the configured cap
+- **Encashment** of eligible types up to the cap
+- **Lapse** of remaining unused, untransferable balance
+
+The audit trail (`LeaveTransaction`) shows each member's transitions.
+
+## Apply changes
+
+Mid-year changes affect future requests. Existing balances are preserved unless an Admin runs a manual adjustment.
+
+## Tips
+
+- Discuss policy changes with HR/finance counterparts — leave policy is also a labor compliance topic.
+- Encashment limits prevent surprise payroll spikes; default to a conservative cap and raise as needed.
+- If you're switching to Flotick mid-year, run an opening-balance import for each member so balances start truthful.

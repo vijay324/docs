@@ -1,0 +1,40 @@
+---
+title: "Real-time updates"
+description: "Live updates across boards, lists, comments, and notifications — no refresh needed."
+---
+
+Flotick is real-time by default. When something changes in your organization, every connected client sees it immediately.
+
+## What updates live
+
+- **Tasks** — drag a card on the Kanban and every viewer sees it move
+- **Sprints** — start, complete, and scope events broadcast instantly
+- **Comments** — replies and likes arrive in the thread without refresh
+- **Attendance** — the team overview updates as people check in or out
+- **Notifications** — the bell, the Inbox, and live toasts update the moment events are emitted
+- **AI summaries** — streamed token-by-token for a typewriter effect
+
+## How it works
+
+Your browser opens a secure authenticated WebSocket connection on sign-in. The server places you into rooms keyed by your organization and your member ID. Domain events are routed to the right rooms only — there's no cross-organization leakage.
+
+Behind the scenes, Flotick uses a Redis-backed pub/sub layer so that real-time works correctly across multiple servers, including during deploys.
+
+## Reconnects
+
+If your network blips, the client reconnects with backoff. Once the access token is refreshed (which happens automatically), real-time resumes.
+
+## Presence and typing
+
+Where supported, you'll see live presence indicators (e.g., who's also viewing a task) and live counts that change without action.
+
+## What does not stream
+
+- Static settings pages
+- Historical analytics that don't change between reads (cached for short windows)
+- Files content (the metadata is real-time; the file body is fetched on demand)
+
+## Tips
+
+- Real-time only applies to the org you're signed into. Switching organizations refreshes the connection.
+- If a stale value persists, hard-refresh the tab; this rarely happens but ensures any cached query is reseeded.

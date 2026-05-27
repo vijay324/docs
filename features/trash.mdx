@@ -1,0 +1,56 @@
+---
+title: "Trash"
+description: "30-day soft-delete recovery for tasks, sprints, projects, and members."
+---
+
+Flotick uses **soft delete** for major entities. Deleted items move to **Trash** at `/<org-slug>/trash` and stay recoverable for **30 days**. After that, they're permanently removed by an automated background job.
+
+[IMAGE: Trash page with tabs for Tasks, Sprints, Projects, Members]
+
+## What can be deleted (and recovered)
+
+- **Tasks** — including comments, work logs, history, and links
+- **Sprints** — including their task associations
+- **Projects** — including child sprints and tasks
+- **Members** — soft-deleted accounts
+
+Each row in Trash shows the original item, who deleted it, and how many days remain before permanent deletion.
+
+## Restore an item
+
+<Steps>
+  <Step title="Open Trash">
+    From the sidebar, click **Trash**. Use the entity tabs to switch between Tasks, Sprints, Projects, and Members.
+  </Step>
+
+  <Step title="Find the item">
+    Search by name or filter by deletion date.
+  </Step>
+
+  <Step title="Restore">
+    Click **Restore**. The item flips back to active state and reappears in normal lists.
+  </Step>
+</Steps>
+
+## Cascade behavior
+
+When you delete a parent (e.g., a project), Flotick cascades the soft delete to all children using the same expiry timestamp. Restoring the parent **does not** automatically restore children deleted before the parent — only those deleted as part of the cascade.
+
+This is intentional: you don't want to revive earlier independent deletions when you restore a project.
+
+## Permanent delete (Admin)
+
+Admins can permanently delete an item before the 30-day window with the **Delete permanently** action. Use this for sensitive data you want gone immediately.
+
+<Warning>
+Permanent deletion is irreversible. The item, its history, and its children cannot be restored.
+</Warning>
+
+## Auto-cleanup
+
+A daily background job runs around 02:00 UTC and hard-deletes items whose 30-day window has expired. You don't need to manage retention manually.
+
+## Tips
+
+- Use **Trash** as a safety net, not as a workflow. If you regularly use deletes-then-restores, consider archiving or moving to a different status instead.
+- Members in Trash retain their email — it's only freed up after permanent deletion. If you need to re-invite someone, restore first.

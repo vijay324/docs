@@ -1,27 +1,105 @@
 ---
 title: "Sprints"
-description: "Run focused delivery cycles with better planning, execution, and review."
+description: "Time-boxed iterations with goal, capacity, burndown, velocity, and retrospectives."
 ---
 
-## What it does
+A **Sprint** is a time-boxed cycle of work inside a project, with a goal and a planned capacity in story points. Sprints follow a clear lifecycle and produce a velocity number when completed.
 
-Sprints group tasks into time-boxed cycles with a shared goal and measurable progress.
+[IMAGE: Sprint detail page with burndown chart and task list]
 
-## Why it matters
+## Sprint lifecycle
 
-- Improves delivery predictability.
-- Helps teams commit to realistic scope.
-- Makes progress visible through velocity and burndown trends.
+```
+Planning → Active → Review → Retrospective → Completed
+```
 
-## How to use it effectively
+| Status | What it means |
+| :--- | :--- |
+| **Planning** | The sprint exists but hasn't started. You can add or remove tasks freely. |
+| **Active** | Currently running. Scope changes are tracked as `SprintScopeEvent`s for audit. |
+| **Review** | Demo and stakeholder review. |
+| **Retrospective** | Team retrospective in progress. |
+| **Completed** | Locked in. Velocity is calculated and the sprint becomes read-only. |
 
-1. Define a sprint goal before selecting tasks.
-2. Add only tasks that are ready to execute.
-3. Track progress daily on board and sprint views.
-4. Review completed vs planned work at sprint close.
+Only **one sprint per project** can be `Active` at any time.
 
-## Sprint success checklist
+## Create a sprint
 
-- Goal is clear and outcome-based.
-- Scope matches team capacity.
-- Blockers are surfaced within 24 hours.
+<Steps>
+  <Step title="Open Sprints">
+    From the project page or the global **Sprints** sidebar item, click **New sprint**.
+  </Step>
+
+  <Step title="Fill the form">
+    - **Title** and optional description
+    - **Sprint goal** — the headline outcome you want
+    - **Start date** and **end date**
+    - **Capacity** in story points (the team's planned commitment)
+  </Step>
+
+  <Step title="Add tasks">
+    Drag tasks from the project backlog into the sprint, or set the sprint on individual tasks.
+  </Step>
+</Steps>
+
+## Start a sprint
+
+When the team is ready, click **Start sprint**. Flotick:
+
+- Validates the sprint has tasks and dates
+- Confirms no other sprint in the project is active
+- Records a baseline scope snapshot
+- Switches status to `Active`
+
+[IMAGE: Sprint card showing the Start sprint confirmation dialog]
+
+## Track progress
+
+The sprint detail page shows:
+
+- **Burndown chart** — remaining story points vs the ideal line, updated daily
+- **Scope timeline** — every change recorded (tasks added, removed, story points adjusted)
+- **Task list** — grouped by status with quick filters
+- **Members** — who's actively contributing
+
+Scope changes during an active sprint are auditable but not blocked. Use the timeline during retro to discuss what changed and why.
+
+## Complete a sprint
+
+Click **Complete sprint** to:
+
+- Set status to `Completed`
+- Calculate **velocity** as the sum of completed story points
+- Lock the sprint as read-only
+- Optionally move incomplete tasks to the next sprint or back to the backlog
+
+## Run a retrospective
+
+Capture the retrospective directly inside Flotick:
+
+- **What went well**
+- **What can improve**
+- **Action items** for the next sprint
+- **Sprint rating** out of five
+
+The retrospective lives next to the sprint forever.
+
+[IMAGE: Sprint retrospective form with three columns and rating]
+
+## Comments and collaboration
+
+Sprints support threaded comments, just like tasks. Use them to coordinate scope decisions or share retrospective context with the team.
+
+## Velocity and forecasting
+
+After a few sprints, your average velocity is a strong planning signal:
+
+- Use it to set realistic capacity for the next sprint
+- Pair with the **AI sprint summary** template for a written recap (see [AI Summaries](/features/ai-summaries))
+- The **Sprint Commitment Coach** flags when you're committing significantly above the trend
+
+## Tips
+
+- Keep sprint length consistent (one or two weeks) for cleaner velocity comparisons.
+- Discuss every scope event in your retro — drift is a leading indicator of risk.
+- Don't restart a "completed" sprint. Create a new one if you need to extend.

@@ -1,0 +1,55 @@
+---
+title: "Security"
+description: "How Flotick protects your account, data, and organization."
+---
+
+Security is foundational for Flotick. This page summarises the protections in place across authentication, data, and operations.
+
+## Account security
+
+- **Strong password policy** — Argon2id hashing, breached-password detection, and a strength meter at sign-up
+- **Two-factor authentication (TOTP)** — opt-in for every account; required by default for platform staff
+- **Email-code device verification** — new devices receive a 6-digit verification code
+- **Trusted devices** — opt-in skip of new-device verification, individually revocable
+- **Lockout** — exponential backoff after failed sign-ins, capped at 60 minutes
+- **Session rotation** — refresh tokens rotate; reuse of an old token revokes the entire session family
+
+See [Security and 2FA](/account/security-and-2fa).
+
+## Data protection
+
+- **Encryption at rest** — sensitive long-form fields (task description, acceptance criteria, considerations, optional comments) are encrypted with AES-256-GCM
+- **Encryption in transit** — TLS only across all endpoints
+- **Bank, PAN, UAN** — payroll-sensitive fields are encrypted at rest in member compensation records
+- **File storage** — files are encrypted at rest in cloud storage; downloads use short-lived presigned URLs
+- **Environment variables** — secrets in Env Storage are encrypted at rest
+
+## Authorization and isolation
+
+- **Multi-tenant by design** — every record carries an organization scope, enforced at the data layer
+- **Role-based access** — Admin, Manager, Member roles with explicit permission rules
+- **Single Admin Invariant** — exactly one Admin per organization, with deliberate handover semantics
+- **Project visibility** — Public vs Private projects with explicit project membership for private data
+
+## Platform staff access
+
+- **IP whitelist** — every Flotick admin endpoint is gated by an IP allowlist
+- **Mandatory 2FA** — email-code based 2FA for every platform staff sign-in
+- **Single-device sessions** — a new sign-in revokes any prior platform staff session
+- **Permission-based RBAC** — platform staff carry granular permissions; one master `owner` permission grants full access
+- **Audit logs** — every platform staff action writes to an append-only audit log
+
+## Operational security
+
+- **Rate limiting** — per-IP and per-user, layered across API and bot detection
+- **Bot detection** — behavioral and signature-based protection on public surfaces
+- **Backups** — regular backups with point-in-time recovery for the primary database
+- **Health monitoring** — continuous health checks and alerting across dependencies
+
+## Compliance
+
+If you have specific regulatory needs (GDPR, India IT Act, HIPAA, etc.), email [security@flotick.com](mailto:security@flotick.com) to discuss your requirements.
+
+## Reporting a vulnerability
+
+If you've found a security issue, please do not open a public ticket. Email [security@flotick.com](mailto:security@flotick.com) with details. We respond promptly and reward responsible disclosure where appropriate.

@@ -1,0 +1,41 @@
+---
+title: "Personal Board"
+description: "A focused Kanban view of only your assigned tasks across every project."
+---
+
+The **Personal Board** at `/<org-slug>/board` shows only tasks assigned to you across every project and sprint you're part of. It's the page to keep open during deep-work blocks.
+
+[IMAGE: Personal Board with tasks across Todo, In Progress, Review, Testing, Done columns]
+
+## What's on the board
+
+Tasks are filtered to `assignee = you` and grouped by status:
+
+```
+Todo · In Progress · Review · Testing · Done
+```
+
+Quick filters let you slice further by:
+
+- **Sprint** — only show this sprint's work
+- **Priority** — focus on `Critical` and `High`
+- **Due date** — overdue, due today, due this week
+- **Project**
+
+## Drag to move
+
+Drag a card to a new column. Flotick validates the transition against your organization's workflow rules and broadcasts the change in real time. The same WIP limits and required-step rules from the regular task board apply.
+
+## Open task detail
+
+Click any card to open the full task detail dialog with tabs for Comments, Files, Worklog, History, and Links.
+
+## Pair with focus sessions
+
+Start a [Focus Session](/features/focus-sessions) tied to the task you're working on. When you stop the session, Flotick logs the time on the task automatically.
+
+## Tips
+
+- Bookmark `/<your-org>/board` as your homepage if you live on tasks day-to-day.
+- Use the **due date** filter at the start of each day to find what genuinely matters.
+- The personal board respects all the same access rules — you'll only see tasks you can normally view.
