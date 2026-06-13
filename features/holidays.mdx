@@ -1,0 +1,54 @@
+---
+title: "Holidays"
+description: "Define your organization's non-working days so attendance, leave, and payroll stay accurate."
+---
+
+The **holiday calendar** is the single source of truth for non-working days. Attendance won't mark people absent on a holiday, leave that overlaps a holiday isn't deducted from balance, and payroll excludes holidays from working-day counts.
+
+**Where to find it:** sidebar → **Holidays** (`/<org-slug>/holidays`). Admin-only to edit; everyone can view.
+
+## What a holiday has
+
+| Field | Description |
+| :--- | :--- |
+| **Date** and **name** | Unique together within your organization. |
+| **Type** | `National`, `Regional`, `Company`, `Optional`, or `Restricted`. |
+| **Recurring** | Repeats annually (e.g. New Year's Day). |
+| **Optional / restricted** | An employee may choose to take it. |
+| **Scope** | Limit to specific locations and/or departments. Empty scope = applies to everyone. |
+
+## Add a holiday
+
+<Steps>
+  <Step title="Open Holidays">
+    Go to **Holidays** in the sidebar and click **Add holiday**.
+  </Step>
+  <Step title="Fill the details">
+    Set date, name, and type. Optionally add a description, recurrence, the optional flag, and a location/department scope.
+  </Step>
+  <Step title="Save">
+    The holiday is published immediately and dependent attendance, leave, and payroll data update automatically.
+  </Step>
+</Steps>
+
+## Bulk import
+
+Pasting a national calendar? Use **Bulk import** to add up to 200 holidays in one action. Open the bulk-import dialog, paste or upload the list, and confirm.
+
+## Scope to locations or departments
+
+- Leave scope **empty** to apply org-wide.
+- Add **locations** and/or **departments** to make a holiday regional — only those members treat it as a non-working day.
+
+## How it connects
+
+- **Attendance** — holidays are skipped when computing absent/late status.
+- **Leave** — leave days overlapping a holiday aren't deducted from balance.
+- **Payroll** — working-day counts exclude holidays.
+- **Shifts** — combined with each shift's working-day mask to determine expected workdays.
+
+## Tips
+
+- Set up the full year in one bulk import at the start of the year, then add company days as they come up.
+- Mark genuinely flexible days as **Optional/Restricted** so employees can choose them without skewing attendance.
+- Use **department scope** for office-specific or regional holidays instead of creating duplicate org-wide entries.

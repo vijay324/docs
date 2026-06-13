@@ -1,42 +1,47 @@
 ---
 title: "Architecture"
-description: "System architecture across frontend, backend, data services, and realtime infrastructure."
+description: "How Flotick is built across frontend, backend, data, and realtime infrastructure."
 ---
 
 ## Runtime topology
 
 <CardGroup cols={2}>
   <Card title="Frontend" icon="monitor-smartphone">
-    Next.js App Router application with org-scoped routing and protected tenant areas.
+    Next.js (App Router) with org-scoped routing and protected, authenticated tenant areas.
   </Card>
   <Card title="Backend" icon="server">
-    Express 5 API with REST, GraphQL, Better Auth routes, and middleware-based policy enforcement.
+    Express API serving REST under `/api/v1`, with middleware-based auth, role, and policy enforcement.
   </Card>
-  <Card title="Data and cache" icon="database">
-    MongoDB (Mongoose) for persistence, Redis for caching, limits, streams, and security primitives.
+  <Card title="Data & cache" icon="database">
+    PostgreSQL (via Prisma) for persistence; Redis for caching, rate limits, and streams.
   </Card>
-  <Card title="Storage and integrations" icon="hard-drive">
-    Backblaze B2 (S3-compatible) for attachments, Polar for subscriptions, Gemini for AI services.
+  <Card title="Storage & integrations" icon="hard-drive">
+    S3-compatible object storage (presigned URLs) for files; Polar for billing; Google Gemini for AI.
   </Card>
 </CardGroup>
 
 ## API surfaces
 
-- `/api/v1/*` for versioned REST.
-- `/api/v1/graphql` for selected aggregated read models.
-- `/api/auth/*` for Better Auth handlers.
-- `/api/v1/o/:orgSlug/*` for org-scoped aliases.
-- `/api/v1/platform-admin/*` for global operations.
+- `/api/v1/*` — versioned REST (the primary API).
+- `/api/v1/o/:orgSlug/*` — org-scoped aliases that resolve organization membership before handlers run.
+- `/api/auth/*` — authentication endpoints (JWT-based).
+- `/api/v1/graphql` — an optional GraphQL endpoint for selected aggregated reads.
+- `/api/v1/platform-admin/*` — platform (super-admin) operations.
 
-## Background processing
+## Authentication
 
-- Analytics worker and Redis streams.
-- Sprint scheduler cadence.
-- Subscription reminder job loop.
-- Optional MongoDB change streams for realtime enhancement.
+- **Members** use JWT access tokens (Bearer) plus an HttpOnly refresh-token cookie with family rotation.
+- **Platform admins** use a separate JWT system with IP allowlisting and email 2FA.
+- Refresh tokens are rotated; reuse of a rotated token revokes the whole token family.
 
-## Observability
+## Realtime & background work
 
-- `/health` and `/api/v1/health` health checks.
-- `/metrics` Prometheus endpoint with production token guard.
-- Correlation IDs and structured logs for traceability.
+- Socket.io delivers live updates, scaled across instances via a Redis adapter.
+- Server-Sent Events stream long-running flows such as Orbit Agent execution.
+- Background jobs (queues + cron) handle analytics, reminders, trash cleanup, and plan enforcement.
+
+## Security & observability
+
+- Field-level **AES-256-GCM** encryption at rest for sensitive content (e.g. task descriptions).
+- TLS in transit, Helmet headers, CORS, and layered rate limiting.
+- Health checks (`/health`, `/api/v1/health`), Prometheus metrics, and correlation IDs for tracing.

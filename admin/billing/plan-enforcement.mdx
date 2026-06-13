@@ -1,0 +1,43 @@
+---
+title: "Downgrades and plan limits"
+description: "What happens to members, projects, and features when a plan changes — and how everything is restored."
+---
+
+When an organization moves to a lower plan (trial expiry, cancellation, or a manual downgrade), Flotick reconciles your existing data to the new limits. The core principle: **downgrades restrict, upgrades fully restore — nothing is ever deleted.**
+
+## Grace period first
+
+Before anything changes, you get a **grace window** (default **7 days**). During grace:
+
+- Your plan stays on the higher tier — access is unchanged.
+- A banner warns the Admin that a downgrade is pending.
+- At the end of the window, the downgrade finalizes and limits are applied.
+
+## What gets enforced
+
+| Resource | What happens on downgrade |
+| :--- | :--- |
+| **Features** (payroll, env storage, Telegram, team views, exports, custom workflows) | Switch off the moment the plan changes. |
+| **Members over the seat limit** | The **newest** members are locked out (can't sign in). The owner/Admin is never locked. |
+| **Active projects over the limit** | The **newest** active projects become **read-only**. Reads still work; writes are blocked. |
+| **Files / storage** | Existing files stay readable; new uploads are blocked past the quota. |
+
+<Warning>
+  Nothing is deleted. Locked members and read-only projects are restored automatically when you upgrade again.
+</Warning>
+
+## See what's affected
+
+Open **Settings → Billing**. The **Restricted resources** panel lists every locked member and read-only project, with the reason and how to restore them. A banner also appears across the app while enforcement is active.
+
+A locked member who tries to sign in sees a "workspace restricted — ask your admin to upgrade" message.
+
+## Restore everything
+
+Upgrade back to a plan that fits your usage and Flotick restores locked resources **oldest-first**, up to the new capacity. No data is lost in the round trip.
+
+## Tips
+
+- Watch the grace banner — fix the overage (remove members/projects) or upgrade before the window ends to avoid any lock at all.
+- If you're trimming to fit Free, archive extra projects yourself first so *you* choose what stays active, not the newest-first rule.
+- Seat and project locks are reversible, so a brief downgrade between billing changes won't cost you data.

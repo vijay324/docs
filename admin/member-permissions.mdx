@@ -1,0 +1,59 @@
+---
+title: "Member permissions"
+description: "Fine-tune what individual members can do — on top of their role — without changing roles."
+---
+
+<Info>Available on **Pro** and **Max**. On Free, members get standard role permissions only.</Info>
+
+Roles (`Admin > Manager > Member`) set the baseline. **Member permissions** let you grant or restrict specific capabilities for one person — for example, give a Member read access to Analytics, or stop a Manager from deleting tasks — without promoting or demoting them.
+
+**Where to find it:** **Members → open a member → Permissions tab** (`/<org-slug>/members/<username>`).
+
+## How it works
+
+- A permission is a **module + operation** pair, e.g. `analytics.view`, `tasks.delete`.
+- Operations are `view`, `create`, `edit`, `delete`.
+- Overrides only move within the **role ceiling** — you can never grant a capability the role isn't allowed to have.
+- Roles never change; overrides simply fine-tune within them.
+
+## Modules you can tune
+
+`inbox`, `tasks`, `sprints`, `projects`, `board`, `attendance`, `leave`, `analytics`, `files`, `env storage`, `members`, `holidays`, `shifts`, `payroll`.
+
+Organization settings stay role-only (Admin) and aren't override targets.
+
+## Set an override
+
+<Steps>
+  <Step title="Open the member">
+    Go to **Members**, open the person, and select the **Permissions** tab.
+  </Step>
+  <Step title="Toggle capabilities">
+    Flip individual `view / create / edit / delete` toggles per module. Greyed toggles are above the role ceiling and can't be enabled.
+  </Step>
+  <Step title="Save">
+    Changes apply almost immediately — the member doesn't need to sign out. Per-module **Reset** returns them to role defaults.
+  </Step>
+</Steps>
+
+## Who can edit whom
+
+| Editor | Can edit |
+| :--- | :--- |
+| **Admin** | Any member (not themselves or other Admins). |
+| **Manager** | Member-role people only, and can't grant a capability they lack. |
+| **Member** | No access. |
+
+Admins always have full access and can't be restricted.
+
+## Effects
+
+- The member's **sidebar** hides modules they can't view.
+- Restricted actions are hidden or blocked in the UI and rejected by the API.
+- Overrides are preserved if you downgrade to Free (ignored while on Free), and re-activate on upgrade.
+
+## Tips
+
+- Start from the role and grant the *minimum* extra each person genuinely needs.
+- Use a Member + `analytics.view` override instead of promoting someone to Manager just for dashboards.
+- Reset to role defaults whenever an override stops being necessary — it keeps access easy to reason about.

@@ -1,29 +1,39 @@
 ---
-title: "API Introduction"
-description: "How Flotick APIs are structured across REST, GraphQL, tenant scopes, and platform administration."
+title: "API introduction"
+description: "How the Flotick API is structured across REST, tenancy, and platform administration."
 ---
+
+Flotick exposes a versioned REST API. Most product surfaces in the app are built on the same endpoints.
 
 ## Base patterns
 
-- Versioned REST base: `/api/v1`
-- Better Auth handlers: `/api/auth/*`
-- GraphQL endpoint: `/api/v1/graphql`
-- Org-scoped aliases: `/api/v1/o/:orgSlug/*`
-- Platform-admin APIs: `/api/v1/platform-admin/*`
+- **Versioned REST**: `/api/v1/*`
+- **Org-scoped aliases**: `/api/v1/o/:orgSlug/*` — resolve organization membership and role before the handler runs
+- **Auth endpoints**: `/api/auth/*`
+- **Platform-admin API**: `/api/v1/platform-admin/*`
+- **GraphQL** (optional, selected reads): `/api/v1/graphql`
 
 ## Core domains
 
-- Delivery: `projects`, `tasks`, `sprints`, `dashboard`, `analytics`, `search`
-- Workforce: `attendance`, `leave`, `payroll`, `employees`, `policies`
-- Platform: `organizations`, `subscription`, `webhooks`, `feedback`, `contact`
+- **Delivery**: `projects`, `tasks`, `sprints`, `dashboard`, `analytics`, `search`
+- **Workforce**: `attendance`, `leave`, `payroll`, `holidays`, `shifts`, `members`, `policies`
+- **AI**: `ai` (summaries/enhance), `orbit` (insights, chat, agent)
+- **Platform**: `organizations`, `polar` (billing), `webhooks`, `feedback`, `contact`
 
-## Integration surfaces
+## Conventions
 
-- File storage endpoints (`/files`) for uploads and entity attachments.
-- AI endpoints (`/ai`) for generation and summaries.
-- Realtime via Socket.IO + short-lived socket token flow.
+- **Tenancy**: every org-scoped request is bound to one organization; data is never returned across tenants.
+- **Files**: uploads and downloads use short-lived presigned URLs rather than proxying through the API.
+- **Realtime**: live updates arrive over Socket.io; long-running flows stream over Server-Sent Events.
 
-## Compatibility notes
+## Response shape
 
-- Some domains expose both global and org-scoped entry points.
-- Webhooks requiring signature validation use raw request body handling.
+```json
+// Success
+{ "data": { } }
+
+// Error
+{ "error": { "code": "ERROR_CODE", "message": "Human-readable message" } }
+```
+
+See [Authentication](/api/authentication) for tokens and [Error model](/api/error-model) for failure handling.

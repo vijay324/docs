@@ -5,7 +5,6 @@ description: "The atomic unit of work in Flotick — with rich workflow, multipl
 
 Tasks are where the actual work lives. Every project's progress reduces to the state of its tasks.
 
-[IMAGE: Tasks page with List, Board, and Calendar view tabs]
 
 ## What a task contains
 
@@ -44,17 +43,14 @@ Drag-and-drop on the board moves a task between columns. Each transition is vali
   <Tab title="List view">
     A dense, sortable, filterable table. Best for triage and bulk updates.
 
-    [IMAGE: List view with grouped rows by status]
   </Tab>
   <Tab title="Board view">
     A Kanban with one column per status. Best for daily standups and progress visibility.
 
-    [IMAGE: Kanban board view with cards in columns]
   </Tab>
   <Tab title="Calendar view">
     Tasks placed on a calendar by due date with day, week, and month modes.
 
-    [IMAGE: Calendar view with day, week, month toggle]
   </Tab>
 </Tabs>
 
@@ -85,16 +81,14 @@ Open any card to bring up the **task detail dialog**. From here you can:
 - Log **work** (hours and description)
 - Add **dependencies** (see [Task dependencies](/features/task-dependencies))
 
-[IMAGE: Task detail dialog with tabs for Details, Comments, Files, Worklog, Links]
 
 ## Time tracking
 
-Two ways to log time:
+Log time directly on a task:
 
-1. **Manual work log** — open the task, choose **Log work**, enter hours and description
-2. **Focus session** — start a [Focus Session](/features/focus-sessions) tied to the task; on stop, Flotick auto-creates a work log
-
-Either way, `Time spent` rolls up automatically.
+1. Open the task and choose **Log work**
+2. Enter the hours spent and a short description
+3. `Time spent` rolls up automatically and feeds sprint velocity and analytics
 
 ## History and audit
 

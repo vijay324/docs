@@ -1,0 +1,65 @@
+---
+title: "Orbit Agent"
+description: "Tell Orbit what to do in plain language — it plans the work, you approve, it executes."
+---
+
+**Orbit Agent** turns a single natural-language instruction into an ordered set of actions across tasks, projects, and sprints. You review the plan, approve it, and Orbit executes every step with live progress. Every change is traceable and most are reversible.
+
+**Where to find it:** **Inbox → Orbit → Agent** tab (`/<org-slug>/inbox/orbit`). Available to **Admins and Managers**.
+
+## How it works
+
+<Steps>
+  <Step title="Describe the outcome">
+    Type one instruction, e.g. *"Create a bug task for the login crash, assign it to Priya, set it High priority, due Friday."*
+  </Step>
+  <Step title="Review the plan">
+    Orbit returns a preview card listing every step and the exact field values it will write. If a plan touches several existing records, you'll confirm a bulk-acknowledge checkbox first.
+  </Step>
+  <Step title="Run or cancel">
+    Click **Run** to execute, or **Cancel** to discard. Plans expire 10 minutes after they're generated if not confirmed.
+  </Step>
+  <Step title="Watch it execute">
+    Steps run in order with live status. If a step fails, execution stops and the remaining steps are skipped.
+  </Step>
+</Steps>
+
+## What it can do
+
+Orbit Agent works through the same logic as manual edits, so history, notifications, and analytics stay identical.
+
+- Create tasks, projects, and sprints
+- Update task title, description, priority, status, due date
+- Assign or bulk-assign tasks
+- Add comments
+- Archive a project or cancel a task
+
+<Note>
+  **The agent never deletes anything.** "Remove a project" becomes *archive*; "remove a task" becomes *cancel* (with an audit comment). There is no delete capability.
+</Note>
+
+## Permissions
+
+| Action | Who can run it |
+| :--- | :--- |
+| Agent mode (plan + run) | Admin, Manager |
+| Create project, bulk-assign tasks, archive/cancel | Admin only |
+| Undo an executed step | Admin only |
+
+## Provenance and undo
+
+- Every Orbit-created task, project, or sprint shows an **Orbit badge** next to its title.
+- Update-type steps store a before-snapshot, so an Admin can **undo** them from the **History** tab.
+- Undo applies to updates only — never to creations — and warns you if the record changed since.
+
+## Limits
+
+- **50 actions per organization per hour** (consumed when you confirm a plan).
+- **Monthly request quota** by plan: Free 50 · Pro 200 · Max unlimited. You'll see usage after each plan.
+- Out of scope: emails, org settings, billing, permissions, and user accounts. For questions and analysis, use Orbit **Chat** mode instead.
+
+## Tips
+
+- Be specific about names and dates — Orbit fills sensible defaults for anything you omit and shows them before running.
+- Use one instruction per outcome; break very large changes into a couple of runs.
+- Check the **History** tab after big runs so you can undo anything that didn't land as intended.

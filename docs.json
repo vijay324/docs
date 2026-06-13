@@ -1,4 +1,5 @@
 {
+  "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "Flotick Docs",
   "description": "Flotick is the organization-first work operating system for delivery, workforce operations, and team collaboration.",
@@ -43,12 +44,21 @@
             ]
           },
           {
-            "group": "Sign up and onboarding",
+            "group": "Set up your account",
             "pages": [
               "get-started/sign-up",
               "get-started/accept-invitation",
               "get-started/onboarding",
               "get-started/dashboard-tour"
+            ]
+          },
+          {
+            "group": "Use cases",
+            "pages": [
+              "use-cases/engineering-teams",
+              "use-cases/operations-hr-teams",
+              "use-cases/remote-hybrid-teams",
+              "use-cases/growing-organizations"
             ]
           }
         ]
@@ -65,7 +75,9 @@
               "features/personal-board",
               "features/task-dependencies",
               "features/comments",
-              "features/files"
+              "features/files",
+              "features/env-storage",
+              "features/trash"
             ]
           },
           {
@@ -74,7 +86,8 @@
               "features/attendance",
               "features/leave",
               "features/payroll",
-              "features/focus-sessions"
+              "features/holidays",
+              "features/shifts"
             ]
           },
           {
@@ -91,7 +104,8 @@
             "pages": [
               "features/ai-summaries",
               "features/ai-insights",
-              "features/ai-enhance"
+              "features/ai-enhance",
+              "features/ai-agent"
             ]
           },
           {
@@ -99,13 +113,6 @@
             "pages": [
               "features/personal-dashboard",
               "features/team-analytics"
-            ]
-          },
-          {
-            "group": "Configuration",
-            "pages": [
-              "features/env-storage",
-              "features/trash"
             ]
           }
         ]
@@ -140,6 +147,7 @@
               "admin/organization-settings",
               "admin/members-and-roles",
               "admin/departments",
+              "admin/member-permissions",
               "admin/workflow-policy",
               "admin/attendance-policy",
               "admin/leave-policy",
@@ -147,11 +155,12 @@
             ]
           },
           {
-            "group": "Billing",
+            "group": "Billing and plans",
             "pages": [
               "admin/billing/plans",
               "admin/billing/upgrade-or-cancel",
-              "admin/billing/seat-management"
+              "admin/billing/seat-management",
+              "admin/billing/plan-enforcement"
             ]
           },
           {
@@ -161,6 +170,29 @@
               "account/security-and-2fa",
               "account/notification-preferences",
               "account/trusted-devices"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Platform",
+        "groups": [
+          {
+            "group": "Architecture and access",
+            "pages": [
+              "platform/architecture",
+              "platform/multi-tenant-routing",
+              "platform/roles-and-access",
+              "platform/super-admin"
+            ]
+          },
+          {
+            "group": "Developers",
+            "pages": [
+              "api/introduction",
+              "api/authentication",
+              "api/error-model",
+              "api/webhooks-and-realtime"
             ]
           }
         ]

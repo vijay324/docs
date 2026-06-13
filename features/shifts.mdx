@@ -1,0 +1,63 @@
+---
+title: "Shifts"
+description: "Reusable working-time templates that drive accurate attendance, overtime, and payroll."
+---
+
+**Shifts** define working-time templates — like "General 9–6" or "Night 10pm–7am" — and assign them to members over date ranges. Attendance uses each person's active shift to decide expected hours, grace windows, half/full-day thresholds, and overtime.
+
+**Where to find it:** sidebar → **Shifts** (`/<org-slug>/shifts`). Admins and Managers manage shifts; members view their own.
+
+## What a shift defines
+
+| Setting | Purpose |
+| :--- | :--- |
+| **Name / code** | Label and a unique short code (e.g. `GEN`, `NIGHT`). |
+| **Type** | `Fixed`, `Flexible`, `Rotational`, `Night`, or `Split`. |
+| **Start / end time** | 24-hour `HH:MM`. Night shifts that cross midnight are detected automatically. |
+| **Working days** | Which weekdays the shift runs (default Mon–Fri). |
+| **Break, grace, hours** | Break minutes, late grace window, and working-hour target. |
+| **Thresholds** | Half-day hours, full-day hours, and the overtime cutoff. |
+
+## Define a shift
+
+<Steps>
+  <Step title="Open Shifts">
+    Go to **Shifts** in the sidebar and click **New shift**.
+  </Step>
+  <Step title="Set the schedule">
+    Enter name, code, start/end times, and working days. Add break, grace, and hour thresholds.
+  </Step>
+  <Step title="Save">
+    The shift becomes available to assign. Mark one shift as **default** for members without an explicit assignment.
+  </Step>
+</Steps>
+
+## Assign a shift to a member
+
+<Steps>
+  <Step title="Open the assign dialog">
+    From the Shifts page, open **Assign shift**.
+  </Step>
+  <Step title="Pick member, shift, and dates">
+    Choose the member, the shift, an **effective from** date, and an optional **effective to** date. Add notes if useful.
+  </Step>
+  <Step title="Save">
+    The new assignment supersedes the member's previous one. Rotation history is preserved — nothing is deleted.
+  </Step>
+</Steps>
+
+<Tip>
+  Leave **effective to** empty for an open-ended (current) assignment. Set it to schedule a rotation that ends on a known date.
+</Tip>
+
+## How it connects
+
+- **Attendance** — the active shift sets expected check-in/out, grace, half/full-day status, and overtime.
+- **Holidays** — combined with the shift's working days to compute expected workdays.
+- **Payroll** — full/half-day hour thresholds feed pay calculations.
+
+## Tips
+
+- Create one shift per real schedule, then assign — don't duplicate shifts per person.
+- Use **Night** type for any schedule ending the next morning; cross-midnight handling is automatic.
+- Schedule rotations ahead of time with dated assignments instead of editing on the day.

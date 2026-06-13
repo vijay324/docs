@@ -5,9 +5,11 @@ description: "Permission model for tenant users and platform super administrator
 
 ## Tenant roles
 
-- **Admin**: organization-level control including billing, member administration, and policies.
+- **Admin**: organization-level control including billing, member administration, and policies. Exactly one Admin per organization.
 - **Manager**: team-level management across projects, sprints, analytics, and approvals.
-- **Employee**: execution workflows for tasks, attendance, leave, and personal profile.
+- **Member**: execution workflows for tasks, attendance, leave, and personal profile.
+
+Roles can be fine-tuned per person with [member permissions](/admin/member-permissions) (Pro/Max) without changing the role itself.
 
 ## Access enforcement
 
