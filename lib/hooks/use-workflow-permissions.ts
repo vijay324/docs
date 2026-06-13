@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useAuth } from '@/lib/auth-context';
-import { Task } from '@/types';
+import type { Task } from '@/types';
 
 export interface WorkflowPermissions {
   canStart: boolean;

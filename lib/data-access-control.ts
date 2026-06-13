@@ -2,7 +2,7 @@
  * Data Access Control utilities for role-based data filtering
  */
 
-import { UserRole, User, Project, Task } from './permissions';
+import type { UserRole, User, Project, Task } from './permissions';
 
 // Sprint type definition (if not available in permissions)
 interface Sprint {

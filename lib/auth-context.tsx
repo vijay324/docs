@@ -8,7 +8,7 @@
  * a few convenience methods.
  */
 
-import React, {
+import {
   createContext,
   type ReactNode,
   useCallback,

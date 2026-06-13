@@ -1,7 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useAuth } from '@/lib/auth-context';
 import { apiClient } from '@/lib/api';
-import { Attendance, AttendanceStats } from '@/types';
+import type { Attendance, AttendanceStats } from '@/types';
 
 
 // Query keys for attendance

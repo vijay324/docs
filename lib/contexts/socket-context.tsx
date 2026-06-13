@@ -1,7 +1,7 @@
 "use client";
 
-import React, { createContext, useContext, useEffect, useState, useCallback, useRef, ReactNode } from 'react';
-import { io, Socket } from 'socket.io-client';
+import { createContext, useContext, useEffect, useState, useCallback, useRef, type ReactNode } from 'react';
+import { io, type Socket } from 'socket.io-client';
 import { useAuth } from '@/lib/auth-context';
 
 /**

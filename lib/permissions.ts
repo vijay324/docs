@@ -3,7 +3,7 @@
  * Defines permissions, roles, and access control utilities
  */
 
-import {
+import type {
   Project as CentralProject,
   Task as CentralTask,
   UserRole,

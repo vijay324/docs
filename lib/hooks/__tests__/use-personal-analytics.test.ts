@@ -1,6 +1,6 @@
 import { renderHook, waitFor } from '@testing-library/react';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ReactNode } from 'react';
+import { QueryClient, type QueryClientProvider } from '@tanstack/react-query';
+import type { ReactNode } from 'react';
 import {
   usePersonalAnalytics,
   useTeamAnalytics,

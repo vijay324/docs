@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { apiClient } from '@/lib/api';
-import { Sprint } from '@/utils/types';
+import type { Sprint } from '@/utils/types';
 import { API_ENDPOINTS } from '@/utils/constants';
 
 

@@ -7,36 +7,60 @@ description: "Tell Orbit what to do in plain language — it plans the work, you
 
 **Where to find it:** **Inbox → Orbit → Agent** tab (`/<org-slug>/inbox/orbit`). Available to **Admins and Managers**.
 
+Where [Orbit Chat](/features/orbit) *answers* questions, the Orbit Agent *makes changes*. Same panel, two modes — toggle between **Chat**, **Agent**, and **History**.
+
 ## How it works
 
 <Steps>
   <Step title="Describe the outcome">
-    Type one instruction, e.g. *"Create a bug task for the login crash, assign it to Priya, set it High priority, due Friday."*
+    Type one instruction, e.g. *"Create a bug task for the login crash, assign it to Priya, set it High priority, due Friday."* Orbit never asks clarifying questions — it fills sensible defaults for anything you leave out and shows them before running. If a request isn't feasible, it's refused with a reason instead of guessing.
   </Step>
   <Step title="Review the plan">
-    Orbit returns a preview card listing every step and the exact field values it will write. If a plan touches several existing records, you'll confirm a bulk-acknowledge checkbox first.
+    Orbit returns a preview card listing every step and a **per-step field table** with the exact values it will write — IDs already resolved to real names. If a plan touches several existing records, you'll confirm a bulk-acknowledge checkbox first.
   </Step>
   <Step title="Run or cancel">
     Click **Run** to execute, or **Cancel** to discard. Plans expire 10 minutes after they're generated if not confirmed.
   </Step>
   <Step title="Watch it execute">
-    Steps run in order with live status. If a step fails, execution stops and the remaining steps are skipped.
+    Steps run in order with live progress streamed to your screen. If a step fails, execution stops and the remaining steps are skipped — nothing half-applies silently.
   </Step>
 </Steps>
 
-## What it can do
+## How the plan is built
 
-Orbit Agent works through the same logic as manual edits, so history, notifications, and analytics stay identical.
+When you submit an instruction, Orbit:
 
-- Create tasks, projects, and sprints
-- Update task title, description, priority, status, due date
-- Assign or bulk-assign tasks
-- Add comments
-- Archive a project or cancel a task
+1. **Plans** the work into an ordered list of steps (structured output, deterministic).
+2. **Resolves names to records** — *"Priya"*, *"the Mobile project"* are matched to real org-scoped IDs at plan time, never at execution.
+3. **Completes every field** with defaults that mirror Flotick's own create forms (priority, type, status, visibility, story points, dates…), so the preview you approve is exactly what gets written.
+4. **Validates** against the allowed action list, your role, and org ownership before anything runs.
+
+Because the agent runs through the **same internal services as manual edits**, history rows, notifications, analytics, and realtime updates are identical to doing it by hand.
+
+## Full action catalog
+
+| Action | Minimum role | Reversible |
+| :--- | :--- | :--- |
+| Create task | Manager | — |
+| Create sprint | Manager | — |
+| Create project | Admin | — |
+| Update task (title, description, priority, status, due date) | Manager | ✅ |
+| Update project (name, description, status) | Manager | ✅ |
+| Assign task | Manager | ✅ |
+| Bulk-assign tasks (1–25) | Admin | ✅ |
+| Change task status | Manager | ✅ |
+| Set task deadline | Manager | ✅ |
+| Add comment | Manager | — |
+| Archive a project | Admin | ✅ |
+| Cancel a task | Manager | ✅ |
 
 <Note>
-  **The agent never deletes anything.** "Remove a project" becomes *archive*; "remove a task" becomes *cancel* (with an audit comment). There is no delete capability.
+  **The agent never deletes anything.** There is no delete capability anywhere in its toolset. *"Remove a project"* becomes **archive**; *"remove a task"* becomes **cancel** (status change plus an audit comment). Out of scope entirely: emails, org settings, billing, permissions, and user accounts.
 </Note>
+
+## Orbit learns your organization
+
+After every agent run and every chat turn, Orbit quietly extracts durable knowledge about your org — who owns which projects, how your team names things, your usual priorities — and folds it into its understanding. Over time, plans get more accurate and more personalized without any configuration. You can shape this further from the [Orbit Harness](/features/orbit#make-orbit-speak-your-language-harness).
 
 ## Permissions
 
@@ -55,8 +79,8 @@ Orbit Agent works through the same logic as manual edits, so history, notificati
 ## Limits
 
 - **50 actions per organization per hour** (consumed when you confirm a plan).
-- **Monthly request quota** by plan: Free 50 · Pro 200 · Max unlimited. You'll see usage after each plan.
-- Out of scope: emails, org settings, billing, permissions, and user accounts. For questions and analysis, use Orbit **Chat** mode instead.
+- **Monthly request quota** by plan: Free 50 · Pro 200 · Max unlimited (separate from the hourly action cap). You'll see a usage snapshot after each plan.
+- For questions and analysis rather than changes, use [Orbit Chat](/features/orbit) instead.
 
 ## Tips
 

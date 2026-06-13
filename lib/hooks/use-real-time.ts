@@ -1,11 +1,11 @@
 import { useEffect, useCallback, useRef } from 'react';
 import { useQueryClient } from '@tanstack/react-query';
-import { useSocket, NotificationPayload } from '@/lib/contexts/socket-context';
+import { useSocket, type NotificationPayload } from '@/lib/contexts/socket-context';
 import { taskKeys } from './use-tasks';
 import { projectKeys } from './use-projects';
 import { sprintKeys } from './use-sprints';
-import { Task, Project, Sprint } from '@/utils/types';
-import { REALTIME_VERSION, RealtimeEventEnvelope, REALTIME_EVENT_TYPES } from '@/lib/realtime/contracts';
+import type { Task, Project, Sprint } from '@/utils/types';
+import { REALTIME_VERSION, type RealtimeEventEnvelope, REALTIME_EVENT_TYPES } from '@/lib/realtime/contracts';
 
 /**
  * Real-time CRUD hooks using Socket.IO

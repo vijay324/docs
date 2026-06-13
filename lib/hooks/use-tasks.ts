@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { apiClient } from '@/lib/api';
-import { Task, User } from '@/utils/types';
+import { type Task, } from '@/utils/types';
 import { useOptimisticUpdates } from './use-optimistic-updates';
 import { errorHandler } from '../error-handler';
 import { API_ENDPOINTS } from '@/utils/constants';

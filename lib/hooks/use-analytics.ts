@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { useMemo } from 'react';
 import { apiClient } from '@/lib/api';
-import { Task, Sprint, Project } from '@/utils/types';
+import { type Task, type Sprint, } from '@/utils/types';
 import { useTasks } from './use-tasks';
 import { useSprints } from './use-sprints';
 import { API_ENDPOINTS } from '@/utils/constants';

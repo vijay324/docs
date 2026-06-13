@@ -1,6 +1,6 @@
 ---
 title: "Roles and Access"
-description: "Permission model for tenant users and platform super administrators."
+description: "Permission model for organization users — Admin, Manager, and Member."
 ---
 
 ## Tenant roles
@@ -17,16 +17,6 @@ Roles can be fine-tuned per person with [member permissions](/admin/member-permi
 - Permission checks in API middleware and selected UI modules.
 - Org membership validation for org-scoped endpoints.
 
-## Platform-admin model
+## Single Admin invariant
 
-Platform administrators use a dedicated auth and permission stack at `/super-admin/*` and `/api/v1/platform-admin/*`.
-
-Capabilities include:
-- Organization portfolio management
-- User and subscription operations
-- Infrastructure health checks
-- Audit and compliance workflows
-
-<Warning>
-  Platform-admin access should be restricted to trusted operator networks and protected with 2FA.
-</Warning>
+Each organization has exactly one **Admin**. Ownership can be transferred intentionally, but the platform never allows two concurrent Admins for a single organization.

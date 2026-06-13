@@ -1,13 +1,13 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { Project } from '@/utils/types';
+import type { Project } from '@/utils/types';
 import { useOrgApi } from '@/lib/hooks/use-org-api';
 import { useOrganization } from '@/lib/contexts/organization-context';
 import { API_ENDPOINTS } from '@/utils/constants';
 import { getAutoSelectProject, setLastSelectedProject } from '@/lib/utils/favorite-projects';
 import { useSocket } from '@/lib/contexts/socket-context';
-import { REALTIME_EVENT_TYPES, REALTIME_VERSION, RealtimeEventEnvelope } from '@/lib/realtime/contracts';
+import { REALTIME_EVENT_TYPES, REALTIME_VERSION, type RealtimeEventEnvelope } from '@/lib/realtime/contracts';
 
 interface CleanDashboardData {
   projects: Project[];

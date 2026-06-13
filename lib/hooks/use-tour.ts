@@ -1,9 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useRef } from 'react';
-import { driver, Driver, Config } from 'driver.js';
+import { driver, type Driver, type Config } from 'driver.js';
 import 'driver.js/dist/driver.css';
-import { getTourSteps, TourPage } from '@/lib/constants/tour-steps';
+import { getTourSteps, type TourPage } from '@/lib/constants/tour-steps';
 import { useProductTourStatus } from '@/lib/hooks/use-product-tour-status';
 
 interface UseTourOptions {

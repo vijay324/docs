@@ -1,6 +1,6 @@
 // Signup flow utilities and constants
 
-import { SignupOrganizationData, SignupUserData } from '@/types';
+import type { SignupOrganizationData, SignupUserData } from '@/types';
 
 // Storage key for signup data
 const SIGNUP_STORAGE_KEY = 'flotick_signup_data';

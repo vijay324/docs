@@ -1,7 +1,7 @@
 "use client";
 
-import React, { createContext, useContext, useEffect, ReactNode } from 'react';
-import { useOfflineDetection, NetworkStatus, OfflineDetectionOptions } from '@/hooks/use-offline-detection';
+import React, { createContext, useContext, useEffect, type ReactNode } from 'react';
+import { useOfflineDetection, type NetworkStatus, type OfflineDetectionOptions } from '@/hooks/use-offline-detection';
 
 
 /**

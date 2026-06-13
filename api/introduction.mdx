@@ -1,6 +1,6 @@
 ---
 title: "API introduction"
-description: "How the Flotick API is structured across REST, tenancy, and platform administration."
+description: "How the Flotick API is structured across REST, tenancy, and org-scoped access."
 ---
 
 Flotick exposes a versioned REST API. Most product surfaces in the app are built on the same endpoints.
@@ -10,7 +10,6 @@ Flotick exposes a versioned REST API. Most product surfaces in the app are built
 - **Versioned REST**: `/api/v1/*`
 - **Org-scoped aliases**: `/api/v1/o/:orgSlug/*` — resolve organization membership and role before the handler runs
 - **Auth endpoints**: `/api/auth/*`
-- **Platform-admin API**: `/api/v1/platform-admin/*`
 - **GraphQL** (optional, selected reads): `/api/v1/graphql`
 
 ## Core domains

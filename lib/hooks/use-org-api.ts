@@ -8,7 +8,7 @@
 import { useCallback, useMemo } from 'react';
 import { useOrganization } from '@/lib/contexts/organization-context';
 import { apiClient } from '@/lib/api';
-import { AxiosRequestConfig, AxiosResponse } from 'axios';
+import type { AxiosRequestConfig, AxiosResponse } from 'axios';
 
 /**
  * Hook that provides org-scoped API methods

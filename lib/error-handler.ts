@@ -1,4 +1,4 @@
-import { AxiosError } from 'axios';
+import type { AxiosError } from 'axios';
 import {
   DEFAULT_API_ERROR_MESSAGE,
   extractApiErrorMessage,

@@ -3,7 +3,7 @@
  * Provides consistent animation presets and motion utilities
  */
 
-import { Variants, Transition } from 'framer-motion';
+import type { Variants, Transition } from 'framer-motion';
 
 // Check for reduced motion preference
 export const prefersReducedMotion = () => {

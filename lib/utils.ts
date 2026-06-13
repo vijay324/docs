@@ -56,7 +56,7 @@ export function getDaysBetween(startDate: string | Date, endDate: string | Date)
 // String utilities
 export function truncateText(text: string, maxLength: number): string {
   if (text.length <= maxLength) return text;
-  return text.substring(0, maxLength) + '...';
+  return `${text.substring(0, maxLength)}...`;
 }
 
 export function capitalizeFirst(str: string): string {
@@ -90,7 +90,7 @@ export function isValidEmployeeId(employeeId: string): boolean {
 }
 
 export function isValidMobile(mobile: string): boolean {
-  const mobileRegex = /^\+?[\d\s\-\(\)]{10,}$/;
+  const mobileRegex = /^\+?[\d\s\-()]{10,}$/;
   return mobileRegex.test(mobile);
 }
 
@@ -289,9 +289,9 @@ export function debounce<T extends (...args: any[]) => any>(
 export const ValidationPatterns = {
   email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
   username: /^[a-zA-Z0-9_.-]+$/,
-  password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])/,
-  phone: /^\+?[\d\s\-\(\)]{10,}$/,
-  employeeId: /^[a-zA-Z0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~`]+$/,
+  password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?])/,
+  phone: /^\+?[\d\s\-()]{10,}$/,
+  employeeId: /^[a-zA-Z0-9!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~`]+$/,
   objectId: /^[0-9a-fA-F]{24}$/
 } as const;
 

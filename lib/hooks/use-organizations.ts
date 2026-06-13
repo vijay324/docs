@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { apiClient } from '../api';
-import { Organization } from '@/types';
+import type { Organization } from '@/types';
 import { API_ENDPOINTS } from '@/utils/constants';
 
 // Query Keys

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect, useCallback, useMemo, ReactNode, useRef } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback, useMemo, type ReactNode, useRef } from 'react';
 import { useParams, useRouter, usePathname } from 'next/navigation';
 import { bffApiClient } from '@/lib/bff-api-client';
 import { useAuth } from '@/lib/auth-context';

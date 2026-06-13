@@ -5,7 +5,7 @@ import axios, {
   isAxiosError,
 } from "axios";
 import { API_CONFIG } from "@/utils/api-config";
-import { AWS_CONFIG, logAWSConfig } from "@/utils/aws-config";
+import { AWS_CONFIG, } from "@/utils/aws-config";
 import type {
   ApiResponse,
   AuthResponse,

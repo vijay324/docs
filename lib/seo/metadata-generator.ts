@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { getRequiredSiteUrl } from '@/lib/site-config';
 
 interface MetadataConfig {

@@ -1,6 +1,6 @@
 ---
 title: "Authentication"
-description: "Token, session, and authorization patterns for tenant and platform APIs."
+description: "Token, session, and authorization patterns for the Flotick API."
 ---
 
 ## Member authentication
@@ -15,17 +15,11 @@ description: "Token, session, and authorization patterns for tenant and platform
 - Request a short-lived socket token: `GET /api/v1/auth/socket-token`.
 - The token authorizes realtime subscriptions over Socket.io.
 
-## Platform-admin authentication
-
-- A separate auth stack under `/api/v1/platform-admin/*` with its own JWT issuer.
-- Protected by **IP allowlisting** and **email 2FA**, fully isolated from member auth.
-
 ## Authorization
 
 - **Roles**: `Admin`, `Manager`, `Member`. Admins and Managers have elevated capabilities; exactly one Admin per organization.
 - **Org membership** is enforced on every org-scoped route.
 - **Per-member permission overrides** (Pro/Max) can fine-tune access within a role's ceiling.
-- Platform permissions gate global operations.
 
 ## Production recommendations
 

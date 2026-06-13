@@ -100,12 +100,13 @@
             ]
           },
           {
-            "group": "AI assistance",
+            "group": "Orbit AI",
             "pages": [
-              "features/ai-summaries",
+              "features/orbit",
+              "features/ai-agent",
               "features/ai-insights",
-              "features/ai-enhance",
-              "features/ai-agent"
+              "features/ai-summaries",
+              "features/ai-enhance"
             ]
           },
           {
@@ -182,8 +183,7 @@
             "pages": [
               "platform/architecture",
               "platform/multi-tenant-routing",
-              "platform/roles-and-access",
-              "platform/super-admin"
+              "platform/roles-and-access"
             ]
           },
           {

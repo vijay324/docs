@@ -1,6 +1,6 @@
 import { useQueryClient } from '@tanstack/react-query';
 import { useCallback } from 'react';
-import { Task, Project, Sprint } from '@/utils/types';
+import type { Task, Project, Sprint } from '@/utils/types';
 import { taskKeys } from './use-tasks';
 import { projectKeys } from './use-projects';
 import { sprintKeys } from './use-sprints';

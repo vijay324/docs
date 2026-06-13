@@ -26,12 +26,10 @@ description: "How Flotick is built across frontend, backend, data, and realtime 
 - `/api/v1/o/:orgSlug/*` — org-scoped aliases that resolve organization membership before handlers run.
 - `/api/auth/*` — authentication endpoints (JWT-based).
 - `/api/v1/graphql` — an optional GraphQL endpoint for selected aggregated reads.
-- `/api/v1/platform-admin/*` — platform (super-admin) operations.
 
 ## Authentication
 
 - **Members** use JWT access tokens (Bearer) plus an HttpOnly refresh-token cookie with family rotation.
-- **Platform admins** use a separate JWT system with IP allowlisting and email 2FA.
 - Refresh tokens are rotated; reuse of a rotated token revokes the whole token family.
 
 ## Realtime & background work

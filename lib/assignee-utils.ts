@@ -1,4 +1,4 @@
-import { Task, User } from '@/utils/types';
+import type { Task, User } from '@/utils/types';
 
 type AssignmentViewer = Pick<User, '_id'> & {
   role?: User['role'];

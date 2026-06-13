@@ -1,4 +1,4 @@
-import { Project } from '@/utils/types';
+import type { Project } from '@/utils/types';
 
 /**
  * Utility functions for managing favorite projects

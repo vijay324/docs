@@ -1,7 +1,7 @@
 import useSWR from 'swr';
 import { useState } from 'react';
 import apiClient from '../api';
-import { ApiResponse } from '@/utils/types';
+import type { ApiResponse } from '@/utils/types';
 
 // Align with React Query: reduce duplicate requests and avoid refetch on tab focus
 const SWR_OPTIONS = {

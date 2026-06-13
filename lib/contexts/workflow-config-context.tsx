@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect, useCallback, useMemo, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback, useMemo, type ReactNode } from 'react';
 import { apiClient } from '@/lib/api';
 import { useOrganization } from '@/lib/contexts/organization-context';
 import { DEPARTMENT_HIERARCHY } from '@/utils/constants';

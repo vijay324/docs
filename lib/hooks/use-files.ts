@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { apiClient } from '@/lib/api';
-import { EntityType, FileTag } from '@/utils/file-constants';
+import type { EntityType, FileTag } from '@/utils/file-constants';
 import { downloadFileFromApi, previewFileFromApi } from '@/lib/utils/download-utils';
 
 // File interface

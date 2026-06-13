@@ -3,7 +3,7 @@ import arcjet, {
   shield,
   detectBot,
 } from "@arcjet/next";
-import { NextRequest, NextResponse } from "next/server";
+import { type NextRequest, } from "next/server";
 
 // Environment-based mode configuration
 const isProduction = process.env.NODE_ENV === 'production';

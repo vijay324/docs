@@ -1,6 +1,6 @@
 import { useEffect, useCallback, useRef } from 'react';
-import { UseFormReturn, FieldValues, Path } from 'react-hook-form';
-import { FormStorage, FormStorageOptions } from '../../lib/form-storage';
+import type { UseFormReturn, FieldValues, Path } from 'react-hook-form';
+import { FormStorage, type FormStorageOptions } from '../../lib/form-storage';
 
 export interface UsePersistentFormOptions<T extends FieldValues> extends Omit<FormStorageOptions, 'formKey'> {
   /** Unique key for the form */

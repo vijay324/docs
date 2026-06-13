@@ -4,7 +4,7 @@
  * Utilities for managing loading states with React Query and other async operations.
  */
 
-import { useQuery, UseQueryResult } from "@tanstack/react-query";
+import { type UseQueryResult } from "@tanstack/react-query";
 import { useState, useCallback, useEffect } from "react";
 
 /**
