@@ -1,40 +1,33 @@
 ---
 title: "Real-time updates"
-description: "Live updates across boards, lists, comments, and notifications — no refresh needed."
+description: "Keep Tasks, comments, notifications, and Orbit activity current across connected sessions."
 ---
 
-Flotick is real-time by default. When something changes in your organization, every connected client sees it immediately.
+Flotick refreshes supported organization data when another member changes it. Common live surfaces include Task lists and boards, comments, notifications, Project and Sprint activity, and Orbit Agent progress.
 
-## What updates live
+## Connection behavior
 
-- **Tasks** — drag a card on the Kanban and every viewer sees it move
-- **Sprints** — start, complete, and scope events broadcast instantly
-- **Comments** — replies and likes arrive in the thread without refresh
-- **Attendance** — the team overview updates as people check in or out
-- **Notifications** — the bell, the Inbox, and live toasts update the moment events are emitted
-- **AI summaries** — streamed token-by-token for a typewriter effect
+- The app authenticates its real-time connection with your current session.
+- Short network interruptions trigger automatic reconnection.
+- Relevant cached views refresh when a domain event arrives.
+- The notification center displays the current connection state.
 
-## How it works
+If a view appears stale, confirm that the bell menu shows **Live**, then refresh the page. Unsaved form input is not shared with other members.
 
-Your browser opens a secure authenticated WebSocket connection on sign-in. The server places you into rooms keyed by your organization and your member ID. Domain events are routed to the right rooms only — there's no cross-organization leakage.
+<Note>
+Real-time delivery improves freshness; the server remains the source of truth and validates every saved change.
+</Note>
 
-Behind the scenes, Flotick uses a Redis-backed pub/sub layer so that real-time works correctly across multiple servers, including during deploys.
+## What you will notice
 
-## Reconnects
+When a teammate updates a Task, moves a board card, posts a comment, creates a Project or Sprint item, or triggers an Orbit Agent action, the affected list and open detail views can refresh without a manual page reload. This reduces the chance of working from stale board state during collaboration.
 
-If your network blips, the client reconnects with backoff. Once the access token is refreshed (which happens automatically), real-time resumes.
+## If updates stop arriving
 
-## Presence and typing
+1. Open the notification bell and check its connection indicator.
+2. Confirm the browser has network access and is not in offline mode.
+3. Click the offline indicator to retry the connection.
+4. Refresh the affected page if it remains stale.
+5. If the problem continues, contact [support](/resources/support) with the organization slug, page, and approximate time.
 
-Where supported, you'll see live presence indicators (e.g., who's also viewing a task) and live counts that change without action.
-
-## What does not stream
-
-- Static settings pages
-- Historical analytics that don't change between reads (cached for short windows)
-- Files content (the metadata is real-time; the file body is fetched on demand)
-
-## Tips
-
-- Real-time only applies to the org you're signed into. Switching organizations refreshes the connection.
-- If a stale value persists, hard-refresh the tab; this rarely happens but ensures any cached query is reseeded.
+Real-time updates do not overwrite unsaved changes in an open form. Save or cancel your draft before reloading a page that has changed elsewhere.

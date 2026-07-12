@@ -1,61 +1,48 @@
 ---
 title: "Inbox"
-description: "Your central hub for notifications and AI insights."
+description: "Review Tasks relevant to you in a focused master-detail workspace."
 ---
 
-The Inbox at `/<org-slug>/inbox` is where every notification and AI insight lands. It's the page to open first thing in the morning.
+Inbox is the default page after sign-in. It shows your active work rather than the organization's entire Task list.
 
+Inbox includes Sprint Tasks where you are the assignee, reviewer, tester, or reporter, plus individual Tasks you created. Tasks from completed Sprints are hidden unless you enable **Show completed sprint tasks**.
 
-## The two-pane layout
+## Views and filters
 
-- **Left** — the list of notifications, with filters and bulk actions
-- **Right** — the detail of the selected notification, including a quick action button (e.g., **Open task**, **Reassign**)
+- **List:** select a Task on the left and work from its detail panel.
+- **Board:** group the same Tasks by status and move them with drag-and-drop.
+- **Calendar:** place Tasks by due date.
+- **Filters:** narrow by search, status, priority, type, responsibility, dates, and other available Task fields.
 
-Click any row to load the detail. Selecting a row auto-marks it as read after a short dwell.
+From Inbox, you can create a Task, edit accessible fields, change status, and delete work you are allowed to manage.
 
-## Filter and find
+<Note>
+The bell in the app header is the notification center. Inbox is your personal Task workspace; it is not a notification history.
+</Note>
 
-Filter the list by:
+Use the Orbit launcher or open `/<org-slug>/inbox/orbit` for [Orbit](/features/orbit).
 
-- **Type** — task, sprint, comment, leave, payroll, AI insight, etc.
-- **Priority** — low, normal, high, urgent
-- **Read state** — unread only, read only, or all
-- **Date range**
+## Find the right work
 
-Search across notification text and entity titles for quick lookup.
+The toolbar applies filters to your personal Task set. Use it to narrow work by status, priority, type, Project, Sprint, responsibility, label, or due date. Search matches Task information available in the current list.
 
-## Bulk actions
+Choose a scope when it is available:
 
-Multi-select rows to:
+| Scope | Includes |
+| --- | --- |
+| **All** | Your relevant individual and Sprint Tasks. |
+| **Assigned** | Tasks where you are the assignee. |
+| **Created** | Tasks you reported or created. |
+| **Team** | Team Tasks you are permitted to view. |
 
-- **Mark as read** in bulk
-- **Delete** notifications you don't want to keep
-- **Mark all read** clears the bell
+The page keeps completed-Sprint work out of the default results so daily execution stays focused. Turn on **Show completed sprint tasks** only when you are reviewing historical work.
 
-## AI Insights tab
+## Work from the detail pane
 
-The **AI Insights** sub-page proactively surfaces what AI has spotted in your organization:
+In List view, select a Task to open its details without leaving Inbox. Depending on your permissions, you can update ownership, priority, status, dates, description, subtasks, files, comments, work logs, and task links. The detail pane is optimized for quick review; open the full Task page when you need the complete history or more space.
 
-- Sprints trending off-track
-- Members likely overloaded
-- Tasks with deadline risk
-- Workflow bottlenecks (e.g., review queues piling up)
+## Common questions
 
+**A Task is missing:** clear filters, confirm the Project selector, and check whether it belongs to a completed Sprint. A deleted Task appears in [Trash](/features/trash) if you have access.
 
-Each insight is a card with:
-
-- A clear **title** and short **explanation**
-- A suggested **action** (e.g., "Reassign", "Notify owner")
-- **Dismiss** to remove the card with a cooldown before re-evaluation
-
-Insights respect your plan. Some advanced types are available on Pro and Max only.
-
-## Notification preferences
-
-Tune what shows up in your Inbox from **Profile → Notification preferences**. The Inbox respects per-type settings — types you've disabled don't appear here either.
-
-## Tips
-
-- Treat the Inbox like a triage queue: read, decide, act, archive.
-- Use AI Insights as a daily nudge — it catches things easy to miss in raw data.
-- Pair the Inbox with [Notifications](/features/notifications) preferences to control noise without losing the signal.
+**I cannot edit a Task:** your role, Project membership, and per-member permission settings determine which operations you can perform. Ask an Admin or Manager to review your access.

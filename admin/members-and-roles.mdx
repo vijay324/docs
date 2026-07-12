@@ -1,69 +1,44 @@
 ---
 title: "Members and roles"
-description: "Invite, manage, promote, and remove members of your organization."
+description: "Invite people, manage profiles and roles, and control organization membership."
 ---
 
-The **Members** page at `/<org-slug>/members` lists everyone in your organization — active members plus anyone with a pending invitation.
+**Team Members** is available to Admins and Managers by default. Individual permission overrides can change access on paid plans.
 
+## Add members
 
-## Roles
+- **Invite by email:** choose the email and role. Pending invitations can be viewed, resent, or cancelled.
+- **Bulk import:** download the CSV template, complete it, and upload it to send multiple invitations.
+- **Direct member creation:** authorized flows can add a member profile with work details.
 
-| Role | Capabilities |
-| :--- | :--- |
-| **Admin** | Full access. Exactly **one** Admin per organization. |
-| **Manager** | Create and manage projects, sprints, and tasks. Approve attendance and leave. Cannot edit billing or change the Admin. |
-| **Member** | Work on assigned tasks, log time, request leave, view their analytics. |
+An accepted invitation uses one plan seat.
 
-The **Single Admin Invariant** means promotions to Admin require demoting the existing Admin in the same step. This is a deliberate guardrail.
+## Manage members
 
-## Invite a new member
+Open a member to review their profile, Project access, assignments, and analytics available to your role. Authorized leaders can update work details, role, active status, department, and Project membership.
 
-<Steps>
-  <Step title="Click Invite member">
-    Top-right of the Members page.
-  </Step>
+| Role | Scope |
+| --- | --- |
+| **Admin** | Full organization administration and billing. |
+| **Manager** | Delivery and team management within configured permissions. |
+| **Member** | Accessible work and personal operations. |
 
-  <Step title="Enter email and pick role">
-    The invitation is unique to the email and valid for 7 days. The role can be Admin, Manager, or Member — pick what fits today.
-  </Step>
+Managers cannot manage an Admin. Admin-only actions include removing and restoring members. Removal is a soft delete; the member moves to [Trash](/features/trash) for 30 days while related work remains.
 
-  <Step title="Send">
-    Flotick emails the invitee with an accept link. Pending invites show in the Members list until accepted.
-  </Step>
-</Steps>
+<Warning>
+Reassign important work before removing a member. Restoring the account does not resolve ownership changes made while it was deleted.
+</Warning>
 
-## Resend or revoke an invite
+## Send and manage invitations
 
-Open a pending member and choose:
+From **Team Members**, choose **Invite member**, provide the recipient email, and select the appropriate role. The recipient receives a time-limited link and completes account setup before becoming an active member. Pending invitations can be reviewed, resent, or cancelled from the same management area.
 
-- **Resend** — regenerates the token and re-emails the invite
-- **Revoke** — deletes the pending member entirely
+Use bulk import only for a prepared list of people. Download the template first, preserve its headers, validate email addresses and roles, then upload it. Review the result for rows that did not send and fix those records before importing again.
 
-## Promote, demote, or change role
+## Update a member
 
-Open a member and pick a new role. Flotick enforces:
+Open a member record to update allowed profile and work fields, Project access, department, work type, and role. Keep role changes deliberate: role determines the default ceiling for actions throughout the workspace. Use [Member permissions](/admin/member-permissions) when one person needs an exception rather than a new role.
 
-- Promoting to Admin requires demoting the current Admin in the same flow
-- Demoting yourself to Member requires another Admin to be ready
+## Deactivate, remove, and restore
 
-## Departments and sub-departments
-
-Set a member's **Department** and **Sub-department** to drive analytics and reporting groupings. See [Departments](/admin/departments).
-
-## Soft-delete a member
-
-The **Remove member** action soft-deletes the account. The member appears in [Trash](/features/trash) for 30 days. Their tasks remain assigned (you'll likely want to reassign before removing).
-
-## Permanent delete (Admin)
-
-Admins can permanently delete a soft-deleted member from the Trash before the 30-day window. This is irreversible.
-
-## Seat limits
-
-Each plan has a maximum number of active members. Pending invites also count toward seats. If you hit the cap, upgrade the plan or revoke unused invites.
-
-## Tips
-
-- Audit pending invites monthly. Empty seats save money and reduce noise.
-- Use **Manager** generously — it's the role designed for team leads day-to-day.
-- Keep the **Admin** role with the founder or operations owner; rotate intentionally if needed.
+Deactivating a member keeps their account record while preventing normal active use. Removing a member is a soft delete and places the account in Trash. Restore an account only when a plan seat is available. If you are removing someone who owns active delivery work, reassign their Tasks, reviews, and test responsibilities first.

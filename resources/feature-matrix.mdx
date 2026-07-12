@@ -1,71 +1,46 @@
 ---
 title: "Feature matrix"
-description: "What's available across plans and roles."
+description: "A compact view of active product availability by plan and role."
 ---
 
-For current prices, see [flotick.com/pricing](https://flotick.com/pricing). This page summarizes feature availability. Plan limits are enforced by the backend — the pricing page is the source of truth for exact numbers.
-
-## Limits by plan
+## By plan
 
 | Capability | Free | Pro | Max |
-| :--- | :---: | :---: | :---: |
-| Team members (seats) | 5 | 25 | Unlimited |
-| Active projects | 3 | 15 | Unlimited |
-| File storage | 500 MB | 5 GB | 100 GB |
-| Max file size | 25 MB | 100 MB | 500 MB |
-| AI generations / month | 20 | 500 | Unlimited |
-| Orbit Agent actions / month | 50 | 200 | Unlimited |
-| Personal analytics window | 30 days | 1 year | 1 year |
+| --- | :---: | :---: | :---: |
+| Projects, Sprints, Tasks, comments, and links | ✓ | ✓ | ✓ |
+| Personal Inbox, My Board, attendance, and leave requests | ✓ | ✓ | ✓ |
+| Project and Sprint files | ✓ | ✓ | ✓ |
+| Task file uploads | — | ✓ | ✓ |
+| Team analytics and CSV export | — | ✓ | ✓ |
+| Workflow customization | — | ✓ | ✓ |
+| Env Storage | — | ✓ | ✓ |
+| Team attendance and advanced leave | — | ✓ | ✓ |
+| Per-member permission overrides | — | ✓ | ✓ |
+| Orbit model selection | — | ✓ | ✓ |
+| Scheduled PDF reports | — | — | ✓ |
 
-## Features by plan
+See the **Plans** page in the Admin and account section for implemented numerical limits. Current pricing remains at [flotick.com/pricing](https://flotick.com/pricing).
 
-| Feature | Free | Pro | Max |
-| :--- | :---: | :---: | :---: |
-| Projects, Sprints, Tasks | ✅ | ✅ | ✅ |
-| Personal Board & Dashboard | ✅ | ✅ | ✅ |
-| Personal attendance & leave requests | ✅ | ✅ | ✅ |
-| Real-time updates | ✅ | ✅ | ✅ |
-| Comments & notifications | ✅ | ✅ | ✅ |
-| AI summaries & Orbit (within usage limits) | ✅ | ✅ | ✅ |
-| Trash & 30-day recovery | ✅ | ✅ | ✅ |
-| Task file attachments | — | ✅ | ✅ |
-| Team attendance overview | — | ✅ | ✅ |
-| Advanced leave (comp-off, encashment, accruals) | — | ✅ | ✅ |
-| Payroll, payslips, F&F, loans | — | ✅ | ✅ |
-| Env / workspace vault | — | ✅ | ✅ |
-| Telegram integration | — | ✅ | ✅ |
-| Custom workflows | — | ✅ | ✅ |
-| Team analytics & data export | — | ✅ | ✅ |
-| Per-member permission overrides | — | ✅ | ✅ |
-| Highest AI & agent usage limits | — | — | ✅ |
-| Premium support & onboarding | — | — | ✅ |
-
-## Capabilities by role
+## By role
 
 | Capability | Member | Manager | Admin |
-| :--- | :---: | :---: | :---: |
-| View accessible projects, sprints, tasks | ✅ | ✅ | ✅ |
-| Create or edit own tasks | ✅ | ✅ | ✅ |
-| Create or edit any task | — | ✅ | ✅ |
-| Create projects | — | ✅ | ✅ |
-| Manage project membership | — | ✅ | ✅ |
-| Start, complete, or delete sprints | — | ✅ | ✅ |
-| Approve or reject leave | — | ✅ | ✅ |
-| Backfill another member's attendance | — | ✅ | ✅ |
-| Use Orbit Agent | — | ✅ | ✅ |
-| Run payroll | — | — | ✅ |
-| Edit organization settings & policies | — | — | ✅ |
-| Manage billing | — | — | ✅ |
-| Soft-delete or restore members | — | — | ✅ |
-| Manage per-member permissions | — | ✅ * | ✅ |
-| Access organization-wide analytics | — | ✅ | ✅ |
-| Access personal analytics | ✅ | ✅ | ✅ |
+| --- | :---: | :---: | :---: |
+| Work with accessible Tasks | ✓ | ✓ | ✓ |
+| View personal analytics | ✓ | ✓ | ✓ |
+| Manage Projects and Sprints by default | — | ✓ | ✓ |
+| Manage team attendance and leave by default | — | ✓ | ✓ |
+| Use Orbit Agent | — | ✓ | ✓ |
+| Manage members by default | — | ✓ | ✓ |
+| Manage organization settings and billing | — | — | ✓ |
 
-\* Managers can adjust permissions for Member-role people only, and can't grant a capability they lack.
+Per-member overrides can change Manager and Member defaults within each role's ceiling.
 
-## Notes
+## Read the matrix correctly
 
-- Features and limits evolve. The [pricing page](https://flotick.com/pricing) is authoritative for current limits.
-- Some AI templates are gated by monthly **usage limits**, not feature toggles — heavy users may need a higher plan.
-- Per-member overrides can fine-tune the role defaults above within each role's ceiling — see [Member permissions](/admin/member-permissions).
-- Security capabilities (2FA, trusted devices, encryption at rest, audit) are available on every plan.
+The matrix describes product entitlement, not a promise that every member can use every listed feature. A member must also have an active organization account, the required role or override, and access to the relevant Project or data.
+
+For example, Pro enables Env Storage for the organization, but a Member still needs its Env Storage permission and access to the selected Project. Max enables scheduled reports, but only Admins and Managers can create and manage them.
+
+## Temporarily unavailable modules
+
+Flotick can hide fully built modules during pre-launch. The matrix documents the client-facing modules currently enabled in the application. If a feature is not visible in your sidebar or settings, do not assume it is available solely because a plan supports related capability.

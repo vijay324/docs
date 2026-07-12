@@ -1,89 +1,56 @@
 ---
 title: "Orbit Agent"
-description: "Tell Orbit what to do in plain language — it plans the work, you approve, it executes."
+description: "Turn a plain-language instruction into a reviewed sequence of workspace changes."
 ---
 
-**Orbit Agent** turns a single natural-language instruction into an ordered set of actions across tasks, projects, and sprints. You review the plan, approve it, and Orbit executes every step with live progress. Every change is traceable and most are reversible.
+Orbit Agent is available to Admins and Managers from the **Agent** tab in Orbit.
 
-**Where to find it:** **Inbox → Orbit → Agent** tab (`/<org-slug>/inbox/orbit`). Available to **Admins and Managers**.
-
-Where [Orbit Chat](/features/orbit) *answers* questions, the Orbit Agent *makes changes*. Same panel, two modes — toggle between **Chat**, **Agent**, and **History**.
-
-## How it works
+## How execution works
 
 <Steps>
   <Step title="Describe the outcome">
-    Type one instruction, e.g. *"Create a bug task for the login crash, assign it to Priya, set it High priority, due Friday."* Orbit never asks clarifying questions — it fills sensible defaults for anything you leave out and shows them before running. If a request isn't feasible, it's refused with a reason instead of guessing.
+    Ask Orbit to create or update delivery work, assign Tasks, set deadlines, add a comment, complete a Project, or cancel a Task.
   </Step>
   <Step title="Review the plan">
-    Orbit returns a preview card listing every step and a **per-step field table** with the exact values it will write — IDs already resolved to real names. If a plan touches several existing records, you'll confirm a bulk-acknowledge checkbox first.
+    Orbit resolves referenced Projects, Sprints, Tasks, and members, then presents each proposed step. Nothing runs before approval.
   </Step>
-  <Step title="Run or cancel">
-    Click **Run** to execute, or **Cancel** to discard. Plans expire 10 minutes after they're generated if not confirmed.
+  <Step title="Run">
+    Approve the plan. Progress updates in real time and each action records its status.
   </Step>
-  <Step title="Watch it execute">
-    Steps run in order with live progress streamed to your screen. If a step fails, execution stops and the remaining steps are skipped — nothing half-applies silently.
+  <Step title="Review or undo">
+    Open a completed session from history. Supported actions can be undone when the original state is still valid.
   </Step>
 </Steps>
 
-## How the plan is built
+Agent tools include creating Tasks, Projects, and Sprints; updating Tasks and Projects; assigning one or multiple Tasks; changing status; setting deadlines; and adding comments.
 
-When you submit an instruction, Orbit:
+<Warning>
+Orbit Agent never deletes records. Removal requests are mapped to safe, visible state changes such as completing a Project or blocking a Task with an audit comment.
+</Warning>
 
-1. **Plans** the work into an ordered list of steps (structured output, deterministic).
-2. **Resolves names to records** — *"Priya"*, *"the Mobile project"* are matched to real org-scoped IDs at plan time, never at execution.
-3. **Completes every field** with defaults that mirror Flotick's own create forms (priority, type, status, visibility, story points, dates…), so the preview you approve is exactly what gets written.
-4. **Validates** against the allowed action list, your role, and org ownership before anything runs.
+A plan can contain up to 20 steps, and bulk assignment is limited to 25 Tasks per action.
 
-Because the agent runs through the **same internal services as manual edits**, history rows, notifications, analytics, and realtime updates are identical to doing it by hand.
+## What Agent can do
 
-## Full action catalog
+| Action | Typical use |
+| --- | --- |
+| Create Project, Sprint, or Task | Turn a delivery plan into structured workspace records. |
+| Update Project or Task | Change supported details such as title, priority, status, or planning data. |
+| Assign Tasks | Assign one Task or distribute a selected batch. |
+| Change Task status or deadline | Move work or set a due date after reviewing the plan. |
+| Add a comment | Record a decision or context on a Task. |
+| Complete a Project or cancel a Task | Use safe state changes instead of deletion. |
 
-| Action | Minimum role | Reversible |
-| :--- | :--- | :--- |
-| Create task | Manager | — |
-| Create sprint | Manager | — |
-| Create project | Admin | — |
-| Update task (title, description, priority, status, due date) | Manager | ✅ |
-| Update project (name, description, status) | Manager | ✅ |
-| Assign task | Manager | ✅ |
-| Bulk-assign tasks (1–25) | Admin | ✅ |
-| Change task status | Manager | ✅ |
-| Set task deadline | Manager | ✅ |
-| Add comment | Manager | — |
-| Archive a project | Admin | ✅ |
-| Cancel a task | Manager | ✅ |
+## Review the plan carefully
 
-<Note>
-  **The agent never deletes anything.** There is no delete capability anywhere in its toolset. *"Remove a project"* becomes **archive**; *"remove a task"* becomes **cancel** (status change plus an audit comment). Out of scope entirely: emails, org settings, billing, permissions, and user accounts.
-</Note>
+The plan shows the actions, targets, and resolved members or work items before execution. Confirm the Project, Sprint dates, assignees, task titles, and status changes are correct. Cancel the session if anything is ambiguous; you can submit a clearer instruction in a new session.
 
-## Orbit learns your organization
+After approval, each step progresses through pending, running, succeeded, failed, skipped, or undone states. A failed step can stop dependent remaining steps, so review the session history rather than assuming a partially completed plan performed every change.
 
-After every agent run and every chat turn, Orbit quietly extracts durable knowledge about your org — who owns which projects, how your team names things, your usual priorities — and folds it into its understanding. Over time, plans get more accurate and more personalized without any configuration. You can shape this further from the [Orbit Harness](/features/orbit#make-orbit-speak-your-language-harness).
+## Undo and history
 
-## Permissions
+When an action is eligible, Agent exposes an undo control from the completed session. Undo is not guaranteed: it requires the original entity state to still make the reversal safe. Agent history is available in Orbit, letting authorized users inspect instruction, planned work, execution state, and credit use later.
 
-| Action | Who can run it |
-| :--- | :--- |
-| Agent mode (plan + run) | Admin, Manager |
-| Create project, bulk-assign tasks, archive/cancel | Admin only |
-| Undo an executed step | Admin only |
-
-## Provenance and undo
-
-- Every Orbit-created task, project, or sprint shows an **Orbit badge** next to its title.
-- Update-type steps store a before-snapshot, so an Admin can **undo** them from the **History** tab.
-- Undo applies to updates only — never to creations — and warns you if the record changed since.
-
-## Limits
-
-- **50 actions per organization per hour** (consumed when you confirm a plan).
-- **Monthly request quota** by plan: Free 50 · Pro 200 · Max unlimited (separate from the hourly action cap). You'll see a usage snapshot after each plan.
-- For questions and analysis rather than changes, use [Orbit Chat](/features/orbit) instead.
-
-## Tips
-
-- Be specific about names and dates — Orbit fills sensible defaults for anything you omit and shows them before running.
-- Use one instruction per outcome; break very large changes into a couple of runs.
-- Check the **History** tab after big runs so you can undo anything that didn't land as intended.
+<Tip>
+Start with a small instruction—one Project or a few Tasks—before automating a larger workflow. It is easier to verify the resulting pattern and refine the wording.
+</Tip>

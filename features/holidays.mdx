@@ -1,54 +1,43 @@
 ---
 title: "Holidays"
-description: "Define your organization's non-working days so attendance, leave, and payroll stay accurate."
+description: "Maintain the organization's working-day calendar."
 ---
 
-The **holiday calendar** is the single source of truth for non-working days. Attendance won't mark people absent on a holiday, leave that overlaps a holiday isn't deducted from balance, and payroll excludes holidays from working-day counts.
+Authorized Admins and Managers can create, edit, bulk import, and delete holidays.
 
-**Where to find it:** sidebar → **Holidays** (`/<org-slug>/holidays`). Admin-only to edit; everyone can view.
+Each holiday includes:
 
-## What a holiday has
+- Name and date
+- Type: national, regional, company, optional, or restricted
+- Optional description
+- **Recurring** to repeat annually
+- **Optional** to identify an optional holiday
 
-| Field | Description |
-| :--- | :--- |
-| **Date** and **name** | Unique together within your organization. |
-| **Type** | `National`, `Regional`, `Company`, `Optional`, or `Restricted`. |
-| **Recurring** | Repeats annually (e.g. New Year's Day). |
-| **Optional / restricted** | An employee may choose to take it. |
-| **Scope** | Limit to specific locations and/or departments. Empty scope = applies to everyone. |
+The holiday list can be filtered by year and type. Bulk import is available for adding multiple calendar entries at once.
+
+Holidays are used by attendance and leave calculations. A holiday can prevent a day from being treated as a normal working day, subject to organization policy.
 
 ## Add a holiday
 
 <Steps>
   <Step title="Open Holidays">
-    Go to **Holidays** in the sidebar and click **Add holiday**.
+    Choose **New holiday** from the Holidays page.
   </Step>
-  <Step title="Fill the details">
-    Set date, name, and type. Optionally add a description, recurrence, the optional flag, and a location/department scope.
+  <Step title="Enter the calendar details">
+    Provide a name and date, select the holiday type, and add optional notes.
+  </Step>
+  <Step title="Choose recurrence">
+    Enable **Recurring** for an annual date and **Optional** when the day is not automatically observed by every member.
   </Step>
   <Step title="Save">
-    The holiday is published immediately and dependent attendance, leave, and payroll data update automatically.
+    The holiday appears immediately in the organization calendar and becomes available to relevant attendance and leave rules.
   </Step>
 </Steps>
 
-## Bulk import
+## Import a calendar
 
-Pasting a national calendar? Use **Bulk import** to add up to 200 holidays in one action. Open the bulk-import dialog, paste or upload the list, and confirm.
+Use bulk import when setting up a regional or company calendar. Review the file against the required import format before submitting it, then inspect the resulting list for duplicate dates or names. A holiday is unique within an organization by its date and name.
 
-## Scope to locations or departments
+## Maintain the calendar
 
-- Leave scope **empty** to apply org-wide.
-- Add **locations** and/or **departments** to make a holiday regional — only those members treat it as a non-working day.
-
-## How it connects
-
-- **Attendance** — holidays are skipped when computing absent/late status.
-- **Leave** — leave days overlapping a holiday aren't deducted from balance.
-- **Payroll** — working-day counts exclude holidays.
-- **Shifts** — combined with each shift's working-day mask to determine expected workdays.
-
-## Tips
-
-- Set up the full year in one bulk import at the start of the year, then add company days as they come up.
-- Mark genuinely flexible days as **Optional/Restricted** so employees can choose them without skewing attendance.
-- Use **department scope** for office-specific or regional holidays instead of creating duplicate org-wide entries.
+Edit a holiday when its name, type, or recurrence changes. Delete an incorrect entry rather than leaving an unused calendar record. Before changing an existing holiday, check whether it overlaps approved leave or historical attendance so your team understands the reporting impact.

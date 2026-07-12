@@ -1,41 +1,30 @@
 ---
 title: "Seat management"
-description: "How seats are counted, when they're consumed, and how to free up seats."
+description: "Track which members use plan seats and free capacity safely."
 ---
 
-A **seat** is a slot for a member of your organization. Plans define a maximum number of seats; managing them keeps your bill predictable.
+An active accepted member uses one organization seat. Pending invitations do not use a seat until accepted.
 
-## What counts as a seat
+| Plan | Seat limit |
+| --- | ---: |
+| Free | 5 |
+| Pro | 25 |
+| Max | Unlimited |
 
-| Status | Counts as a seat? |
-| :--- | :---: |
-| Active member | ✅ |
-| Pending invitation | ✅ |
-| Soft-deleted member (in Trash) | ❌ |
-| Permanently deleted | ❌ |
+To free a seat, an Admin can remove a member. Removed members move to Trash and cannot sign in. Their Tasks, comments, history, and other organization records remain.
 
-This means inviting someone immediately consumes a seat — even before they accept.
+Restoring a deleted member consumes a seat and can be blocked when the organization is at its limit.
 
-## Hitting the cap
+After a downgrade below current usage, Flotick protects the Admin seat and plan-locks the newest excess non-Admin members. Their data is retained. Available capacity or a later upgrade restores the longest-standing locked members first.
 
-When you're at the seat cap, the **Invite member** flow returns a clear error. To free a seat:
+## Monitor seats
 
-- **Revoke** unaccepted invitations you no longer need from the **Members** page
-- **Soft-delete** members who have left
-- **Upgrade** to a plan with a higher cap
+Review seat usage in **Settings** before sending invitations or restoring deleted members. An invitation can be sent while pending, but acceptance is checked against the current seat limit. If the organization has no capacity, increase the plan or free a seat before the recipient tries again.
 
-Soft-deleted members can be restored within 30 days. Restoring puts the seat back in use.
+## Free a seat responsibly
 
-## Plan downgrades and seat counts
+Open the member record and confirm ownership transfer before removing the person. Reassign active Tasks, review assignments, and testing responsibility when the work must continue. Removal frees the seat only after the member is no longer active; restoring the member later consumes a seat again.
 
-If you downgrade to a plan whose cap is below your current member count, the downgrade takes effect at period end. By then, your active member count must be at or under the new cap. Flotick shows a banner reminding you well in advance.
+## Plan-locked members
 
-## Auditing seats
-
-The **Members** page shows total active and pending counts. Combine with **Trash → Members** to see who's pending purge.
-
-## Tips
-
-- Audit pending invites monthly. They're the cheapest seats to free.
-- Coordinate seat changes with HR — onboarding and offboarding usually have a tail of pending invites.
-- If you frequently bump against the cap, consider **Yearly** billing on the next plan up — the savings often offset the extra seats.
+Plan locking is different from an Admin deactivation. A plan-locked member is restricted because capacity fell after a downgrade. When capacity returns, Flotick can restore that member without overriding a separate deliberate deactivation made by an Admin.

@@ -1,83 +1,47 @@
 ---
 title: "Attendance"
-description: "Daily check-in and check-out with live work timer, work descriptions, and team overview."
+description: "Check in, check out, review attendance, and request corrections."
 ---
 
-Flotick attendance is built around a simple promise: **one record per member per day**. Members check in, check out, and add a brief description of what they worked on. Managers see a live picture of their team.
-
-
-## Check in
+## Record your day
 
 <Steps>
-  <Step title="Open the check-in dialog">
-    Click **Check in** in the sidebar or top bar. The dialog appears anywhere in the app.
+  <Step title="Check in">
+    Open **Attendance**, click **Check in**, and confirm your work type. Flotick creates one attendance record for the current date.
   </Step>
-
-  <Step title="Pick your work type">
-    `Office`, `Remote`, or `Hybrid`. Your default work type comes from your profile.
-  </Step>
-
-  <Step title="Confirm the time">
-    Flotick suggests now. Adjust if needed (admins control whether past-date entries are allowed).
-  </Step>
-
-  <Step title="Submit">
-    Your day record is created with status `Checked In`. The **live work timer** starts ticking in the top bar.
-
+  <Step title="Check out">
+    Click **Check out** and add a work description. The app calculates the recorded duration.
   </Step>
 </Steps>
 
-## Check out
+Use the table or calendar view to review your history. Statuses include `Checked In`, `Checked Out`, `Pending`, and `Leave`.
 
-When you're done for the day, click **Check out**.
+## Missed or incorrect attendance
 
-- Add a brief **work description** in plain text or Markdown
-- Click **Enhance with AI** to polish the description into a clean recap (see [AI Enhance](/features/ai-enhance))
-- Confirm the time
+Use **Forgot attendance** to submit a past entry when policy allows. For corrections, create a regularization request with the date, reason, requested times, work type, and description. You can review your requests and cancel an eligible pending request.
 
-Your day record updates to `Checked Out` with the duration calculated automatically. **Cross-midnight check-outs are supported** — the duration accounts for the day boundary.
+Admins can review organization requests. Approved regularization creates or updates the underlying attendance record.
 
+## Team view
 
-## Three views
+The paid-plan team view shows organization attendance for authorized leaders. Past-date edits and team actions remain subject to role and attendance policy.
 
-<Tabs>
-  <Tab title="Table">
-    Your full attendance log. Filter by month, status, or work type.
-  </Tab>
-  <Tab title="Calendar">
-    A color-coded calendar:
-    - 🟢 **Checked Out** — completed day
-    - 🟡 **Checked In** — in progress
-    - ⚪ **Pending** — future or unrecorded
-    - 🔵 **Leave** — approved leave day
-  </Tab>
-  <Tab title="Team overview">
-    Managers and Admins see who's checked in, on leave, or absent. Aggregated stats by date range help with capacity planning.
+AI Enhance can rewrite a work description before you save it. See [AI Enhance](/features/ai-enhance).
 
-  </Tab>
-</Tabs>
+## Understand the record
 
-## Late arrival and overtime
+Each attendance record is tied to one member and one calendar date. It can include check-in and check-out time, work type, work description, status, and recorded duration. A check-in starts the day; checking out records the end of the day rather than creating a second record.
 
-Both rules are configurable in the [attendance policy](/admin/attendance-policy):
+Your organization's attendance policy determines working days, past-date allowance, grace periods, and hour thresholds. A member shift can provide more specific timings and thresholds for that member. See [Attendance policy](/admin/attendance-policy) and [Shifts](/features/shifts).
 
-- **Late arrival window** — flag check-ins after a threshold (e.g., 10:00)
-- **Overtime** — durations longer than 8 hours are flagged automatically and feed payroll OT calculation (1.5×)
+## Regularize an entry
 
-## Forgotten check-out
+Use a regularization request when the date already has an incorrect record or when you need to explain a missed punch. Choose the correct request type, provide a reason, and enter requested check-in/out times or corrected work information. The request remains `Pending` until an authorized reviewer approves or rejects it. Approval updates the corresponding attendance record; rejection preserves the original record.
 
-If a member forgets to check out, an Admin or Manager can backfill from the **Forgotten attendance** dialog. The action is recorded with the admin as the creator for audit.
+## Team and request views
 
-## Leave and attendance
+Authorized leaders can switch to the team view to inspect organization attendance by date. The regularization section separates **My Requests** from **Team Requests**, making it clear which changes need a decision. Use filters and date controls before reviewing a large team.
 
-When a leave request is approved, Flotick automatically creates or updates the matching attendance rows with status `Leave`. You won't need to back-mark anything — the systems stay in sync.
-
-## Live team picture
-
-The team overview updates in real time as your colleagues check in or out. Useful for stand-ups and same-day capacity questions.
-
-## Tips
-
-- Encourage a daily check-out habit — work descriptions become a great input for the AI weekly summary.
-- Use **work type** consistently to power hybrid policy reporting.
-- If your team doesn't track attendance, ask your Admin to disable it from organization settings — Flotick's other features still work without it.
+<Tip>
+Use a concise check-out description that names the outcome, not just the activity. This gives Analytics and Orbit better context without requiring a separate daily report.
+</Tip>

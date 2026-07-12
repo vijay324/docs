@@ -1,51 +1,46 @@
 ---
 title: "Organization settings"
-description: "Configure your org identity, work mode, and policy hubs."
+description: "Manage organization identity, work configuration, policies, usage, and billing."
 ---
 
-The **Settings** page at `/<org-slug>/settings` is your control center. It's available to Admins.
+Organization settings are available to the Admin. The page shows the organization profile, current plan, usage, and links to administrative modules.
 
+## Organization profile
 
-## What you'll find
+The page displays the organization name, slug, type, industry, size, country, timezone, website, description, and work mode. These identity fields are read-only in the current client interface. Admins can upload or replace the organization logo.
 
-| Tab | What it controls |
-| :--- | :--- |
-| **Organization** | Name, slug, logo, work mode, contact info. |
-| **Workflow** | Required transitions, WIP limits, story-point scale. See [Workflow policy](/admin/workflow-policy). |
-| **Attendance** | Working hours, weekend rules, late-arrival window. See [Attendance policy](/admin/attendance-policy). |
-| **Leave** | Leave types, balances, accrual, encashment. See [Leave policy](/admin/leave-policy). |
-| **Integrations** | Telegram, billing portal access. See [Integrations](/admin/integrations). |
-| **Departments** | Department hierarchy. See [Departments](/admin/departments). |
-| **Members and roles** | Member list and role management. See [Members and roles](/admin/members-and-roles). |
-| **Billing** | Plan, seat usage, payment method. See [Plans](/admin/billing/plans). |
-| **Danger zone** | Slug change, soft-delete the organization. |
+The organization slug appears in signed-in URLs and saved links.
 
-## Organization identity
+## Settings areas
 
-- **Name** — display name shown across the app
-- **Slug** — the URL identifier; changing it redirects users to the new path
-- **Logo** — uploaded image, shown in the header and emails
-- **Work mode** — `Office`, `Remote`, or `Hybrid`. This is the org's default for new members.
+<CardGroup cols={2}>
+  <Card title="Team management" icon="users" href="/admin/members-and-roles">Members, invitations, roles, and permissions.</Card>
+  <Card title="Workflow configuration" icon="workflow" href="/admin/workflow-policy">Task statuses, transitions, priorities, Sprint defaults, and points.</Card>
+  <Card title="Policies" icon="sliders-horizontal" href="/admin/attendance-policy">Attendance and leave rules.</Card>
+  <Card title="Labels" icon="tags" href="/admin/labels">Canonical Task label names and colors.</Card>
+  <Card title="Billing" icon="credit-card" href="https://flotick.com/pricing">Subscription plans and usage.</Card>
+  <Card title="Scheduled reports" icon="mail" href="/features/scheduled-reports">Max-plan analytics email schedules.</Card>
+</CardGroup>
 
-## Slug changes
+The usage section reports AI and Orbit consumption, seats, active Projects, and storage against the current plan.
 
-Slug changes are permitted but careful — changing it updates every dashboard URL for your team. Bookmarks under the old slug redirect automatically to the new one. Communicate slug changes ahead of time.
+## Use Settings as the administration hub
 
-## Work mode
+The Settings page is a read-only organization overview plus links to the administrative surfaces that own each configuration. It shows plan status, billing cycle, renewal information when available, usage, organization identity, and trust-center indicators.
 
-The org-level work mode is the default for new members and the source of truth for hybrid policy reporting. Individual members can still pick a different work type when they check in for the day.
+Use the appropriate linked page for changes rather than expecting all settings to be editable in one form:
 
-## Danger zone
+- **Team management:** invitations, profiles, roles, and Project access.
+- **Workflow configuration:** Task stages, allowed moves, priorities, points, Sprint defaults, and departments.
+- **Attendance and leave policies:** organization-level working and time-off rules.
+- **Labels:** approved Task label names and colors.
+- **Scheduled reports:** recurring analytics email delivery on Max.
+- **Billing:** subscription actions and usage review for the Admin.
 
-- **Slug change** — discussed above
-- **Delete organization** — soft-deletes the org with a 7-day reversible window. After 7 days the deletion proceeds; data is retained per the data retention policy
+## Upload an organization logo
 
-<Warning>
-Deleting an organization signs out every member and removes access. Restore is only possible within 7 days.
-</Warning>
+Admins can upload or replace the organization logo from the profile area. Use a clear square or horizontal mark that remains recognizable at small sizes. The logo is stored as an organization asset and is used where Flotick displays organization identity.
 
-## Tips
+## Review usage before a plan change
 
-- Keep the org name consistent with how the team refers to itself in the real world — it shows up in emails and exports.
-- The slug is the part of the URL most often shared internally. Keep it short and easy to type.
-- Schedule policy changes (workflow, attendance, leave) for a sprint boundary so the impact is contained.
+Before inviting members, creating Projects, uploading large files, generating AI content, or downgrading a plan, review the usage cards. These report the organization total, not only the currently signed-in member's activity.

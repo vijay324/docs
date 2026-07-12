@@ -1,97 +1,52 @@
 ---
 title: "Core concepts"
-description: "The building blocks of Flotick: organizations, members, projects, sprints, tasks, and roles."
+description: "The organization, work, and access model used throughout Flotick."
 ---
 
-Knowing how Flotick is structured makes every other page in these docs easier to follow.
+## Work hierarchy
 
-## Organization
+| Concept | Purpose |
+| --- | --- |
+| **Organization** | Contains your members, policies, work, files, and subscription. |
+| **Project** | Groups a body of work, its team, Sprints, Tasks, files, and environments. |
+| **Sprint** | A time-boxed cycle within one Project. |
+| **Task** | A deliverable with ownership, status, priority, dates, and collaboration. |
 
-An **Organization** is the top-level tenant. It owns members, projects, sprints, tasks, attendance, leave, payroll, and billing. Every organization has:
+Projects, Sprints, and Tasks receive readable IDs such as `OPS-P-001`, `OPS-S-004`, and `OPS-T-037`. You can open detail pages with these IDs.
 
-- A unique **slug** (e.g., `acme-co`) used in every dashboard URL: `app.flotick.com/acme-co/...`
-- A **plan** — Free, Pro, or Max — that controls limits and advanced features
-- **Policies** for workflow, attendance, and leave that apply to every member
+## Task ownership
 
-Data is strictly isolated per organization. Members of one organization cannot see another's data.
+A Task can identify four responsibilities:
 
-## Members and roles
+- **Assignee:** completes the work.
+- **Reviewer:** reviews the result.
+- **Tester:** validates it.
+- **Reporter:** created or requested it.
 
-A **Member** is a user inside an organization. Every member has exactly one role:
+Individual Tasks use `To Do`, `In Progress`, and `Completed`. Sprint Tasks use the organization workflow, which can include `Backlog`, `Sprint Backlog`, `Todo`, `In Progress`, `Review`, `Testing`, `Blocked`, and `Done`.
 
-| Role | What they can do |
-| :--- | :--- |
-| **Admin** | Everything: organization settings, members, billing, all projects, payroll. Exactly one Admin per organization. |
-| **Manager** | Create and manage projects, sprints, and tasks. Approve attendance and leave. Cannot edit billing or change the Admin. |
-| **Member** | Work on assigned tasks, log time, request leave, view their analytics, and collaborate. |
+## Roles
 
-Members can also be grouped into **Departments** and **Sub-departments** for reporting and routing.
+| Role | Typical access |
+| --- | --- |
+| **Admin** | Organization, billing, policy, member, and work administration. |
+| **Manager** | Team and delivery management within the role's permission ceiling. |
+| **Member** | Assigned and accessible work, personal attendance, and leave. |
 
-## Projects
+On paid plans, per-member overrides can narrow or grant allowed operations without changing a member's role. See [Member permissions](/admin/member-permissions).
 
-A **Project** is a container for related work. Projects own sprints, tasks, files, and environment configurations.
+## Organization routes
 
-Key project attributes:
+Signed-in pages include your organization slug: `app.flotick.com/<org-slug>/tasks`. This keeps navigation and access scoped to the correct organization.
 
-- **Visibility** — `Public` (visible to everyone in the org) or `Private` (visible only to assigned project members)
-- **Status** — `Active`, `On Hold`, `Archived`, `Cancelled`, `Completed`
-- **Health** — automatically calculated as `On Track`, `At Risk`, or `Off Track`
-- **Project lead** — the accountable owner
+## How access is evaluated
 
-## Sprints
+Flotick evaluates access in layers. First, you must be an active member of the organization. Next, the app checks your role and any per-member permission override. Finally, it checks Project visibility and membership for Project-scoped work. This means being able to see the Tasks page does not automatically grant access to every Task or Project in the organization.
 
-A **Sprint** is a time-boxed iteration inside a project, with a goal, capacity in story points, and a lifecycle: `Planning → Active → Review → Retrospective → Completed`.
+## Status, estimates, and reporting
 
-Only one sprint per project can be active at a time. When you complete a sprint, Flotick calculates the velocity automatically from completed story points.
+Status describes where work is in a workflow. Priority communicates urgency. Story points estimate relative effort for Sprint planning; logged hours record time already spent. Keeping these fields current gives Sprints, Analytics, and Orbit reliable information to work from.
 
-## Tasks
+## What belongs where
 
-A **Task** is the atomic unit of work. Tasks have:
-
-- A **type**: `Story`, `Bug`, `Task`, `Epic`, or `Spike`
-- A **status** that flows: `Backlog → Sprint Backlog → Todo → In Progress → Review → Testing → Blocked → Done`
-- A **priority**: `Critical`, `High`, `Medium`, `Low`
-- Up to four people: **assignee**, **reviewer**, **tester**, **reporter**
-- **Story points**, **labels**, **dates**, **attachments**, **threaded comments**, **work logs**, and **dependencies**
-
-Long-form fields like description and acceptance criteria are encrypted at rest.
-
-## Workforce records
-
-Two records ride alongside delivery:
-
-- **Attendance** — one record per member per day (`Checked In`, `Checked Out`, `Pending`, or `Leave`)
-- **Leave** — typed requests (Privilege, Sick, Casual, Earned, Maternity, Paternity, Comp-off, Loss of Pay) tied to balances and the approval workflow
-
-When leave is approved, Flotick creates the matching attendance rows automatically.
-
-## Real-time and notifications
-
-Every meaningful action — task moved, comment posted, sprint started, leave approved — is broadcast in real time over the web app and surfaced in the **Inbox**. Members can opt in to receive selected notifications via Telegram.
-
-## How everything fits together
-
-```
-Organization
-├── Members (Admin / Manager / Member)
-│   └── Departments → Sub-departments
-├── Projects (Public or Private)
-│   ├── Sprints (one Active at a time)
-│   │   └── Tasks → Comments, Work Logs, Files, Links
-│   └── Environments → Variables (encrypted)
-├── Attendance (one per member per day)
-├── Leave Requests → Leave Balances
-├── Payroll Runs → Payslips → Loans
-└── Files (S3-backed, presigned uploads)
-```
-
-## Next
-
-<CardGroup cols={2}>
-  <Card title="Quickstart" icon="rocket" href="/get-started/quickstart">
-    Hands-on walkthrough from sign-up to first task.
-  </Card>
-  <Card title="Dashboard tour" icon="layout-dashboard" href="/get-started/dashboard-tour">
-    What every page in the dashboard does.
-  </Card>
-</CardGroup>
+Use a Project for an ongoing delivery area, a Sprint for a bounded iteration, a Task for a deliverable, a subtask for a short checklist item, a comment for discussion, a file for an artifact, and a task link for a relationship to another Task. This separation keeps views and reporting useful as the organization grows.

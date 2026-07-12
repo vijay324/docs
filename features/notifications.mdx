@@ -1,66 +1,37 @@
 ---
 title: "Notifications"
-description: "Multi-channel notifications for the things you care about, with full per-type control."
+description: "Receive and act on organization events from the in-app notification center."
 ---
 
-Flotick produces notifications for the events you care about: a task assigned to you, a comment that mentions you, an approved leave, a sprint that just started, a high-priority insight, and many more.
+Click the **bell** in the app shell to open unread notifications. The center loads up to 50 unread items and adds new events while you are connected.
 
+Notifications can cover events such as:
 
-## Where notifications appear
+- Task assignment, status changes, and comments
+- Leave decisions
+- Attendance regularization decisions
+- Comp-off, reimbursement, and loan decisions when those workflows are active
 
-| Channel | When | Where to control it |
-| :--- | :--- | :--- |
-| **In-app bell** | Always | The bell icon in the top bar, with the unread count. |
-| **Inbox** | Always | The full list at `/<org-slug>/inbox`. See [Inbox](/features/inbox). |
-| **Live toast** | Always | A short banner pops up when an event arrives. |
-| **Email** | High and Urgent priority | Sent through your account email. |
-| **Telegram** | Selected types you opt in to | Connect from Settings → Integrations. See [Telegram](/features/telegram). |
+Click a notification to mark it read and open its linked item when an action URL is available. You can also **Mark all read** or clear the current local list.
 
-## Notification priorities
+The connection indicator shows `Live`, `Connecting`, or `Offline`. Click the offline indicator to retry the real-time connection.
 
-Each notification has a priority that determines how aggressively it's delivered:
+<Note>
+Clearing the displayed list does not delete the underlying notification records. Flotick does not currently expose a client-facing channel-preference editor.
+</Note>
 
-- **Low** — informational; in-app only
-- **Normal** — typical events; in-app, toast, and Inbox
-- **High** — important events; also email
-- **Urgent** — critical events; in-app, email, and Telegram (when connected)
+## Read and act on notifications
 
-## Common notification types
+Open the bell to see unread items ordered by time. An unread item has an indicator. Click it to mark it as read; when the event has an associated Task or request, Flotick opens the relevant page.
 
-- Task assigned to you, status changed, or commented on
-- Mentions in comments (`@you`)
-- Sprint started, completed, or scope event flagged
-- Leave request submitted, approved, or rejected
-- Payroll run draft ready or finalized
-- AI insight detected (sprint risk, deadline risk, workload imbalance)
-- Member joined, role changed, removed
-- Files shared with you
+Use **Mark all read** after you have reviewed the current list. The **Clear all** control only clears the local display during that session; it is not a destructive delete of the notification record.
 
-## Mark as read
+## Connection state
 
-- Selecting a notification in the [Inbox](/features/inbox) auto-marks it read after a brief dwell
-- The bell dropdown has a **Mark all read** action
-- Bulk-select rows in the Inbox to mark or delete in batches
+| State | Meaning | What to do |
+| --- | --- | --- |
+| **Live** | The real-time connection is active. | No action required. |
+| **Connecting** | Flotick is reconnecting. | Wait briefly. |
+| **Offline** | No active real-time connection. | Click the indicator to retry, then verify your network. |
 
-## Configure preferences
-
-Open **Profile → Notification preferences** to:
-
-- Toggle each notification type on or off
-- Choose which channels each type uses (in-app, email, Telegram)
-- Mute individual conversations during focus blocks (where supported)
-
-
-## Real-time delivery
-
-Notifications arrive via secure WebSocket the moment they're generated. The bell, the Inbox, and live toasts update without a page refresh.
-
-## Telegram delivery
-
-Once you connect Telegram from settings, you can opt selected types into Telegram delivery. The bot only sends what you've explicitly enabled. See [Telegram](/features/telegram).
-
-## Tips
-
-- If your Inbox is noisy, start by muting the noisiest type (often comment activity on busy projects).
-- Use **email** sparingly — keep it for events you'll act on outside the app.
-- The AI Insights tab in your Inbox surfaces proactive items you can turn into action.
+New notifications appear while the center is closed and update the unread count. A page refresh retrieves unread items again from the server.

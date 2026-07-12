@@ -1,47 +1,37 @@
 ---
 title: "Departments"
-description: "Group members into a two-level hierarchy for reporting and routing."
+description: "Organize members in a two-level department structure."
 ---
 
-Departments give your organization a structural map. Members belong to a **Department** and optionally a **Sub-department** under it.
+Flotick supports a main department and an optional sub-department for each member. Department choices appear in onboarding, profile management, member administration, and supported analytics filters.
 
+Admins manage the organization department structure from workflow settings. Create or rename a main department, add sub-departments beneath it, and assign members from their profile or member record.
 
-## Why use departments
+<Note>
+A sub-department must belong to the selected main department. Changing a member's main department may require selecting a new sub-department.
+</Note>
 
-- Cleaner **analytics** — slice productivity, attendance, and leave by department
-- **Reporting** — payroll exports and audit logs show department context
-- **Routing** — some notification rules and approval flows can use department membership
+Department changes affect future grouping and filtering; they do not rewrite historical work ownership.
 
-## Create a department
+## Set up departments
 
 <Steps>
-  <Step title="Open Settings → Departments">
-    The page shows existing departments and their sub-departments.
+  <Step title="Open workflow configuration">
+    Go to **Settings → Workflow configuration** and open the department management area.
   </Step>
-
-  <Step title="Add a department">
-    Enter a name (e.g., `Engineering`, `Operations`, `Sales`). Names must be unique within the org.
+  <Step title="Create the main department">
+    Add the top-level group, such as Engineering, Operations, Sales, or People.
   </Step>
-
-  <Step title="Add sub-departments (optional)">
-    Under any department, add sub-departments (e.g., `Engineering → Platform`, `Engineering → Mobile`).
+  <Step title="Add sub-departments where useful">
+    Create a second-level group only when it improves routing or reporting, such as Engineering → Platform.
+  </Step>
+  <Step title="Assign members">
+    Set each member's department and optional sub-department from their profile or member record.
   </Step>
 </Steps>
 
-## Assign a member
+Keep names clear and stable. Renaming a department changes how it is shown in current member records and filters, while historical Tasks and attendance remain attributable to the member who performed them.
 
-Open the member's profile or detail page. Pick a department, then optionally a sub-department under it. Sub-department selection is constrained to the chosen parent.
-
-## Move or rename
-
-You can rename a department or sub-department at any time. Moving a sub-department under a different parent reassigns it; existing member assignments retain the new parent.
-
-## Delete
-
-Deleting a department reassigns its members to "no department" by default. Be deliberate — some analytics views key off department membership.
-
-## Tips
-
-- Keep your hierarchy two levels deep. Going deeper rarely earns its complexity in analytics.
-- Use department names matching how the team actually talks. Avoid jargon-only names.
-- Departments can be a quick proxy for org-wide policies — for example, different leave behavior by department, when policy supports it.
+<Tip>
+Use departments for people structure. Use Projects for delivery work and labels for cross-cutting classification.
+</Tip>

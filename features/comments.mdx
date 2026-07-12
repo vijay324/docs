@@ -1,49 +1,48 @@
 ---
-title: "Comments"
-description: "Threaded comments on tasks and sprints with mentions, likes, and Markdown."
+title: "Comments and subtasks"
+description: "Discuss work in threads and break a Task into an ordered checklist."
 ---
 
-Flotick comments turn tasks and sprints into a living thread of context. Comments support threading, `@mentions`, likes, and Markdown.
+## Comments
 
+Tasks and Sprints support comments. On Tasks, you can:
 
-## Where you can comment
+- Write Markdown
+- Reply in a thread
+- Like or unlike a comment
+- Edit your comment
+- Soft-delete a comment you are allowed to remove
 
-- **Tasks** — full threaded comments inside the task detail dialog
-- **Sprints** — sprint-scoped comments for goal discussion and retro notes
+Comments display their author, time, edited state, replies, and likes. Real-time updates keep open workspaces current for connected members.
 
-## Compose a comment
+## Subtasks
 
-The comment composer accepts:
+Open a Task's **Subtasks** section to create a checklist item with a title and optional description. You can complete, reopen, reorder, edit, or delete subtasks according to your Task permissions.
 
-- **Markdown** including bold, italic, code, links, and lists
-- **GitHub-flavored Markdown** features like task lists and tables
-- **Mentions** with `@` to autocomplete teammates
-- **Code fences** for snippets
+Subtask completion is tracked separately from the parent Task. Completing every subtask does not automatically move the parent Task to `Done`.
 
-Posting is **rate limited** (about 30 per hour per user) to deter spam and accidental loops.
+## Write a useful comment
 
-## Reply and thread
+Open the Task or Sprint, scroll to **Comments**, and write the update. Markdown is supported for headings, emphasis, lists, links, code, tables, and task lists. Submit the comment to make it visible to other members with access to the work item.
 
-Click **Reply** under any comment to nest a reply. Threads keep the conversation grouped by topic.
+To continue a focused conversation, choose **Reply** on a comment. Replies remain grouped beneath the parent comment. Use likes to acknowledge an update without adding another message.
 
-## Like a comment
+## Edit and remove comments
 
-Click the heart icon to like a comment. Likes are visible to the author and other readers — useful for low-noise acknowledgements.
+Your edited comment retains an edited indicator. Soft-deleting a comment removes it from the normal conversation while preserving the record for authorized recovery and audit behavior. Editing or deleting another member's comment depends on the access rules applied to that Task or Sprint.
 
-## Edit and delete
+## Manage subtasks
 
-You can edit your own comments at any time. The comment shows an `edited` indicator after the first edit. Admins can delete any comment in their organization. Deleted comments leave a small placeholder so the thread structure remains readable.
+<Steps>
+  <Step title="Add the checklist item">
+    In **Subtasks**, enter a concise title and optional description.
+  </Step>
+  <Step title="Order the work">
+    Reorder items to represent the expected execution sequence.
+  </Step>
+  <Step title="Track completion">
+    Check an item when it is complete. Reopen it when more work is needed.
+  </Step>
+</Steps>
 
-## Mentions and notifications
-
-`@mention` triggers a notification to the mentioned member, including in their [Inbox](/features/inbox), and through Telegram if they've connected it.
-
-## Encryption
-
-If your organization enables comment encryption, the body is stored encrypted (AES-256-GCM). The `@mentions` and metadata stay queryable for routing notifications.
-
-## Tips
-
-- Use **threads** to keep multi-thread discussions navigable.
-- Lead with a one-line summary; put detail in fenced code or collapsibles.
-- Replace one-word "ok" comments with a 👍 like to reduce noise.
+Subtasks work best for a small, concrete checklist. When an item needs its own owner, due date, review, or discussion, create a linked Task instead.

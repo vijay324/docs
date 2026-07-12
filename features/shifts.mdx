@@ -1,63 +1,49 @@
 ---
 title: "Shifts"
-description: "Reusable working-time templates that drive accurate attendance, overtime, and payroll."
+description: "Define working-time rules and assign effective-dated schedules to members."
 ---
 
-**Shifts** define working-time templates — like "General 9–6" or "Night 10pm–7am" — and assign them to members over date ranges. Attendance uses each person's active shift to decide expected hours, grace windows, half/full-day thresholds, and overtime.
+Shift management is available to Admins and Managers.
 
-**Where to find it:** sidebar → **Shifts** (`/<org-slug>/shifts`). Admins and Managers manage shifts; members view their own.
+## Shift definition
 
-## What a shift defines
+A shift includes a name, unique code, type, working days, start and end times, break duration, and working-hour rules. Types include fixed, flexible, rotational, night, and split.
 
-| Setting | Purpose |
-| :--- | :--- |
-| **Name / code** | Label and a unique short code (e.g. `GEN`, `NIGHT`). |
-| **Type** | `Fixed`, `Flexible`, `Rotational`, `Night`, or `Split`. |
-| **Start / end time** | 24-hour `HH:MM`. Night shifts that cross midnight are detected automatically. |
-| **Working days** | Which weekdays the shift runs (default Mon–Fri). |
-| **Break, grace, hours** | Break minutes, late grace window, and working-hour target. |
-| **Thresholds** | Half-day hours, full-day hours, and the overtime cutoff. |
+Configure:
 
-## Define a shift
+- Grace period for late arrival
+- Half-day and full-day hour thresholds
+- Overtime threshold
+- Active status
+- Default status
+
+Flotick supports overnight shifts where the end time falls on the following day.
+
+## Assign a shift
+
+Choose a member, an active shift, an effective-from date, optional effective-to date, and notes. A new overlapping assignment automatically ends the member's previous active assignment.
+
+Use **All Shifts** to manage definitions and **My Assignments** to review effective-dated assignments available to you. A shift with active assignments cannot be deleted until those assignments are ended.
+
+## Create a shift
 
 <Steps>
-  <Step title="Open Shifts">
-    Go to **Shifts** in the sidebar and click **New shift**.
+  <Step title="Open All Shifts">
+    Click **New Shift**.
   </Step>
-  <Step title="Set the schedule">
-    Enter name, code, start/end times, and working days. Add break, grace, and hour thresholds.
+  <Step title="Set schedule and type">
+    Enter a name and unique code, choose the shift type, working days, start time, and end time. Flotick detects a cross-midnight schedule from the times.
   </Step>
-  <Step title="Save">
-    The shift becomes available to assign. Mark one shift as **default** for members without an explicit assignment.
+  <Step title="Set attendance thresholds">
+    Configure working hours, break duration, grace minutes, half-day hours, full-day hours, and overtime-after hours.
+  </Step>
+  <Step title="Activate or set default">
+    Keep the shift active to make it assignable. Mark one as default when it should be the organization's standard option.
   </Step>
 </Steps>
 
-## Assign a shift to a member
+## Manage assignments
 
-<Steps>
-  <Step title="Open the assign dialog">
-    From the Shifts page, open **Assign shift**.
-  </Step>
-  <Step title="Pick member, shift, and dates">
-    Choose the member, the shift, an **effective from** date, and an optional **effective to** date. Add notes if useful.
-  </Step>
-  <Step title="Save">
-    The new assignment supersedes the member's previous one. Rotation history is preserved — nothing is deleted.
-  </Step>
-</Steps>
+Assignments are effective-dated. Use an end date for a temporary schedule or omit it for an ongoing one. When a new assignment overlaps an active assignment, Flotick automatically closes the older assignment to avoid two active shift rules for the same day.
 
-<Tip>
-  Leave **effective to** empty for an open-ended (current) assignment. Set it to schedule a rotation that ends on a known date.
-</Tip>
-
-## How it connects
-
-- **Attendance** — the active shift sets expected check-in/out, grace, half/full-day status, and overtime.
-- **Holidays** — combined with the shift's working days to compute expected workdays.
-- **Payroll** — full/half-day hour thresholds feed pay calculations.
-
-## Tips
-
-- Create one shift per real schedule, then assign — don't duplicate shifts per person.
-- Use **Night** type for any schedule ending the next morning; cross-midnight handling is automatic.
-- Schedule rotations ahead of time with dated assignments instead of editing on the day.
+Review **My Assignments** to confirm the schedule associated with your member record. If it is wrong, ask an Admin or Manager to correct the assignment rather than changing an attendance entry manually.

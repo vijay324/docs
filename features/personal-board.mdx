@@ -1,40 +1,37 @@
 ---
-title: "Personal Board"
-description: "A focused Kanban view of only your assigned tasks across every project."
+title: "My Board"
+description: "A Project-scoped Kanban board for work assigned to you or created by you."
 ---
 
-The **Personal Board** at `/<org-slug>/board` shows only tasks assigned to you across every project and sprint you're part of. It's the page to keep open while you work.
+My Board lives at `/<org-slug>/board`. Select a Project before opening it.
 
+The board includes:
 
-## What's on the board
+- Tasks assigned to you
+- Unassigned Tasks you reported
+- Filters for today, tomorrow, the next seven days, and overdue work
+- Real-time Task updates
 
-Tasks are filtered to `assignee = you` and grouped by status:
+Drag a card to an allowed status or open it for full detail. You can also create a Task in the selected Project.
 
-```
-Todo · In Progress · Review · Testing · Done
-```
+My Board is intentionally personal even for Admins and Managers. Use the main [Tasks](/features/tasks) page with **Team** scope when you need broader visibility.
 
-Quick filters let you slice further by:
+## Use the board
 
-- **Sprint** — only show this sprint's work
-- **Priority** — focus on `Critical` and `High`
-- **Due date** — overdue, due today, due this week
-- **Project**
+<Steps>
+  <Step title="Select a Project">
+    Choose a Project from the sidebar selector or open My Board with a `project` query parameter. The board needs a single Project because its columns follow that Project's workflow.
+  </Step>
+  <Step title="Choose a time filter">
+    Use **Today**, **Tomorrow**, **Next 7 days**, or **Overdue** to narrow the personal cards by due date. Select **All** to return to the full personal set.
+  </Step>
+  <Step title="Move or open a card">
+    Drag the card to an allowed status, or open it to edit Task details. Workflow validation still applies to a drag-and-drop move.
+  </Step>
+</Steps>
 
-## Drag to move
+Cards update when other members change the underlying Task. A Task that is reassigned away from you, or an unassigned Task that you no longer report, disappears from this Board after the next refresh.
 
-Drag a card to a new column. Flotick validates the transition against your organization's workflow rules and broadcasts the change in real time. The same WIP limits and required-step rules from the regular task board apply.
-
-## Open task detail
-
-Click any card to open the full task detail dialog with tabs for Comments, Files, Worklog, History, and Links.
-
-## Log work as you go
-
-Open the task you're working on and use **Log work** to record hours and a short note. `Time spent` rolls up automatically and feeds sprint velocity and analytics.
-
-## Tips
-
-- Bookmark `/<your-org>/board` as your homepage if you live on tasks day-to-day.
-- Use the **due date** filter at the start of each day to find what genuinely matters.
-- The personal board respects all the same access rules — you'll only see tasks you can normally view.
+<Tip>
+Use My Board for execution, not reporting. It excludes most work owned by other people by design.
+</Tip>

@@ -1,102 +1,56 @@
 ---
 title: "Sprints"
-description: "Time-boxed iterations with goal, capacity, burndown, velocity, and retrospectives."
+description: "Plan time-boxed work, track scope and burndown, and carry unfinished Tasks forward."
 ---
 
-A **Sprint** is a time-boxed cycle of work inside a project, with a goal and a planned capacity in story points. Sprints follow a clear lifecycle and produce a velocity number when completed.
+A Sprint belongs to one Project. It includes a title, goal, dates, capacity, visibility, members, Tasks, comments, files, and delivery metrics.
 
+## Lifecycle
 
-## Sprint lifecycle
+`Planning → Active → Review → Completed`
 
-```
-Planning → Active → Review → Retrospective → Completed
-```
+Status changes advance one stage at a time. Planning Sprints can be edited; starting, advancing, completing, and deleting a Sprint require the appropriate delivery permissions.
 
-| Status | What it means |
-| :--- | :--- |
-| **Planning** | The sprint exists but hasn't started. You can add or remove tasks freely. |
-| **Active** | Currently running. Scope changes are tracked as `SprintScopeEvent`s for audit. |
-| **Review** | Demo and stakeholder review. |
-| **Retrospective** | Team retrospective in progress. |
-| **Completed** | Locked in. Velocity is calculated and the sprint becomes read-only. |
-
-Only **one sprint per project** can be `Active` at any time.
-
-## Create a sprint
+## Create and start a Sprint
 
 <Steps>
-  <Step title="Open Sprints">
-    From the project page or the global **Sprints** sidebar item, click **New sprint**.
+  <Step title="Create the Sprint">
+    Choose a Project, dates, goal, capacity, visibility, and members. The start date cannot be in the past, the end date must follow it, and overlapping Sprints in the same Project are rejected.
   </Step>
-
-  <Step title="Fill the form">
-    - **Title** and optional description
-    - **Sprint goal** — the headline outcome you want
-    - **Start date** and **end date**
-    - **Capacity** in story points (the team's planned commitment)
+  <Step title="Add Sprint Tasks">
+    Create Tasks in the Sprint or move eligible Project backlog Tasks into it.
   </Step>
-
-  <Step title="Add tasks">
-    Drag tasks from the project backlog into the sprint, or set the sprint on individual tasks.
+  <Step title="Start">
+    Move the Sprint from `Planning` to `Active`. Flotick begins recording scope changes and burndown data.
   </Step>
 </Steps>
 
-## Start a sprint
+## Complete a Sprint
 
-When the team is ready, click **Start sprint**. Flotick:
+Velocity is the total story points on Tasks in `Done`. When incomplete Tasks remain, choose whether to move them to another non-completed Sprint or return them to the Project backlog. Flotick records their carry-over origin.
 
-- Validates the sprint has tasks and dates
-- Confirms no other sprint in the project is active
-- Records a baseline scope snapshot
-- Switches status to `Active`
+Completed Sprints support a retrospective with what went well, what could improve, action items, and a rating. Sprint pages also expose burndown, scope changes, velocity history, comments, and member contribution data where available.
 
+## Plan the Sprint
 
-## Track progress
+Set a clear goal and capacity before moving a Sprint to `Active`. Capacity is expressed in story points and serves as the baseline for velocity and predictability. Add only work that belongs to the selected Project. Flotick rejects invalid date ranges and overlapping Sprints so the Project does not run conflicting time boxes.
 
-The sprint detail page shows:
+## Monitor delivery
 
-- **Burndown chart** — remaining story points vs the ideal line, updated daily
-- **Scope timeline** — every change recorded (tasks added, removed, story points adjusted)
-- **Task list** — grouped by status with quick filters
-- **Members** — who's actively contributing
+During an active Sprint, the detail page provides:
 
-Scope changes during an active sprint are auditable but not blocked. Use the timeline during retro to discuss what changed and why.
+- **Burndown:** completed and remaining points against the Sprint dates.
+- **Scope ledger:** additions, removals, point changes, completion, and reopening events recorded while the Sprint is active.
+- **Task list and board:** current status of Sprint work.
+- **Velocity and contribution data:** points completed and historical context where the selected view supports it.
+- **Comments and files:** a shared record for decisions, demos, and Sprint context.
 
-## Complete a sprint
+Scope changes are recorded rather than silently ignored. They are useful for understanding why delivered work differs from the original commitment.
 
-Click **Complete sprint** to:
+## Carry unfinished work
 
-- Set status to `Completed`
-- Calculate **velocity** as the sum of completed story points
-- Lock the sprint as read-only
-- Optionally move incomplete tasks to the next sprint or back to the backlog
+When completing a Sprint, review incomplete Tasks before confirming. You can send selected or all incomplete work to an eligible next Sprint, or return it to the Project backlog. Carried Tasks retain a reference to the Sprint they came from, which makes carry-over visible in later reviews.
 
-## Run a retrospective
+## Retrospectives
 
-Capture the retrospective directly inside Flotick:
-
-- **What went well**
-- **What can improve**
-- **Action items** for the next sprint
-- **Sprint rating** out of five
-
-The retrospective lives next to the sprint forever.
-
-
-## Comments and collaboration
-
-Sprints support threaded comments, just like tasks. Use them to coordinate scope decisions or share retrospective context with the team.
-
-## Velocity and forecasting
-
-After a few sprints, your average velocity is a strong planning signal:
-
-- Use it to set realistic capacity for the next sprint
-- Pair with the **AI sprint summary** template for a written recap (see [AI Summaries](/features/ai-summaries))
-- The **Sprint Commitment Coach** flags when you're committing significantly above the trend
-
-## Tips
-
-- Keep sprint length consistent (one or two weeks) for cleaner velocity comparisons.
-- Discuss every scope event in your retro — drift is a leading indicator of risk.
-- Don't restart a "completed" sprint. Create a new one if you need to extend.
+After the Sprint is completed, authorized members can create one retrospective. Capture what went well, what needs improvement, action items, and a rating. The retrospective is stored with the Sprint so the team can revisit it during later planning.

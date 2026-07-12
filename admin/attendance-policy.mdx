@@ -1,53 +1,49 @@
 ---
 title: "Attendance policy"
-description: "Configure working hours, weekend rules, late arrivals, overtime, and past-date entries."
+description: "Set organization defaults for working hours and attendance entry rules."
 ---
 
-Attendance policy lives at **Settings → Attendance** and applies to every member of your organization.
+Admins manage attendance policy from **Settings → Attendance and leave policies**.
 
+Policy controls include:
 
-## What you can configure
+- Standard workday start and end times
+- Working days and weekend behavior
+- Grace period and late-arrival threshold
+- Half-day and full-day hour thresholds
+- Overtime threshold
+- Whether members may create past-date entries
+- The maximum past-date entry window
+- Default work type and related attendance rules shown in settings
 
-| Setting | What it does |
-| :--- | :--- |
-| **Standard working hours** | The expected check-in / check-out window. Used for late-arrival flags. |
-| **Working days** | Monday through Friday by default; configurable per region. |
-| **Weekend policy** | Whether weekend check-ins are allowed and how they appear in reports. |
-| **Late-arrival window** | Threshold beyond which a check-in is flagged as late. |
-| **Overtime threshold** | Hours per day above which overtime is flagged (default 8). Drives 1.5× OT in payroll. |
-| **Allow past-date entries** | Whether members can backfill previous days, and how far back. |
-| **Past-date limit** | The number of days back a member can backfill. Beyond that, only Admins can. |
+Save applies the policy to later attendance actions. **Reset** restores Flotick's defaults.
 
-## Late arrival
+Shift assignments can provide member-specific working hours and thresholds. See [Shifts](/features/shifts).
 
-Set a window like `09:00–10:00`. Check-ins after 10:00 get the **late** flag, surfaced in the table view and the team overview.
+## Configure the policy
 
-## Overtime
+<Steps>
+  <Step title="Open policies">
+    Go to **Settings → Attendance and leave policies**, then choose attendance.
+  </Step>
+  <Step title="Set standard schedule">
+    Choose the normal start and end time, working days, weekend behavior, and default work type.
+  </Step>
+  <Step title="Set threshold behavior">
+    Configure grace, late, half-day, full-day, and overtime thresholds to match your organization rules.
+  </Step>
+  <Step title="Set correction controls">
+    Decide whether members can create past-date entries and set the permitted number of past days.
+  </Step>
+  <Step title="Save">
+    Save the policy. New attendance actions use the updated rules.
+  </Step>
+</Steps>
 
-If a check-out duration exceeds the overtime threshold, the day is flagged for OT. Flotick computes the hourly rate from the member's monthly gross and standard working days; OT contributes to payroll at 1.5×.
+## How policy and shifts interact
 
-## Weekend behavior
+The attendance policy is the organization baseline. A member's effective Shift can supply its own start, end, working-day, grace, half-day, full-day, and overtime values. Review shift assignments when one member's attendance behavior differs from the organization default.
 
-Pick:
+## Reset safely
 
-- **Block** — weekend check-ins are not allowed
-- **Allow** — recorded normally
-- **Allow but flag** — recorded with a weekend tag for reporting
-
-## Backfill rules
-
-Members may genuinely forget to check in or out. Configure how forgiving you want the system to be:
-
-- `allowPastDates` on or off
-- `pastDaysLimit` for how many days back self-backfill is allowed
-- Beyond the limit, an Admin or Manager uses the **Forgotten attendance** dialog to backfill on the member's behalf
-
-## Apply changes
-
-Policy changes apply going forward. Past records are not re-evaluated.
-
-## Tips
-
-- Be reasonable on **late arrival**. Punitive flags reduce honest data over time.
-- Use the **OT threshold** carefully. 8h is a common default but doesn't fit every team.
-- Document your policy in the team handbook in addition to setting it in Flotick — clarity reduces friction.
+Use **Reset** only when you intend to restore Flotick's default policy. Reset changes future validation and calculations; it does not erase historical attendance records or approval decisions.

@@ -1,41 +1,37 @@
 ---
-title: "Workflow policy"
-description: "Configure required transitions, WIP limits, and the story-point scale for your organization."
+title: "Workflow configuration"
+description: "Configure organization Task stages, transitions, priorities, Sprint defaults, and estimation."
 ---
 
-The **Workflow policy** controls how tasks move through statuses across every project in your organization. It's edited from **Settings → Workflow** by Admins.
+Workflow customization is available on Pro and Max. Admins manage it from **Settings → Workflow configuration**.
 
+## Configuration areas
 
-## What you can configure
+- **Statuses:** enable, label, color, and order Sprint Task stages.
+- **Transitions:** define which status moves are allowed.
+- **Priorities:** control labels, colors, and order for Task priorities.
+- **Sprint defaults:** configure organization Sprint behavior exposed by the settings form.
+- **Story points:** select the allowed estimation scale.
+- **Departments:** manage main and sub-departments.
 
-| Setting | Default | What it does |
-| :--- | :--- | :--- |
-| **Required transitions** | Through `Review` before `Done` | Force tasks to pass through specified statuses. |
-| **WIP limits** | Off by default | Cap the number of tasks in a column per assignee or globally. |
-| **Story-point scale** | 1, 2, 3, 5, 8, 13 | The values shown in the estimation picker. |
-| **Default task type** | `Task` | What new tasks default to. |
-| **Allow blocked tasks to be edited** | Yes | Whether `Blocked` is a hard or soft state. |
+The server validates workflow transitions for direct edits, bulk changes, and drag-and-drop. Individual Tasks retain their separate three-stage workflow.
 
-## Required transitions
+Use validation before saving a complex workflow. **Reset** restores the default organization configuration.
 
-By default, Flotick won't let a task jump straight from `In Progress` to `Done` — it must pass through `Review`. Tighten or relax this per status. Required transitions are validated server-side, so they apply equally to drag-drop and to API actions.
+<Warning>
+Removing or renaming a displayed option does not erase historical Task data. Review existing Tasks before changing a workflow used by active Sprints.
+</Warning>
 
-## WIP limits
+## Configure statuses and transitions
 
-A WIP limit caps how many tasks can sit in a column at once. For example, set `In Progress: 3` to encourage finishing before starting new work.
+Statuses control the columns and state choices available to Sprint Tasks. Give each status a clear label and color, then place it in the intended order. Transitions define which moves are valid—for example, a team can require work to pass through review before it reaches done.
 
-When a column hits its limit, drops into that column are rejected with a clear toast. You can lift WIP limits temporarily for sprints with unusual scope.
+Before saving, use the configuration's validation control. A workflow with no valid path for an active Task will block normal delivery, so test the key paths your team uses: start work, request review, test, block, reopen, and complete.
 
-## Story-point scale
+## Configure priority and estimation
 
-The scale shown in the estimation picker. Most teams stick to a Fibonacci-like scale (1, 2, 3, 5, 8, 13). Avoid arbitrary continuous values — they hurt comparability.
+Priority configuration controls the labels and visual order used when teams triage work. Story-point configuration controls the estimate values users can choose. Keep the scale short and familiar so capacity and velocity remain comparable across Sprints.
 
-## Apply changes
+## Apply changes to active work
 
-Workflow changes take effect on the **next** transition. Existing tasks aren't re-validated retroactively, so changing the rules is safe to do mid-sprint, but new transitions follow the new rules.
-
-## Tips
-
-- Start strict on **required transitions** (so quality steps don't get skipped) and loose on **WIP limits**, then tune based on real bottlenecks.
-- Discuss policy changes with the team — workflow is a team contract.
-- Use **AI Insights** to find the right WIP limit. If `Review` keeps clogging, that's the column that benefits most.
+Workflow changes take effect for new interactions after saving. Existing Tasks retain their stored status and priority values. Plan a migration for active Sprints before removing a stage or option that they use, and communicate the new meaning to the team before the next planning session.

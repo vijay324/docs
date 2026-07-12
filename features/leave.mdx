@@ -1,98 +1,51 @@
 ---
 title: "Leave"
-description: "Request, track, and approve leave with balances, approval workflow, and attendance integration."
+description: "Request time off, track balances, and manage team approvals."
 ---
-
-Flotick's leave module handles the full lifecycle: request, approval, balance tracking, and integration with attendance.
-
-
-## Leave types
-
-Flotick supports the leave types organizations typically need. Your Admin enables and tunes the ones you use.
-
-| Code | Name | Typical use |
-| :--- | :--- | :--- |
-| **PL** | Privilege Leave | Earned, planned vacation. |
-| **SL** | Sick Leave | Health-related absence. |
-| **CL** | Casual Leave | Short personal leave. |
-| **EL** | Earned Leave | Accrued time off. |
-| **ML** | Maternity Leave | Childbirth and recovery. |
-| **PTL** | Paternity Leave | New-parent leave. |
-| **CO** | Comp-off | Compensatory off for extra hours. |
-| **LOP** | Loss of Pay | Unpaid leave. |
 
 ## Request leave
 
 <Steps>
   <Step title="Open Leave">
-    From the sidebar, click **Leave** then **Request leave**.
+    Click **New request**.
   </Step>
-
-  <Step title="Pick a type and dates">
-    - Choose a **leave type**
-    - Select start and end dates (multi-day allowed)
-    - Tick **Half day** if applicable, then choose first half or second half
+  <Step title="Enter the request">
+    Choose a leave type, start and end dates, optional half-day period, and reason.
   </Step>
-
-  <Step title="Add a reason">
-    Brief context helps your approver decide quickly.
-  </Step>
-
   <Step title="Submit">
-    Your request is created in `Pending`. Your Admin or Manager sees it immediately and is notified by email and (if configured) Telegram.
-
+    The request starts as `Pending`. You can cancel it while policy and status allow.
   </Step>
 </Steps>
 
-## Track your balance
+Supported leave codes are `PL`, `SL`, `CL`, `EL`, `ML`, `PTL`, `CO`, and `LOP`. Your organization controls which are enabled and how each name is presented.
 
-The **Balance** tab shows per-type totals for the financial year:
+## Review leave
 
-- **Opening** — balance carried in
-- **Accrued** — earned during the period
-- **Used** — already taken
-- **Available** — what you can still take
-- **Encashed** — converted to cash (where enabled)
-- **Lapsed** — expired
+Admins and Managers with leave-edit access can open pending or team requests, then approve or reject with an optional review comment. Approved leave updates balances and links applicable attendance dates.
 
+## Balances and advanced workflows
 
-## Approval workflow (Manager / Admin)
+The page shows available balance and request history. Paid-plan leave management can also include:
 
-In the **Team requests** tab, approvers see all pending requests. Each row shows:
+- Comp-off requests and decisions
+- Balance accrual and carry-forward runs
+- Balance adjustments and transaction history
+- Leave encashment settings
 
-- Member, leave type, dates, half-day flag
-- Days requested
-- Available balance for the type
-- Reason
+Holidays, weekends, overlap rules, notice periods, and half-day behavior follow the organization's [leave policy](/admin/leave-policy).
 
-Click **Approve** or **Reject** with an optional review comment. Approval:
+## Review your request history
 
-- Updates `LeaveRequest.status` to `Approved`
-- Creates or updates **Attendance** rows for each day with status `Leave`
-- Decrements the member's balance and writes an audit transaction
-- Sends a notification to the requester
+The **My requests** tab separates pending, approved, rejected, and cancelled leave. Open a request to review its dates, day count, type, reason, reviewer, and any review comment. Cancel a pending request when the action is available; approved leave may require an Admin or Manager to resolve it according to organization policy.
 
-Rejection releases the balance and records a `LeaveTransaction`.
+## Approve or reject requests
 
-## Cancel a pending request
+Authorized reviewers use the **Pending** or **Team** tabs. Review the member, leave type, dates, requested day count, available balance, and overlap information before making a decision. Add a short comment so the decision is clear to the member. Approval updates the request state and applicable balance; rejection leaves the request recorded with the decision.
 
-You can cancel your own requests while they are still `Pending`. Once approved, cancellation depends on org policy.
+## Comp-off and accrual
 
-## Half days, weekends, and balance checks
+On eligible plans, members can request compensatory time off for approved work on a holiday or weekend. Authorized reviewers can approve, reject, expire, or mark comp-off as used. Admins can run configured leave accrual and year-end carry-forward workflows; use these controls only after reviewing policy settings and the intended financial period.
 
-The behavior of these is set by your Admin in the [leave policy](/admin/leave-policy):
+## Leave types and balances
 
-- **Half-day** counts as 0.5 days against your balance
-- **Weekends** can be excluded from leave day counts
-- **Balance check** can be required (or warning-only) before submission
-- **Overlapping** requests can be allowed or blocked
-
-## Audit trail
-
-Every balance change is logged in `LeaveTransaction` rows visible to Admins. This includes approvals, rejections, manual adjustments, and encashment.
-
-## Tips
-
-- Plan PL early — most policies don't refund a lapsed leave.
-- Use comp-off (`CO`) and not LOP when you've banked extra hours, so your balance reflects reality.
-- If you need to reschedule approved leave, reject the old request and submit a new one.
+Leave codes are organization-configurable. A member's balance tracks opening amount, accrued, used, adjustments, carried forward, encashed, and lapsed days. The balance is a record of approved transactions, not a simple editable total—use the appropriate administrative adjustment flow when a correction is needed.

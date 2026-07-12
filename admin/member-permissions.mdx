@@ -1,59 +1,46 @@
 ---
 title: "Member permissions"
-description: "Fine-tune what individual members can do — on top of their role — without changing roles."
+description: "Adjust a member's module operations without changing their role."
 ---
 
-<Info>Available on **Pro** and **Max**. On Free, members get standard role permissions only.</Info>
+Per-member overrides are available on Pro and Max. On Free, each role uses its default permissions.
 
-Roles (`Admin > Manager > Member`) set the baseline. **Member permissions** let you grant or restrict specific capabilities for one person — for example, give a Member read access to Analytics, or stop a Manager from deleting tasks — without promoting or demoting them.
+Open a member and choose **Permissions**. Each supported module exposes one or more operations: `View`, `Create`, `Edit`, and `Delete`.
 
-**Where to find it:** **Members → open a member → Permissions tab** (`/<org-slug>/members/<username>`).
+Modules include Inbox, Tasks, Sprints, Projects, My Board, Attendance, Leave, Analytics, Files, Env Storage, Team Members, Holidays, and Shifts. Temporarily unavailable modules are hidden.
 
-## How it works
+## Resolution rules
 
-- A permission is a **module + operation** pair, e.g. `analytics.view`, `tasks.delete`.
-- Operations are `view`, `create`, `edit`, `delete`.
-- Overrides only move within the **role ceiling** — you can never grant a capability the role isn't allowed to have.
-- Roles never change; overrides simply fine-tune within them.
+1. Admins retain full organization access.
+2. A role defines the maximum operations the member can receive.
+3. An override can enable or disable an operation within that ceiling.
+4. An unset operation inherits the role default.
 
-## Modules you can tune
+Managers can edit permissions for Members, but cannot grant an operation their target role is not allowed to hold. The server enforces the same result as the interface.
 
-`inbox`, `tasks`, `sprints`, `projects`, `board`, `attendance`, `leave`, `analytics`, `files`, `env storage`, `members`, `holidays`, `shifts`, `payroll`.
+Use **Reset to role defaults** to remove all custom choices for a member.
 
-Organization settings stay role-only (Admin) and aren't override targets.
-
-## Set an override
+## Change an override
 
 <Steps>
   <Step title="Open the member">
-    Go to **Members**, open the person, and select the **Permissions** tab.
+    Go to **Team Members**, select the person, then open the permission panel.
   </Step>
-  <Step title="Toggle capabilities">
-    Flip individual `view / create / edit / delete` toggles per module. Greyed toggles are above the role ceiling and can't be enabled.
+  <Step title="Review the role baseline">
+    The panel shows which operations are inherited from the role and which are available within its ceiling.
   </Step>
-  <Step title="Save">
-    Changes apply almost immediately — the member doesn't need to sign out. Per-module **Reset** returns them to role defaults.
+  <Step title="Set only the exception">
+    Enable or disable the necessary operation. Leave unrelated operations inherited so later role changes remain understandable.
+  </Step>
+  <Step title="Save and verify">
+    The change applies to navigation and server-side authorization. Ask the member to refresh if they already have the app open.
   </Step>
 </Steps>
 
-## Who can edit whom
+## Recommended use
 
-| Editor | Can edit |
-| :--- | :--- |
-| **Admin** | Any member (not themselves or other Admins). |
-| **Manager** | Member-role people only, and can't grant a capability they lack. |
-| **Member** | No access. |
+Use overrides to give a specific Member view-only access to a module, permit an eligible person to create a particular kind of work, or remove an operation from a Manager who should not perform it. Do not use overrides to model a department hierarchy or Project membership—those are separate controls.
 
-Admins always have full access and can't be restricted.
-
-## Effects
-
-- The member's **sidebar** hides modules they can't view.
-- Restricted actions are hidden or blocked in the UI and rejected by the API.
-- Overrides are preserved if you downgrade to Free (ignored while on Free), and re-activate on upgrade.
-
-## Tips
-
-- Start from the role and grant the *minimum* extra each person genuinely needs.
-- Use a Member + `analytics.view` override instead of promoting someone to Manager just for dashboards.
-- Reset to role defaults whenever an override stops being necessary — it keeps access easy to reason about.
+<Warning>
+Overrides do not bypass plan limits, organization membership, Project visibility, or a role ceiling. A saved-looking client change cannot grant access the server will reject.
+</Warning>

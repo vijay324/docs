@@ -1,41 +1,31 @@
 ---
 title: "Glossary"
-description: "Terms used across Flotick — short definitions you can scan."
+description: "The terms used across Flotick."
 ---
 
-| Term | Definition |
-| :--- | :--- |
-| **Organization** | The top-level tenant. Owns members, projects, attendance, leave, payroll, and billing. |
-| **Slug** | The URL-safe identifier of an organization (e.g., `acme-co`). Forms the dashboard URL. |
-| **Member** | A user inside an organization, with a role of Admin, Manager, or Member. |
-| **Admin** | The single highest-privilege role per organization. Manages billing and policies. |
-| **Manager** | A role that can manage projects, sprints, and tasks, and approve leave. |
-| **Project** | A container for sprints, tasks, files, and environments. |
-| **Sprint** | A time-boxed iteration in a project, with a goal and capacity. |
-| **Task** | The atomic work unit. Has type, status, priority, assignees, and history. |
-| **Personal Board** | A Kanban view of just your assigned tasks. |
-| **Backlog** | Tasks that haven't been pulled into a sprint yet. |
-| **WIP limit** | Cap on the number of tasks in a workflow column. |
-| **Burndown** | Chart of remaining points across a sprint vs the ideal line. |
-| **Velocity** | Story points completed per sprint. Calculated automatically on completion. |
-| **Retrospective** | Post-sprint reflection captured directly on the sprint. |
-| **Story points** | An estimation unit of relative complexity, not hours. |
-| **Attendance** | A daily record per member with check-in / check-out and work type. |
-| **Work type** | Where the member worked that day: Office, Remote, Hybrid. |
-| **Leave** | A typed, dated absence request (PL, SL, CL, EL, ML, PTL, CO, LOP). |
-| **Leave balance** | Per-type counts of accrued, used, and remaining leave for the financial year. |
-| **Payroll run** | A monthly batch that calculates pay for every active member. |
-| **Payslip** | A finalized monthly pay breakdown for an individual member. |
-| **Compensation** | A member's salary structure, monthly gross, basic, and bank details. |
-| **Salary structure** | A reusable template of earnings and deductions. |
-| **Notification** | An event of interest to a member, delivered in-app, by email, or via Telegram. |
-| **Inbox** | Centralized list of notifications and AI insights. |
-| **Real-time** | Live updates pushed via WebSocket; no refresh needed. |
-| **AI Summary** | An on-demand AI-generated recap based on a chosen template and scope. |
-| **AI Insight** | A proactive AI alert about a notable condition (e.g., sprint risk). |
-| **Trash** | Soft-delete recovery surface; items recoverable for 30 days. |
-| **Plan** | Free, Pro, or Max subscription tier. |
-| **Seat** | A slot for a member. Active members and pending invites consume seats. |
-| **TOTP** | Time-based one-time password, used for two-factor authentication. |
-| **Trusted device** | A device you've allowed to skip new-device email verification. |
-| **Department** | A group of members. Sub-departments add a second level. |
+| Term | Meaning |
+| --- | --- |
+| Organization | The top-level workspace for members, work, policies, and billing. |
+| Member | A person with access to an organization. |
+| Project | A container for delivery work, team, files, environments, and reporting. |
+| Sprint | A time-boxed delivery cycle inside one Project. |
+| Task | A unit of work with ownership, status, priority, and detail. |
+| Individual Task | A Task outside a Sprint, using the three-stage personal workflow. |
+| Sprint Task | A Task assigned to a Sprint and the organization Sprint workflow. |
+| Story point | A relative estimate used for capacity and velocity. |
+| Velocity | Story points completed in a Sprint. |
+| Scope event | A recorded change to an active Sprint's Tasks or points. |
+| Regularization | A request to correct an attendance record. |
+| Comp-off | Leave earned for approved work on a holiday or non-working day. |
+| Orbit Chat | Read-only AI questions and reports grounded in organization data. |
+| Orbit Agent | Approved AI execution of supported workspace changes. |
+| Plan lock | Non-destructive restricted access applied when usage exceeds a lower plan. |
+| Trash | The 30-day recovery area for supported deleted items. |
+
+## Status language
+
+Task and Project states are not interchangeable. A Task status describes the delivery stage of a single unit of work. A Project status describes the overall container. A Sprint status describes the lifecycle of a time-boxed iteration. Use the entity-specific status when communicating with the team so a Task marked `Done` is not mistaken for a completed Project or Sprint.
+
+## Access language
+
+**Role** is the member's broad organization responsibility. **Permission** is a module operation such as view, create, edit, or delete. **Project membership** controls intended access to a Project. **Plan** is the organization's product entitlement. These controls work together.

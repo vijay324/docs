@@ -1,39 +1,54 @@
 ---
 title: "Profile"
-description: "Update your personal info, photo, and links."
+description: "Manage your identity, work details, password, and connected Google account."
 ---
 
-Your profile lives at `/<org-slug>/profile`. It's the page to keep current — every interaction with teammates flows through it.
+Open `/<org-slug>/profile`. The page is divided into **Personal**, **Security**, and **Connections**.
 
+## Personal details
 
-## What you can edit
+You can update:
 
-| Field | Notes |
-| :--- | :--- |
-| First name and last name | Shown on every card and in mentions. |
-| Job title | Shown in member directory and on assignments. |
-| Mobile number | For HR and emergency contact (visibility configurable). |
-| Profile picture | Up to 5 MB; JPG, PNG, or WebP. |
-| Bio | A short introduction shown in member detail. |
-| LinkedIn and GitHub URLs | Optional links displayed in member detail. |
+- Username
+- First and last name
+- Member code
+- Job title and job type
+- Main and sub-department
+- Mobile number
+- Work type: `Office`, `Remote`, or `Hybrid`
 
-## Profile picture
+Your email and role are displayed with the account. Some organization-managed fields can be constrained by your role or department configuration.
 
-Click the avatar to upload a new image. The image is uploaded directly to secure storage; existing avatars are replaced. Maximum 5 MB.
+## Security
 
-## Job and department
+Email accounts can change their password. Admins and Managers can also manage two-factor authentication from this tab.
 
-Job title is free text. **Department** and **Sub-department** are managed by Admins from the Members page or settings.
+## Connections
 
-## Tour again
+Connect Google to add Google sign-in to an existing account. You can unlink Google only when another working sign-in method remains, preventing accidental account lockout.
 
-Click **Tour again** to re-run the onboarding wizard if you want a refresher on the dashboard.
+Incomplete required fields contribute to your profile-completion status and may trigger a reminder.
 
-## Privacy
+## Update your profile
 
-Your profile is visible to other members of your organization. Job title, name, and avatar appear on every comment, task, and member view. If you need a field hidden, contact your Admin or [support](/resources/support).
+<Steps>
+  <Step title="Open Profile">
+    Select your profile from the organization navigation, then open the **Personal** tab.
+  </Step>
+  <Step title="Edit the required work details">
+    Update your name, username, member code, title, department, job type, mobile number, and work type as permitted.
+  </Step>
+  <Step title="Save changes">
+    Review the validation messages and save. Flotick refreshes your active profile after a successful update.
+  </Step>
+</Steps>
 
-## Tips
+Your username is used in member URLs and your name is shown on work, comments, and member views. Use a recognizable, professional identity so teammates can correctly assign and mention you.
 
-- Keep your name and photo current — they make mentions and reviews far easier to navigate.
-- A short, useful bio (one or two lines) helps new teammates know what you do.
+## Department and work type
+
+Department and sub-department choices come from the organization configuration. If the correct option is missing, ask an Admin to update [Departments](/admin/departments). Work type records whether your normal arrangement is office, remote, or hybrid; it can be used by attendance and reporting surfaces.
+
+## Keep your profile complete
+
+Flotick calculates a profile-completion percentage from required information. If a reminder appears, you can complete the fields immediately, defer it, or dismiss it for the day. A completed profile makes member assignment and people operations more reliable.

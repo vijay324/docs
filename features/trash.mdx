@@ -1,55 +1,42 @@
 ---
 title: "Trash"
-description: "30-day soft-delete recovery for tasks, sprints, projects, and members."
+description: "Restore or permanently remove deleted Tasks, Sprints, Projects, members, and files."
 ---
 
-Flotick uses **soft delete** for major entities. Deleted items move to **Trash** at `/<org-slug>/trash` and stay recoverable for **30 days**. After that, they're permanently removed by an automated background job.
+Flotick keeps supported deleted items recoverable for 30 days. Trash is organized into tabs for Tasks, Sprints, Projects, members, and files.
 
+Each row shows who deleted the item, when it was deleted, and how many days remain. Authorized members can:
 
-## What can be deleted (and recovered)
+- Restore one item to its original location
+- Select and restore multiple items
+- Permanently delete one or more items
 
-- **Tasks** — including comments, work logs, history, and links
-- **Sprints** — including their task associations
-- **Projects** — including child sprints and tasks
-- **Members** — soft-deleted accounts
+<Warning>
+Permanent deletion cannot be undone. Items also become unavailable after their recovery window expires.
+</Warning>
 
-Each row in Trash shows the original item, who deleted it, and how many days remain before permanent deletion.
+Restoring a member uses a plan seat. Restoring a Project can be blocked by plan limits or by a missing parent relationship. Restore parent items before their children when necessary.
 
 ## Restore an item
 
 <Steps>
-  <Step title="Open Trash">
-    From the sidebar, click **Trash**. Use the entity tabs to switch between Tasks, Sprints, Projects, and Members.
+  <Step title="Open the correct tab">
+    Choose Tasks, Sprints, Projects, Members, or Files.
   </Step>
-
-  <Step title="Find the item">
-    Search by name or filter by deletion date.
+  <Step title="Review expiry and context">
+    Check the deletion date, remaining days, associated Project, and who deleted the item.
   </Step>
-
   <Step title="Restore">
-    Click **Restore**. The item flips back to active state and reappears in normal lists.
+    Click **Restore** for one item, or select multiple rows and use the bulk restore action. Confirm when prompted.
   </Step>
 </Steps>
 
-## Cascade behavior
+Restoration returns the record and its retained related data to normal access where the original parent and permission conditions still exist. For example, restoring a Task also restores its standard Task context; restoring a file returns it to its supported association.
 
-When you delete a parent (e.g., a project), Flotick cascades the soft delete to all children using the same expiry timestamp. Restoring the parent **does not** automatically restore children deleted before the parent — only those deleted as part of the cascade.
+## Permanently delete
 
-This is intentional: you don't want to revive earlier independent deletions when you restore a project.
+Use permanent deletion only when the record is no longer needed and recovery should be impossible. The confirmation is deliberate because this action cannot be reversed. Items that are not permanently deleted remain eligible for automated cleanup after their 30-day recovery period.
 
-## Permanent delete (Admin)
+## Access notes
 
-Admins can permanently delete an item before the 30-day window with the **Delete permanently** action. Use this for sensitive data you want gone immediately.
-
-<Warning>
-Permanent deletion is irreversible. The item, its history, and its children cannot be restored.
-</Warning>
-
-## Auto-cleanup
-
-A daily background job runs around 02:00 UTC and hard-deletes items whose 30-day window has expired. You don't need to manage retention manually.
-
-## Tips
-
-- Use **Trash** as a safety net, not as a workflow. If you regularly use deletes-then-restores, consider archiving or moving to a different status instead.
-- Members in Trash retain their email — it's only freed up after permanent deletion. If you need to re-invite someone, restore first.
+Your role determines which Trash tabs and actions you see. Admins have the broadest recovery controls, particularly for members. If an expected item is not visible, confirm you are in the right organization and ask an Admin to check whether it was already permanently deleted or has expired.

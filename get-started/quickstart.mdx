@@ -1,99 +1,43 @@
 ---
 title: "Quickstart"
-description: "Go from sign-up to your first delivered task in under 10 minutes."
+description: "Create an organization, invite your team, and deliver the first Task."
 ---
 
-This guide walks a brand-new user through creating an organization, inviting their team, and shipping their first task.
-
 <Steps>
-  <Step title="Create your organization">
-    Visit [app.flotick.com/auth/signup](https://app.flotick.com/auth/signup) and sign up with email or Google.
-
-    Pick an organization name. Flotick generates a URL-safe slug like `acme-co` that becomes your workspace URL: `app.flotick.com/acme-co/...`. You become the **Admin** of the new organization automatically.
-
+  <Step title="Create or join an organization">
+    [Sign up](/get-started/sign-up), or open the invitation link sent by an Admin or Manager.
   </Step>
-
-  <Step title="Complete the onboarding wizard">
-    After sign-up you land on the onboarding wizard. Complete:
-
-    - **Profile** — first name, last name, job title, profile photo
-    - **Organization details** — work mode (Office, Remote, Hybrid) and standard work hours
-    - **Invite teammates** (optional) — kick off your team's onboarding now or later
-
-    You can skip optional steps and return to them through your profile.
-
+  <Step title="Complete your profile">
+    Add your name, role details, department, work type, and mobile number during [onboarding](/get-started/onboarding).
   </Step>
-
-  <Step title="Invite your team">
-    From the sidebar, open **Members** and click **Invite member**.
-
-    Enter their email and pick a role:
-
-    - **Admin** — one per organization, full access
-    - **Manager** — manage projects, sprints, and tasks; approve leave
-    - **Member** — work on their own tasks, request leave, log work
-
-    Invitees receive a tokenized email link valid for 7 days.
+  <Step title="Create a Project">
+    Open **Projects**, click **New project**, then set its name, dates, visibility, lead, and members.
   </Step>
-
-  <Step title="Create your first project">
-    Open **Projects** and click **New project**.
-
-    Fill in:
-
-    - **Name** and short description
-    - **Visibility** — Public (every member can see it) or Private (only assigned project members)
-    - **Project lead** — owner accountable for delivery
-    - **Target date** (optional) — drives the project health calculation
-
-    Once created, the project shows up in the list with a `Health` indicator that updates as work progresses.
-
+  <Step title="Create work">
+    Open **Tasks** and click **Create task**. Choose whether it is an individual Task or part of a Sprint workflow.
   </Step>
-
-  <Step title="Plan your first sprint">
-    Inside the project, open the **Sprints** tab and create a new sprint.
-
-    Provide a goal, start and end dates, and a planned capacity in story points. The sprint starts in the `Planning` state. Drag tasks from the backlog into the sprint, then click **Start sprint** when you're ready.
-
-    Only one sprint per project can be active at a time.
+  <Step title="Plan a Sprint">
+    Create a Sprint inside the Project, set its dates and capacity, then assign Sprint Tasks.
   </Step>
-
-  <Step title="Create and assign a task">
-    Open the **Tasks** page or the project board, then click **New task**.
-
-    Enter a title, pick a type (`Story`, `Bug`, `Task`, `Epic`, or `Spike`), priority, story points, and assignee. Optional fields include reviewer, tester, labels, and due date.
-
-    The task appears in the assignee's **Personal Board** instantly via real-time updates.
-
-  </Step>
-
-  <Step title="Move work across the board">
-    Drag the task across columns: `Backlog → Todo → In Progress → Review → Testing → Done`. Each transition is validated against your organization's workflow rules.
-
-    Reaching `Done` marks the task complete and contributes to sprint velocity.
-
-  </Step>
-
-  <Step title="Check in for the day">
-    Open the **Attendance** dialog from the sidebar or top bar to check in. Pick your work type — Office, Remote, or Hybrid — and start the live work timer.
-
-    At the end of the day, check out and add a brief work description. Use **Enhance with AI** to polish the prose if you like.
+  <Step title="Start the day">
+    Open **Inbox** for your relevant Tasks. Use **Attendance** to check in and check out.
   </Step>
 </Steps>
 
-## What's next
+<Tip>
+Press <kbd>Ctrl</kbd> + <kbd>K</kbd> or <kbd>⌘</kbd> + <kbd>K</kbd> at any time to find a page or action.
+</Tip>
 
-<CardGroup cols={2}>
-  <Card title="Core concepts" icon="book-open" href="/get-started/core-concepts">
-    Understand the building blocks: organizations, members, projects, sprints, and roles.
-  </Card>
-  <Card title="Daily routine" icon="calendar-days" href="/guides/daily-routine">
-    A 5-minute checklist to start every workday in Flotick.
-  </Card>
-  <Card title="Sprint planning" icon="bullseye" href="/guides/sprint-planning">
-    Run a sharp sprint planning session that ends with a committed sprint.
-  </Card>
-  <Card title="Settings and policies" icon="sliders" href="/admin/organization-settings">
-    Configure workflow, attendance, and leave to fit your team.
-  </Card>
-</CardGroup>
+## A practical first-day checklist
+
+After the first setup, make sure the organization can actually use the workspace:
+
+1. Invite at least one teammate and confirm they can accept the invitation.
+2. Add that member to the first Project.
+3. Create a Task with an assignee, priority, and due date.
+4. Add a comment and attachment so the team sees the collaborative workflow.
+5. Create a short Sprint when the Project will run in iterations.
+6. Ask every member to check their Inbox and complete their Profile.
+7. If your team uses time operations, configure attendance and leave policy before the first requests arrive.
+
+The initial configuration does not need to be perfect. Begin with the default workflow, then customize it after the team has real work to evaluate.

@@ -2,7 +2,7 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "Flotick Docs",
-  "description": "Flotick is the organization-first work operating system for delivery, workforce operations, and team collaboration.",
+  "description": "Guides for planning work, running team operations, and using Orbit in Flotick.",
   "colors": {
     "primary": "#16A34A",
     "light": "#22C55E",
@@ -15,96 +15,109 @@
   },
   "navbar": {
     "links": [
-      {
-        "label": "Support",
-        "href": "mailto:support@flotick.com"
-      },
-      {
-        "label": "Pricing",
-        "href": "https://flotick.com/pricing"
-      }
+      { "label": "Support", "href": "mailto:support@flotick.com" },
+      { "label": "Pricing", "href": "https://flotick.com/pricing" }
     ],
     "primary": {
       "type": "button",
-      "label": "Open App",
+      "label": "Open Flotick",
       "href": "https://app.flotick.com"
     }
   },
   "navigation": {
     "tabs": [
       {
-        "tab": "Get Started",
+        "tab": "Get started",
         "groups": [
           {
-            "group": "Welcome",
+            "group": "Start here",
             "pages": [
               "index",
               "get-started/quickstart",
-              "get-started/core-concepts"
+              "get-started/core-concepts",
+              "get-started/navigation"
             ]
           },
           {
-            "group": "Set up your account",
+            "group": "Access your organization",
             "pages": [
               "get-started/sign-up",
               "get-started/accept-invitation",
-              "get-started/onboarding",
-              "get-started/dashboard-tour"
-            ]
-          },
-          {
-            "group": "Use cases",
-            "pages": [
-              "use-cases/engineering-teams",
-              "use-cases/operations-hr-teams",
-              "use-cases/remote-hybrid-teams",
-              "use-cases/growing-organizations"
+              "get-started/onboarding"
             ]
           }
         ]
       },
       {
-        "tab": "Features",
+        "tab": "Work management",
         "groups": [
           {
-            "group": "Plan and deliver work",
+            "group": "Your work",
             "pages": [
-              "features/projects",
-              "features/sprints",
+              "features/inbox",
               "features/tasks",
-              "features/personal-board",
-              "features/task-dependencies",
-              "features/comments",
-              "features/files",
-              "features/env-storage",
-              "features/trash"
+              "features/personal-board"
             ]
           },
           {
-            "group": "Workforce operations",
+            "group": "Plan and deliver",
+            "pages": [
+              "features/projects",
+              "features/sprints",
+              "features/recurring-tasks",
+              "features/task-dependencies"
+            ]
+          },
+          {
+            "group": "Collaborate",
+            "pages": [
+              "features/comments",
+              "features/files",
+              "features/notifications",
+              "features/realtime"
+            ]
+          },
+          {
+            "group": "Developer workflows",
+            "pages": [
+              "features/env-storage",
+              "features/trash"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Team operations",
+        "groups": [
+          {
+            "group": "Time and time off",
             "pages": [
               "features/attendance",
               "features/leave",
-              "features/payroll",
               "features/holidays",
               "features/shifts"
             ]
           },
           {
-            "group": "Collaboration",
+            "group": "Administration",
             "pages": [
-              "features/notifications",
-              "features/inbox",
-              "features/realtime",
-              "features/telegram"
+              "admin/members-and-roles",
+              "admin/member-permissions",
+              "admin/departments",
+              "admin/attendance-policy",
+              "admin/leave-policy"
             ]
-          },
+          }
+        ]
+      },
+      {
+        "tab": "Orbit and analytics",
+        "groups": [
           {
-            "group": "Orbit AI",
+            "group": "Orbit",
             "pages": [
               "features/orbit",
               "features/ai-agent",
-              "features/ai-insights",
               "features/ai-summaries",
               "features/ai-enhance"
             ]
@@ -112,51 +125,25 @@
           {
             "group": "Analytics",
             "pages": [
-              "features/personal-dashboard",
-              "features/team-analytics"
+              "features/analytics",
+              "features/scheduled-reports"
             ]
           }
         ]
       },
       {
-        "tab": "Guides",
+        "tab": "Admin and account",
         "groups": [
           {
-            "group": "Daily execution",
-            "pages": [
-              "guides/daily-routine",
-              "guides/sprint-planning",
-              "guides/team-lead-rhythm"
-            ]
-          },
-          {
-            "group": "People operations",
-            "pages": [
-              "guides/onboarding-new-members",
-              "guides/approving-leave",
-              "guides/running-payroll"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Admin",
-        "groups": [
-          {
-            "group": "Organization",
+            "group": "Organization settings",
             "pages": [
               "admin/organization-settings",
-              "admin/members-and-roles",
-              "admin/departments",
-              "admin/member-permissions",
               "admin/workflow-policy",
-              "admin/attendance-policy",
-              "admin/leave-policy",
-              "admin/integrations"
+              "admin/labels"
             ]
           },
           {
-            "group": "Billing and plans",
+            "group": "Plans and billing",
             "pages": [
               "admin/billing/plans",
               "admin/billing/upgrade-or-cancel",
@@ -165,48 +152,26 @@
             ]
           },
           {
-            "group": "Account",
+            "group": "Your account",
             "pages": [
               "account/profile",
-              "account/security-and-2fa",
-              "account/notification-preferences",
-              "account/trusted-devices"
+              "account/security-and-2fa"
             ]
           }
         ]
       },
       {
-        "tab": "Platform",
+        "tab": "Help",
         "groups": [
           {
-            "group": "Architecture and access",
+            "group": "Product help",
             "pages": [
-              "platform/architecture",
-              "platform/multi-tenant-routing",
-              "platform/roles-and-access"
-            ]
-          },
-          {
-            "group": "Developers",
-            "pages": [
-              "api/introduction",
-              "api/authentication",
-              "api/error-model",
-              "api/webhooks-and-realtime"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Resources",
-        "groups": [
-          {
-            "group": "Help",
-            "pages": [
-              "resources/faq",
-              "resources/glossary",
+              "resources/feature-requests",
+              "resources/feedback",
               "resources/feature-matrix",
               "resources/security",
+              "resources/faq",
+              "resources/glossary",
               "resources/support"
             ]
           }
@@ -215,13 +180,7 @@
     ]
   },
   "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity"
-    ]
+    "options": ["copy", "view", "chatgpt", "claude", "perplexity"]
   },
   "footer": {
     "socials": {

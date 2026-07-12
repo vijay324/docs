@@ -1,0 +1,38 @@
+---
+title: "Recurring Tasks"
+description: "Generate individual Tasks automatically on a daily, weekly, or monthly schedule."
+---
+
+Recurring Tasks live in a Project's **Recurring Tasks** tab. Each schedule creates a new individual Task with `To Do` status, no due date, and the selected assignee.
+
+<Steps>
+  <Step title="Open a Project">
+    Select **Recurring Tasks**, then click **New Recurring Task**.
+  </Step>
+  <Step title="Define the schedule">
+    Enter a title, optional description, cadence, and Project member to assign.
+  </Step>
+  <Step title="Save">
+    Flotick shows the next run date and begins generating occurrences.
+  </Step>
+</Steps>
+
+Authorized Project managers can edit the title, description, or assignee; pause and resume a schedule; or delete it. The cadence cannot be changed after creation.
+
+Deleting a schedule stops future occurrences. Tasks already generated remain unchanged and display a recurring badge.
+
+## When to use recurring Tasks
+
+Use a recurring schedule for repeatable Project work such as weekly status updates, monthly reviews, routine QA, or recurring client handoffs. It is not a substitute for a Sprint: each occurrence is an individual Task and is not automatically added to a Sprint.
+
+## Schedule behavior
+
+The server calculates the next run for each active schedule. At the scheduled time it creates a new Task in the configured Project, assigns the selected member, marks the Task as recurring, and starts it in `To Do`. The generated Task is independent: updating or completing it does not edit the schedule or prior occurrences.
+
+## Edit, pause, or remove
+
+Open the Project's **Recurring Tasks** tab to see next run date, cadence, assignee, and active state. You can update the title, description, and assignee; pause a schedule without deleting it; or resume it later. The cadence is fixed after creation to keep the schedule history predictable.
+
+<Tip>
+Give recurring Tasks a clear, action-oriented title. Add the reporting period in the description when it changes between occurrences.
+</Tip>

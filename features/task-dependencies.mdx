@@ -1,58 +1,39 @@
 ---
-title: "Task dependencies"
-description: "Express how tasks relate: blocks, relates to, duplicates, parent of, clones, implements."
+title: "Task links"
+description: "Connect related Tasks and express blocking or duplicate relationships."
 ---
 
-Task dependencies (also called **task links**) make relationships between tasks explicit so the team can see what's blocking what.
+Open a Task and use **Dependencies** to link another active Task in the same organization.
 
-## Supported link types
+| Link | Meaning |
+| --- | --- |
+| `Blocks` | This Task blocks the linked Task. |
+| `Blocked by` | This Task is blocked by the linked Task. |
+| `Relates to` | The Tasks are associated without a blocking relationship. |
+| `Duplicates` | The Tasks represent duplicate work. |
 
-| Link type | Inverse | Meaning |
-| :--- | :--- | :--- |
-| **blocks** | blocked_by | Task A must finish before Task B can start. |
-| **relates_to** | (symmetric) | Loose relationship — relevant context. |
-| **duplicates** | duplicated_by | Same as another task; usually one is closed. |
-| **parent_of** | child_of | A composes the other into a hierarchy. |
-| **clones** | cloned_by | Created as a copy of another task. |
-| **implements** | implemented_by | Implements a story, spec, or epic. |
+You cannot link a Task to itself or add the same link twice. Each linked Task shows its readable ID, title, type, and current status. Authorized editors can remove links from either Task.
 
-Inverse links are created automatically. Adding `A blocks B` also creates `B blocked_by A`.
+<Note>
+Task links communicate relationships; they do not automatically change either Task's status.
+</Note>
 
-## Add a dependency
+## Add a link
 
 <Steps>
-  <Step title="Open the task">
-    Click any task to open its detail dialog, then go to the **Links** tab.
+  <Step title="Open the source Task">
+    Go to its detail page and locate the **Dependencies** section.
   </Step>
-
-  <Step title="Search for the target">
-    Start typing a task title or ID. Results are scoped to your organization and to tasks you can access.
+  <Step title="Choose the relationship">
+    Select `Blocks`, `Blocked by`, `Relates to`, or `Duplicates`.
   </Step>
-
-  <Step title="Pick the link type">
-    Select the relationship from the dropdown.
-  </Step>
-
-  <Step title="Save">
-    Flotick checks for circular dependencies, creates the link, and creates the inverse if applicable.
-
+  <Step title="Find the other Task">
+    Search for the target Task and confirm the link. Flotick displays the linked Task's ID, title, type, and status after saving.
   </Step>
 </Steps>
 
-## Visualizing blockers
+`Relates to` and `Duplicates` are symmetric when viewed from either Task. A blocking relationship appears as its inverse from the target Task, so a Task that is blocked by another clearly identifies the dependency.
 
-Tasks with active blockers show a small badge on the card and a clear **Blocked by** section in the detail dialog. Clicking a blocker opens that task — useful for tracing dependency chains.
+## Manage linked work
 
-## Cycle prevention
-
-You can't create a circular `blocks` chain. If you try `A blocks B` while `B` already blocks `A` (directly or through a chain), Flotick rejects the request with a clear error.
-
-## Cleaning up
-
-Removing one side of a bidirectional pair removes both. Deleting a task removes all of its links.
-
-## Tips
-
-- Use **blocks** sparingly. Too many cross-task blockers usually mean tasks are too small or scope is unclear.
-- For long-running work, use **parent_of** (Epic → Story → Task) to keep hierarchy readable.
-- The **Sprint Commitment Coach** uses blocker counts to flag risky sprint commitments.
+Links are useful during planning, triage, and review. Use **Blocks** when work order matters, **Relates to** for context, and **Duplicates** when two records describe the same work. Remove a link from either connected Task when the relationship is no longer useful. Deleting the link does not delete, merge, or change either Task.

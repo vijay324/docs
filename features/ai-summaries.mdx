@@ -1,77 +1,41 @@
 ---
 title: "AI Summaries"
-description: "On-demand AI reports for teams, sprints, projects, and members — powered by Gemini."
+description: "Generate narrative briefs from current organization metrics."
 ---
 
-AI Summaries turn your Flotick data into clean, useful narrative reports in seconds. Pick a template and a scope; Flotick collects the right context and streams a summary back in real time.
+AI Summaries turn Flotick metrics into a written brief. They appear in supported analytics surfaces and as report templates in Orbit.
 
-
-## What you can generate
-
-| Template | Best for |
-| :--- | :--- |
-| **Weekly summary** | A team-wide recap of last week. |
-| **Monthly summary** | Higher-altitude view spanning a month. |
-| **Sprint summary** | Recap of a single sprint, including velocity and outcomes. |
-| **Bottleneck detection** | Find where work is piling up. |
-| **Top and bottom performers** | A read on contribution patterns. |
-| **Workload balance** | Spotting imbalances across the team. |
-| **Deadline risk** | Highlight upcoming due dates at risk. |
-| **Team health** | Composite signal across velocity, attendance, and reviews. |
-| **Founder snapshot** | A founder-grade pulse on the org. |
-| **Leadership digest** | Summary tuned for leadership readers. |
-| **Custom** | Bring your own prompt. |
+Available templates include weekly and monthly summaries, Sprint summaries, bottleneck detection, deadline risk, workload balance, team health, leadership digest, founder snapshot, HR delivery review, and performance-oriented summaries.
 
 ## Generate a summary
 
-<Steps>
-  <Step title="Open the AI panel">
-    Click the **AI summary** widget on your [Personal Dashboard](/features/personal-dashboard) or open it from **Analytics**.
-  </Step>
+1. Open the supported analytics brief or [Orbit](/features/orbit).
+2. Choose a template and scope when offered.
+3. Generate the report.
+4. Review the source metrics and submit feedback on the result.
 
-  <Step title="Pick a template and scope">
-    Each template tells you what scope it needs:
+Generated summaries and usage are recorded so supported history views can retrieve previous reports. Generation consumes the organization's monthly AI allowance.
 
-    - Org-wide: weekly, monthly, leadership digest
-    - Project: monthly, bottlenecks
-    - Sprint: sprint summary, retrospective help
-    - Member: workload balance for a single person
-  </Step>
+<Note>
+AI-generated text is a decision aid. Use the underlying Task, Sprint, attendance, or leave records as the authoritative source.
+</Note>
 
-  <Step title="Generate">
-    Click **Generate**. The summary streams in token-by-token (a typewriter effect). When it finishes, you can copy or share it.
+## Choose the right summary
 
-  </Step>
-</Steps>
+| Need | Useful template |
+| --- | --- |
+| Weekly delivery update | Weekly summary or leadership digest |
+| Sprint review | Sprint summary, bottleneck detection, or deadline risk |
+| Capacity conversation | Workload balance or team health |
+| Leadership update | Founder snapshot or leadership digest |
+| People and delivery review | HR delivery review |
 
-## Where context comes from
+Templates use the selected or inferred reporting context. A result is most useful when the related Tasks have current statuses, estimates, points, and due dates, and when attendance and leave records are complete.
 
-Flotick builds context from the right data automatically:
+## Review a generated brief
 
-- Tasks, statuses, and points
-- Sprint metrics and burndowns
-- Attendance and leave activity
-- Comments and recent updates
+Read the summary for trends, risks, and actions, then verify the numbers in Analytics and the relevant work records. Use the feedback control to indicate whether a result was useful. Feedback helps Flotick capture quality signals for later review; it does not automatically change the source data.
 
-Context is always **org-scoped** — a summary only ever draws on data from your organization. Encrypted long-form fields are not included in context.
+## Usage behavior
 
-## History and feedback
-
-The **History** panel lists past summaries with their template and scope. Open any past summary to view it again.
-
-Click 👍 or 👎 on a summary to leave feedback. We use the signal to improve prompts and templates.
-
-## Custom prompts
-
-The **Custom** template lets you bring your own prompt. Useful for "summarize what changed about Project X this week" or similar bespoke questions. Custom prompts may produce noisier output than the curated templates.
-
-## Plan limits
-
-AI usage is metered. Free plan organizations get a baseline; Pro and Max raise the limits. See [Plans](/admin/billing/plans).
-
-## Tips
-
-- Lead with a curated template before reaching for **Custom**.
-- Generate the **Weekly summary** every Friday — your team will love the artifact.
-- Pair AI summaries with [AI Insights](/features/ai-insights) for proactive alerts in your Inbox.
-- For ad-hoc questions that don't fit a template, ask [Orbit Chat](/features/orbit) instead.
+AI summary requests count against organization AI allowance. A generation can be unavailable when no eligible data exists for the requested scope, when the feature is not included in the plan, or when the monthly allowance is exhausted.

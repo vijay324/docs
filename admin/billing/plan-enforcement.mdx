@@ -1,43 +1,45 @@
 ---
-title: "Downgrades and plan limits"
-description: "What happens to members, projects, and features when a plan changes — and how everything is restored."
+title: "Plan changes and retained data"
+description: "How Flotick applies lower limits without deleting organization data."
 ---
 
-When an organization moves to a lower plan (trial expiry, cancellation, or a manual downgrade), Flotick reconciles your existing data to the new limits. The core principle: **downgrades restrict, upgrades fully restore — nothing is ever deleted.**
+Plan enforcement is non-destructive. A downgrade normally opens a seven-day grace window; the exact window can vary by deployment configuration.
 
-## Grace period first
+## During grace
 
-Before anything changes, you get a **grace window** (default **7 days**). During grace:
+- The current higher-plan access remains active.
+- The app shows the pending plan and deadline.
+- Admins can reduce seats and active Projects or upgrade again.
 
-- Your plan stays on the higher tier — access is unchanged.
-- A banner warns the Admin that a downgrade is pending.
-- At the end of the window, the downgrade finalizes and limits are applied.
+## After enforcement
 
-## What gets enforced
+- New actions above the plan limits are blocked.
+- Excess newest non-Admin members are locked from signing in.
+- Excess newest active Projects become read-only.
+- Paid modules and advanced actions are hidden or blocked.
+- Stored records remain in the organization.
 
-| Resource | What happens on downgrade |
-| :--- | :--- |
-| **Features** (payroll, env storage, Telegram, team views, exports, custom workflows) | Switch off the moment the plan changes. |
-| **Members over the seat limit** | The **newest** members are locked out (can't sign in). The owner/Admin is never locked. |
-| **Active projects over the limit** | The **newest** active projects become **read-only**. Reads still work; writes are blocked. |
-| **Files / storage** | Existing files stay readable; new uploads are blocked past the quota. |
+The Admin is never plan-locked. Archived and completed Projects do not count as active Projects.
 
-<Warning>
-  Nothing is deleted. Locked members and read-only projects are restored automatically when you upgrade again.
-</Warning>
+## Restore access
 
-## See what's affected
+Upgrade or reduce usage until it fits the plan. Flotick automatically unlocks eligible members and Projects when capacity returns; no retained work needs to be recreated.
 
-Open **Settings → Billing**. The **Restricted resources** panel lists every locked member and read-only project, with the reason and how to restore them. A banner also appears across the app while enforcement is active.
+## What to expect during a downgrade
 
-A locked member who tries to sign in sees a "workspace restricted — ask your admin to upgrade" message.
+The default downgrade grace period is seven days, although a deployment can configure a different period. During grace, Flotick keeps the current effective plan active and exposes a warning to the organization. This is the time to clean up usage or reverse the plan change.
 
-## Restore everything
+At enforcement, the service chooses the newest eligible excess members and active Projects to lock. It preserves the organization Admin's access. Locked Projects are visible and read-only; locked members cannot sign in. Records, history, files, and relationships remain stored.
 
-Upgrade back to a plan that fits your usage and Flotick restores locked resources **oldest-first**, up to the new capacity. No data is lost in the round trip.
+## Reduce usage before enforcement
 
-## Tips
+- Remove or deactivate only members who no longer need access.
+- Archive or complete Projects that are no longer active.
+- Delete or move unused files if storage is above the new allowance.
+- Document paid-only workflows that the lower plan no longer exposes.
 
-- Watch the grace banner — fix the overage (remove members/projects) or upgrade before the window ends to avoid any lock at all.
-- If you're trimming to fit Free, archive extra projects yourself first so *you* choose what stays active, not the newest-first rule.
-- Seat and project locks are reversible, so a brief downgrade between billing changes won't cost you data.
+Do not permanently delete work merely to avoid a plan lock unless data removal is actually intended. A plan lock is reversible and designed to preserve the organization state.
+
+## Check restricted state
+
+Flotick exposes the pending plan, grace deadline, and locked-resource status to the workspace so members understand why a feature or Project is restricted. The Admin should use that information to decide whether to reduce usage or restore the higher entitlement.

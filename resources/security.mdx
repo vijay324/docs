@@ -1,55 +1,49 @@
 ---
 title: "Security"
-description: "How Flotick protects your account, data, and organization."
+description: "Client-facing controls that protect accounts and organization data."
 ---
 
-Security is foundational for Flotick. This page summarises the protections in place across authentication, data, and operations.
+## Account protection
 
-## Account security
+- Strong-password validation and secure password hashing
+- Password reset by time-limited email token
+- Temporary lockout after repeated failed sign-ins
+- TOTP two-factor authentication for Admins and Managers
+- Email verification for unfamiliar devices in protected sign-in flows
+- Google account linking without creating a duplicate member
+- Session refresh and sign-out controls
 
-- **Strong password policy** — Argon2id hashing, breached-password detection, and a strength meter at sign-up
-- **Two-factor authentication (TOTP)** — opt-in for every account; required by default for platform staff
-- **Email-code device verification** — new devices receive a 6-digit verification code
-- **Trusted devices** — opt-in skip of new-device verification, individually revocable
-- **Lockout** — exponential backoff after failed sign-ins, capped at 60 minutes
-- **Session rotation** — refresh tokens rotate; reuse of an old token revokes the entire session family
+## Organization access
 
-See [Security and 2FA](/account/security-and-2fa).
+- Every signed-in request is scoped to an organization
+- Role-based permissions for Admin, Manager, and Member
+- Project membership and visibility checks
+- Paid-plan per-member permission overrides
+- Server-side validation even when an action is hidden in the interface
 
 ## Data protection
 
-- **Encryption at rest** — sensitive long-form fields (task description, acceptance criteria, considerations, optional comments) are encrypted with AES-256-GCM
-- **Encryption in transit** — TLS only across all endpoints
-- **Bank, PAN, UAN** — payroll-sensitive fields are encrypted at rest in member compensation records
-- **File storage** — files are encrypted at rest in cloud storage; downloads use short-lived presigned URLs
-- **Environment variables** — secrets in Env Storage are encrypted at rest
+- HTTPS in transit in production
+- Encrypted sensitive fields, including supported Task content and environment secrets
+- Short-lived upload, view, and download access for files
+- Soft-delete recovery for major records
+- Rate limits on authentication, AI, upload, and high-volume actions
 
-## Authorization and isolation
+For account-specific controls, see [Account security](/account/security-and-2fa). To report a security concern, email [support@flotick.com](mailto:support@flotick.com) with **Security** in the subject.
 
-- **Multi-tenant by design** — every record carries an organization scope, enforced at the data layer
-- **Role-based access** — Admin, Manager, Member roles with explicit permission rules
-- **Single Admin Invariant** — exactly one Admin per organization, with deliberate handover semantics
-- **Project visibility** — Public vs Private projects with explicit project membership for private data
+## Your responsibilities
 
-## Platform staff access
+- Use a unique password and do not share it.
+- Enable two-factor authentication when it is available to your role.
+- Verify the organization slug and destination before adding files or secrets.
+- Use Env Storage for environment values instead of comments or attachments.
+- Review invitations, role changes, and plan changes carefully.
+- Sign out of shared devices and avoid trusting them for future verification.
 
-- **IP whitelist** — every Flotick admin endpoint is gated by an IP allowlist
-- **Mandatory 2FA** — email-code based 2FA for every platform staff sign-in
-- **Single-device sessions** — a new sign-in revokes any prior platform staff session
-- **Permission-based RBAC** — platform staff carry granular permissions; one master `owner` permission grants full access
-- **Audit logs** — every platform staff action writes to an append-only audit log
+## What to report
 
-## Operational security
+Report suspected unauthorized access, a lost device with an active session, an exposed secret, an invitation sent to the wrong person, or unexpected changes to account or organization access. Include the organization slug, affected account, time, and a safe description of the issue. Do not include the secret or verification code itself.
 
-- **Rate limiting** — per-IP and per-user, layered across API and bot detection
-- **Bot detection** — behavioral and signature-based protection on public surfaces
-- **Backups** — regular backups with point-in-time recovery for the primary database
-- **Health monitoring** — continuous health checks and alerting across dependencies
+## Security limitations
 
-## Compliance
-
-If you have specific regulatory needs (GDPR, India IT Act, HIPAA, etc.), email [security@flotick.com](mailto:security@flotick.com) to discuss your requirements.
-
-## Reporting a vulnerability
-
-If you've found a security issue, please do not open a public ticket. Email [security@flotick.com](mailto:security@flotick.com) with details. We respond promptly and reward responsible disclosure where appropriate.
+No service can eliminate all risk. Client-side controls, role restrictions, encryption, and temporary access URLs reduce exposure, but your organization remains responsible for choosing appropriate members, access levels, and data-handling practices.

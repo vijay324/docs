@@ -1,63 +1,38 @@
 ---
 title: "Leave policy"
-description: "Enable leave types, set balances and accrual, and govern half-day, encashment, and overlap rules."
+description: "Configure leave types, balance rules, and request validation."
 ---
 
-Leave policy lives at **Settings → Leave** and applies to every member.
+Admins manage leave policy from **Settings → Attendance and leave policies**.
 
+Depending on the active plan, controls include:
 
-## Leave types
+- Enabled leave types and display names
+- Default annual balances
+- Half-day support
+- Weekend and holiday treatment
+- Minimum notice and maximum request length
+- Overlapping-request validation
+- Accrual cadence and carry-forward limits
+- Comp-off expiry
+- Encashment eligibility and maximum days
 
-Pick which leave types your organization uses. Common types:
+Policy changes affect validation and future balance calculations. Existing approved requests remain recorded.
 
-| Code | Name |
-| :--- | :--- |
-| **PL** | Privilege Leave |
-| **SL** | Sick Leave |
-| **CL** | Casual Leave |
-| **EL** | Earned Leave |
-| **ML** | Maternity Leave |
-| **PTL** | Paternity Leave |
-| **CO** | Comp-off |
-| **LOP** | Loss of Pay |
+Use **Reset** to restore Flotick defaults. Review balances after changing accrual, carry-forward, or enabled leave types.
 
-For each enabled type, configure:
+## Configure leave types
 
-- **Annual balance** (e.g., 12 PL per year)
-- **Accrual rule** — at start of year, monthly, or per quarter
-- **Carry-forward limit** — how much can roll into the next year
-- **Encashment** — whether the type can be encashed and how many days max per year
-- **Half-day allowed** — whether members can request half days
+Start by enabling only the leave types your organization actually uses. For each type, set the visible label and balance behavior. A clear setup prevents members from selecting an invalid category and keeps reports understandable.
 
-## Behavior switches
+## Configure request rules
 
-| Switch | What it does |
-| :--- | :--- |
-| **Requires balance** | Block submission if requested days exceed balance. |
-| **Allow overlapping requests** | Permit a second request that overlaps an existing one. |
-| **Exclude weekends** | Skip weekends when counting days requested. |
-| **Notice period required** | Enforce a minimum notice for certain leave types. |
+Define whether half-day requests are allowed, how weekends and holidays affect the charged day count, the required notice period, maximum request duration, and whether overlapping requests are blocked. These settings are applied when a member submits or an authorized reviewer evaluates a request.
 
-## Financial year
+## Configure balance lifecycle
 
-Balances are tracked per **financial year** (e.g., `2025-2026`). Configure your org's start month so balances reset correctly.
+On plans with advanced leave controls, set accrual period, carry-forward limits, comp-off expiry, and encashment rules. Run accrual or carry-forward only after checking the intended dates and balances. Flotick records transactions so the later balance can be explained.
 
-## Lapse and roll-over
+## Review before publishing
 
-At the end of the financial year, Flotick processes:
-
-- **Carry-forward** up to the configured cap
-- **Encashment** of eligible types up to the cap
-- **Lapse** of remaining unused, untransferable balance
-
-The audit trail (`LeaveTransaction`) shows each member's transitions.
-
-## Apply changes
-
-Mid-year changes affect future requests. Existing balances are preserved unless an Admin runs a manual adjustment.
-
-## Tips
-
-- Discuss policy changes with HR/finance counterparts — leave policy is also a labor compliance topic.
-- Encashment limits prevent surprise payroll spikes; default to a conservative cap and raise as needed.
-- If you're switching to Flotick mid-year, run an opening-balance import for each member so balances start truthful.
+Test a representative request after a major policy change: a normal full day, a half day, a holiday overlap, and a balance-limited request. This confirms the member experience matches the policy your organization intended.

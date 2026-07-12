@@ -1,121 +1,67 @@
 ---
 title: "Tasks"
-description: "The atomic unit of work in Flotick — with rich workflow, multiple views, and built-in collaboration."
+description: "Create, assign, prioritize, schedule, and move work through individual or Sprint workflows."
 ---
 
-Tasks are where the actual work lives. Every project's progress reduces to the state of its tasks.
+## Task fields
 
+| Field | Options or purpose |
+| --- | --- |
+| Type | `Story`, `Bug`, `Task`, `Epic`, or `Spike` |
+| Priority | `Critical`, `High`, `Medium`, or `Low` |
+| Responsibility | Assignee, reviewer, tester, and reporter |
+| Planning | Project, optional Sprint, story points, estimates, due date, and labels |
+| Detail | Description, acceptance criteria, considerations, attachments, subtasks, comments, links, and work logs |
 
-## What a task contains
+## Individual and Sprint Tasks
 
-| Field | Description |
-| :--- | :--- |
-| **Title** and **description** | Title is plain text; description supports Markdown and is encrypted at rest. |
-| **Type** | `Story`, `Bug`, `Task`, `Epic`, or `Spike`. |
-| **Priority** | `Critical`, `High`, `Medium`, `Low`. |
-| **Status** | The workflow stage (see below). |
-| **Assignee, Reviewer, Tester, Reporter** | Up to four people with different responsibilities. |
-| **Story points** | Estimation in points. |
-| **Estimates and time spent** | Original estimate, remaining estimate, and accumulated time spent. |
-| **Labels** | Free-form text tags. |
-| **Acceptance criteria, considerations** | Long-form fields, encrypted. |
-| **Due date** | Used for deadline alerts and the calendar view. |
-| **Sprint** | Optional sprint membership. |
-| **Files**, **Comments**, **Work logs**, **Links** | Built-in collaboration around the task. |
+An **individual Task** is not attached to a Sprint and moves through `To Do`, `In Progress`, and `Completed`.
 
-## Workflow status
+A **Sprint Task** uses the organization's Sprint workflow. The default stages are `Backlog`, `Sprint Backlog`, `Todo`, `In Progress`, `Review`, `Testing`, `Blocked`, and `Done`.
 
-Tasks flow through a default workflow, which Admins can adjust per organization (see [Workflow policy](/admin/workflow-policy)).
+## Work with Tasks
 
-```
-Backlog → Sprint Backlog → Todo → In Progress → Review → Testing → Blocked → Done
-```
+The Tasks page supports **List**, **Board**, **Calendar**, and single-Project **Backlog** views. You can switch between all, assigned, created, and team scopes when your role permits.
 
-Drag-and-drop on the board moves a task between columns. Each transition is validated server-side:
+Search and filter by status, priority, type, Project, Sprint, responsibility, label, and date. Select multiple visible Tasks to change status, priority, or Sprint, or to delete them in bulk.
 
-- Required transitions (e.g., must pass through `Review` before `Done`) are enforced
-- WIP limits per column are respected — if a column is at capacity, the move is rejected
-- Reaching `Done` triggers a confetti animation in the UI
+Open a Task to manage its content and history. Status and assignment changes are recorded. Add work logs in hours to update time spent.
 
-## Three views
+<Note>
+Tasks in completed Sprints are excluded by default. Enable **Show completed sprint tasks** when you need historical work in the current view.
+</Note>
 
-<Tabs>
-  <Tab title="List view">
-    A dense, sortable, filterable table. Best for triage and bulk updates.
+Deleting a Task moves it to [Trash](/features/trash). Access to create, edit, assign, or delete depends on role, Project access, and any member-specific permission override.
 
-  </Tab>
-  <Tab title="Board view">
-    A Kanban with one column per status. Best for daily standups and progress visibility.
-
-  </Tab>
-  <Tab title="Calendar view">
-    Tasks placed on a calendar by due date with day, week, and month modes.
-
-  </Tab>
-</Tabs>
-
-## Create a task
+## Create a Task
 
 <Steps>
-  <Step title="Open the new task dialog">
-    Click **New task** from any list, board, or project page. The dialog opens immediately.
+  <Step title="Choose where the Task belongs">
+    Click **Create task** from Inbox, Tasks, a Project, or a Sprint. Select a Project first. Add a Sprint only when the Task is planned for that iteration.
   </Step>
-
-  <Step title="Fill the essentials">
-    Title, project, type, and priority are required. Optionally set assignee, reviewer, tester, story points, labels, and due date.
+  <Step title="Set the work type and urgency">
+    Enter a title, then choose type and priority. Use `Epic` for a larger unit of work and link the related Tasks rather than relying on naming alone.
   </Step>
-
-  <Step title="Save">
-    The task starts in `Backlog`. The assignee sees it on their [Personal Board](/features/personal-board) instantly via real-time updates.
+  <Step title="Set responsibility and planning data">
+    Assign an owner, reviewer, tester, and reporter as needed. Add story points, estimates, labels, and a due date when those help the team plan or report work.
+  </Step>
+  <Step title="Save and add detail">
+    Save the Task, then use the detail page to add acceptance criteria, considerations, files, subtasks, links, comments, and work logs.
   </Step>
 </Steps>
 
-## Update a task
+## Change status safely
 
-Open any card to bring up the **task detail dialog**. From here you can:
+On a board, drag a card to a permitted column. In list and detail views, use the status control. Flotick validates the target state against the active workflow. If a move is rejected, check the transition rules, required stage order, or any configured work-in-progress limit with an Admin.
 
-- Change status, priority, assignee, and dates
-- Add or update **acceptance criteria** and **considerations**
-- Attach files (drag-drop)
-- Post threaded **comments** and `@mention` teammates
-- Log **work** (hours and description)
-- Add **dependencies** (see [Task dependencies](/features/task-dependencies))
+Individual Tasks and Sprint Tasks intentionally behave differently. Adding a Sprint changes the Task into Sprint work and makes the Sprint workflow available. Removing it returns the Task to Project backlog handling where permitted.
 
+## Bulk actions
 
-## Time tracking
+Select visible rows in the list to update multiple Tasks at once. You can set a common status, priority, or Sprint, or soft-delete the selected Tasks. Flotick reports any rows that could not be changed so you can resolve access or workflow conflicts individually.
 
-Log time directly on a task:
+## Time, history, and dates
 
-1. Open the task and choose **Log work**
-2. Enter the hours spent and a short description
-3. `Time spent` rolls up automatically and feeds sprint velocity and analytics
+Use **Log work** to record hours and an optional description. Time spent accumulates on the Task and contributes to eligible reporting. Status history captures the previous and new status, actor, and time; assignment history records changes to each responsibility. Completion uses a stable completion timestamp so later edits do not change the reporting period in which the work was finished.
 
-## History and audit
-
-Every task carries a complete history:
-
-- **Status history** — when the status changed and who changed it
-- **Assignment history** — when the assignee, reviewer, or tester changed
-
-Open the **History** tab on the task to review.
-
-## Encryption
-
-Long-form, sensitive fields are encrypted with AES-256-GCM at rest:
-
-- Description
-- Acceptance criteria
-- Considerations
-- Optionally, comment content
-
-Encrypted fields are decrypted only on read for users with access. They aren't included in full-text search.
-
-## Soft delete
-
-Deleting a task moves it to [Trash](/features/trash) for 30 days. Comments, work logs, history, and links are preserved during the recovery window. After 30 days, hard deletion runs automatically.
-
-## Tips
-
-- Use **labels** for cross-cutting tags (`platform`, `cust:acme`, `tech-debt`) since they're free-form and indexable.
-- Save effort estimates — sprint velocity and AI summaries get sharper with consistent estimation.
-- Promote a task to an **Epic** when scope expands; link sub-tasks to it (see [Task dependencies](/features/task-dependencies)).
+Due dates power Calendar view, overdue filters, deadline analytics, and Orbit risk questions. They do not automatically prevent a Task from moving to a later status.

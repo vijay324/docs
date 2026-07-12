@@ -1,9 +1,17 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect, useCallback, useMemo, type ReactNode } from 'react';
-import { apiClient } from '@/lib/api';
-import { useOrganization } from '@/lib/contexts/organization-context';
-import { DEPARTMENT_HIERARCHY } from '@/utils/constants';
+import {
+  createContext,
+  type ReactNode,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
+import { apiClient } from "@/lib/api";
+import { useOrganization } from "@/lib/contexts/organization-context";
+import { DEPARTMENT_HIERARCHY } from "@/utils/constants";
 
 // ============================================================================
 // TYPE DEFINITIONS
@@ -37,7 +45,7 @@ export interface PriorityConfig {
  * Story points scale configuration
  */
 export interface StoryPointConfig {
-  scale: 'fibonacci' | 'linear' | 'tshirt' | 'custom';
+  scale: "fibonacci" | "linear" | "tshirt" | "custom";
   values: number[];
   labels?: Record<number, string>;
 }
@@ -67,30 +75,44 @@ export interface WorkflowConfig {
 // ============================================================================
 
 const DEFAULT_TASK_STATUSES: StatusConfig[] = [
-  { key: 'backlog', label: 'Backlog', color: '#6B7280', order: 0, isInitial: true },
-  { key: 'sprint_backlog', label: 'Sprint Backlog', color: '#8B5CF6', order: 1 },
-  { key: 'to_do', label: 'To Do', color: '#3B82F6', order: 2, isDefault: true },
-  { key: 'in_progress', label: 'In Progress', color: '#F59E0B', order: 3 },
-  { key: 'review', label: 'Review', color: '#8B5CF6', order: 4 },
-  { key: 'testing', label: 'Testing', color: '#EC4899', order: 5 },
-  { key: 'done', label: 'Done', color: '#10B981', order: 6, isFinal: true },
+  {
+    key: "backlog",
+    label: "Backlog",
+    color: "#6B7280",
+    order: 0,
+    isInitial: true,
+  },
+  { key: "to_do", label: "To Do", color: "#3B82F6", order: 1, isDefault: true },
+  { key: "in_progress", label: "In Progress", color: "#F59E0B", order: 2 },
+  { key: "review", label: "Review", color: "#8B5CF6", order: 3 },
+  { key: "testing", label: "Testing", color: "#EC4899", order: 4 },
+  { key: "done", label: "Done", color: "#10B981", order: 5, isFinal: true },
 ];
 
 const DEFAULT_PRIORITIES: PriorityConfig[] = [
-  { key: 'critical', label: 'Critical', color: '#DC2626', order: 0 },
-  { key: 'high', label: 'High', color: '#F59E0B', order: 1 },
-  { key: 'medium', label: 'Medium', color: '#3B82F6', order: 2, isDefault: true },
-  { key: 'low', label: 'Low', color: '#6B7280', order: 3 },
+  { key: "critical", label: "Critical", color: "#DC2626", order: 0 },
+  { key: "high", label: "High", color: "#F59E0B", order: 1 },
+  {
+    key: "medium",
+    label: "Medium",
+    color: "#3B82F6",
+    order: 2,
+    isDefault: true,
+  },
+  { key: "low", label: "Low", color: "#6B7280", order: 3 },
 ];
 
 const DEFAULT_STORY_POINTS: StoryPointConfig = {
-  scale: 'fibonacci',
+  scale: "fibonacci",
   values: [0, 1, 2, 3, 5, 8, 13, 21],
 };
 
-const DEFAULT_DEPARTMENTS: DepartmentConfig[] = Object.entries(DEPARTMENT_HIERARCHY).map(
-  ([name, config]) => ({ name, subDepartments: [...config.subDepartments] })
-);
+const DEFAULT_DEPARTMENTS: DepartmentConfig[] = Object.entries(
+  DEPARTMENT_HIERARCHY,
+).map(([name, config]) => ({
+  name,
+  subDepartments: [...config.subDepartments],
+}));
 
 const DEFAULT_WORKFLOW_CONFIG: WorkflowConfig = {
   taskStatuses: DEFAULT_TASK_STATUSES,
@@ -125,7 +147,7 @@ interface WorkflowConfigContextValue {
   // Department helpers
   getDepartmentNames: () => string[];
   getSubDepartmentsForDept: (departmentName: string) => string[];
-  
+
   // Validation helpers
   isValidStatus: (key: string) => boolean;
   isValidPriority: (key: string) => boolean;
@@ -145,18 +167,20 @@ const defaultContextValue: WorkflowConfigContextValue = {
   storyPointValues: DEFAULT_STORY_POINTS.values,
   departments: DEFAULT_DEPARTMENTS,
   getStatusLabel: (key: string) => key,
-  getStatusColor: (key: string) => '#6B7280',
+  getStatusColor: (key: string) => "#6B7280",
   getPriorityLabel: (key: string) => key,
-  getPriorityColor: (key: string) => '#6B7280',
-  getDepartmentNames: () => DEFAULT_DEPARTMENTS.map(d => d.name),
-  getSubDepartmentsForDept: (name: string) => DEFAULT_DEPARTMENTS.find(d => d.name === name)?.subDepartments || [],
+  getPriorityColor: (key: string) => "#6B7280",
+  getDepartmentNames: () => DEFAULT_DEPARTMENTS.map((d) => d.name),
+  getSubDepartmentsForDept: (name: string) =>
+    DEFAULT_DEPARTMENTS.find((d) => d.name === name)?.subDepartments || [],
   isValidStatus: () => true,
   isValidPriority: () => true,
   isValidStoryPoints: () => true,
   refreshConfig: async () => {},
 };
 
-const WorkflowConfigContext = createContext<WorkflowConfigContextValue>(defaultContextValue);
+const WorkflowConfigContext =
+  createContext<WorkflowConfigContextValue>(defaultContextValue);
 
 // ============================================================================
 // PROVIDER COMPONENT
@@ -166,9 +190,11 @@ interface WorkflowConfigProviderProps {
   children: ReactNode;
 }
 
-export function WorkflowConfigProvider({ children }: WorkflowConfigProviderProps) {
+export function WorkflowConfigProvider({
+  children,
+}: WorkflowConfigProviderProps) {
   const { organization, isLoading: orgLoading } = useOrganization();
-  
+
   const [config, setConfig] = useState<WorkflowConfig>(DEFAULT_WORKFLOW_CONFIG);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -187,8 +213,10 @@ export function WorkflowConfigProvider({ children }: WorkflowConfigProviderProps
     setError(null);
 
     try {
-      const response = await apiClient.get(`/organizations/${organization._id}/workflow-config`);
-      
+      const response = await apiClient.get(
+        `/organizations/${organization._id}/workflow-config`,
+      );
+
       if (response.data?.success && response.data?.data?.config) {
         setConfig(response.data.data.config);
         setIsUsingDefaults(response.data.data.isUsingDefaults ?? false);
@@ -198,8 +226,8 @@ export function WorkflowConfigProvider({ children }: WorkflowConfigProviderProps
         setIsUsingDefaults(true);
       }
     } catch (err: any) {
-      console.error('Failed to fetch workflow config:', err);
-      setError(err.message || 'Failed to load workflow configuration');
+      console.error("Failed to fetch workflow config:", err);
+      setError(err.message || "Failed to load workflow configuration");
       // Fall back to defaults on error
       setConfig(DEFAULT_WORKFLOW_CONFIG);
       setIsUsingDefaults(true);
@@ -228,96 +256,130 @@ export function WorkflowConfigProvider({ children }: WorkflowConfigProviderProps
   // HELPER FUNCTIONS
   // ============================================================================
 
-  const getStatusLabel = useCallback((key: string): string => {
-    const status = config.taskStatuses.find(s => s.key === key);
-    if (status) return status.label;
-    
-    // Fallback: convert key to label format
-    return key.split('_').map(word => 
-      word.charAt(0).toUpperCase() + word.slice(1)
-    ).join(' ');
-  }, [config.taskStatuses]);
+  const getStatusLabel = useCallback(
+    (key: string): string => {
+      const status = config.taskStatuses.find((s) => s.key === key);
+      if (status) return status.label;
 
-  const getStatusColor = useCallback((key: string): string => {
-    const status = config.taskStatuses.find(s => s.key === key);
-    return status?.color || '#6B7280';
-  }, [config.taskStatuses]);
+      // Fallback: convert key to label format
+      return key
+        .split("_")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+    },
+    [config.taskStatuses],
+  );
 
-  const getPriorityLabel = useCallback((key: string): string => {
-    const priority = config.priorities.find(p => p.key === key);
-    if (priority) return priority.label;
-    
-    // Fallback: capitalize first letter
-    return key.charAt(0).toUpperCase() + key.slice(1);
-  }, [config.priorities]);
+  const getStatusColor = useCallback(
+    (key: string): string => {
+      const status = config.taskStatuses.find((s) => s.key === key);
+      return status?.color || "#6B7280";
+    },
+    [config.taskStatuses],
+  );
 
-  const getPriorityColor = useCallback((key: string): string => {
-    const priority = config.priorities.find(p => p.key === key);
-    return priority?.color || '#6B7280';
-  }, [config.priorities]);
+  const getPriorityLabel = useCallback(
+    (key: string): string => {
+      const priority = config.priorities.find((p) => p.key === key);
+      if (priority) return priority.label;
 
-  const isValidStatus = useCallback((key: string): boolean => {
-    return config.taskStatuses.some(s => s.key === key);
-  }, [config.taskStatuses]);
+      // Fallback: capitalize first letter
+      return key.charAt(0).toUpperCase() + key.slice(1);
+    },
+    [config.priorities],
+  );
 
-  const isValidPriority = useCallback((key: string): boolean => {
-    return config.priorities.some(p => p.key === key);
-  }, [config.priorities]);
+  const getPriorityColor = useCallback(
+    (key: string): string => {
+      const priority = config.priorities.find((p) => p.key === key);
+      return priority?.color || "#6B7280";
+    },
+    [config.priorities],
+  );
 
-  const isValidStoryPoints = useCallback((value: number): boolean => {
-    return config.storyPoints.values.includes(value);
-  }, [config.storyPoints.values]);
+  const isValidStatus = useCallback(
+    (key: string): boolean => {
+      return config.taskStatuses.some((s) => s.key === key);
+    },
+    [config.taskStatuses],
+  );
+
+  const isValidPriority = useCallback(
+    (key: string): boolean => {
+      return config.priorities.some((p) => p.key === key);
+    },
+    [config.priorities],
+  );
+
+  const isValidStoryPoints = useCallback(
+    (value: number): boolean => {
+      return config.storyPoints.values.includes(value);
+    },
+    [config.storyPoints.values],
+  );
 
   const activeDepartments = useMemo<DepartmentConfig[]>(
-    () => config.departments && config.departments.length > 0 ? config.departments : DEFAULT_DEPARTMENTS,
-    [config.departments]
+    () =>
+      config.departments && config.departments.length > 0
+        ? config.departments
+        : DEFAULT_DEPARTMENTS,
+    [config.departments],
   );
 
   const getDepartmentNames = useCallback((): string[] => {
-    return activeDepartments.map(d => d.name);
+    return activeDepartments.map((d) => d.name);
   }, [activeDepartments]);
 
-  const getSubDepartmentsForDept = useCallback((departmentName: string): string[] => {
-    return activeDepartments.find(d => d.name === departmentName)?.subDepartments || [];
-  }, [activeDepartments]);
+  const getSubDepartmentsForDept = useCallback(
+    (departmentName: string): string[] => {
+      return (
+        activeDepartments.find((d) => d.name === departmentName)
+          ?.subDepartments || []
+      );
+    },
+    [activeDepartments],
+  );
 
   // Memoized context value
-  const contextValue = useMemo<WorkflowConfigContextValue>(() => ({
-    config,
-    isLoading,
-    error,
-    isUsingDefaults,
-    taskStatuses: config.taskStatuses,
-    priorities: config.priorities,
-    storyPointValues: config.storyPoints.values,
-    departments: activeDepartments,
-    getStatusLabel,
-    getStatusColor,
-    getPriorityLabel,
-    getPriorityColor,
-    getDepartmentNames,
-    getSubDepartmentsForDept,
-    isValidStatus,
-    isValidPriority,
-    isValidStoryPoints,
-    refreshConfig,
-  }), [
-    config,
-    isLoading,
-    error,
-    isUsingDefaults,
-    activeDepartments,
-    getStatusLabel,
-    getStatusColor,
-    getPriorityLabel,
-    getPriorityColor,
-    getDepartmentNames,
-    getSubDepartmentsForDept,
-    isValidStatus,
-    isValidPriority,
-    isValidStoryPoints,
-    refreshConfig,
-  ]);
+  const contextValue = useMemo<WorkflowConfigContextValue>(
+    () => ({
+      config,
+      isLoading,
+      error,
+      isUsingDefaults,
+      taskStatuses: config.taskStatuses,
+      priorities: config.priorities,
+      storyPointValues: config.storyPoints.values,
+      departments: activeDepartments,
+      getStatusLabel,
+      getStatusColor,
+      getPriorityLabel,
+      getPriorityColor,
+      getDepartmentNames,
+      getSubDepartmentsForDept,
+      isValidStatus,
+      isValidPriority,
+      isValidStoryPoints,
+      refreshConfig,
+    }),
+    [
+      config,
+      isLoading,
+      error,
+      isUsingDefaults,
+      activeDepartments,
+      getStatusLabel,
+      getStatusColor,
+      getPriorityLabel,
+      getPriorityColor,
+      getDepartmentNames,
+      getSubDepartmentsForDept,
+      isValidStatus,
+      isValidPriority,
+      isValidStoryPoints,
+      refreshConfig,
+    ],
+  );
 
   return (
     <WorkflowConfigContext.Provider value={contextValue}>
@@ -335,11 +397,13 @@ export function WorkflowConfigProvider({ children }: WorkflowConfigProviderProps
  */
 export function useWorkflowConfig(): WorkflowConfigContextValue {
   const context = useContext(WorkflowConfigContext);
-  
+
   if (context === undefined) {
-    throw new Error('useWorkflowConfig must be used within a WorkflowConfigProvider');
+    throw new Error(
+      "useWorkflowConfig must be used within a WorkflowConfigProvider",
+    );
   }
-  
+
   return context;
 }
 
@@ -349,19 +413,20 @@ export function useWorkflowConfig(): WorkflowConfigContextValue {
  */
 export function useStatusOptions() {
   const { taskStatuses } = useWorkflowConfig();
-  
-  return useMemo(() => 
-    taskStatuses
-      .sort((a, b) => a.order - b.order)
-      .map(status => ({
-        value: status.label, // Use label as value for backward compatibility
-        key: status.key,
-        label: status.label,
-        color: status.color,
-        isInitial: status.isInitial,
-        isFinal: status.isFinal,
-      })),
-    [taskStatuses]
+
+  return useMemo(
+    () =>
+      taskStatuses
+        .sort((a, b) => a.order - b.order)
+        .map((status) => ({
+          value: status.label, // Use label as value for backward compatibility
+          key: status.key,
+          label: status.label,
+          color: status.color,
+          isInitial: status.isInitial,
+          isFinal: status.isFinal,
+        })),
+    [taskStatuses],
   );
 }
 
@@ -370,18 +435,19 @@ export function useStatusOptions() {
  */
 export function usePriorityOptions() {
   const { priorities } = useWorkflowConfig();
-  
-  return useMemo(() => 
-    priorities
-      .sort((a, b) => a.order - b.order)
-      .map(priority => ({
-        value: priority.label, // Use label as value for backward compatibility
-        key: priority.key,
-        label: priority.label,
-        color: priority.color,
-        isDefault: priority.isDefault,
-      })),
-    [priorities]
+
+  return useMemo(
+    () =>
+      priorities
+        .sort((a, b) => a.order - b.order)
+        .map((priority) => ({
+          value: priority.label, // Use label as value for backward compatibility
+          key: priority.key,
+          label: priority.label,
+          color: priority.color,
+          isDefault: priority.isDefault,
+        })),
+    [priorities],
   );
 }
 
@@ -390,13 +456,14 @@ export function usePriorityOptions() {
  */
 export function useStoryPointOptions() {
   const { config } = useWorkflowConfig();
-  
-  return useMemo(() => 
-    config.storyPoints.values.map(value => ({
-      value,
-      label: config.storyPoints.labels?.[value] || String(value),
-    })),
-    [config.storyPoints]
+
+  return useMemo(
+    () =>
+      config.storyPoints.values.map((value) => ({
+        value,
+        label: config.storyPoints.labels?.[value] || String(value),
+      })),
+    [config.storyPoints],
   );
 }
 

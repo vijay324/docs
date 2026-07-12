@@ -1,91 +1,46 @@
 ---
 title: "Orbit Chat"
-description: "Ask plain-language questions about your workspace and get grounded, number-accurate answers in seconds."
+description: "Ask grounded questions about your organization's delivery and workforce data."
 ---
 
-**Orbit** is Flotick's conversational, workspace-aware AI assistant. Ask it anything about your organization's work — *"How is the Mobile sprint tracking?"*, *"What's overdue for Priya?"*, *"Which projects are at risk this week?"* — and Orbit reads your live, org-scoped data and answers in clear narrative, with every number backed by real records.
+Open Orbit from the floating launcher or `/<org-slug>/inbox/orbit`. Chat is available to every organization member; answers are scoped to data the member can access.
 
-Orbit is the front door to all of Flotick's AI. From the same surface you can chat, run one-click reports, and hand off bigger changes to the [Orbit Agent](/features/ai-agent).
+## Ask a question
 
-**Where to find it:** **Inbox → Orbit** (`/<org-slug>/inbox/orbit`). Access is gated to **Admins and Managers**.
+Use natural language for questions such as:
 
-## The three-panel workspace
+- What is at risk this week?
+- Which Tasks are overdue?
+- Summarize the active Sprint.
+- How is work distributed across the team?
+- What changed since the previous reporting period?
 
-<CardGroup cols={3}>
-  <Card title="History" icon="clock">
-    Every conversation you've had with Orbit, saved per person. Reopen, continue, or delete any thread.
-  </Card>
-  <Card title="Chat" icon="messages-square">
-    The main conversation. Ask follow-ups naturally — Orbit keeps the recent turns in context.
-  </Card>
-  <Card title="Quick Reports" icon="zap">
-    A library of one-click reports (deterministic and AI) for the questions teams ask most.
-  </Card>
-</CardGroup>
+Orbit focuses on Flotick organization data. Responses can include structured claims and supporting workspace context. You can provide positive or negative feedback and regenerate an answer.
 
-## What you can ask
+## Reports and history
 
-Orbit is built for **workspace questions** — anything grounded in your projects, sprints, tasks, members, attendance, and leave.
+Report templates are grouped into leadership, delivery, and people categories. Conversations are saved to history. You can reopen or delete a conversation and pin up to five items in the current browser.
 
-- **Status** — *"How is the Q3 Platform sprint doing?"*, *"Are we on track to finish by Friday?"*
-- **People** — *"What is Aryan working on?"*, *"Who has the most open tasks right now?"*
-- **Risk** — *"What's overdue?"*, *"Which tasks are blocked and for how long?"*
-- **Comparison** — *"Compare this sprint's velocity to the last one."*
-- **Workload** — *"Is anyone overloaded this week?"*
+Free organizations use automatic model selection. Pro and Max members can select supported Orbit modes. Every answer consumes the plan's current AI or Orbit allowance shown in settings.
 
 <Note>
-  Orbit answers questions about **your workspace**. Off-topic asks (general trivia, coding help, world knowledge) are politely declined — Orbit stays focused on your organization's data and never sends it anywhere it doesn't belong.
+Orbit can summarize and explain data, but you should verify important delivery or people decisions against the source records it references.
 </Note>
 
-## How Orbit answers accurately
+## Use report templates
 
-Orbit is engineered so the numbers in an answer are **always real**, not invented by the model.
+Open the report area in Orbit to choose a template. Templates are organized into leadership, delivery, and people categories so a manager can quickly find a Sprint summary, deadline-risk assessment, workload balance, team-health brief, or executive digest. The exact templates visible can depend on available data and plan entitlement.
 
-<Steps>
-  <Step title="Understands the question">
-    A lightweight classifier figures out what you're really asking and which people or projects you named — so *"how is Aryan doing?"* is treated as a real question, not rejected as off-topic.
-  </Step>
-  <Step title="Fetches the right data">
-    Orbit builds a compact, **org-scoped** snapshot of exactly the records your question needs. If you name a person or project, their full open-task list is pulled in directly, with timezone-correct due-date and overdue math.
-  </Step>
-  <Step title="Writes the answer">
-    Google Gemini narrates the snapshot under a locked instruction set that demands grounding, accurate counting, and concise answers.
-  </Step>
-  <Step title="Verifies every number">
-    Before you see it, a numeric verifier checks that every count in the answer exists in the underlying data. On a mismatch, Orbit retries once with authoritative totals; if it still can't confirm, it falls back to a plain factual summary rather than risk a wrong number.
-  </Step>
-</Steps>
+When you run a template, Orbit builds a response from current organization data and adds it to the conversation. Treat the template as a starting point for review; open the cited Task, Project, Sprint, attendance, or leave surface when you need to take action.
 
-Answers stream in with a typewriter effect, so you start reading immediately.
+## Manage conversations
 
-## Quick Reports
+Start a new conversation for a distinct question. History preserves prior chats and Agent sessions. You can reopen a conversation, delete it from history, or pin up to five conversations in the current browser. Pinning is a local convenience—it does not pin the item for other members.
 
-The **Quick Reports** panel gives you the most-asked questions as one-click buttons — no typing required. Reports cover sprint health, workload distribution, deadline risk, and team activity. Some are deterministic (computed straight from your data) and some are AI-narrated; either way they're scoped to your organization.
+## Choose a model
 
-## Make Orbit speak your language (Harness)
+Free-plan use is automatically selected by Flotick. Eligible Pro and Max users can choose **Auto**, **Orbit**, or **Orbit Pro** before asking a question. The interface shows the credit cost of the selected mode. If usage is exhausted, wait for the next allowance period or ask the organization Admin to review the plan.
 
-Every organization has its own vocabulary. The **Harness** lets Admins and Managers teach Orbit your terminology and the names it should recognize, so answers match how your team actually talks.
+## Get better answers
 
-- **Terminology and known names** — register the projects, squads, and aliases your team uses.
-- **Learns from feedback** — when you 👎 an answer, Orbit periodically reviews recent negative feedback and drafts prompt improvements.
-- **Approval-gated** — suggested improvements stay **pending** until an Admin approves them. Nothing changes how Orbit answers until a human signs off, so the assistant never silently drifts.
-
-Open the **Harness** settings from the Orbit page to edit terminology, review pending suggestions, and approve or reject them.
-
-## Privacy and isolation
-
-- Every query is filtered to **your organization only** — data is never returned across tenants.
-- Conversations are private to the person who created them; reopening or deleting is per-user.
-- The exact data snapshot behind each answer is stored for audit but **never shown to the client** and never leaves your org boundary.
-- If AI is temporarily unavailable, Orbit degrades gracefully with a friendly message, and deterministic Quick Reports still work.
-
-## Plan availability
-
-Orbit chat and reports are metered as part of your organization's AI usage. Free organizations get a baseline; Pro and Max raise the limits. See [Plans](/admin/billing/plans).
-
-## Tips
-
-- Name people and projects explicitly — Orbit recognizes them and pulls their full task lists.
-- Ask follow-ups in the same thread; Orbit remembers the recent turns.
-- Use 👍/👎 on answers — your feedback feeds the Harness so Orbit gets sharper for your team.
-- For questions and analysis, use Orbit **Chat**; to actually *make changes*, hand off to the [Orbit Agent](/features/ai-agent).
+Name a Project, Sprint, member, status, or date range when it matters. Ask one decision-oriented question at a time, such as “Which active Tasks are overdue in Project Atlas?” rather than “What is happening?” This gives Orbit less ambiguity and makes the result easier to verify.
