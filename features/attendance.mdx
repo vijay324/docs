@@ -7,41 +7,25 @@ description: "Check in, check out, review attendance, and request corrections."
 
 <Steps>
   <Step title="Check in">
-    Open **Attendance**, click **Check in**, and confirm your work type. Flotick creates one attendance record for the current date.
+    Open **Attendance**, click **Check in**, and confirm your work type.
   </Step>
   <Step title="Check out">
-    Click **Check out** and add a work description. The app calculates the recorded duration.
+    Click **Check out**, add a work description, and save. Flotick calculates the recorded duration.
   </Step>
 </Steps>
 
-Use the table or calendar view to review your history. Statuses include `Checked In`, `Checked Out`, `Pending`, and `Leave`.
+Use **Table** or **Calendar** view to review your history. A record can include check-in and check-out time, work type, description, status, and duration.
+
+[AI Enhance](/features/ai-enhance) can rewrite the work description before you save it.
 
 ## Missed or incorrect attendance
 
-Use **Forgot attendance** to submit a past entry when policy allows. For corrections, create a regularization request with the date, reason, requested times, work type, and description. You can review your requests and cancel an eligible pending request.
+Use **Forgot attendance** for a past entry when the organization policy allows it. Use **Regularization** to request a correction with the date, reason, requested times, work type, and description.
 
-Admins can review organization requests. Approved regularization creates or updates the underlying attendance record.
+A request stays `Pending` until an authorized reviewer approves or rejects it. Approval creates or updates the attendance record. You can review your own requests and cancel an eligible pending request.
 
-## Team view
+## Team attendance
 
-The paid-plan team view shows organization attendance for authorized leaders. Past-date edits and team actions remain subject to role and attendance policy.
+On eligible plans, authorized leaders can use **Team Overview**, filter by member or department, and review team regularization requests. **My Requests** and **Team Requests** keep personal corrections separate from decisions awaiting review.
 
-AI Enhance can rewrite a work description before you save it. See [AI Enhance](/features/ai-enhance).
-
-## Understand the record
-
-Each attendance record is tied to one member and one calendar date. It can include check-in and check-out time, work type, work description, status, and recorded duration. A check-in starts the day; checking out records the end of the day rather than creating a second record.
-
-Your organization's attendance policy determines working days, past-date allowance, grace periods, and hour thresholds. A member shift can provide more specific timings and thresholds for that member. See [Attendance policy](/admin/attendance-policy) and [Shifts](/features/shifts).
-
-## Regularize an entry
-
-Use a regularization request when the date already has an incorrect record or when you need to explain a missed punch. Choose the correct request type, provide a reason, and enter requested check-in/out times or corrected work information. The request remains `Pending` until an authorized reviewer approves or rejects it. Approval updates the corresponding attendance record; rejection preserves the original record.
-
-## Team and request views
-
-Authorized leaders can switch to the team view to inspect organization attendance by date. The regularization section separates **My Requests** from **Team Requests**, making it clear which changes need a decision. Use filters and date controls before reviewing a large team.
-
-<Tip>
-Use a concise check-out description that names the outcome, not just the activity. This gives Analytics and Orbit better context without requiring a separate daily report.
-</Tip>
+The [attendance policy](/admin/attendance-policy) controls standard hours, overtime threshold, default work type, weekend requirements, and whether backdated entries are allowed.

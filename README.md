@@ -14,13 +14,14 @@ Open `http://localhost:3000`.
 
 ## Content architecture
 
-The site is organized for end users, not implementers. Top-level tabs in `docs.json`:
+The site is organized for clients and workspace users, not implementers. Top-level tabs in `docs.json`:
 
-- `Get Started` — welcome, quickstart, core concepts, sign-up, onboarding, dashboard tour
-- `Features` — every user-facing capability (planning, workforce, collaboration, AI, analytics, configuration)
-- `Guides` — end-to-end workflows for daily use, sprint planning, leave, payroll
-- `Admin` — organization settings, policies, billing, member management, account security
-- `Resources` — FAQ, glossary, feature matrix, security, support
+- `Get started` account access, onboarding, core concepts, and navigation
+- `Work management` personal work, delivery planning, collaboration, and Env Storage
+- `Team operations` attendance, leave, members, permissions, and policies
+- `Insights and AI` Analytics, reports, Orbit, and AI-assisted workflows
+- `Admin and account` organization configuration, plans, billing, security, and recovery
+- `Help` feature requests, availability, security, FAQ, glossary, and support
 
 ## Authoring standards
 

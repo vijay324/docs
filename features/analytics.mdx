@@ -1,46 +1,42 @@
 ---
 title: "Analytics"
-description: "Measure delivery, workload, deadlines, attendance, and leave at the scope your role permits."
+description: "Understand delivery, flow, workload, deadlines, attendance, and leave."
 ---
 
-Analytics adapts to role and plan. Members receive personal delivery analytics. Admins and Managers can access organization and Project views when the active plan enables them.
+Analytics adapts to your role, data access, and plan. Use the scope and Project filters to focus the results you can access.
 
-## Sections
+## Analytics workspace
 
-| Section | Examples |
+| Tab | What you can analyze |
 | --- | --- |
-| Overview | Completed work, completion rate, cycle time, activity, anomalies, and executive brief |
-| Projects | Active Projects, status, blocked and overdue work |
-| Team | Completed work, review and testing load, member drill-down |
-| Sprints | Velocity, predictability, cumulative flow, and cycle trends |
-| Tasks | Status, flow, quality, age, and movement |
-| Attendance | Attendance rate, hours, late arrivals, and work location |
-| Leave | Leave volume and type |
-| Deadlines | On-time delivery, overdue work, slippage, and risk |
-| Workload | Open work by member and workload heatmap |
+| Overview | Delivery health, risks, completed work, trends, executive brief, anomalies, and insights |
+| Work | Projects, Sprints, Tasks, flow reliability, quality, blockers, and deadlines |
+| People | Team delivery, workload, attendance, leave, and departments |
+| Compare | Scopes, periods, metrics, and leaderboards available to your plan |
 
-Use the Project selector and time-range control to change scope. Supported ranges depend on plan: Free offers 7 and 30 days; paid plans also offer 90 days and one year.
+**Work** includes Projects, Sprints, Tasks, and Deadlines. **People** includes Team, Workload, Attendance, Leave, and Departments. Attendance is organization-scoped and does not inherit a Project filter.
 
-CSV export is available when the plan enables data export. Refresh clears the current analytics cache and requests updated data.
+Some metrics need enough history to calculate a useful result. Flotick shows an empty or unavailable state when the underlying data is insufficient.
 
-<Note>
-Some cards require enough history to calculate a meaningful result. Flotick shows an empty or unavailable state instead of estimating missing data.
-</Note>
+## Time ranges and plans
 
-## Navigate Analytics
+| Capability | Free | Pro | Max |
+| --- | --- | --- | --- |
+| Time ranges | 7 and 30 days | 7, 30, and 90 days; 1 year, 2 years, all time, and custom | 7, 30, and 90 days; 1 year, 2 years, all time, and custom |
+| Team analytics | — | Included | Included |
+| Export | — | CSV, XLSX, and PDF | CSV, XLSX, and PDF |
+| Saved views | — | Included | Included |
+| Delivery forecast | — | — | Included |
+| Scheduled reports | — | — | Included |
 
-Use the primary tabs to move between Overview, Projects, Team, Sprints, Tasks, Attendance, Leave, Deadlines, and Workload. The available tabs adapt to role: personal views focus on your delivery; leader views add team, workforce, and Project drill-down. A Project selector scopes supported analytics to a specific Project.
+Plan and role can further limit specific comparisons, leaderboards, anomaly detection, project flow, or people analysis.
 
-## Read the metrics
+## Save, export, and schedule
 
-Analytics includes activity counts, completed work, completion rate, active members, status breakdowns, cycle-time percentiles, work-in-progress age, blocked age, velocity, predictability, workload distribution, deadline slippage, and due-date risk. Metric cards link to richer charts or drilldowns where available.
+Save the current filters as a private or organization view and optionally make it your default. Exports reflect the selected scope, period, and filters.
 
-Use time ranges consistently when comparing periods. A short range is useful for daily execution; 90 days or one year is better for recurring delivery patterns when your plan includes those ranges.
+On Max, schedule a saved view as a weekly or monthly report. See [Scheduled reports](/features/scheduled-reports).
 
-## Export and refresh
+## Interpret metrics responsibly
 
-Eligible paid plans show **Export CSV** for supported organization data. Exports reflect the current selected scope and filters. Use **Refresh** when you need a new server snapshot rather than the current cached view.
-
-## Interpret responsibly
-
-Metrics show work recorded in Flotick; they do not by themselves measure effort, performance, or quality. Review workload, status, time, leave, and project context together before making people or staffing decisions.
+Analytics reflects work recorded in Flotick. Review task flow, estimates, dates, leave, attendance, and delivery context together. A metric does not by itself measure individual effort, performance, or quality.

@@ -1,56 +1,54 @@
 ---
 title: "Sprints"
-description: "Plan time-boxed work, track scope and burndown, and carry unfinished Tasks forward."
+description: "Plan time-boxed work, monitor scope, and carry unfinished Tasks forward."
 ---
 
-A Sprint belongs to one Project. It includes a title, goal, dates, capacity, visibility, members, Tasks, comments, files, and delivery metrics.
+A Sprint belongs to one Project and includes a goal, objectives, dates, capacity, visibility, members, Tasks, files, comments, and delivery metrics.
 
 ## Lifecycle
 
-`Planning → Active → Review → Completed`
+`Planning → Active → Review → Retrospective → Completed`
 
-Status changes advance one stage at a time. Planning Sprints can be edited; starting, advancing, completing, and deleting a Sprint require the appropriate delivery permissions.
+Authorized members advance a Sprint through its lifecycle. Starting an active Sprint begins its scope ledger and delivery tracking.
 
-## Create and start a Sprint
+## Create and plan a Sprint
 
 <Steps>
-  <Step title="Create the Sprint">
-    Choose a Project, dates, goal, capacity, visibility, and members. The start date cannot be in the past, the end date must follow it, and overlapping Sprints in the same Project are rejected.
+  <Step title="Set the frame">
+    Choose a Project, title, goal, objectives, success criteria, start and end dates, and story-point capacity.
   </Step>
-  <Step title="Add Sprint Tasks">
-    Create Tasks in the Sprint or move eligible Project backlog Tasks into it.
+  <Step title="Set access">
+    Choose visibility, add Sprint members, and attach planning files.
+  </Step>
+  <Step title="Add work">
+    Create Sprint Tasks or move eligible Project backlog Tasks into the Sprint.
   </Step>
   <Step title="Start">
-    Move the Sprint from `Planning` to `Active`. Flotick begins recording scope changes and burndown data.
+    Review the commitment, then move the Sprint from `Planning` to `Active`.
   </Step>
 </Steps>
 
-## Complete a Sprint
+You can use [AI-assisted drafting](/features/ai-drafting) to prepare editable Sprint content.
 
-Velocity is the total story points on Tasks in `Done`. When incomplete Tasks remain, choose whether to move them to another non-completed Sprint or return them to the Project backlog. Flotick records their carry-over origin.
+## Sprint workspace
 
-Completed Sprints support a retrospective with what went well, what could improve, action items, and a rating. Sprint pages also expose burndown, scope changes, velocity history, comments, and member contribution data where available.
+| Tab | What it contains |
+| --- | --- |
+| Overview | Health, work board, carried work, and unassigned Tasks |
+| Insights | Commitment Coach, Auto Standup, and the active-Sprint scope ledger |
+| Members | Sprint membership and capacity context |
+| Files | Sprint attachments |
+| Comments | Sprint discussion |
+| Analytics | Burndown and Sprint delivery metrics |
 
-## Plan the Sprint
+**Commitment Coach** compares committed points with capacity and highlights risk. **Auto Standup** prepares a daily summary from current Sprint activity; Admins and Managers can regenerate it. The **Scope ledger** records additions, removals, estimate changes, completion, and reopening while the Sprint is active.
 
-Set a clear goal and capacity before moving a Sprint to `Active`. Capacity is expressed in story points and serves as the baseline for velocity and predictability. Add only work that belongs to the selected Project. Flotick rejects invalid date ranges and overlapping Sprints so the Project does not run conflicting time boxes.
+## Complete and carry work
 
-## Monitor delivery
+When unfinished Tasks remain, choose selected or all work and move it to another eligible Sprint or back to the Project backlog. Carried Tasks retain their source Sprint.
 
-During an active Sprint, the detail page provides:
+A Sprint supports one retrospective with what went well, what should improve, action items, and a rating. Keep it with the Sprint so the outcome is available during later planning.
 
-- **Burndown:** completed and remaining points against the Sprint dates.
-- **Scope ledger:** additions, removals, point changes, completion, and reopening events recorded while the Sprint is active.
-- **Task list and board:** current status of Sprint work.
-- **Velocity and contribution data:** points completed and historical context where the selected view supports it.
-- **Comments and files:** a shared record for decisions, demos, and Sprint context.
-
-Scope changes are recorded rather than silently ignored. They are useful for understanding why delivered work differs from the original commitment.
-
-## Carry unfinished work
-
-When completing a Sprint, review incomplete Tasks before confirming. You can send selected or all incomplete work to an eligible next Sprint, or return it to the Project backlog. Carried Tasks retain a reference to the Sprint they came from, which makes carry-over visible in later reviews.
-
-## Retrospectives
-
-After the Sprint is completed, authorized members can create one retrospective. Capture what went well, what needs improvement, action items, and a rating. The retrospective is stored with the Sprint so the team can revisit it during later planning.
+<Note>
+Velocity is based on story points completed in `Done`. Scope changes remain visible instead of being folded into the original commitment.
+</Note>

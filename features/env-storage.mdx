@@ -3,49 +3,41 @@ title: "Env Storage"
 description: "Store encrypted environment configuration by Project, codebase, and workspace."
 ---
 
-Env Storage is a paid-plan module for Project configuration. Access also depends on your member permission.
+Env Storage is available on Pro and Max. Access also depends on member permission and Project access.
 
 ## Structure
 
-`Project → Codebase → Workspace → Environment variables`
+`Project → Codebase → Workspace → Environment configuration`
 
-Codebase types include backend, frontend, mobile, database, DevOps, API, and custom. Workspaces can represent production, staging, development, testing, or a custom environment, with active, inactive, or maintenance status.
+Codebase types include backend, frontend, mobile, database, DevOps, API, and custom. A workspace can represent production, development, staging, testing, or a custom environment, with `Active`, `Inactive`, or `Maintenance` status.
 
-## Manage configuration
+## Manage a workspace
 
 <Steps>
-  <Step title="Select a Project">
-    Open **Env Storage** and choose an accessible Project.
+  <Step title="Choose a Project">
+    Open **Env Storage** and select an accessible Project.
   </Step>
-  <Step title="Create a codebase and workspace">
-    Authorized members can define the codebase, then create one or more workspaces under it.
+  <Step title="Create the structure">
+    Add a codebase, then create the workspaces it needs.
   </Step>
-  <Step title="Add variables">
-    Store configuration entries in the selected workspace. Sensitive values are encrypted at rest and masked in the interface.
+  <Step title="Add configuration">
+    Use **Normal** view to edit key-value rows, or **Developer** view to edit raw `.env` content.
   </Step>
-  <Step title="Use or export">
-    Copy values when permitted or download the workspace configuration as an `.env` file.
+  <Step title="Use the configuration">
+    Reveal or copy a value, copy a `KEY=value` pair, copy all, or download the workspace as an `.env` file.
   </Step>
 </Steps>
 
-Deleting a codebase or workspace removes its nested configuration after confirmation. Use separate workspaces to prevent production values from being mixed with development or testing.
+You can import a `.env` or `.txt` file up to 1 MB. Review the target workspace before importing or exporting.
 
-## Create a codebase
+## Versions and encryption
 
-Select the Project, open the **Codebases** tab, and click **Add Codebase**. Provide a name, choose the closest codebase type, and save. A Project can contain multiple codebases, such as a frontend and API, so each one can keep its own environment structure.
+Each saved configuration creates a version you can inspect later. Current values are masked until revealed.
 
-## Create a workspace
-
-Select a codebase, then create a workspace. Give it a name and choose its type and status. Use separate `Production`, `Staging`, `Development`, and `Testing` workspaces when the configuration values or access expectations differ.
-
-## Manage variables
-
-Open a workspace to add, edit, or remove environment configuration entries. Mark sensitive values as secrets. Secret values are encrypted at rest and presented as masked values in the workspace. Copy and export controls apply to the selected workspace, so verify the environment before using them.
-
-## Access and safety
-
-Only accessible Projects appear in Env Storage. Admins, Managers, and eligible Project creators can manage Project environments; members need the specific Env Storage permission to view the module. Store values carefully: exporting an `.env` file puts the selected values on the device that downloads it.
+Workspace values are encrypted at rest. You can also enable zero-knowledge encryption with a custom passphrase; the entire configuration is then encrypted and decrypted in your browser.
 
 <Warning>
-Never paste production secrets into a Task, comment, feature request, or support email. Use the intended Env Storage workspace instead.
+A zero-knowledge passphrase cannot be recovered by Flotick. Losing it makes the protected configuration unreadable.
 </Warning>
+
+Deleting a codebase or workspace removes its nested configuration after confirmation. Keep production and non-production values in separate workspaces.

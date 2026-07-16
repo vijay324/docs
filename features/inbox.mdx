@@ -3,46 +3,27 @@ title: "Inbox"
 description: "Review Tasks relevant to you in a focused master-detail workspace."
 ---
 
-Inbox is the default page after sign-in. It shows your active work rather than the organization's entire Task list.
+Inbox is the default page after sign-in. It shows your active work instead of the organization's full Task list.
 
-Inbox includes Sprint Tasks where you are the assignee, reviewer, tester, or reporter, plus individual Tasks you created. Tasks from completed Sprints are hidden unless you enable **Show completed sprint tasks**.
+It includes Sprint Tasks where you participate as assignee, reviewer, tester, or reporter, plus individual Tasks you created. Tasks from completed Sprints are hidden unless you enable **Show completed sprint tasks**.
 
 ## Views and filters
 
-- **List:** select a Task on the left and work from its detail panel.
-- **Board:** group the same Tasks by status and move them with drag-and-drop.
+- **List:** select a Task and work from its detail pane.
+- **Board:** group the same Tasks by status and move them with drag and drop.
 - **Calendar:** place Tasks by due date.
-- **Filters:** narrow by search, status, priority, type, responsibility, dates, and other available Task fields.
+- **Filters:** narrow by search, status, priority, type, Project, Sprint, responsibility, label, or date.
 
-From Inbox, you can create a Task, edit accessible fields, change status, and delete work you are allowed to manage.
+Available scopes include **All**, **Assigned**, **Created**, and **Team**, depending on your permissions.
+
+## Work from Inbox
+
+Create a Task, open its full page, or update accessible responsibility, priority, status, dates, description, subtasks, files, comments, and work logs from the detail experience.
 
 <Note>
-The bell in the app header is the notification center. Inbox is your personal Task workspace; it is not a notification history.
+The header bell is the notification center. Inbox is your personal Task workspace, not a notification history.
 </Note>
 
-Use the Orbit launcher or open `/<org-slug>/inbox/orbit` for [Orbit](/features/orbit).
+If a Task is missing, clear filters, confirm its Project, and check whether it belongs to a completed Sprint or [Trash](/features/trash). Your role, permissions, visibility, and Project access determine whether you can view or edit it.
 
-## Find the right work
-
-The toolbar applies filters to your personal Task set. Use it to narrow work by status, priority, type, Project, Sprint, responsibility, label, or due date. Search matches Task information available in the current list.
-
-Choose a scope when it is available:
-
-| Scope | Includes |
-| --- | --- |
-| **All** | Your relevant individual and Sprint Tasks. |
-| **Assigned** | Tasks where you are the assignee. |
-| **Created** | Tasks you reported or created. |
-| **Team** | Team Tasks you are permitted to view. |
-
-The page keeps completed-Sprint work out of the default results so daily execution stays focused. Turn on **Show completed sprint tasks** only when you are reviewing historical work.
-
-## Work from the detail pane
-
-In List view, select a Task to open its details without leaving Inbox. Depending on your permissions, you can update ownership, priority, status, dates, description, subtasks, files, comments, work logs, and task links. The detail pane is optimized for quick review; open the full Task page when you need the complete history or more space.
-
-## Common questions
-
-**A Task is missing:** clear filters, confirm the Project selector, and check whether it belongs to a completed Sprint. A deleted Task appears in [Trash](/features/trash) if you have access.
-
-**I cannot edit a Task:** your role, Project membership, and per-member permission settings determine which operations you can perform. Ask an Admin or Manager to review your access.
+Use the Orbit launcher or open `/<org-slug>/inbox/orbit` for [Orbit Chat](/features/orbit).

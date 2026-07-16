@@ -284,55 +284,6 @@ export interface PaginatedResponse<T> {
   pagination: Pagination;
 }
 
-// Feedback Types
-export interface FeedbackItem {
-  _id: string;
-  topic: 'bug' | 'feature' | 'improvement' | 'other';
-  feedback: string;
-  rating: number;
-  submittedBy?: {
-    _id: string;
-    firstName?: string;
-    lastName?: string;
-    email: string;
-    username: string;
-    role: string;
-  };
-  organizationId?: string;
-  email?: string;
-  status: 'pending' | 'reviewed' | 'resolved' | 'archived';
-  reviewedBy?: {
-    _id: string;
-    firstName?: string;
-    lastName?: string;
-    email: string;
-  };
-  reviewedAt?: string;
-  adminNotes?: string;
-  metadata?: {
-    userAgent?: string;
-    ipAddress?: string;
-    browser?: string;
-    os?: string;
-  };
-  createdAt: string;
-  updatedAt: string;
-  ratingEmoji?: string;
-  ratingLabel?: string;
-}
-
-export interface FeedbackStats {
-  total: number;
-  byStatus: {
-    pending: number;
-    reviewed: number;
-    resolved: number;
-    archived: number;
-  };
-  byTopic: Record<string, number>;
-  byRating: Record<string, number>;
-}
-
 // Subscribed Users Types
 export interface SubscribedUser {
   _id: string;
@@ -435,4 +386,3 @@ export interface QuickHealthReport {
   }>;
   uptime: number;
 }
-

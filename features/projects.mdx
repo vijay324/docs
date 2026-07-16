@@ -3,52 +3,56 @@ title: "Projects"
 description: "Organize related Tasks, Sprints, members, files, analytics, and recurring work."
 ---
 
-A Project is the main container for delivery work. It has a name, description, readable ID, lead, visibility, members, dates, status, and health.
+A Project is the main container for delivery work. It starts in `Planning` and keeps its own members, visibility, Sprints, Tasks, files, and recurring schedules.
 
-## Status and visibility
+## Project lifecycle
 
-Project status supports `Active`, `On Hold`, `Archived`, `Cancelled`, and `Completed`. Health is tracked as `On Track`, `At Risk`, `Off Track`, or `Unknown`.
+`Planning → Active → Review → Completed`
 
-- **Private:** available to explicitly assigned members and organization roles with broader access.
-- **Public:** visible according to organization access rules.
+Authorized members advance a Project one stage at a time from **Project settings**. The underlying lifecycle stays fixed, but you can change the display label, color, and order used for each stage.
+
+| Visibility | Who can open the Project |
+| --- | --- |
+| **Public** | Organization members with Project access |
+| **Private** | Assigned Project members, the creator, and privileged organization roles |
 
 ## Project workspace
 
 | Tab | What it contains |
 | --- | --- |
-| Overview | Project progress, recent work, and Task summary |
-| Sprints | Sprints, dates, capacity, status, and velocity |
+| Overview | Progress, health summary, recent work, overdue Tasks, and team context |
+| Sprints | Project Sprints and their current lifecycle state |
 | Team | Project membership |
-| Analytics | Project metrics for a selected time range |
-| Assets | Project files and environment workspace access |
+| Assets | Files attached to the Project |
 | Recurring Tasks | Daily, weekly, or monthly Task schedules |
 
-Admins and Managers can create Projects and manage Project membership. Project settings also allow authorized members to edit details and customize the display label, color, and order of Project statuses.
-
-Archived Projects remain available without counting as active Projects. Deleted Projects move to [Trash](/features/trash).
+Use **Analytics** from the Project header to open reporting already scoped to that Project.
 
 ## Create a Project
 
 <Steps>
-  <Step title="Open Projects">
-    Click **New project**. Creating a Project normally requires Admin or Manager access.
-  </Step>
   <Step title="Define the Project">
-    Enter its name and optional description, select visibility, lead, dates, status, and health, then choose the members who need direct access.
+    Click **New project**, then enter a name and optional description.
   </Step>
-  <Step title="Set up delivery">
-    Add Tasks, create a Sprint, upload reference assets, and create recurring Task schedules where appropriate.
+  <Step title="Set access">
+    Choose **Public** or **Private** and add the members who need to work in it.
+  </Step>
+  <Step title="Add context">
+    Upload reference files or use **Draft with AI** to prepare editable Project content.
+  </Step>
+  <Step title="Plan delivery">
+    Create Tasks, add a Sprint, or configure a recurring Task schedule.
   </Step>
 </Steps>
 
-The Project receives a short ID based on its configured prefix. That ID is stable for links and references even if the Project name later changes.
+Project creation and team management normally require Admin or Manager access. Plan limits apply to active Projects.
 
-## Manage the Project team
+## Manage or remove a Project
 
-Project membership is separate from organization membership. Add members who need Project access and remove members when their work moves elsewhere. Admins and Managers have broader organization access, but a private Project still uses explicit membership to control the intended working group.
+Use **Project settings** to edit its name, description, visibility, members, displayed status styling, or lifecycle stage.
 
-## Archive, complete, and delete
+Deleting a Project moves it to [Trash](/features/trash) for 30 days and also soft-deletes its Sprints and Tasks. Restoring the Project restores that nested work when plan limits and access rules allow it.
 
-Use **Completed** when delivery is finished and **Archived** when the Project should no longer be active but needs to remain visible. Both states preserve the Project record. Deleting sends the Project to Trash; restore it before the 30-day recovery period ends.
-
-If a Project is plan-locked after a downgrade, it remains visible but becomes read-only until capacity is restored.
+<Note>
+A Project affected by a lower plan limit remains retained but can become restricted until the organization restores capacity.
+</Note>

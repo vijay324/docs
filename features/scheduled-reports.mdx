@@ -1,37 +1,32 @@
 ---
 title: "Scheduled reports"
-description: "Email weekly or monthly PDF analytics snapshots to organization recipients."
+description: "Email weekly or monthly analytics reports to selected recipients."
 ---
 
-Scheduled reports are a Max-plan feature for Admins and Managers. Open **Settings → Scheduled reports**.
+Scheduled reports are available on Max to Admins and Managers.
+
+## Schedule from Settings
+
+Open **Settings → Scheduled reports** to create a PDF snapshot for the organization or one Project.
 
 <Steps>
-  <Step title="Choose scope">
-    Select the full organization or one Project.
-  </Step>
-  <Step title="Choose cadence">
-    Select weekly or monthly.
+  <Step title="Choose scope and cadence">
+    Select organization-wide or a Project, then choose weekly or monthly delivery.
   </Step>
   <Step title="Set recipients">
-    Enter comma-separated email addresses. Leave the field blank to send to all Admins and Managers.
+    Enter comma-separated addresses, or leave the field blank to include all Admins and Managers.
   </Step>
-  <Step title="Create the schedule">
-    Flotick calculates the next delivery time and activates the schedule.
+  <Step title="Create and verify">
+    Create the schedule, then use **Send sample to me** or **Send report now**.
   </Step>
 </Steps>
 
-After creation, you can send the full report immediately or send a private sample to yourself. Active schedules can be paused, resumed, or deleted.
+The schedules list shows scope, cadence, recipients, state, and next run. Pause, resume, or delete a schedule from the list.
 
-## Manage an existing schedule
+## Schedule a saved Analytics view
 
-The **Active schedules** list shows the scope, cadence, recipients, state, and next delivery date. Use the switch to pause a schedule temporarily; pausing does not delete its configuration. Delete it when the report should no longer be delivered.
+In **Analytics**, select a saved view and click **Schedule**. Choose weekly or monthly delivery, PDF or XLSX, and organization-member recipients. The report preserves the saved scope and filters and includes generated insights.
 
-You can update cadence and recipient emails from the schedule controls. The scope is chosen when creating the schedule, so create a separate schedule when you need a different Project or organization-wide audience.
-
-## Delivery behavior
-
-With no recipients listed, Flotick sends the report to the organization Admins and Managers. A **Send report now** action sends the configured report to its recipients. A **Send sample to me** action is safer for checking the format and content before a broad delivery.
-
-<Tip>
-Use one organization-wide leadership report and separate Project reports for delivery owners. Keep the recipient list intentional to avoid duplicating routine email.
-</Tip>
+<Note>
+Use an organization report for leadership coverage and Project reports for focused delivery reviews. Check recipients before sending operational or people data.
+</Note>

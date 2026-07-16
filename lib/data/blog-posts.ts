@@ -16,21 +16,21 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: 'what-is-flotick-complete-guide',
-    title: 'What is Flotick? The Modern Work Management Platform',
+    slug: "what-is-flotick-complete-guide",
+    title: "What is Flotick? The Modern Work Management Platform",
     description:
-      'Discover Flotick, the unified work management platform for growing teams. Learn how Flotick combines project management, execution tracking, and people management into one seamless experience.',
-    author: 'Flotick Team',
-    publishedAt: '2026-01-15T10:00:00Z',
-    updatedAt: '2026-02-08T10:00:00Z',
-    image: '/blog/what-is-flotick.png',
-    tags: ['Getting Started', 'Product Overview', 'Work Management'],
+      "Discover Flotick, the unified work management platform for growing teams. Learn how Flotick combines project management, execution tracking, and people management into one seamless experience.",
+    author: "Flotick Team",
+    publishedAt: "2026-01-15T10:00:00Z",
+    updatedAt: "2026-02-08T10:00:00Z",
+    image: "/blogs/what-is-flotick.png",
+    tags: ["Getting Started", "Product Overview", "Work Management"],
     keywords: [
-      'what is flotick',
-      'flotick work management',
-      'flotick guide',
-      'work management system',
-      'agile project management',
+      "what is flotick",
+      "flotick work management",
+      "flotick guide",
+      "work management system",
+      "agile project management",
     ],
     readingTime: 8,
     featured: true,
@@ -159,20 +159,21 @@ A: Yes, all paid plans include API access for custom integrations and automation
     `,
   },
   {
-    slug: 'flotick-vs-traditional-project-management',
-    title: 'Flotick vs Traditional Project Management Tools: A Comprehensive Comparison',
+    slug: "flotick-vs-traditional-project-management",
+    title:
+      "Flotick vs Traditional Project Management Tools: A Comprehensive Comparison",
     description:
-      'Compare Flotick with traditional project management tools. Discover why teams are switching to Flotick for unified work and people management.',
-    author: 'Flotick Team',
-    publishedAt: '2026-01-20T10:00:00Z',
-    image: '/blog/flotick-comparison.png',
-    tags: ['Comparison', 'Product Analysis', 'Work Management'],
+      "Compare Flotick with traditional project management tools. Discover why teams are switching to Flotick for unified work and people management.",
+    author: "Flotick Team",
+    publishedAt: "2026-01-20T10:00:00Z",
+    image: "/blogs/flotick-comparison.png",
+    tags: ["Comparison", "Product Analysis", "Work Management"],
     keywords: [
-      'flotick vs asana',
-      'flotick vs monday',
-      'project management comparison',
-      'best work management tool',
-      'flotick alternatives',
+      "flotick vs asana",
+      "flotick vs monday",
+      "project management comparison",
+      "best work management tool",
+      "flotick alternatives",
     ],
     readingTime: 10,
     featured: true,
@@ -310,20 +311,20 @@ Ready to see the difference? [Start your free 14-day Flotick trial](/auth/signup
     `,
   },
   {
-    slug: 'getting-started-with-flotick-beginners-guide',
-    title: 'How to Get Started with Flotick: A Complete Beginner\'s Guide',
+    slug: "getting-started-with-flotick-beginners-guide",
+    title: "How to Get Started with Flotick: A Complete Beginner's Guide",
     description:
-      'New to Flotick? This step-by-step guide will help you set up your workspace, create your first project, plan sprints, and get your team productive in minutes.',
-    author: 'Flotick Team',
-    publishedAt: '2026-01-25T10:00:00Z',
-    image: '/blog/getting-started.png',
-    tags: ['Tutorial', 'Getting Started', 'How-To'],
+      "New to Flotick? This step-by-step guide will help you set up your workspace, create your first project, plan sprints, and get your team productive in minutes.",
+    author: "Flotick Team",
+    publishedAt: "2026-01-25T10:00:00Z",
+    image: "/blog/getting-started.png",
+    tags: ["Tutorial", "Getting Started", "How-To"],
     keywords: [
-      'flotick tutorial',
-      'how to use flotick',
-      'flotick beginner guide',
-      'flotick setup',
-      'getting started flotick',
+      "flotick tutorial",
+      "how to use flotick",
+      "flotick beginner guide",
+      "flotick setup",
+      "getting started flotick",
     ],
     readingTime: 12,
     featured: true,
@@ -591,20 +592,20 @@ Happy collaborating! 🚀
     `,
   },
   {
-    slug: 'task-management-best-practices-flotick',
-    title: '10 Best Practices for Task Management in Flotick',
+    slug: "task-management-best-practices-flotick",
+    title: "10 Best Practices for Task Management in Flotick",
     description:
-      'Master task management in Flotick with these proven best practices. Learn how to prioritize work, organize tasks efficiently, and boost team productivity.',
-    author: 'Flotick Team',
-    publishedAt: '2026-01-28T10:00:00Z',
-    image: '/blog/best-practices.png',
-    tags: ['Best Practices', 'Productivity', 'Tips'],
+      "Master task management in Flotick with these proven best practices. Learn how to prioritize work, organize tasks efficiently, and boost team productivity.",
+    author: "Flotick Team",
+    publishedAt: "2026-01-28T10:00:00Z",
+    image: "/blog/best-practices.png",
+    tags: ["Best Practices", "Productivity", "Tips"],
     keywords: [
-      'flotick tips',
-      'task management best practices',
-      'flotick productivity',
-      'work management tips',
-      'agile best practices',
+      "flotick tips",
+      "task management best practices",
+      "flotick productivity",
+      "work management tips",
+      "agile best practices",
     ],
     readingTime: 7,
     content: `
@@ -875,20 +876,20 @@ Ready to put these practices into action? [Log in to Flotick](/auth/sign-in) and
     `,
   },
   {
-    slug: 'flotick-for-agile-teams-sprint-planning',
-    title: 'Flotick for Agile Teams: Sprint Planning Made Easy',
+    slug: "flotick-for-agile-teams-sprint-planning",
+    title: "Flotick for Agile Teams: Sprint Planning Made Easy",
     description:
-      'Learn how Flotick empowers agile teams with powerful sprint planning tools, burndown charts, velocity tracking, and retrospectives. Perfect for Scrum and Kanban teams.',
-    author: 'Flotick Team',
-    publishedAt: '2026-02-01T10:00:00Z',
-    image: '/blog/agile-teams.png',
-    tags: ['Agile', 'Sprint Planning', 'Scrum'],
+      "Learn how Flotick empowers agile teams with powerful sprint planning tools, burndown charts, velocity tracking, and retrospectives. Perfect for Scrum and Kanban teams.",
+    author: "Flotick Team",
+    publishedAt: "2026-02-01T10:00:00Z",
+    image: "/blog/agile-teams.png",
+    tags: ["Agile", "Sprint Planning", "Scrum"],
     keywords: [
-      'flotick agile',
-      'sprint planning tool',
-      'scrum management',
-      'agile project management',
-      'flotick sprints',
+      "flotick agile",
+      "sprint planning tool",
+      "scrum management",
+      "agile project management",
+      "flotick sprints",
     ],
     readingTime: 9,
     content: `
@@ -1204,25 +1205,31 @@ Ready to make sprint planning effortless? [Start your free Flotick trial](/auth/
 
 // Helper function to get featured posts
 export function getFeaturedPosts(): BlogPost[] {
-  return blogPosts.filter(post => post.featured);
+  return blogPosts.filter((post) => post.featured);
 }
 
 // Helper function to get post by slug
 export function getPostBySlug(slug: string): BlogPost | undefined {
-  return blogPosts.find(post => post.slug === slug);
+  return blogPosts.find((post) => post.slug === slug);
 }
 
 // Helper function to get recent posts
 export function getRecentPosts(limit: number = 5): BlogPost[] {
   return blogPosts
-    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+    .sort(
+      (a, b) =>
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+    )
     .slice(0, limit);
 }
 
 // Helper function to get related posts
-export function getRelatedPosts(currentPost: BlogPost, limit: number = 3): BlogPost[] {
+export function getRelatedPosts(
+  currentPost: BlogPost,
+  limit: number = 3,
+): BlogPost[] {
   return blogPosts
-    .filter(post => post.slug !== currentPost.slug)
-    .filter(post => post.tags.some(tag => currentPost.tags.includes(tag)))
+    .filter((post) => post.slug !== currentPost.slug)
+    .filter((post) => post.tags.some((tag) => currentPost.tags.includes(tag)))
     .slice(0, limit);
 }

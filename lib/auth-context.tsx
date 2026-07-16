@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Better Auth — React Auth Context
+ * Better Auth React Auth Context
  *
  * Provides `useAuth()` hook for components to check authentication state,
  * sign in, sign out, etc.  Wraps Better Auth's `useSession` hook and adds

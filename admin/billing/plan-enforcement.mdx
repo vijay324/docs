@@ -9,37 +9,22 @@ Plan enforcement is non-destructive. A downgrade normally opens a seven-day grac
 
 - The current higher-plan access remains active.
 - The app shows the pending plan and deadline.
-- Admins can reduce seats and active Projects or upgrade again.
+- Admins can reduce members and active Projects or restore the higher plan.
 
 ## After enforcement
 
-- New actions above the plan limits are blocked.
+- New actions above the lower limits are blocked.
 - Excess newest non-Admin members are locked from signing in.
 - Excess newest active Projects become read-only.
 - Paid modules and advanced actions are hidden or blocked.
 - Stored records remain in the organization.
 
-The Admin is never plan-locked. Archived and completed Projects do not count as active Projects.
+The Admin is not plan-locked. Completed Projects do not count as active Projects.
 
 ## Restore access
 
-Upgrade or reduce usage until it fits the plan. Flotick automatically unlocks eligible members and Projects when capacity returns; no retained work needs to be recreated.
+Upgrade or reduce usage until it fits the plan. Flotick unlocks eligible members and Projects when capacity returns; retained work does not need to be recreated.
 
-## What to expect during a downgrade
+Before enforcement, remove or deactivate members who no longer need access, complete Projects that are finished, and remove unused files when storage exceeds the next allowance. Do not permanently delete work solely to avoid a reversible plan lock.
 
-The default downgrade grace period is seven days, although a deployment can configure a different period. During grace, Flotick keeps the current effective plan active and exposes a warning to the organization. This is the time to clean up usage or reverse the plan change.
-
-At enforcement, the service chooses the newest eligible excess members and active Projects to lock. It preserves the organization Admin's access. Locked Projects are visible and read-only; locked members cannot sign in. Records, history, files, and relationships remain stored.
-
-## Reduce usage before enforcement
-
-- Remove or deactivate only members who no longer need access.
-- Archive or complete Projects that are no longer active.
-- Delete or move unused files if storage is above the new allowance.
-- Document paid-only workflows that the lower plan no longer exposes.
-
-Do not permanently delete work merely to avoid a plan lock unless data removal is actually intended. A plan lock is reversible and designed to preserve the organization state.
-
-## Check restricted state
-
-Flotick exposes the pending plan, grace deadline, and locked-resource status to the workspace so members understand why a feature or Project is restricted. The Admin should use that information to decide whether to reduce usage or restore the higher entitlement.
+The billing workspace shows the pending plan, grace deadline, and restricted resources so the Admin can decide how to restore capacity.

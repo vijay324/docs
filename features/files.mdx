@@ -3,43 +3,38 @@ title: "Files"
 description: "Upload, organize, preview, download, and assign files across your organization."
 ---
 
-Files can belong to a Project, Sprint, or Task. **All Files** provides an organization-wide browser for files you can access.
+Files can belong to a Project, Sprint, or Task. You can also upload an unassigned file and connect it later.
 
-## File actions
+## Browse the library
 
-- Upload one or more files with background progress
-- Preview supported formats or download the original
-- Add or remove standard tags such as `design`, `specification`, `report`, `draft`, or `final-version`
-- Assign an unassigned file to a Project, Sprint, or Task
-- Reassign a file to another supported item
-- Delete and restore files through Trash
+**All Files** is organized into **All Files**, **Projects**, **Sprints**, **Tasks**, and **Unassigned** tabs. Search by file name, select multiple files, and inspect the uploader and current association.
 
-Uploads use short-lived secure upload URLs. Download and inline-view access is also issued on demand rather than exposing a permanent storage URL.
+Available actions include:
 
-## Limits
+- Upload with drag and drop or the file picker
+- Preview supported images and PDFs
+- Download the original
+- Copy a temporary view link when available
+- Assign or reassign files to a Project, Sprint, or Task
+- Add standard tags such as `design`, `specification`, `draft`, or `final-version`
+- Delete files and restore them from [Trash](/features/trash)
 
-Storage and per-file size limits depend on plan. The current implemented maximums are 25 MB on Free, 100 MB on Pro, and 500 MB on Max. The app shows remaining organization storage and rejects files above the active limit before upload.
+## Upload limits
 
-<Note>
-Free organizations can upload Project and Sprint files within plan limits. Task attachments require a plan that enables Task file uploads.
-</Note>
+| Plan | Organization storage | Maximum file size |
+| --- | ---: | ---: |
+| Free | 500 MB | 25 MB |
+| Pro | 5 GB | 100 MB |
+| Max | 100 GB | 500 MB |
 
-## Upload files
+Project, Sprint, Task, and unassigned uploads are available on every plan within these limits. The app shows current storage usage and rejects an upload that exceeds the active allowance.
 
-You can upload directly from a Task's attachments, a Sprint's attachments, a Project's assets tab, or the All Files workspace. Select the target before uploading whenever possible so the file is immediately attached to the correct work item.
+## Keep files organized
 
-The upload queue continues in the background and displays progress, success, or failure for each file. If an upload fails, retry it after checking your network connection, storage allowance, file size, and access to the target entity.
+Attach long-lived reference material to the Project, planning material to the Sprint, and execution evidence to the Task. Use **Assign** for an unassigned upload and **Reassign** when its work context changes.
 
-## Organize the library
+Viewing and downloading use short-lived access URLs. A copied storage URL is not a permanent public link.
 
-In **All Files**, search and filter files, inspect their owner and associated entity, and apply standard tags. Tags help teams distinguish reference material, designs, specifications, project-wide assets, drafts, and final versions without changing the original filename.
-
-Use **Assign** for unassigned uploads and **Reassign** when a file should move between supported Projects, Sprints, and Tasks. Reassigning changes the association, not the file bytes or file name.
-
-## Preview, download, and delete
-
-Use **View** to open a supported file in the browser and **Download** to save the original. Flotick grants the access URL only for the request, so do not rely on a copied storage URL remaining available. Delete a file when it is no longer needed; restore it from [Trash](/features/trash) during the recovery window.
-
-<Tip>
-Attach a canonical specification to the Project, a planning artifact to the Sprint, and evidence or implementation context to the individual Task.
-</Tip>
+<Warning>
+Do not upload secrets to Files. Store environment configuration in [Env Storage](/features/env-storage).
+</Warning>

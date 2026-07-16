@@ -21,7 +21,7 @@
     "primary": {
       "type": "button",
       "label": "Open Flotick",
-      "href": "https://flotick.com"
+      "href": "https://app.flotick.com"
     }
   },
   "navigation": {
@@ -64,8 +64,7 @@
             "pages": [
               "features/projects",
               "features/sprints",
-              "features/recurring-tasks",
-              "features/task-dependencies"
+              "features/recurring-tasks"
             ]
           },
           {
@@ -79,10 +78,7 @@
           },
           {
             "group": "Developer workflows",
-            "pages": [
-              "features/env-storage",
-              "features/trash"
-            ]
+            "pages": ["features/env-storage"]
           }
         ]
       },
@@ -93,9 +89,7 @@
             "group": "Time and time off",
             "pages": [
               "features/attendance",
-              "features/leave",
-              "features/holidays",
-              "features/shifts"
+              "features/leave"
             ]
           },
           {
@@ -111,7 +105,7 @@
         ]
       },
       {
-        "tab": "Orbit and analytics",
+        "tab": "Insights and AI",
         "groups": [
           {
             "group": "Orbit",
@@ -119,6 +113,7 @@
               "features/orbit",
               "features/ai-agent",
               "features/ai-summaries",
+              "features/ai-drafting",
               "features/ai-enhance"
             ]
           },
@@ -155,7 +150,8 @@
             "group": "Your account",
             "pages": [
               "account/profile",
-              "account/security-and-2fa"
+              "account/security-and-2fa",
+              "features/trash"
             ]
           }
         ]
@@ -167,7 +163,6 @@
             "group": "Product help",
             "pages": [
               "resources/feature-requests",
-              "resources/feedback",
               "resources/feature-matrix",
               "resources/security",
               "resources/faq",

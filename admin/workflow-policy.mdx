@@ -1,37 +1,20 @@
 ---
 title: "Workflow configuration"
-description: "Configure organization Task stages, transitions, priorities, Sprint defaults, and estimation."
+description: "Set Task status colors, priority colors, and the organization story-point scale."
 ---
 
 Workflow customization is available on Pro and Max. Admins manage it from **Settings → Workflow configuration**.
 
-## Configuration areas
+## What you can configure
 
-- **Statuses:** enable, label, color, and order Sprint Task stages.
-- **Transitions:** define which status moves are allowed.
-- **Priorities:** control labels, colors, and order for Task priorities.
-- **Sprint defaults:** configure organization Sprint behavior exposed by the settings form.
-- **Story points:** select the allowed estimation scale.
-- **Departments:** manage main and sub-departments.
+| Area | Configuration |
+| --- | --- |
+| Task statuses | Color for each fixed workflow status |
+| Priorities | Color for `Critical`, `High`, `Medium`, and `Low` |
+| Story points | Fibonacci, linear, or T-shirt estimation scale |
 
-The server validates workflow transitions for direct edits, bulk changes, and drag-and-drop. Individual Tasks retain their separate three-stage workflow.
+The status pipeline, priority keys, labels, and order remain fixed so boards, permissions, and Analytics stay consistent. Individual Tasks keep their separate three-stage workflow.
 
-Use validation before saving a complex workflow. **Reset** restores the default organization configuration.
+Use the live preview to review Task cards and board columns. Click **Save Changes** to publish the new appearance, or **Reset** to restore the default configuration.
 
-<Warning>
-Removing or renaming a displayed option does not erase historical Task data. Review existing Tasks before changing a workflow used by active Sprints.
-</Warning>
-
-## Configure statuses and transitions
-
-Statuses control the columns and state choices available to Sprint Tasks. Give each status a clear label and color, then place it in the intended order. Transitions define which moves are valid—for example, a team can require work to pass through review before it reaches done.
-
-Before saving, use the configuration's validation control. A workflow with no valid path for an active Task will block normal delivery, so test the key paths your team uses: start work, request review, test, block, reopen, and complete.
-
-## Configure priority and estimation
-
-Priority configuration controls the labels and visual order used when teams triage work. Story-point configuration controls the estimate values users can choose. Keep the scale short and familiar so capacity and velocity remain comparable across Sprints.
-
-## Apply changes to active work
-
-Workflow changes take effect for new interactions after saving. Existing Tasks retain their stored status and priority values. Plan a migration for active Sprints before removing a stage or option that they use, and communicate the new meaning to the team before the next planning session.
+Departments are managed from the separate **Departments** tab. See [Departments](/admin/departments).

@@ -10,7 +10,7 @@
 
 ## Audience
 
-End users of Flotick — Admins, Managers, and Members of organizations using the product. The docs are not for Flotick employees or for implementing the product itself.
+End users of Flotick Admins, Managers, and Members of organizations using the product. The docs are not for Flotick employees or for implementing the product itself.
 
 ## Terminology
 
@@ -21,7 +21,7 @@ End users of Flotick — Admins, Managers, and Members of organizations using th
 - **Sign in / sign out / sign-up** (sign-up hyphenated only as a noun)
 - Use the term "two-factor authentication" with "TOTP" or "2FA" as accepted shorthand
 - "Real-time" with the hyphen
-- "AI Summary", "AI Insight", "AI Enhance" — capitalized as proper feature names
+- "AI Summary", "AI Insight", "AI Enhance" capitalized as proper feature names
 
 ## Style
 
@@ -45,6 +45,6 @@ Maintainers replace these with real screenshots when capturing. Keep description
 ## Content boundaries
 
 - Document only user-facing surfaces in `app.flotick.com`. Do not document internal-only super admin tools.
-- Avoid implementation details (API routes, database fields, internal modules) — they belong in the engineering repo, not here.
+- Avoid implementation details (API routes, database fields, internal modules) they belong in the engineering repo, not here.
 - Keep pricing references soft. Authoritative pricing lives at `flotick.com/pricing`.
 - Don't document features behind a feature flag until they ship to all users on at least one plan.

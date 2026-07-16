@@ -3,54 +3,43 @@ title: "Orbit Agent"
 description: "Turn a plain-language instruction into a reviewed sequence of workspace changes."
 ---
 
-Orbit Agent is available to Admins and Managers from the **Agent** tab in Orbit.
+Orbit Agent is visible to Admins and Managers from the **Agent** tab in Orbit. Each action is still checked against the requesting member's role and access.
 
-## How execution works
+## Run an instruction
 
 <Steps>
   <Step title="Describe the outcome">
-    Ask Orbit to create or update delivery work, assign Tasks, set deadlines, add a comment, complete a Project, or cancel a Task.
+    Name the relevant Project, Sprint, Tasks, members, dates, and status changes.
   </Step>
   <Step title="Review the plan">
-    Orbit resolves referenced Projects, Sprints, Tasks, and members, then presents each proposed step. Nothing runs before approval.
+    Orbit resolves the referenced records and presents every proposed step. Nothing runs before approval.
   </Step>
-  <Step title="Run">
-    Approve the plan. Progress updates in real time and each action records its status.
+  <Step title="Approve execution">
+    Run the plan and follow each step through pending, running, succeeded, failed, or skipped state.
   </Step>
-  <Step title="Review or undo">
-    Open a completed session from history. Supported actions can be undone when the original state is still valid.
+  <Step title="Review history">
+    Open the completed session to inspect the instruction, actions, results, and usage.
   </Step>
 </Steps>
 
-Agent tools include creating Tasks, Projects, and Sprints; updating Tasks and Projects; assigning one or multiple Tasks; changing status; setting deadlines; and adding comments.
+## Supported actions
+
+- Create Tasks, Projects, and Sprints
+- Update Tasks and Projects
+- Assign one Task or assign up to 25 Tasks in bulk
+- Change Task status or deadline
+- Add a Task comment
+- Complete a Project
+- Cancel a Task
+
+A plan can contain up to 20 steps. Some actions require Admin access even when the Agent tab is visible; for example, creating or completing a Project and bulk assignment are Admin-only. Other delivery actions require Manager-level authority.
 
 <Warning>
-Orbit Agent never deletes records. Removal requests are mapped to safe, visible state changes such as completing a Project or blocking a Task with an audit comment.
+Orbit Agent does not delete records, manage members or billing, change organization settings, or send messages outside Flotick.
 </Warning>
 
-A plan can contain up to 20 steps, and bulk assignment is limited to 25 Tasks per action.
+## Undo
 
-## What Agent can do
+Admins can undo supported update actions from a completed session when the target has not changed in a way that makes reversal unsafe. Creations and comments are not undoable. Agent warns about newer changes instead of silently overwriting them.
 
-| Action | Typical use |
-| --- | --- |
-| Create Project, Sprint, or Task | Turn a delivery plan into structured workspace records. |
-| Update Project or Task | Change supported details such as title, priority, status, or planning data. |
-| Assign Tasks | Assign one Task or distribute a selected batch. |
-| Change Task status or deadline | Move work or set a due date after reviewing the plan. |
-| Add a comment | Record a decision or context on a Task. |
-| Complete a Project or cancel a Task | Use safe state changes instead of deletion. |
-
-## Review the plan carefully
-
-The plan shows the actions, targets, and resolved members or work items before execution. Confirm the Project, Sprint dates, assignees, task titles, and status changes are correct. Cancel the session if anything is ambiguous; you can submit a clearer instruction in a new session.
-
-After approval, each step progresses through pending, running, succeeded, failed, skipped, or undone states. A failed step can stop dependent remaining steps, so review the session history rather than assuming a partially completed plan performed every change.
-
-## Undo and history
-
-When an action is eligible, Agent exposes an undo control from the completed session. Undo is not guaranteed: it requires the original entity state to still make the reversal safe. Agent history is available in Orbit, letting authorized users inspect instruction, planned work, execution state, and credit use later.
-
-<Tip>
-Start with a small instruction—one Project or a few Tasks—before automating a larger workflow. It is easier to verify the resulting pattern and refine the wording.
-</Tip>
+Review every plan for the correct records, responsibility, dates, and status before approval. A failed step can prevent dependent steps from running.

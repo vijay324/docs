@@ -15,7 +15,7 @@ Each row shows who deleted the item, when it was deleted, and how many days rema
 Permanent deletion cannot be undone. Items also become unavailable after their recovery window expires.
 </Warning>
 
-Restoring a member uses a plan seat. Restoring a Project can be blocked by plan limits or by a missing parent relationship. Restore parent items before their children when necessary.
+Restoring a member uses a plan seat. Restoring a Project can be blocked by plan limits. A Project restore also restores the Sprints and Tasks soft-deleted with it.
 
 ## Restore an item
 
@@ -31,7 +31,7 @@ Restoring a member uses a plan seat. Restoring a Project can be blocked by plan 
   </Step>
 </Steps>
 
-Restoration returns the record and its retained related data to normal access where the original parent and permission conditions still exist. For example, restoring a Task also restores its standard Task context; restoring a file returns it to its supported association.
+Restoration returns the record and its retained related data to normal access when its parent, plan, and permission conditions allow it. Restore a missing parent before restoring a child that was deleted independently.
 
 ## Permanently delete
 

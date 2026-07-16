@@ -7,7 +7,7 @@ description: "Change your password, use Google sign-in, enable 2FA, and verify n
 
 Email-based accounts can change the password from **Profile → Security**. Enter the current password and a new password that passes the strength checks. Password reset is also available from the sign-in page by email link.
 
-Repeated failed sign-ins can temporarily lock the account. Contact support if you cannot recover access.
+Five failed sign-in attempts lock password access for 60 minutes. Use password reset or contact support if you cannot recover access.
 
 ## Google connection
 
@@ -31,7 +31,7 @@ TOTP-based two-factor authentication is currently available to Admins and Manage
 
 ## New-device verification
 
-Protected sign-ins can require an email verification code for an unfamiliar device. Enter the code sent to your account email. If **Remember this device** is selected, Flotick stores a trusted-device token in that browser to reduce later challenges.
+Protected sign-ins can require an email verification code for an unfamiliar device. Enter the code sent to your account email. If **Remember this device** is selected, the browser is trusted for 30 days.
 
 Signing out or clearing browser storage can remove local trust. Flotick does not currently expose a client-facing list of trusted devices.
 
@@ -49,7 +49,7 @@ Signing out or clearing browser storage can remove local trust. Flotick does not
   </Step>
 </Steps>
 
-Use the **Forgot password** link on the sign-in screen when you cannot provide the current password. The reset email is time-limited. If it does not arrive, check spam and confirm that you are using the email associated with your Flotick account.
+Use the **Forgot password** link on the sign-in screen when you cannot provide the current password. The single-use reset link expires after 15 minutes. If it does not arrive, check spam and confirm that you are using the email associated with your Flotick account.
 
 ## Set up two-factor authentication
 

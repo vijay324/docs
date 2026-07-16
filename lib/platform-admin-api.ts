@@ -19,8 +19,6 @@ import {
   OrganizationListQuery,
   UserListQuery,
   AuditLogQuery,
-  FeedbackItem,
-  FeedbackStats,
   SubscribedUser,
   ContactItem,
   ContactStats,
@@ -371,28 +369,6 @@ class PlatformAdminApiClient {
     return this.client.get('/audit/export', { params: query });
   }
 
-  // ==================== FEEDBACK ENDPOINTS ====================
-
-  async getAllFeedback(query?: {
-    status?: 'pending' | 'reviewed' | 'resolved' | 'archived';
-    topic?: 'bug' | 'feature' | 'improvement' | 'other';
-    rating?: number;
-    page?: number;
-    limit?: number;
-    includeAnonymous?: boolean;
-  }): Promise<AxiosResponse<ApiResponse<{
-    data: FeedbackItem[];
-    pagination: Pagination;
-  }>>> {
-    return this.client.get('/feedback', { params: query });
-  }
-
-  async getFeedbackStats(includeAnonymous?: boolean): Promise<AxiosResponse<ApiResponse<FeedbackStats>>> {
-    return this.client.get('/feedback/stats', { 
-      params: includeAnonymous ? { includeAnonymous: 'true' } : {} 
-    });
-  }
-
   // ==================== SUBSCRIBED USERS ENDPOINTS ====================
 
   async getSubscribedUsers(query?: {
@@ -444,12 +420,6 @@ class PlatformAdminApiClient {
 
   async deleteContact(id: string): Promise<AxiosResponse<ApiResponse>> {
     return this.client.delete(`/contact/${id}`);
-  }
-
-  // ==================== FEEDBACK DELETE ENDPOINT ====================
-
-  async deleteFeedback(id: string): Promise<AxiosResponse<ApiResponse>> {
-    return this.client.delete(`/feedback/${id}`);
   }
 
   // ==================== SYSTEM HEALTH ENDPOINTS ====================

@@ -7,46 +7,38 @@ description: "The organization, work, and access model used throughout Flotick."
 
 | Concept | Purpose |
 | --- | --- |
-| **Organization** | Contains your members, policies, work, files, and subscription. |
-| **Project** | Groups a body of work, its team, Sprints, Tasks, files, and environments. |
-| **Sprint** | A time-boxed cycle within one Project. |
-| **Task** | A deliverable with ownership, status, priority, dates, and collaboration. |
+| **Organization** | Contains members, policies, work, files, and the subscription. |
+| **Project** | Groups a delivery area, its team, Sprints, Tasks, files, and environments. |
+| **Sprint** | A time-boxed cycle in one Project. |
+| **Task** | A deliverable with classification, status, dates, and collaboration. |
+| **Epic** | A Task type that groups direct child Tasks in the same Project. |
 
-Projects, Sprints, and Tasks receive readable IDs such as `OPS-P-001`, `OPS-S-004`, and `OPS-T-037`. You can open detail pages with these IDs.
+Projects, Sprints, and Tasks receive readable IDs for navigation and reference.
 
-## Task ownership
+## Task responsibility
 
-A Task can identify four responsibilities:
+Sprint Tasks can identify an assignee, reviewer, tester, and reporter. They can also include supported collaborator roles such as approver, watcher, or contributor.
 
-- **Assignee:** completes the work.
-- **Reviewer:** reviews the result.
-- **Tester:** validates it.
-- **Reporter:** created or requested it.
-
-Individual Tasks use `To Do`, `In Progress`, and `Completed`. Sprint Tasks use the organization workflow, which can include `Backlog`, `Sprint Backlog`, `Todo`, `In Progress`, `Review`, `Testing`, `Blocked`, and `Done`.
+Individual Tasks are lightweight Project work without Sprint responsibility fields. They use `To Do`, `In Progress`, and `Completed`; Sprint Tasks use the organization Sprint workflow.
 
 ## Roles
 
 | Role | Typical access |
 | --- | --- |
-| **Admin** | Organization, billing, policy, member, and work administration. |
-| **Manager** | Team and delivery management within the role's permission ceiling. |
-| **Member** | Assigned and accessible work, personal attendance, and leave. |
+| **Admin** | Organization, billing, policy, member, and work administration |
+| **Manager** | Team and delivery management within the role ceiling |
+| **Member** | Accessible work and personal attendance and leave |
 
-On paid plans, per-member overrides can narrow or grant allowed operations without changing a member's role. See [Member permissions](/admin/member-permissions).
-
-## Organization routes
-
-Signed-in pages include your organization slug: `app.flotick.com/<org-slug>/tasks`. This keeps navigation and access scoped to the correct organization.
+On Pro and Max, per-member overrides can change eligible operations within a role ceiling. See [Member permissions](/admin/member-permissions).
 
 ## How access is evaluated
 
-Flotick evaluates access in layers. First, you must be an active member of the organization. Next, the app checks your role and any per-member permission override. Finally, it checks Project visibility and membership for Project-scoped work. This means being able to see the Tasks page does not automatically grant access to every Task or Project in the organization.
+You must be an active organization member. Flotick then checks plan entitlement, role and overrides, record visibility, and Project membership. Access to the Tasks page does not grant access to every private Project or Task.
 
-## Status, estimates, and reporting
+Signed-in routes include the organization slug, such as `app.flotick.com/<org-slug>/tasks`.
 
-Status describes where work is in a workflow. Priority communicates urgency. Story points estimate relative effort for Sprint planning; logged hours record time already spent. Keeping these fields current gives Sprints, Analytics, and Orbit reliable information to work from.
+## Use each record intentionally
 
-## What belongs where
+Use a Project for a delivery area, a Sprint for a bounded iteration, a Task for a deliverable, an Epic for a one-level work group, a subtask for a checklist item, a comment for discussion, and a file for an artifact.
 
-Use a Project for an ongoing delivery area, a Sprint for a bounded iteration, a Task for a deliverable, a subtask for a short checklist item, a comment for discussion, a file for an artifact, and a task link for a relationship to another Task. This separation keeps views and reporting useful as the organization grows.
+Status describes workflow position, priority communicates urgency, story points estimate relative Sprint effort, and work logs record time already spent. Keeping these fields current improves Sprints, Analytics, and Orbit.

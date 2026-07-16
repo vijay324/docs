@@ -3,7 +3,7 @@ import { useMutation, useQuery } from '@tanstack/react-query';
 import { bffGet, bffPost } from '@/lib/bff-api-client';
 
 /**
- * AI summary hooks — calls `/api/v1/ai/*` via `bffGet` / `bffPost` with
+ * AI summary hooks calls `/api/v1/ai/*` via `bffGet` / `bffPost` with
  * `credentials: 'include'` so the Better Auth session cookie (API origin) is sent.
  */
 

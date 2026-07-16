@@ -93,17 +93,17 @@ function getMotivationalMessage(urgencyLevel: UrgencyLevel, timeRemaining: strin
       // Critical but encouraging messages
       const criticalMessages = [
         `Almost there! ${timeRemaining} remaining`,
-        `Final stretch — ${timeRemaining} left`,
+        `Final stretch ${timeRemaining} left`,
         `You've got this! ${timeRemaining} to go`,
-        `Home stretch — ${timeRemaining} remaining`,
+        `Home stretch ${timeRemaining} remaining`,
       ];
       return criticalMessages[Math.floor(Date.now() / 86400000) % criticalMessages.length];
     case 'warning':
       // Warning with soft encouragement
       const warningMessages = [
-        `⏳ Deadline approaching — ${timeRemaining} left`,
+        `⏳ Deadline approaching ${timeRemaining} left`,
         `⏰ ${timeRemaining} remaining`,
-        `📅 Due soon — ${timeRemaining} left`,
+        `📅 Due soon ${timeRemaining} left`,
       ];
       return warningMessages[Math.floor(Date.now() / 86400000) % warningMessages.length];
     default:

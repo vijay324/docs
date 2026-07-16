@@ -6,46 +6,36 @@ description: "Request time off, track balances, and manage team approvals."
 ## Request leave
 
 <Steps>
-  <Step title="Open Leave">
-    Click **New request**.
+  <Step title="Create the request">
+    Click **New request**, then choose an enabled leave type and dates.
   </Step>
-  <Step title="Enter the request">
-    Choose a leave type, start and end dates, optional half-day period, and reason.
+  <Step title="Set the duration">
+    Choose a full day or an available half-day period and add the reason.
   </Step>
   <Step title="Submit">
-    The request starts as `Pending`. You can cancel it while policy and status allow.
+    Review the calculated day count and submit. The request starts as `Pending`.
   </Step>
 </Steps>
 
-Supported leave codes are `PL`, `SL`, `CL`, `EL`, `ML`, `PTL`, `CO`, and `LOP`. Your organization controls which are enabled and how each name is presented.
+Your organization's policy determines enabled types, available balance, past-date behavior, notice, maximum consecutive days, and whether weekends count.
 
-## Review leave
+## Leave workspace
 
-Admins and Managers with leave-edit access can open pending or team requests, then approve or reject with an optional review comment. Approved leave updates balances and links applicable attendance dates.
+| Tab | Purpose |
+| --- | --- |
+| My requests | Review your request history and decisions |
+| Pending | Approve or reject requests when authorized |
+| Team | Review organization leave when authorized |
+| Upcoming | See approved upcoming absences |
+| Comp-off | Claim and review compensatory time off |
+| Accrual | Run and inspect balance workflows when authorized |
 
-## Balances and advanced workflows
+Open a request to see its dates, day count, type, reason, reviewer, and review comment. Cancel an eligible pending request from its available actions.
 
-The page shows available balance and request history. Paid-plan leave management can also include:
+## Approvals and balances
 
-- Comp-off requests and decisions
-- Balance accrual and carry-forward runs
-- Balance adjustments and transaction history
-- Leave encashment settings
+Authorized reviewers can approve or reject a request and add a comment. Approval updates the applicable leave balance and attendance dates.
 
-Holidays, weekends, overlap rules, notice periods, and half-day behavior follow the organization's [leave policy](/admin/leave-policy).
+On eligible plans, leave management also supports comp-off claims and decisions, accrual runs, carry-forward, balance adjustments and history, and encashment workflows. Balance history separates opening, accrued, used, adjusted, carried, encashed, and lapsed amounts.
 
-## Review your request history
-
-The **My requests** tab separates pending, approved, rejected, and cancelled leave. Open a request to review its dates, day count, type, reason, reviewer, and any review comment. Cancel a pending request when the action is available; approved leave may require an Admin or Manager to resolve it according to organization policy.
-
-## Approve or reject requests
-
-Authorized reviewers use the **Pending** or **Team** tabs. Review the member, leave type, dates, requested day count, available balance, and overlap information before making a decision. Add a short comment so the decision is clear to the member. Approval updates the request state and applicable balance; rejection leaves the request recorded with the decision.
-
-## Comp-off and accrual
-
-On eligible plans, members can request compensatory time off for approved work on a holiday or weekend. Authorized reviewers can approve, reject, expire, or mark comp-off as used. Admins can run configured leave accrual and year-end carry-forward workflows; use these controls only after reviewing policy settings and the intended financial period.
-
-## Leave types and balances
-
-Leave codes are organization-configurable. A member's balance tracks opening amount, accrued, used, adjustments, carried forward, encashed, and lapsed days. The balance is a record of approved transactions, not a simple editable total—use the appropriate administrative adjustment flow when a correction is needed.
+See [Leave policy](/admin/leave-policy) for the organization controls applied to new requests and future accrual.

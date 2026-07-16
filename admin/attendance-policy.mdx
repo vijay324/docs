@@ -3,47 +3,18 @@ title: "Attendance policy"
 description: "Set organization defaults for working hours and attendance entry rules."
 ---
 
-Admins manage attendance policy from **Settings → Attendance and leave policies**.
+Admins manage attendance policy from **Settings → Attendance and leave policies**. Policy customization is available on Pro and Max.
 
-Policy controls include:
+## Available controls
 
-- Standard workday start and end times
-- Working days and weekend behavior
-- Grace period and late-arrival threshold
-- Half-day and full-day hour thresholds
-- Overtime threshold
-- Whether members may create past-date entries
-- The maximum past-date entry window
-- Default work type and related attendance rules shown in settings
+- Standard hours per day
+- Overtime threshold in hours
+- Default work type: `Office`, `Remote`, or `Hybrid`
+- Whether attendance is required on weekends
+- Whether members can create backdated entries
 
-Save applies the policy to later attendance actions. **Reset** restores Flotick's defaults.
+Save changes to apply the updated rules to later attendance actions. **Reset** restores Flotick's defaults.
 
-Shift assignments can provide member-specific working hours and thresholds. See [Shifts](/features/shifts).
-
-## Configure the policy
-
-<Steps>
-  <Step title="Open policies">
-    Go to **Settings → Attendance and leave policies**, then choose attendance.
-  </Step>
-  <Step title="Set standard schedule">
-    Choose the normal start and end time, working days, weekend behavior, and default work type.
-  </Step>
-  <Step title="Set threshold behavior">
-    Configure grace, late, half-day, full-day, and overtime thresholds to match your organization rules.
-  </Step>
-  <Step title="Set correction controls">
-    Decide whether members can create past-date entries and set the permitted number of past days.
-  </Step>
-  <Step title="Save">
-    Save the policy. New attendance actions use the updated rules.
-  </Step>
-</Steps>
-
-## How policy and shifts interact
-
-The attendance policy is the organization baseline. A member's effective Shift can supply its own start, end, working-day, grace, half-day, full-day, and overtime values. Review shift assignments when one member's attendance behavior differs from the organization default.
-
-## Reset safely
-
-Use **Reset** only when you intend to restore Flotick's default policy. Reset changes future validation and calculations; it does not erase historical attendance records or approval decisions.
+<Note>
+Changing the policy does not remove historical attendance records or regularization decisions.
+</Note>

@@ -1,5 +1,5 @@
 /**
- * Better Auth — React Client
+ * Better Auth React Client
  *
  * Shared auth client used throughout the Next.js frontend.
  * Import `authClient` (or the individual helpers) wherever you need

@@ -1,38 +1,27 @@
 ---
 title: "Leave policy"
-description: "Configure leave types, balance rules, and request validation."
+description: "Configure leave types, allocation, accrual, and request rules."
 ---
 
-Admins manage leave policy from **Settings → Attendance and leave policies**.
+Admins manage leave policy from **Settings → Attendance and leave policies**. Policy customization is available on Pro and Max.
 
-Depending on the active plan, controls include:
+Full-time employees and interns have independent policies. Contract employees are excluded from leave policy.
 
-- Enabled leave types and display names
-- Default annual balances
-- Half-day support
-- Weekend and holiday treatment
-- Minimum notice and maximum request length
-- Overlapping-request validation
-- Accrual cadence and carry-forward limits
-- Comp-off expiry
-- Encashment eligibility and maximum days
+## Available controls
 
-Policy changes affect validation and future balance calculations. Existing approved requests remain recorded.
+- Enable or disable each leave type
+- Set its default annual allocation
+- Enable accrual and choose monthly, quarterly, half-yearly, or annual cadence
+- Set days added per accrual period
+- Allow or block past-date requests
+- Exclude or include weekends in the charged day count
+- Set minimum advance notice
+- Set maximum consecutive days
 
-Use **Reset** to restore Flotick defaults. Review balances after changing accrual, carry-forward, or enabled leave types.
+Save changes to apply them to new validation and future balance calculations. **Reset** restores Flotick's defaults.
 
-## Configure leave types
+<Warning>
+Review active requests and member balances before changing enabled types, allocation, or accrual. Existing approved requests remain recorded.
+</Warning>
 
-Start by enabling only the leave types your organization actually uses. For each type, set the visible label and balance behavior. A clear setup prevents members from selecting an invalid category and keeps reports understandable.
-
-## Configure request rules
-
-Define whether half-day requests are allowed, how weekends and holidays affect the charged day count, the required notice period, maximum request duration, and whether overlapping requests are blocked. These settings are applied when a member submits or an authorized reviewer evaluates a request.
-
-## Configure balance lifecycle
-
-On plans with advanced leave controls, set accrual period, carry-forward limits, comp-off expiry, and encashment rules. Run accrual or carry-forward only after checking the intended dates and balances. Flotick records transactions so the later balance can be explained.
-
-## Review before publishing
-
-Test a representative request after a major policy change: a normal full day, a half day, a holiday overlap, and a balance-limited request. This confirms the member experience matches the policy your organization intended.
+Administrative leave tools can run accrual and carry-forward and record adjustments, comp-off decisions, and encashment transactions on eligible plans. Use balance history to verify the resulting ledger.

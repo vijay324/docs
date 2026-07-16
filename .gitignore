@@ -33,7 +33,7 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files — NEVER commit real secrets
+# env files NEVER commit real secrets
 # .env.example is the only env file that should be committed
 .env
 .env.*

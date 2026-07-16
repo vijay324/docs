@@ -5,3 +5,11 @@
 # Draft content
 drafts/
 *.draft.mdx
+
+# Application source copied into this directory is not documentation content.
+hooks/
+lib/
+
+# No client-facing public API is currently documented.
+api-reference/
+AGENTS.md
