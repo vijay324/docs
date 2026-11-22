@@ -1,42 +1,47 @@
 ---
-title: "Upgrade, downgrade, or cancel"
-description: "Manage the organization subscription from billing settings."
+title: "Upgrade, trial, or cancel"
+description: "Change your plan, see your billing history, and cancel in the app."
+icon: "credit-card"
 ---
 
-Only the organization Admin can manage billing.
+<Badge color="gray">Admin only</Badge>
+
+Open **Settings → Workspace → Billing**. Payments are handled securely by **Polar**.
+
+## See where you stand
+
+The page shows your current plan, its **status**, your **usage**, and your **billing history**.
+
+| Status | Meaning |
+| --- | --- |
+| **Active** | Paid and running |
+| **Trialing** | In a free trial |
+| **Canceling** | Ends at the close of the billing period |
+| **Past due** | A payment failed |
+| **Ended** | The plan has ended |
+| **Complimentary** | A plan provided by Flotick |
+| **Free** | The default plan |
 
 ## Upgrade
 
-1. Open **Settings → Billing and subscription**.
-2. Choose a plan and monthly or yearly billing where offered.
-3. Review the checkout or upgrade preview.
-4. Confirm payment in the hosted checkout.
+<Steps>
+  <Step title="Choose a plan on Billing, or visit /pricing" />
+  <Step title="Pick monthly or yearly" />
+  <Step title="Check out">
+    Upgrading to a higher plan is **prorated**, so you only pay the difference. You return to a confirmation page.
+  </Step>
+</Steps>
 
-The billing page updates after Flotick receives confirmation from its billing provider. A mid-cycle paid-plan upgrade can show a preview before confirmation.
+**Pro** has a **7-day free trial**, once per organization.
 
-## Downgrade or cancel
+## Manage payment
 
-Use the billing page's available plan-change or cancellation action. Flotick preserves organization data and applies the lower plan through its non-destructive enforcement process.
+Use the **payment portal** link to update your card or download invoices.
 
-<Warning>
-Before lowering a plan, review member seats, active Projects, storage, Env Storage, Analytics, and custom permissions. Features above the new entitlement become unavailable even though retained data is not deleted.
-</Warning>
+## Cancel
 
-If a payment or plan status does not update after checkout, refresh billing settings and contact [support](/resources/support) with the organization slug and checkout time.
+Choose **Cancel** in the app and tell us why. Your plan stays active until the end of the period. See [Plan enforcement](/admin/billing/plan-enforcement) for what changes afterwards.
 
-## Before you upgrade
-
-Check the feature you need and the current organization usage. Pro unlocks several modules rather than only raising a numerical limit; Max adds scheduled reports and removes core usage caps. The billing screen shows the organization plan, status, billing cycle, price when available, and renewal information.
-
-## Before you downgrade or cancel
-
-1. Count active members and active Projects.
-2. Review storage and the largest files still in use.
-3. Identify work that relies on paid-only modules, workflow configuration, exports, or individual overrides.
-4. Decide whether to complete finished Projects, remove members, reduce storage, or upgrade again before the grace window ends.
-
-Flotick retains data during a lower-plan transition. See **Plan changes and retained data** in this section for the resulting access behavior.
-
-## Billing authority
-
-Only an Admin can initiate subscription changes. Managers and Members can view plan information where Flotick exposes it, but cannot modify the organization subscription.
+<Note>
+Only Admins can change plans. Prices and terms are listed at [flotick.com/pricing](https://flotick.com/pricing).
+</Note>

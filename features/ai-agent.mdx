@@ -1,45 +1,46 @@
 ---
 title: "Orbit Agent"
-description: "Turn a plain-language instruction into a reviewed sequence of workspace changes."
+description: "Describe what you want. Orbit plans the changes, and nothing happens until you confirm."
+icon: "bot"
 ---
 
-Orbit Agent is visible to Admins and Managers from the **Agent** tab in Orbit. Each action is still checked against the requesting member's role and access.
+<Badge color="green">All plans</Badge> <Badge color="gray">Access follows your role permissions</Badge>
 
-## Run an instruction
+Orbit Agent turns an instruction into a **plan of changes**. You review it, confirm it, and only then does anything happen.
+
+## What it can do
+
+- Create or update **leads**, log activity, and **convert leads** to clients
+- Create **clients** and link **Projects** to clients
+- Schedule **meetings** (invites are disclosed to you first)
+- Create, assign, or comment on **Tasks**
+- Create **Projects** and **Sprints**
+
+## How it works
 
 <Steps>
-  <Step title="Describe the outcome">
-    Name the relevant Project, Sprint, Tasks, members, dates, and status changes.
+  <Step title="Open Orbit and switch to agent mode">
+    Type what you want, for example "Add a lead for Maya at Northwind and schedule a call on Friday".
   </Step>
   <Step title="Review the plan">
-    Orbit resolves the referenced records and presents every proposed step. Nothing runs before approval.
+    Orbit lists every change it will make.
   </Step>
-  <Step title="Approve execution">
-    Run the plan and follow each step through pending, running, succeeded, failed, or skipped state.
-  </Step>
-  <Step title="Review history">
-    Open the completed session to inspect the instruction, actions, results, and usage.
+  <Step title="Confirm">
+    Approve the plan, and Orbit carries it out. Admins can **undo** changes.
   </Step>
 </Steps>
 
-## Supported actions
+## Safety limits
 
-- Create Tasks, Projects, and Sprints
-- Update Tasks and Projects
-- Assign one Task or assign up to 25 Tasks in bulk
-- Change Task status or deadline
-- Add a Task comment
-- Complete a Project
-- Cancel a Task
+- Each plan costs **5 credits**.
+- A plan **expires after 10 minutes** if you do not confirm.
+- Up to **50 actions per hour** per organization.
+- Destructive actions need a separate approval.
 
-A plan can contain up to 20 steps. Some actions require Admin access even when the Agent tab is visible; for example, creating or completing a Project and bulk assignment are Admin-only. Other delivery actions require Manager-level authority.
+<Note>
+Orbit Agent only does what your own permissions allow.
+</Note>
 
-<Warning>
-Orbit Agent does not delete records, manage members or billing, change organization settings, or send messages outside Flotick.
-</Warning>
-
-## Undo
-
-Admins can undo supported update actions from a completed session when the target has not changed in a way that makes reversal unsafe. Creations and comments are not undoable. Agent warns about newer changes instead of silently overwriting them.
-
-Review every plan for the correct records, responsibility, dates, and status before approval. A failed step can prevent dependent steps from running.
+<Card title="Orbit chat" icon="sparkles" href="/features/orbit" horizontal>
+  Start with questions before you ask for changes.
+</Card>

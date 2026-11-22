@@ -1,37 +1,28 @@
 ---
-title: "My Board"
-description: "A Project-scoped Kanban board for work assigned to you or created by you."
+title: "Personal board"
+description: "A Kanban board of only the work that involves you, across every Project."
+icon: "kanban"
 ---
 
-My Board lives at `/<org-slug>/board`. Select a Project before opening it.
+<Badge color="green">All plans</Badge> <Badge color="gray">Every role</Badge>
 
-The board includes:
+The Personal board answers one question: **what is on my plate?** It gathers your Tasks from every Project into a single board, so you do not have to hop between Projects.
 
-- Tasks assigned to you
-- Unassigned Tasks you reported
-- Filters for today, tomorrow, the next seven days, and overdue work
-- Real-time Task updates
+## What appears on it
 
-Drag a card to an allowed status or open it for full detail. You can also create a Task in the selected Project.
+- **Sprint tasks** where you hold any role: assignee, reviewer, tester, or reporter.
+- **Individual tasks** you created.
 
-My Board is intentionally personal even for Admins and Managers. Use the main [Tasks](/features/tasks) page with **Team** scope when you need broader visibility.
+Move a card to update its status. Changes follow the same workflow rules as everywhere else.
 
-## Use the board
+## Open it
 
-<Steps>
-  <Step title="Select a Project">
-    Choose a Project from the sidebar selector or open My Board with a `project` query parameter. The board needs a single Project because its columns follow that Project's workflow.
-  </Step>
-  <Step title="Choose a time filter">
-    Use **Today**, **Tomorrow**, **Next 7 days**, or **Overdue** to narrow the personal cards by due date. Select **All** to return to the full personal set.
-  </Step>
-  <Step title="Move or open a card">
-    Drag the card to an allowed status, or open it to edit Task details. Workflow validation still applies to a drag-and-drop move.
-  </Step>
-</Steps>
-
-Cards update when other members change the underlying Task. A Task that is reassigned away from you, or an unassigned Task that you no longer report, disappears from this Board after the next refresh.
+The board lives at `/board` and has no sidebar link. Use search (`Ctrl/⌘ K`) or press `G` then `B`.
 
 <Tip>
-Use My Board for execution, not reporting. It excludes most work owned by other people by design.
+Pair it with the [Inbox](/features/inbox) Today brief: the brief tells you what needs attention, and the board shows everything you are carrying.
 </Tip>
+
+<Card title="Tasks" icon="list-checks" href="/features/tasks" horizontal>
+  Learn how Sprint and individual Tasks differ.
+</Card>

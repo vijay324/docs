@@ -1,42 +1,55 @@
 ---
 title: "Analytics"
-description: "Understand delivery, flow, workload, deadlines, attendance, and leave."
+description: "See delivery, workload, and trends. Calculated on the server, so numbers always agree."
+icon: "chart-no-axes-combined"
 ---
 
-Analytics adapts to your role, data access, and plan. Use the scope and Project filters to focus the results you can access.
+<Badge color="green">Everyone can view</Badge> <Badge color="gray">Workforce views: Admin or Manager</Badge>
 
-## Analytics workspace
+Analytics turns your Task and Sprint activity into clear answers: Are we on time? Who is overloaded? Is delivery getting faster?
 
-| Tab | What you can analyze |
+## Views
+
+| View | For |
 | --- | --- |
-| Overview | Delivery health, risks, completed work, trends, executive brief, anomalies, and insights |
-| Work | Projects, Sprints, Tasks, flow reliability, quality, blockers, and deadlines |
-| People | Team delivery, workload, attendance, leave, and departments |
-| Compare | Scopes, periods, metrics, and leaderboards available to your plan |
+| **Organization** | Admins and Managers, the big picture |
+| **Work details** | Delivery by Project and Sprint |
+| **People details** | Workload and contribution |
+| **Compare** | Side-by-side periods |
+| **Me** | Your own numbers, for every member |
 
-**Work** includes Projects, Sprints, Tasks, and Deadlines. **People** includes Team, Workload, Attendance, Leave, and Departments. Attendance is organization-scoped and does not inherit a Project filter.
+Choose a **time range** and scope by Project, Sprint, or member. Drill into any chart, and save your favorite setup as a **saved view**.
 
-Some metrics need enough history to calculate a useful result. Flotick shows an empty or unavailable state when the underlying data is insufficient.
+## What you can measure
 
-## Time ranges and plans
+Insights banner, period comparisons, leaderboards, activity heatmap, **cycle time**, **on-time delivery**, **due-date risk**, **workload balance**, **stage latency**, **rework**, and **time on task**. Export to **CSV, XLSX, or PDF**.
 
-| Capability | Free | Pro | Max |
-| --- | --- | --- | --- |
-| Time ranges | 7 and 30 days | 7, 30, and 90 days; 1 year, 2 years, all time, and custom | 7, 30, and 90 days; 1 year, 2 years, all time, and custom |
-| Team analytics | — | Included | Included |
-| Export | — | CSV, XLSX, and PDF | CSV, XLSX, and PDF |
-| Saved views | — | Included | Included |
-| Delivery forecast | — | — | Included |
-| Scheduled reports | — | — | Included |
+## What each plan includes
 
-Plan and role can further limit specific comparisons, leaderboards, anomaly detection, project flow, or people analysis.
+<Tabs>
+  <Tab title="Free">
+    **90 days** of history, daily activity, completion rate, workload balance, and insights.
+  </Tab>
+  <Tab title="Starter">
+    **1 year** plus custom date ranges, team analytics, comparisons, leaderboards, heatmap, cycle time, on-time delivery, people load, and export.
+  </Tab>
+  <Tab title="Pro">
+    **2 years** and custom ranges. Adds advanced comparisons, **project flow** (velocity and cumulative flow), predictive risk, stage latency, anomaly detection, rework, task movement, and time on task.
+  </Tab>
+  <Tab title="Max">
+    **All-time history**, multi-year trends, and **delivery forecasting**.
+  </Tab>
+</Tabs>
 
-## Save, export, and schedule
+## Personal analytics (Me)
 
-Save the current filters as a private or organization view and optionally make it your default. Exports reflect the selected scope, period, and filters.
+Your own completed Tasks, completion rate, overdue count, average cycle time, daily trend, **Due in the next 7 days**, and Tasks by role. Open it with the **Me** view.
 
-On Max, schedule a saved view as a weekly or monthly report. See [Scheduled reports](/features/scheduled-reports).
-
-## Interpret metrics responsibly
-
-Analytics reflects work recorded in Flotick. Review task flow, estimates, dates, leave, attendance, and delivery context together. A metric does not by itself measure individual effort, performance, or quality.
+<CardGroup cols={2}>
+  <Card title="Scheduled reports" icon="calendar-clock" href="/features/scheduled-reports">
+    Get snapshots by email, automatically.
+  </Card>
+  <Card title="AI Summaries" icon="sparkles" href="/features/ai-summaries">
+    Plain-language reports on your team.
+  </Card>
+</CardGroup>

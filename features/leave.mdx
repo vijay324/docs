@@ -1,41 +1,48 @@
 ---
 title: "Leave"
-description: "Request time off, track balances, and manage team approvals."
+description: "Request time off, track balances, and approve in one place. Approved leave updates attendance."
+icon: "plane"
 ---
+
+<Badge color="green">Requests and approvals: all plans</Badge> <Badge color="blue">Advanced: Starter+</Badge>
+
+Leave handles requests, balances, and approvals without spreadsheets.
+
+## Leave types
+
+**Privilege**, **Sick**, **Casual**, **Earned**, **Maternity**, **Paternity**, **Comp-off**, and **Loss of pay**. Half days count as **0.5**.
 
 ## Request leave
 
 <Steps>
-  <Step title="Create the request">
-    Click **New request**, then choose an enabled leave type and dates.
-  </Step>
-  <Step title="Set the duration">
-    Choose a full day or an available half-day period and add the reason.
+  <Step title="Open Leave and choose a request">
+    Pick the type, dates, and whether it is a half day.
   </Step>
   <Step title="Submit">
-    Review the calculated day count and submit. The request starts as `Pending`.
+    Your Manager is notified.
+  </Step>
+  <Step title="Track it">
+    See the status under **My requests**.
   </Step>
 </Steps>
 
-Your organization's policy determines enabled types, available balance, past-date behavior, notice, maximum consecutive days, and whether weekends count.
-
-## Leave workspace
+## Tabs
 
 | Tab | Purpose |
 | --- | --- |
-| My requests | Review your request history and decisions |
-| Pending | Approve or reject requests when authorized |
-| Team | Review organization leave when authorized |
-| Upcoming | See approved upcoming absences |
-| Comp-off | Claim and review compensatory time off |
-| Accrual | Run and inspect balance workflows when authorized |
+| **My requests** | Your own requests and balances |
+| **Pending** | Requests waiting for approval (Managers) |
+| **Team** | Who is off |
+| **Upcoming** | Approved leave ahead |
+| **Comp-off** | Time off earned for extra work |
+| **Accrual** | How balances grow |
 
-Open a request to see its dates, day count, type, reason, reviewer, and review comment. Cancel an eligible pending request from its available actions.
+## What needs Starter+
 
-## Approvals and balances
+**Comp-off**, **encashment**, **accrual logs**, the **team calendar**, and **upcoming leave** need Starter or above. Basic requesting and approving works on every plan.
 
-Authorized reviewers can approve or reject a request and add a comment. Approval updates the applicable leave balance and attendance dates.
+Members can view and create requests. Managers approve. Approved leave is written into [attendance](/features/attendance). Leave is hidden for **Contract** members.
 
-On eligible plans, leave management also supports comp-off claims and decisions, accrual runs, carry-forward, balance adjustments and history, and encashment workflows. Balance history separates opening, accrued, used, adjusted, carried, encashed, and lapsed amounts.
-
-See [Leave policy](/admin/leave-policy) for the organization controls applied to new requests and future accrual.
+<Card title="Attendance and leave policy" icon="settings-2" href="/admin/attendance-leave-policy" horizontal>
+  Set yearly allowances and accrual rules.
+</Card>

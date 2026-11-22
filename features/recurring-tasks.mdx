@@ -1,38 +1,33 @@
 ---
-title: "Recurring Tasks"
-description: "Generate individual Tasks automatically on a daily, weekly, or monthly schedule."
+title: "Recurring tasks"
+description: "Create repeating Tasks automatically on a daily, weekly, or monthly schedule."
+icon: "repeat"
 ---
 
-Recurring Tasks live in a Project's **Recurring Tasks** tab. Each schedule creates a new individual Task with `To Do` status, no due date, and the selected assignee.
+<Badge color="green">All plans</Badge> <Badge color="gray">Admin or Manager</Badge>
+
+Some work repeats: weekly reports, monthly invoices to prepare, daily checks. A recurring task creates an **assigned individual task** for you on a schedule.
+
+## Set one up
 
 <Steps>
-  <Step title="Open a Project">
-    Select **Recurring Tasks**, then click **New Recurring Task**.
+  <Step title="Open the Project and choose Recurring tasks" />
+  <Step title="Add the details">
+    Title, description, and assignee.
   </Step>
-  <Step title="Define the schedule">
-    Enter a title, optional description, cadence, and Project member to assign.
-  </Step>
-  <Step title="Save">
-    Flotick shows the next run date and begins generating occurrences.
+  <Step title="Choose the cadence">
+    **Daily**, **weekly**, or **monthly**, and the next run date.
   </Step>
 </Steps>
 
-Authorized Project managers can edit the title, description, or assignee; pause and resume a schedule; or delete it. The cadence cannot be changed after creation.
+## Manage schedules
 
-Deleting a schedule stops future occurrences. Tasks already generated remain unchanged and display a recurring badge.
-
-## When to use recurring Tasks
-
-Use a recurring schedule for repeatable Project work such as weekly status updates, monthly reviews, routine QA, or recurring client handoffs. It is not a substitute for a Sprint: each occurrence is an individual Task and is not automatically added to a Sprint.
-
-## Schedule behavior
-
-The server calculates the next run for each active schedule. At the scheduled time it creates a new Task in the configured Project, assigns the selected member, marks the Task as recurring, and starts it in `To Do`. The generated Task is independent: updating or completing it does not edit the schedule or prior occurrences.
-
-## Edit, pause, or remove
-
-Open the Project's **Recurring Tasks** tab to see next run date, cadence, assignee, and active state. You can update the title, description, and assignee; pause a schedule without deleting it; or resume it later. The cadence is fixed after creation to keep the schedule history predictable.
+You can **pause**, **resume**, **edit**, or **delete** any schedule at any time. Pausing stops new Tasks without losing the setup.
 
 <Tip>
-Give recurring Tasks a clear, action-oriented title. Add the reporting period in the description when it changes between occurrences.
+Give recurring tasks a clear title like "Weekly client report" so the generated Tasks are easy to spot.
 </Tip>
+
+<Card title="Tasks" icon="list-checks" href="/features/tasks" horizontal>
+  See how individual tasks work.
+</Card>

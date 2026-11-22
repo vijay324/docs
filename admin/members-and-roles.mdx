@@ -1,44 +1,62 @@
 ---
 title: "Members and roles"
-description: "Invite people, manage profiles and roles, and control organization membership."
+description: "Invite people, manage their roles, and keep your team directory up to date."
+icon: "users"
 ---
 
-**Team Members** is available to Admins and Managers by default. Individual permission overrides can change access on paid plans.
+<Badge color="green">All plans</Badge> <Badge color="gray">Admins and Managers</Badge>
 
-## Add members
+Members is your people directory and admin toolbox.
 
-- **Invite by email:** choose the email and role. Pending invitations can be viewed, resent, or cancelled.
-- **Bulk import:** download the CSV template, complete it, and upload it to send multiple invitations.
-- **Direct member creation:** authorized flows can add a member profile with work details.
+## The three roles
 
-An accepted invitation uses one plan seat.
-
-## Manage members
-
-Open a member to review their profile, Project access, assignments, and analytics available to your role. Authorized leaders can update work details, role, active status, department, and Project membership.
-
-| Role | Scope |
+| Role | Typical use |
 | --- | --- |
-| **Admin** | Full organization administration and billing. |
-| **Manager** | Delivery and team management within configured permissions. |
-| **Member** | Accessible work and personal operations. |
+| **Admin** | The owner. Full access, billing, and settings. |
+| **Manager** | Runs delivery and people. |
+| **Member** | Does the work. |
 
-Managers cannot manage an Admin. Admin-only actions include removing and restoring members. Removal is a soft delete; the member moves to [Trash](/features/trash) for 30 days while related work remains.
+Each role has defaults and a ceiling. See [Member permissions](/admin/member-permissions) to adjust access.
 
-<Warning>
-Reassign important work before removing a member. Restoring the account does not resolve ownership changes made while it was deleted.
-</Warning>
+### Default access at a glance
 
-## Send and manage invitations
+| Area | Manager | Member |
+| --- | --- | --- |
+| Tasks | Full | View, create, edit |
+| Projects, Sprints | Full | View |
+| Files | Full | View |
+| Attendance | View, create, edit | View, create |
+| Leave | Full | View, create |
+| Leads, Clients, Meetings, Documents | Full | View, create, edit |
+| Members | View, create, edit | None |
+| Project keys | Full | None |
+| Payroll | None (can be granted) | Own payslips only |
 
-From **Team Members**, choose **Invite member**, provide the recipient email, and select the appropriate role. The recipient receives a time-limited link and completes account setup before becoming an active member. Pending invitations can be reviewed, resent, or cancelled from the same management area.
+## Add people
 
-Use bulk import only for a prepared list of people. Download the template first, preserve its headers, validate email addresses and roles, then upload it. Review the result for rows that did not send and fix those records before importing again.
+- **Invite** by email. See [Accept an invitation](/get-started/accept-invitation).
+- **Add member** directly.
+- **Bulk import** from a CSV or XLSX file.
 
-## Update a member
+## The member page
 
-Open a member record to update allowed profile and work fields, Project access, department, work type, and role. Keep role changes deliberate: role determines the default ceiling for actions throughout the workspace. Use [Member permissions](/admin/member-permissions) when one person needs an exception rather than a new role.
+Open a person to see tabs for **Projects, Sprints, Tasks, Analytics, Attendance**, and **Permissions**. You can:
 
-## Deactivate, remove, and restore
+- Edit details, role, and status
+- Set employment info: employee ID, job type, department
+- Reset a password
+- **Transfer ownership** (Admin only)
+- Soft delete and restore. If a member still owns open work, deleting opens [offboarding](/admin/offboarding) instead.
 
-Deactivating a member keeps their account record while preventing normal active use. Removing a member is a soft delete and places the account in Trash. Restore an account only when a plan seat is available. If you are removing someone who owns active delivery work, reassign their Tasks, reviews, and test responsibilities first.
+## Seats
+
+Seats are limited by plan: **5** Free, **10** Starter, **30** Pro, **75** Max. See [Seat management](/admin/billing/seat-management).
+
+<CardGroup cols={2}>
+  <Card title="Offboarding" icon="user-minus" href="/admin/offboarding">
+    Hand over a leaver's work safely.
+  </Card>
+  <Card title="Departments" icon="network" href="/admin/departments">
+    Organize your team.
+  </Card>
+</CardGroup>

@@ -1,0 +1,121 @@
+/*
+  Flotick docs theme.
+  Mirrors the product brand: monochrome neutrals with functional blue.
+  Source of truth: context/design.md (colour table) in the app repo.
+*/
+
+:root {
+  --fl-canvas: #fbfbfc;
+  --fl-sidebar: #f4f4f6;
+  --fl-surface: #ffffff;
+  --fl-raised: #f7f7f8;
+  --fl-well: #f0f0f2;
+  --fl-text: #0a0a0a;
+  --fl-text-muted: #6b6f76;
+  --fl-border: #e6e6e9;
+  --fl-border-strong: #d3d3d9;
+  --fl-link: #2563eb;
+  --fl-selection: rgba(37, 99, 235, 0.14);
+  --fl-radius-control: 8px;
+  --fl-radius-card: 12px;
+  --fl-radius-panel: 16px;
+}
+
+html.dark {
+  --fl-canvas: #010102;
+  --fl-sidebar: #08090a;
+  --fl-surface: #0f1011;
+  --fl-raised: #141516;
+  --fl-well: #18191b;
+  --fl-text: #f7f8f8;
+  --fl-text-muted: #989da6;
+  --fl-border: #23252a;
+  --fl-border-strong: #34343a;
+  --fl-link: #60a5fa;
+  --fl-selection: rgba(59, 130, 246, 0.22);
+}
+
+/* Native text selection is blue, like the app. */
+::selection {
+  background: var(--fl-selection);
+}
+
+/* Sidebar and navbar use the app's stepped surfaces. */
+#sidebar,
+#sidebar-content {
+  background-color: var(--fl-sidebar);
+}
+
+#navbar {
+  border-bottom: 1px solid var(--fl-border);
+}
+
+/* Cards: surface, hairline border, no glow. */
+.card,
+[data-component-part="card"] {
+  background-color: var(--fl-surface);
+  border: 1px solid var(--fl-border);
+  border-radius: var(--fl-radius-card);
+  box-shadow: none;
+  transition: border-color 150ms ease;
+}
+
+.card:hover,
+[data-component-part="card"]:hover {
+  border-color: var(--fl-border-strong);
+}
+
+/* Callouts, code, tables, accordions share the 12px card radius. */
+.callout,
+.code-block,
+.accordion,
+details {
+  border-radius: var(--fl-radius-card);
+}
+
+.prose table {
+  border: 1px solid var(--fl-border);
+  border-radius: var(--fl-radius-card);
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+}
+
+.prose thead th {
+  background-color: var(--fl-raised);
+  color: var(--fl-text);
+}
+
+.prose th,
+.prose td {
+  border-color: var(--fl-border);
+}
+
+/* Inline code reads as a neutral "well". */
+.prose :not(pre) > code {
+  background-color: var(--fl-well);
+  border: 1px solid var(--fl-border);
+  border-radius: 6px;
+  color: var(--fl-text);
+}
+
+/* Controls use the 8px radius. */
+button,
+input,
+select {
+  border-radius: var(--fl-radius-control);
+}
+
+/* Visible keyboard focus in functional blue. */
+:focus-visible {
+  outline: 2px solid var(--fl-link);
+  outline-offset: 2px;
+}
+
+/* Respect reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

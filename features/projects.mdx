@@ -1,58 +1,61 @@
 ---
 title: "Projects"
-description: "Organize related Tasks, Sprints, members, files, analytics, and recurring work."
+description: "The home for all the work, files, milestones, and client sharing of one piece of delivery."
+icon: "folder-kanban"
 ---
 
-A Project is the main container for delivery work. It starts in `Planning` and keeps its own members, visibility, Sprints, Tasks, files, and recurring schedules.
+<Badge color="green">All plans</Badge> <Badge color="gray">Created by Admins, Managers, and project leads</Badge>
 
-## Project lifecycle
-
-`Planning → Active → Review → Completed`
-
-Authorized members advance a Project one stage at a time from **Project settings**. The underlying lifecycle stays fixed, but you can change the display label, color, and order used for each stage.
-
-| Visibility | Who can open the Project |
-| --- | --- |
-| **Public** | Organization members with Project access |
-| **Private** | Assigned Project members, the creator, and privileged organization roles |
-
-## Project workspace
-
-| Tab | What it contains |
-| --- | --- |
-| Overview | Progress, health summary, recent work, overdue Tasks, and team context |
-| Sprints | Project Sprints and their current lifecycle state |
-| Team | Project membership |
-| Assets | Files attached to the Project |
-| Recurring Tasks | Daily, weekly, or monthly Task schedules |
-
-Use **Analytics** from the Project header to open reporting already scoped to that Project.
+A Project holds everything for a piece of delivery: Sprints, Tasks, files, milestones, and what your client sees. Everyone can use Projects. Admins, Managers, and project leads create and run them.
 
 ## Create a Project
 
 <Steps>
-  <Step title="Define the Project">
-    Click **New project**, then enter a name and optional description.
+  <Step title="Open Projects and choose Create">
+    Or use the first-Project step during [onboarding](/get-started/onboarding).
   </Step>
-  <Step title="Set access">
-    Choose **Public** or **Private** and add the members who need to work in it.
+  <Step title="Fill in the basics">
+    Name, description, dates, and members. Optionally link a client.
   </Step>
-  <Step title="Add context">
-    Upload reference files or use **Draft with AI** to prepare editable Project content.
-  </Step>
-  <Step title="Plan delivery">
-    Create Tasks, add a Sprint, or configure a recurring Task schedule.
+  <Step title="Choose visibility">
+    **Public** projects are visible to the organization. **Private** projects are limited to their members.
   </Step>
 </Steps>
 
-Project creation and team management normally require Admin or Manager access. Plan limits apply to active Projects.
+Each Project gets a readable ID such as `PAY-P-001`.
 
-## Manage or remove a Project
+## Status
 
-Use **Project settings** to edit its name, description, visibility, members, displayed status styling, or lifecycle stage.
+Projects move through **Planning → Active → Review → Completed**. You can also set per-project Task status labels.
 
-Deleting a Project moves it to [Trash](/features/trash) for 30 days and also soft-deletes its Sprints and Tasks. Restoring the Project restores that nested work when plan limits and access rules allow it.
+A **health indicator** shows how the Project is going. It is calculated automatically, or you can set it by hand with a note. Clients can see a client-facing health note.
 
-<Note>
-A Project affected by a lower plan limit remains retained but can become restricted until the organization restores capacity.
-</Note>
+## Project tabs
+
+| Tab | Use it for |
+| --- | --- |
+| **Overview** | Status, health, progress, and key details |
+| **Sprints** | The Project's Sprints. See [Sprints](/features/sprints) |
+| **Milestones** | Client-friendly stages. See [Milestones](/features/milestones) |
+| **Updates** | Status posts for the client. See [Project updates](/features/project-updates) |
+| **Team** | Who is on the Project |
+| **Assets** | Files for the Project. See [Files](/features/files) |
+| **Recurring tasks** | Repeating work. See [Recurring tasks](/features/recurring-tasks) |
+| **Client** | What the client sees. See [Client sharing](/clients/client-sharing) |
+
+**Settings** has four tabs: General, Team, Advanced, and [Credentials](/features/project-credentials).
+
+## Limits and downgrades
+
+Active Projects are limited by plan: **5** on Free, **30** on Starter, and **unlimited** on Pro and Max. After a downgrade, Projects over the limit become read-only. Nothing is deleted. See [Plan enforcement](/admin/billing/plan-enforcement).
+
+Deleting a Project shows a preview of what goes with it. You can restore it from [Trash](/features/trash) within 30 days.
+
+<CardGroup cols={2}>
+  <Card title="Milestones" icon="flag" href="/features/milestones">
+    Break the Project into stages your client understands.
+  </Card>
+  <Card title="Client portal" icon="layout-template" href="/portal/overview">
+    Share progress without sharing internal Tasks.
+  </Card>
+</CardGroup>

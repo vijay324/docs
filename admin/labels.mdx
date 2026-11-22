@@ -1,31 +1,21 @@
 ---
 title: "Labels"
-description: "Manage the canonical names and colors offered on Tasks."
+description: "A shared list of colored Task labels, so everyone tags work the same way."
+icon: "tag"
 ---
 
-Admins and Managers can open **Settings → Labels** to manage the organization label registry.
+<Badge color="green">All plans</Badge> <Badge color="gray">Admins and Managers manage</Badge>
+
+Labels keep tagging consistent: "Bug", "Design", "Client request". Everyone who can edit a Task can apply them.
 
 ## Manage labels
 
-- Create a label with a name and color
-- Rename a label by editing its name
-- Change its color
-- Delete it from the registry
-
-Registry labels appear as color-coded choices on Task forms and boards. Label names are limited to 50 characters.
+Open **Settings → Features → Labels**. Add a label, pick a color, and rename or remove labels as needed.
 
 <Note>
-Renaming or deleting a registry label does not rewrite labels already stored on existing Tasks. Update those Tasks separately when you need historical consistency.
+Renaming or deleting a label does **not** change Tasks that already carry it.
 </Note>
 
-## Create a useful label set
-
-Create labels for classifications that apply across Projects, such as `customer`, `frontend`, `security`, `release`, or `technical-debt`. Choose a distinct color that remains easy to recognize in lists and board cards. Avoid creating multiple labels with the same meaning; the registry is intended to provide a consistent vocabulary.
-
-## Update or remove labels
-
-Edit a label name by changing the field and moving focus away from it. Change its color directly from the color control. Delete a label only when it should no longer be offered for new work. Existing Task labels stay as stored strings, so search for and update those Tasks separately if the label is being replaced.
-
-## Use labels with other fields
-
-Labels complement, rather than replace, priority, type, status, Project, and Sprint. Use structured fields for workflow and ownership; use labels for flexible grouping and filtering.
+<Card title="Tasks" icon="list-checks" href="/features/tasks" horizontal>
+  Filter your Task lists by label.
+</Card>

@@ -1,24 +1,35 @@
 ---
 title: "Member permissions"
-description: "Adjust a member's module operations without changing their role."
+description: "Adjust one person's access to each area without changing their role."
+icon: "shield-user"
 ---
 
-Per-member overrides are available on Pro and Max. Free organizations use role defaults.
+<Badge color="purple">Pro+</Badge> <Badge color="gray">Admins and Managers</Badge>
 
-Open a member's **Permissions** panel. Supported modules expose eligible `View`, `Create`, `Edit`, and `Delete` operations.
+Sometimes a Member needs a bit more access, or less. Permissions let you tune it person by person.
 
-## How access is resolved
+## How it works
 
-1. Admins retain full organization access.
-2. The role defines the maximum operations a member can receive.
-3. An override enables or disables an operation within that ceiling.
-4. An unset operation inherits the role default.
-5. Plan entitlement, organization membership, visibility, and Project access still apply.
+Open a member and choose the **Permissions** tab. For each area, allow or deny **view**, **create**, **edit**, and **delete**. The **role's ceiling** always applies, so you cannot grant more than the role allows.
 
-Supported modules include Inbox, Tasks, Sprints, Projects, My Board, Attendance, Leave, Analytics, Files, Env Storage, and Team Members.
+- **Admins** can edit anyone except other Admins.
+- **Managers** can edit Members only, and cannot grant access they do not have.
 
-Managers can edit eligible Member permissions but cannot exceed the Member role ceiling or manage Admin access. Use **Reset to role defaults** to remove all overrides.
+## Examples
 
-<Tip>
-Use overrides for a specific exception. Use Project membership for Project access and Departments for organization structure.
-</Tip>
+- Let a Member **create and edit Projects**.
+- Let a Member **upload Files**.
+- Let a Member **view Project keys**.
+- Let a Manager **see Payroll**.
+
+## On Free and Starter
+
+Everyone gets their role's defaults. Saved overrides are kept but not used until you upgrade to Pro.
+
+<Note>
+Your plan, your membership status, and access to the specific Project are checked separately from permissions.
+</Note>
+
+<Card title="Members and roles" icon="users" href="/admin/members-and-roles" horizontal>
+  See the default access for each role.
+</Card>

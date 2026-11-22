@@ -1,43 +1,31 @@
 ---
-title: "Env Storage"
-description: "Store encrypted environment configuration by Project, codebase, and workspace."
+title: "Project keys"
+description: "An encrypted vault for your .env settings, with versioned snapshots you can return to."
+icon: "key-round"
 ---
 
-Env Storage is available on Pro and Max. Access also depends on member permission and Project access.
+<Badge color="blue">Starter+</Badge> <Badge color="gray">Managers full, Members none by default</Badge>
 
-## Structure
+Project keys is a safe home for the `.env` settings your developers use. Values are encrypted, organized by Project, and versioned so you can always go back.
 
-`Project → Codebase → Workspace → Environment configuration`
+## How it is organized
 
-Codebase types include backend, frontend, mobile, database, DevOps, API, and custom. A workspace can represent production, development, staging, testing, or a custom environment, with `Active`, `Inactive`, or `Maintenance` status.
+**Project → codebase → environment → versioned configuration.**
 
-## Manage a workspace
+Open **Files → Project keys** in the sidebar (`/env-storage`) and pick the Project and codebase you need.
 
-<Steps>
-  <Step title="Choose a Project">
-    Open **Env Storage** and select an accessible Project.
-  </Step>
-  <Step title="Create the structure">
-    Add a codebase, then create the workspaces it needs.
-  </Step>
-  <Step title="Add configuration">
-    Use **Normal** view to edit key-value rows, or **Developer** view to edit raw `.env` content.
-  </Step>
-  <Step title="Use the configuration">
-    Reveal or copy a value, copy a `KEY=value` pair, copy all, or download the workspace as an `.env` file.
-  </Step>
-</Steps>
+## Save and roll back
 
-You can import a `.env` or `.txt` file up to 1 MB. Review the target workspace before importing or exporting.
+Choose **Save and commit** to create a **read-only snapshot**. Later, you can return to any earlier snapshot if a change goes wrong.
 
-## Versions and encryption
+## Access
 
-Each saved configuration creates a version you can inspect later. Current values are masked until revealed.
-
-Workspace values are encrypted at rest. You can also enable zero-knowledge encryption with a custom passphrase; the entire configuration is then encrypted and decrypted in your browser.
+Managers have full access. Members have none by default, but an Admin can grant them view access. See [Member permissions](/admin/member-permissions).
 
 <Warning>
-A zero-knowledge passphrase cannot be recovered by Flotick. Losing it makes the protected configuration unreadable.
+Never paste secrets into chat, comments, or Task descriptions. Keep them in Project keys or [Project credentials](/features/project-credentials).
 </Warning>
 
-Deleting a codebase or workspace removes its nested configuration after confirmation. Keep production and non-production values in separate workspaces.
+<Card title="Project credentials" icon="lock-keyhole" href="/features/project-credentials" horizontal>
+  Store logins you may want to share with a client.
+</Card>

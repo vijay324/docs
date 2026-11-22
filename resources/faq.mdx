@@ -1,35 +1,81 @@
 ---
-title: "FAQ"
-description: "Answers to common questions about access, work, plans, and recovery."
+title: "Frequently asked questions"
+description: "Quick answers about plans, access, clients, documents, and AI."
+icon: "circle-help"
 ---
 
+## Plans and billing
+
 <AccordionGroup>
-  <Accordion title="Why can’t I see a page or action?">
-    Availability depends on your role, plan, Project access, and any per-member override. Ask an Admin to review your member permissions.
+  <Accordion title="Which plan do I start on?">
+    Every new organization starts on **Free**. Upgrade any time from **Settings → Workspace → Billing**.
   </Accordion>
-  <Accordion title="Where is my dashboard?">
-    Flotick opens Inbox after sign-in. Inbox is your focused Task workspace. Use Analytics for metrics and My Board for a personal Project Kanban.
+  <Accordion title="Is there a free trial?">
+    **Pro** has a 7-day free trial, once per organization.
   </Accordion>
-  <Accordion title="Why is a Task missing?">
-    Check Task scope, Project selector, filters, and **Show completed sprint tasks**. Deleted Tasks appear in Trash when you have access.
+  <Accordion title="What happens if I downgrade?">
+    Nothing is deleted. Members and Projects over the new limit are locked, and features above the plan switch off. Upgrade, and they come back. See [Plan enforcement](/admin/billing/plan-enforcement).
   </Accordion>
-  <Accordion title="Can I recover deleted work?">
-    Supported Tasks, Sprints, Projects, members, and files stay in Trash for 30 days. Permanent deletion cannot be reversed.
-  </Accordion>
-  <Accordion title="Why can’t I upload a file?">
-    Check organization storage, the plan's per-file size, the file type, and your file-create permission. Task uploads are available on every plan within its limits.
-  </Accordion>
-  <Accordion title="Why can’t I create another Project or invite a member?">
-    The organization may have reached its active-Project or seat limit. Complete finished work, free a seat, or change plan.
-  </Accordion>
-  <Accordion title="Does Orbit make changes automatically?">
-    Orbit Chat is read-only. Orbit Agent shows Admins and Managers a plan and requires approval before running changes. It cannot delete records.
-  </Accordion>
-  <Accordion title="How do I contact Flotick?">
-    Use the in-app Help menu or [Support](/resources/support). Include your organization slug and the time the issue occurred.
+  <Accordion title="Where are the current prices?">
+    At [flotick.com/pricing](https://flotick.com/pricing).
   </Accordion>
 </AccordionGroup>
 
-## More help
+## Access and people
 
-Use the feature documentation when you need a workflow walkthrough, such as [Tasks](/features/tasks), [Attendance](/features/attendance), or [Orbit](/features/orbit). Use [Support](/resources/support) when the app behavior does not match these guides or you cannot resolve an access issue through your organization Admin.
+<AccordionGroup>
+  <Accordion title="Why can't I see a page or button?">
+    Check three things: your **role**, your **plan**, and your access to that **Project or record**. Ask an Admin to review your [permissions](/admin/member-permissions).
+  </Accordion>
+  <Accordion title="Why can't I invite someone?">
+    You may be out of **seats**, or not an Admin or Manager. See [Seat management](/admin/billing/seat-management).
+  </Accordion>
+  <Accordion title="Why don't I see Attendance or Leave?">
+    They are hidden for members whose job type is **Contract**.
+  </Accordion>
+  <Accordion title="How do I remove someone who left?">
+    Use [Offboarding](/admin/offboarding) to deactivate them and hand over their work.
+  </Accordion>
+</AccordionGroup>
+
+## Work and clients
+
+<AccordionGroup>
+  <Accordion title="What is the difference between a Sprint task and an individual task?">
+    Sprint tasks belong to a Sprint, have the full workflow, and support comments and files. Individual tasks are private to you and have a simple flow. See [Tasks](/features/tasks).
+  </Accordion>
+  <Accordion title="What do clients see in the portal?">
+    Only what you share. Task names and assignees are never shown. See [Client sharing](/clients/client-sharing).
+  </Accordion>
+  <Accordion title="How do I preview what a client sees?">
+    Use **View as client** on a client or Project. It is a read-only, 30-minute preview.
+  </Accordion>
+  <Accordion title="Can a client sign a document without an account?">
+    Yes. Shared documents open from a link, and clients accept or sign with a typed name. See [Sharing and signing](/documents/sharing-and-signing).
+  </Accordion>
+</AccordionGroup>
+
+## Orbit and AI
+
+<AccordionGroup>
+  <Accordion title="Does Orbit see everything?">
+    No. Orbit only uses what **you** are allowed to see.
+  </Accordion>
+  <Accordion title="Will AI send things without asking?">
+    No. AI results are suggestions. Orbit Agent shows a plan and waits for your confirmation.
+  </Accordion>
+  <Accordion title="What happens when I run out of AI credits?">
+    Features that use credits pause until the next month or an upgrade. Everything still works by hand. See [Orbit credits](/features/orbit#credits).
+  </Accordion>
+</AccordionGroup>
+
+## Data
+
+<AccordionGroup>
+  <Accordion title="How long do deleted items stay in Trash?">
+    30 days. See [Trash](/features/trash).
+  </Accordion>
+  <Accordion title="Can I export my data?">
+    Yes. Admins can download a ZIP of all organization data. See [Data and privacy](/admin/data-and-privacy).
+  </Accordion>
+</AccordionGroup>

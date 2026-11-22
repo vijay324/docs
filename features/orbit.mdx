@@ -1,46 +1,59 @@
 ---
-title: "Orbit Chat"
-description: "Ask grounded questions about your organization's delivery and workforce data."
+title: "Orbit chat"
+description: "Ask questions about your work, clients, meetings, and documents. Get answers with sources."
+icon: "sparkles"
 ---
 
-Open Orbit from the floating launcher or `/<org-slug>/inbox/orbit`. Chat is available to every organization member; answers are scoped to data the member can access.
+<Badge color="green">All plans</Badge> <Badge color="blue">Choosing the model: Starter+</Badge>
 
-## Ask a question
+Orbit is Flotick's AI assistant. Ask in plain language, and Orbit answers from your own data, with **cited sources**. It only uses what **you** are allowed to see.
 
-Use natural language for questions such as:
+## Ask Orbit
 
-- What is at risk this week?
-- Which Tasks are overdue?
-- Summarize the active Sprint.
-- How is work distributed across the team?
-- What changed since the previous reporting period?
+Open the **Orbit button** in the bottom bar, open `/inbox/orbit`, or use the side sheet. Try questions such as:
 
-Orbit focuses on Flotick organization data. Responses can include structured claims and supporting workspace context. You can provide positive or negative feedback and regenerate an answer.
+- "What is overdue on the Acme Project?"
+- "Which leads need a follow-up this week?"
+- "Summarize yesterday's client meeting."
 
-## Reports and history
-
-Report templates are grouped into leadership, delivery, and people categories. Conversations are saved to history. You can reopen or delete a conversation and pin up to five items in the current browser.
-
-Free organizations use automatic model selection. Pro and Max members can select supported Orbit modes. Every answer consumes the plan's current AI or Orbit allowance shown in settings.
-
-<Note>
-Orbit can summarize and explain data, but you should verify important delivery or people decisions against the source records it references.
-</Note>
-
-## Use report templates
-
-Open the report area in Orbit to choose a template. Templates are organized into leadership, delivery, and people categories so a manager can quickly find a Sprint summary, deadline-risk assessment, workload balance, team-health brief, or executive digest. The exact templates visible can depend on available data and plan entitlement.
-
-When you run a template, Orbit builds a response from current organization data and adds it to the conversation. Treat the template as a starting point for review; open the cited Task, Project, Sprint, attendance, or leave surface when you need to take action.
-
-## Manage conversations
-
-Start a new conversation for a distinct question. History preserves prior chats and Agent sessions. You can reopen a conversation, delete it from history, or pin up to five conversations in the current browser. Pinning is a local convenience—it does not pin the item for other members.
+Orbit covers **work, CRM, meetings, and documents**. Your conversation history is saved.
 
 ## Choose a model
 
-Free-plan use is automatically selected by Flotick. Eligible Pro and Max users can choose **Auto**, **Orbit**, or **Orbit Pro** before asking a question. The interface shows the credit cost of the selected mode. If usage is exhausted, wait for the next allowance period or ask the organization Admin to review the plan.
+| Model | Best for | Cost |
+| --- | --- | --- |
+| **Auto** | Let Orbit decide (Free uses Auto) | 1 credit |
+| **Orbit** | Fast answers | 1 credit |
+| **Orbit Pro** | Harder questions | 3 credits |
 
-## Get better answers
+Picking the model yourself needs **Starter or above**.
 
-Name a Project, Sprint, member, status, or date range when it matters. Ask one decision-oriented question at a time, such as “Which active Tasks are overdue in Project Atlas?” rather than “What is happening?” This gives Orbit less ambiguity and makes the result easier to verify.
+## Credits
+
+Orbit and other AI features use monthly **AI credits**.
+
+| Plan | Credits per month |
+| --- | --- |
+| Free | 100 |
+| Starter | 600 |
+| Pro | 2,000 |
+| Max | 6,000 |
+
+| Action | Cost |
+| --- | --- |
+| Orbit chat (Auto or Orbit) | 1 |
+| Orbit Pro | 3 |
+| Orbit Agent plan | 5 |
+| Writing helper | 2 |
+| Rewrite | 1 |
+
+See your usage in [Orbit settings](/features/orbit-settings) and in **Settings → General**.
+
+<CardGroup cols={2}>
+  <Card title="Orbit Agent" icon="bot" href="/features/ai-agent">
+    Let Orbit prepare changes for you to approve.
+  </Card>
+  <Card title="AI writing helpers" icon="pen-line" href="/features/ai-writing">
+    Draft Tasks, notes, and replies.
+  </Card>
+</CardGroup>

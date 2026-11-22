@@ -1,54 +1,27 @@
 ---
 title: "Profile"
-description: "Manage your identity, work details, password, and connected Google account."
+description: "Your photo, details, Google connection, and consent to appear on the public business page."
+icon: "user-round"
 ---
 
-Open `/<org-slug>/profile`. The page is divided into **Personal**, **Security**, and **Connections**.
+<Badge color="green">All plans</Badge> <Badge color="gray">Every role</Badge>
 
-## Personal details
+Open **Settings → Personal → Profile**.
 
-You can update:
+## What you can set
 
-- Username
-- First and last name
-- Member ID
-- Job title and job type
-- Main and sub-department
-- Mobile number
-- Work type: `Office`, `Remote`, or `Hybrid`
+- **Photo**, **name**, and **contact** details
+- **Job title** and **department**
+- **Google account connection**, which powers [Google Calendar sync](/clients/meetings#google-calendar-sync)
+- **Consent** to appear on your organization's [public business page](/grow/business-page)
 
-Your email and role are displayed with the account. Some organization-managed fields can be constrained by your role or department configuration.
+Flotick reminds you until required fields are filled in.
 
-## Security
-
-Email accounts can change their password. Admins and Managers can also manage two-factor authentication from this tab.
-
-## Connections
-
-Connect Google to add Google sign-in to an existing account. You can unlink Google only when another working sign-in method remains, preventing accidental account lockout.
-
-Incomplete required fields contribute to your profile-completion status and may trigger a reminder.
-
-## Update your profile
-
-<Steps>
-  <Step title="Open Profile">
-    Select your profile from the organization navigation, then open the **Personal** tab.
-  </Step>
-  <Step title="Edit the required work details">
-    Update your name, username, member ID, title, department, job type, mobile number, and work type as permitted.
-  </Step>
-  <Step title="Save changes">
-    Review the validation messages and save. Flotick refreshes your active profile after a successful update.
-  </Step>
-</Steps>
-
-Your username is used in member URLs and your name is shown on work, comments, and member views. Use a recognizable, professional identity so teammates can correctly assign and mention you.
-
-## Department and work type
-
-Department and sub-department choices come from the organization configuration. If the correct option is missing, ask an Admin to update [Departments](/admin/departments). Work type records whether your normal arrangement is office, remote, or hybrid; it can be used by attendance and reporting surfaces.
-
-## Keep your profile complete
-
-Flotick calculates a profile-completion percentage from required information. If a reminder appears, you can complete the fields immediately, defer it, or dismiss it for the day. A completed profile makes member assignment and people operations more reliable.
+<CardGroup cols={2}>
+  <Card title="Security and 2FA" icon="shield-check" href="/account/security-and-2fa">
+    Protect your account.
+  </Card>
+  <Card title="Preferences" icon="sliders-horizontal" href="/account/preferences">
+    Customize how Flotick looks.
+  </Card>
+</CardGroup>

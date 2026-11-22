@@ -1,42 +1,34 @@
 ---
 title: "Trash"
-description: "Restore or permanently remove deleted Tasks, Sprints, Projects, members, and files."
+description: "Deleted items wait here for 30 days, so mistakes are easy to undo."
+icon: "trash-2"
 ---
 
-Flotick keeps supported deleted items recoverable for 30 days. Trash is organized into tabs for Tasks, Sprints, Projects, members, and files.
+<Badge color="green">All plans</Badge>
 
-Each row shows who deleted the item, when it was deleted, and how many days remain. Authorized members can:
+When you delete something in Flotick, it moves to **Trash** first. You have **30 days** to restore it before it is removed permanently.
 
-- Restore one item to its original location
-- Select and restore multiple items
-- Permanently delete one or more items
+## Where to find it
 
-<Warning>
-Permanent deletion cannot be undone. Items also become unavailable after their recovery window expires.
-</Warning>
+Open **Trash** in the sidebar footer (`/trash`).
 
-Restoring a member uses a plan seat. Restoring a Project can be blocked by plan limits. A Project restore also restores the Sprints and Tasks soft-deleted with it.
+| Tab | Holds |
+| --- | --- |
+| **Tasks** | Deleted Tasks |
+| **Sprints** | Deleted Sprints |
+| **Projects** | Deleted Projects |
+| **Members** | Deleted members |
+| **Files** | Deleted files |
+| **Sales** | Leads and other CRM items |
+| **More** | Everything else |
 
-## Restore an item
+## Restore or remove
 
-<Steps>
-  <Step title="Open the correct tab">
-    Choose Tasks, Sprints, Projects, Members, or Files.
-  </Step>
-  <Step title="Review expiry and context">
-    Check the deletion date, remaining days, associated Project, and who deleted the item.
-  </Step>
-  <Step title="Restore">
-    Click **Restore** for one item, or select multiple rows and use the bulk restore action. Confirm when prompted.
-  </Step>
-</Steps>
+- **Restore** puts an item back. Restoring a Project also brings back its Sprints, Tasks, and files.
+- **Delete permanently** removes it right away and cannot be undone.
 
-Restoration returns the record and its retained related data to normal access when its parent, plan, and permission conditions allow it. Restore a missing parent before restoring a child that was deleted independently.
+Who can restore or permanently delete depends on the type of item.
 
-## Permanently delete
-
-Use permanent deletion only when the record is no longer needed and recovery should be impossible. The confirmation is deliberate because this action cannot be reversed. Items that are not permanently deleted remain eligible for automated cleanup after their 30-day recovery period.
-
-## Access notes
-
-Your role determines which Trash tabs and actions you see. Admins have the broadest recovery controls, particularly for members. If an expected item is not visible, confirm you are in the right organization and ask an Admin to check whether it was already permanently deleted or has expired.
+<Note>
+Two areas keep their own trash: **Tasks** (`/tasks/trash`) and **Documents** (`/documents/trash`). Deleted meetings send their notes and files to Trash too.
+</Note>

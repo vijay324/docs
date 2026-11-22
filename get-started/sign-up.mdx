@@ -1,39 +1,51 @@
 ---
-title: "Sign up"
-description: "Create a Flotick account and a new organization."
+title: "Sign up and sign in"
+description: "Create your account and organization, then sign in safely from any device."
+icon: "log-in"
 ---
 
-Use sign-up when you are creating a new organization. If your team already uses Flotick, ask an Admin or Manager for an invitation instead.
+<Badge color="green">All plans</Badge>
+
+## Create your organization
+
+Founders sign up once. You create your account first, then your organization, and you become its **Admin**.
 
 <Steps>
-  <Step title="Start sign-up">
-    Open the Flotick sign-up page and choose email or Google.
-  </Step>
   <Step title="Create your account">
-    For email sign-up, enter your name, email, username, and a strong password. Google sign-up uses the verified identity returned by Google.
+    Sign up with your email, or continue with Google.
   </Step>
-  <Step title="Create the organization">
-    Enter the organization name and requested organization details. Flotick creates a unique URL slug for the workspace.
+  <Step title="Describe your organization">
+    Enter the organization name and choose a web address (slug) for it.
   </Step>
-  <Step title="Complete onboarding">
-    Add your work profile and preferences, then open the organization.
+  <Step title="Answer a few questions">
+    Choose your organization type (Agency, Company, Freelance, Startup, or Other), team size, industry, country, how you plan to use Flotick, and how you heard about us. A website and referral code are optional.
   </Step>
 </Steps>
 
-The creator becomes the organization's **Admin**. Member limits depend on the active plan.
+<Note>
+Every signup question needs an answer. Nothing is pre-filled, which keeps your setup accurate.
+</Note>
 
-<Warning>
-Do not use sign-up to join an existing organization. Accounts and email addresses are unique; use the invitation link your organization sent you.
-</Warning>
+Every new organization starts on the **Free** plan. You can upgrade any time from [Billing](/admin/billing/upgrade-or-cancel).
 
-## Choose the right path
+## Sign in
 
-Use **email** when you want a password-based Flotick account. Use **Google** when your organization permits Google sign-in and you want Google to verify the account identity. You can later add or remove a Google connection from [Profile](/account/profile), provided another sign-in method remains.
+Sign in with your email or username and password, or with Google. Forgot your password? Choose **Forgot password** and follow the email link.
 
-## Organization information
+| Security check | What happens |
+| --- | --- |
+| **New device** | You may be asked for a verification code sent to your email. |
+| **Two-factor authentication** | If you turned it on, you enter a code after your password. |
+| **Repeated failures** | The account locks for a while to stop guessing. |
+| **Email verification** | New accounts confirm their email address. |
 
-The organization setup asks for information that identifies the workspace, such as organization name and business details. The name appears across the workspace; the generated slug becomes part of signed-in links. Check it carefully before sharing the first Project link with your team.
+You can keep several accounts signed in on one browser and switch between them from the account switcher.
 
-## If sign-up fails
-
-An email address or username may already belong to an existing account. Try signing in or resetting the password instead of creating a duplicate. If you intended to join an existing organization, request an invitation from its Admin or Manager.
+<CardGroup cols={2}>
+  <Card title="Security and 2FA" icon="shield-check" href="/account/security-and-2fa">
+    Add an authenticator app and backup codes.
+  </Card>
+  <Card title="Accept an invitation" icon="mail-open" href="/get-started/accept-invitation">
+    Joining an existing organization instead?
+  </Card>
+</CardGroup>

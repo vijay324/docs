@@ -1,37 +1,43 @@
 ---
-title: "Notifications"
-description: "Receive and act on organization events from the in-app notification center."
+title: "Notifications and live updates"
+description: "Know what changed the moment it happens, in the app, in your browser, and by email."
+icon: "bell"
 ---
 
-Click the **bell** in the app shell to open unread notifications. The center loads up to 50 unread items and adds new events while you are connected.
+<Badge color="green">All plans</Badge> <Badge color="gray">Every role</Badge>
 
-Notifications can cover events such as:
+Flotick tells you when something needs your attention. Notifications arrive live, so you do not have to refresh.
 
-- Task assignment, status changes, and comments
-- Leave decisions
-- Attendance regularization decisions
-- Comp-off decisions
+## What triggers a notification
 
-Click a notification to mark it read and open its linked item when an action URL is available. You can also **Mark all read** or clear the current local list.
+- A Task is **assigned** to you
+- Someone **comments**, **@mentions** you, or reacts to your comment
+- A **workflow decision** or approval is made
+- A **client** acts in the portal (approves, asks, uploads, or sends a proof)
+- A **billing** event affects your organization
 
-The connection indicator shows `Live`, `Connecting`, or `Offline`. Click the offline indicator to retry the real-time connection.
+Some events also send an **email**.
+
+## Where you see them
+
+| Place | How it works |
+| --- | --- |
+| **Bell in the header** | Opens a dropdown of recent notifications with an unread count. |
+| **Inbox** | The full list, with actions and task previews. See [Inbox](/features/inbox). |
+| **Browser notifications** | Flotick asks once if it may show alerts, even when the tab is in the background. |
+
+Use **Mark as read** on one item, or mark them all in one click.
+
+## Live updates
+
+When a teammate changes a Task, moves a board card, posts a comment, or finishes an Orbit action, your open lists and details refresh on their own.
+
+If a view looks out of date:
+
+1. Open the bell and check that it shows **Live**.
+2. Make sure your device is online. Click the offline indicator to retry.
+3. Refresh the page if the view is still stale.
 
 <Note>
-Clearing the displayed list does not delete the underlying notification records. Flotick does not currently expose a client-facing channel-preference editor.
+Saved changes are always checked by the server. Live updates only keep your screen current.
 </Note>
-
-## Read and act on notifications
-
-Open the bell to see unread items ordered by time. An unread item has an indicator. Click it to mark it as read; when the event has an associated Task or request, Flotick opens the relevant page.
-
-Use **Mark all read** after you have reviewed the current list. The **Clear all** control only clears the local display during that session; it is not a destructive delete of the notification record.
-
-## Connection state
-
-| State | Meaning | What to do |
-| --- | --- | --- |
-| **Live** | The real-time connection is active. | No action required. |
-| **Connecting** | Flotick is reconnecting. | Wait briefly. |
-| **Offline** | No active real-time connection. | Click the indicator to retry, then verify your network. |
-
-New notifications appear while the center is closed and update the unread count. A page refresh retrieves unread items again from the server.

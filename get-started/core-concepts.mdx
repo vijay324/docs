@@ -1,44 +1,55 @@
 ---
 title: "Core concepts"
-description: "The organization, work, and access model used throughout Flotick."
+description: "The handful of ideas that explain how Flotick fits together."
+icon: "blocks"
 ---
 
-## Work hierarchy
+## Organization
 
-| Concept | Purpose |
-| --- | --- |
-| **Organization** | Contains members, policies, work, files, and the subscription. |
-| **Project** | Groups a delivery area, its team, Sprints, Tasks, files, and environments. |
-| **Sprint** | A time-boxed cycle in one Project. |
-| **Task** | A deliverable with classification, status, dates, and collaboration. |
-| **Epic** | A Task type that groups direct child Tasks in the same Project. |
-
-Projects, Sprints, and Tasks receive readable IDs for navigation and reference.
-
-## Task responsibility
-
-Sprint Tasks can identify an assignee, reviewer, tester, and reporter. They can also include supported collaborator roles such as approver, watcher, or contributor.
-
-Individual Tasks are lightweight Project work without Sprint responsibility fields. They use `To Do`, `In Progress`, and `Completed`; Sprint Tasks use the organization Sprint workflow.
+An **organization** is your company, agency, or freelance business inside Flotick. It owns the members, clients, Projects, documents, files, and billing. Each organization has its own web address (called a slug). Every new organization starts on the Free plan.
 
 ## Roles
 
-| Role | Typical access |
+Every member has one of three roles. Roles set the defaults for what each person can see and do.
+
+| Role | What it means |
 | --- | --- |
-| **Admin** | Organization, billing, policy, member, and work administration |
-| **Manager** | Team and delivery management within the role ceiling |
-| **Member** | Accessible work and personal attendance and leave |
+| **Admin** | The owner. Always has full access, and is the only role that can change billing, delete the organization, or transfer ownership. |
+| **Manager** | Runs delivery and people. Full access to most areas, within limits an Admin sets. |
+| **Member** | Does the work. Can view, create, and edit their own work in most areas. |
 
-On Pro and Max, per-member overrides can change eligible operations within a role ceiling. See [Member permissions](/admin/member-permissions).
+On [Pro and above](/admin/billing/plans), Admins and Managers can fine-tune one person's access. See [Member permissions](/admin/member-permissions).
 
-## How access is evaluated
+## How work is organized
 
-You must be an active organization member. Flotick then checks plan entitlement, role and overrides, record visibility, and Project membership. Access to the Tasks page does not grant access to every private Project or Task.
+<CardGroup cols={3}>
+  <Card title="Project" icon="folder-kanban">
+    All the work for one piece of delivery. Holds Sprints, Tasks, files, milestones, and client sharing.
+  </Card>
+  <Card title="Sprint" icon="timer">
+    A time-boxed round of work inside a Project, with a goal, dates, and capacity.
+  </Card>
+  <Card title="Task" icon="square-check-big">
+    The basic unit of work. Either part of a Sprint, or an individual Task just for you.
+  </Card>
+</CardGroup>
 
-Signed-in routes include the organization slug, such as `app.flotick.com/<org-slug>/tasks`.
+## How clients fit in
 
-## Use each record intentionally
+A lead becomes a **client**. A client is linked to Projects, meetings, documents, and files. Clients get their own **Client Portal** where they follow progress, approve work, and talk to your team. They never see your internal Tasks.
 
-Use a Project for a delivery area, a Sprint for a bounded iteration, a Task for a deliverable, an Epic for a one-level work group, a subtask for a checklist item, a comment for discussion, and a file for an artifact.
+## Short IDs
 
-Status describes workflow position, priority communicates urgency, story points estimate relative Sprint effort, and work logs record time already spent. Keeping these fields current improves Sprints, Analytics, and Orbit.
+Projects and Tasks get readable IDs built from a short code for the Project. For example, `PAY-P-001` is a Project and `PAY-T-142` is a Task. Use them in chats and searches.
+
+## Plans
+
+Flotick has four plans: **Free**, **Starter**, **Pro**, and **Max**. Plans set limits (members, Projects, storage, AI credits) and unlock features. A badge such as <Badge color="blue">Starter+</Badge> means that plan and above. See [Plans](/admin/billing/plans).
+
+## Orbit
+
+**Orbit** is Flotick's AI assistant. It answers questions about your work using only what you are allowed to see, and can prepare changes for you to approve. See [Orbit](/features/orbit).
+
+<Note>
+Three things decide what you see: your role, your plan, and your access to the specific Project or record. If something is missing, check each one.
+</Note>

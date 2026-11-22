@@ -1,29 +1,48 @@
 ---
-title: "Inbox"
-description: "Review Tasks relevant to you in a focused master-detail workspace."
+title: "Inbox and Today brief"
+description: "One place for your notifications, personal Tasks, and a daily plan of what needs you."
+icon: "inbox"
 ---
 
-Inbox is the default page after sign-in. It shows your active work instead of the organization's full Task list.
+<Badge color="green">All plans</Badge> <Badge color="gray">Every role</Badge>
 
-It includes Sprint Tasks where you participate as assignee, reviewer, tester, or reporter, plus individual Tasks you created. Tasks from completed Sprints are hidden unless you enable **Show completed sprint tasks**.
+Your Inbox is the page you land on after signing in. It brings together what happened while you were away and what you should do next.
 
-## Views and filters
+## What you will find
 
-- **List:** select a Task and work from its detail pane.
-- **Board:** group the same Tasks by status and move them with drag and drop.
-- **Calendar:** place Tasks by due date.
-- **Filters:** narrow by search, status, priority, type, Project, Sprint, responsibility, label, or date.
+- **Notifications** about assignments, comments, @mentions, reactions, approvals, and client activity.
+- **Your personal Tasks**, so you can act without leaving the page.
+- **Task details** when you open a sprint-task notification: acceptance criteria, subtasks, and comments, right in the Inbox.
 
-Available scopes include **All**, **Assigned**, **Created**, and **Team**, depending on your permissions.
+Unread items are marked. Mark one as read, or mark everything at once. New items arrive live, so you never need to refresh.
 
-## Work from Inbox
+## Today brief
 
-Create a Task, open its full page, or update accessible responsibility, priority, status, dates, description, subtasks, files, comments, and work logs from the detail experience.
+<Badge color="blue">New</Badge>
 
-<Note>
-The header bell is the notification center. Inbox is your personal Task workspace, not a notification history.
-</Note>
+At the top of the Inbox, **Today brief** shows your plan for the day:
 
-If a Task is missing, clear filters, confirm its Project, and check whether it belongs to a completed Sprint or [Trash](/features/trash). Your role, permissions, visibility, and Project access determine whether you can view or edit it.
+| Section | What it counts |
+| --- | --- |
+| **Overdue** | Tasks past their due date |
+| **Due today** | Tasks due today |
+| **Follow-ups** | Lead follow-ups scheduled for today |
+| **Meetings** | Meetings happening today |
+| **Waiting on me** | Reviews, testing, leave approvals, payment proofs, and client change requests |
 
-Use the Orbit launcher or open `/<org-slug>/inbox/orbit` for [Orbit Chat](/features/orbit).
+Each count opens a filtered list. You only see sections you have access to.
+
+An optional **AI summary** turns the brief into a sentence or two. It uses [AI credits](/features/orbit#credits) and falls back to a plain summary when AI is unavailable.
+
+<Tip>
+Start your day with the brief, clear "Waiting on me" first, then work down your overdue Tasks.
+</Tip>
+
+<CardGroup cols={2}>
+  <Card title="Notifications" icon="bell" href="/features/notifications">
+    Control how and where you are notified.
+  </Card>
+  <Card title="Tasks" icon="list-checks" href="/features/tasks">
+    Create and manage the work in your Inbox.
+  </Card>
+</CardGroup>

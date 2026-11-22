@@ -1,40 +1,40 @@
 ---
 title: "Files"
-description: "Upload, organize, preview, download, and assign files across your organization."
+description: "Upload, organize, share, and version files across Projects, Sprints, and Tasks."
+icon: "folder-open"
 ---
 
-Files can belong to a Project, Sprint, or Task. You can also upload an unassigned file and connect it later.
+<Badge color="green">All plans</Badge> <Badge color="blue">Version history: Starter+</Badge>
 
-## Browse the library
+Files collects everything your team uploads in one searchable place, and lets you share the right files with your client.
 
-**All Files** is organized into **All Files**, **Projects**, **Sprints**, **Tasks**, and **Unassigned** tabs. Search by file name, select multiple files, and inspect the uploader and current association.
+## Browse
 
-Available actions include:
+Open **Files**. Tabs are **All files**, **Projects**, **Sprints**, **Tasks**, and **Unassigned**. Filter by tag, switch between grid and list, and watch the storage meter.
 
-- Upload with drag and drop or the file picker
-- Preview supported images and PDFs
-- Download the original
-- Copy a temporary view link when available
-- Assign or reassign files to a Project, Sprint, or Task
-- Add standard tags such as `design`, `specification`, `draft`, or `final-version`
-- Delete files and restore them from [Trash](/features/trash)
+## What you can do
 
-## Upload limits
+- **Upload** by drag and drop. Uploads run in the background, so keep working.
+- **Download** and **tag** files.
+- **Share a Project file with the client** so it appears in their portal.
+- **Request client approval** of a file. See [Approvals](/portal/approvals).
+- **Version history** keeps earlier versions of a file <Badge color="blue">Starter+</Badge>.
+- **Delete** to [Trash](/features/trash) and restore within 30 days.
 
-| Plan | Organization storage | Maximum file size |
-| --- | ---: | ---: |
-| Free | 500 MB | 25 MB |
-| Pro | 5 GB | 100 MB |
-| Max | 100 GB | 500 MB |
+Individual Tasks cannot have attachments. Members can view files and can be allowed to upload.
 
-Project, Sprint, Task, and unassigned uploads are available on every plan within these limits. The app shows current storage usage and rejects an upload that exceeds the active allowance.
+## Storage and file size
 
-## Keep files organized
+| | Free | Starter | Pro | Max |
+| --- | --- | --- | --- | --- |
+| Storage | 2 GB | 25 GB | 100 GB | 500 GB |
+| Largest file | 50 MB | 250 MB | 500 MB | 1 GB |
 
-Attach long-lived reference material to the Project, planning material to the Sprint, and execution evidence to the Task. Use **Assign** for an unassigned upload and **Reassign** when its work context changes.
-
-Viewing and downloading use short-lived access URLs. A copied storage URL is not a permanent public link.
-
-<Warning>
-Do not upload secrets to Files. Store environment configuration in [Env Storage](/features/env-storage).
-</Warning>
+<CardGroup cols={2}>
+  <Card title="Client sharing" icon="share-2" href="/clients/client-sharing">
+    Choose which files clients can see.
+  </Card>
+  <Card title="Portal files" icon="layout-template" href="/portal/files">
+    See what clients can download and upload.
+  </Card>
+</CardGroup>

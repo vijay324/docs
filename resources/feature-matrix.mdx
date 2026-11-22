@@ -1,37 +1,59 @@
 ---
 title: "Feature matrix"
-description: "A compact view of active product availability by plan and role."
+description: "Every feature at a glance: which plan unlocks it and which role can use it."
+icon: "table"
 ---
+
+A "✓" means included. See [Plans](/admin/billing/plans) for limits, and [flotick.com/pricing](https://flotick.com/pricing) for prices.
 
 ## By plan
 
-| Capability | Free | Pro | Max |
-| --- | :---: | :---: | :---: |
-| Projects, Sprints, Tasks, comments, and subtasks | ✓ | ✓ | ✓ |
-| Inbox, My Board, personal attendance, and leave requests | ✓ | ✓ | ✓ |
-| Project, Sprint, Task, and unassigned file uploads | ✓ | ✓ | ✓ |
-| Team analytics and export | — | ✓ | ✓ |
-| Saved Analytics views | — | ✓ | ✓ |
-| Workflow appearance customization | — | ✓ | ✓ |
-| Env Storage | — | ✓ | ✓ |
-| Team attendance and advanced leave | — | ✓ | ✓ |
-| Per-member permission overrides | — | ✓ | ✓ |
-| Orbit model selection | — | ✓ | ✓ |
-| Delivery forecasting | — | — | ✓ |
-| Scheduled reports | — | — | ✓ |
-
-See **Plans** in the Admin and account section for numerical limits. Current commercial terms remain at [flotick.com/pricing](https://flotick.com/pricing).
+| Capability | Free | Starter | Pro | Max |
+| --- | :---: | :---: | :---: | :---: |
+| **Work** | | | | |
+| Projects, Sprints, Tasks, comments | ✓ | ✓ | ✓ | ✓ |
+| Inbox, Today brief, Personal board | ✓ | ✓ | ✓ | ✓ |
+| Milestones and project updates | ✓ | ✓ | ✓ | ✓ |
+| Files and storage | ✓ | ✓ | ✓ | ✓ |
+| File version history | – | ✓ | ✓ | ✓ |
+| Project keys | – | ✓ | ✓ | ✓ |
+| **Clients and sales** | | | | |
+| Leads, Clients, Meetings, Messages | ✓ | ✓ | ✓ | ✓ |
+| Lead autopilot | ✓ | ✓ | ✓ | ✓ |
+| Quote form builder and website embed | – | ✓ | ✓ | ✓ |
+| Client Portal | ✓ | ✓ | ✓ | ✓ |
+| Client approvals | – | ✓ | ✓ | ✓ |
+| White-label portal and custom domain | – | – | ✓ | ✓ |
+| Public business page, reviews | ✓ | ✓ | ✓ | ✓ |
+| **Documents** | | | | |
+| Templates, editor, sharing, e-signature | ✓ | ✓ | ✓ | ✓ |
+| Your logo, saved styles, more fonts | – | ✓ | ✓ | ✓ |
+| Pro designs, layout controls, custom fields | – | – | ✓ | ✓ |
+| **Team** | | | | |
+| Personal attendance and leave requests | ✓ | ✓ | ✓ | ✓ |
+| Team attendance and advanced leave | – | ✓ | ✓ | ✓ |
+| Payroll | – | ✓ | ✓ | ✓ |
+| Workflow and department customization | – | ✓ | ✓ | ✓ |
+| Member permission overrides | – | – | ✓ | ✓ |
+| **Insights and AI** | | | | |
+| Analytics (90 days) | ✓ | ✓ | ✓ | ✓ |
+| Team analytics and export | – | ✓ | ✓ | ✓ |
+| Project flow analytics, scheduled reports | – | – | ✓ | ✓ |
+| Delivery forecasting | – | – | – | ✓ |
+| Orbit chat and Orbit Agent | ✓ | ✓ | ✓ | ✓ |
+| Choose the Orbit model | – | ✓ | ✓ | ✓ |
 
 ## By role
 
 | Capability | Member | Manager | Admin |
 | --- | :---: | :---: | :---: |
-| Work with accessible Tasks | ✓ | ✓ | ✓ |
+| Work with Tasks | ✓ | ✓ | ✓ |
 | View permitted Analytics | ✓ | ✓ | ✓ |
-| Manage Projects and Sprints by default | — | ✓ | ✓ |
-| Review team attendance and leave by default | — | ✓ | ✓ |
-| Use Orbit Agent | — | ✓ | ✓ |
-| Manage members by default | — | ✓ | ✓ |
-| Manage organization settings and billing | — | — | ✓ |
+| Create Projects and Sprints | By permission | ✓ | ✓ |
+| Manage clients, leads, and documents | Edit | ✓ | ✓ |
+| Approve leave and review team attendance | – | ✓ | ✓ |
+| Manage members and settings | – | ✓ | ✓ |
+| Run payroll | – | By permission | ✓ |
+| Manage billing, transfer ownership | – | – | ✓ |
 
-Overrides can change Manager and Member defaults within the applicable role ceiling. Plan entitlement, membership state, work visibility, and Project access are evaluated separately.
+Roles set defaults. [Permission overrides](/admin/member-permissions) can change them within each role's ceiling.

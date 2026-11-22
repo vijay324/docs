@@ -1,30 +1,28 @@
 ---
 title: "Seat management"
-description: "Track which members use plan seats and free capacity safely."
+description: "Understand how seats are counted and what happens when you reach your limit."
+icon: "armchair"
 ---
 
-An active accepted member uses one organization seat. Pending invitations do not use a seat until accepted.
+<Badge color="gray">Admin or Manager</Badge>
 
-| Plan | Seat limit |
-| --- | ---: |
-| Free | 5 |
-| Pro | 25 |
-| Max | Unlimited |
+A **seat** is one member of your organization.
 
-To free a seat, an Admin can remove a member. Removed members move to Trash and cannot sign in. Their Tasks, comments, history, and other organization records remain.
+| | Free | Starter | Pro | Max |
+| --- | --- | --- | --- | --- |
+| Seats | 5 | 10 | 30 | 75 |
 
-Restoring a deleted member consumes a seat and can be blocked when the organization is at its limit.
+## Rules
 
-After a downgrade below current usage, Flotick protects the Admin seat and plan-locks the newest excess non-Admin members. Their data is retained. Available capacity or a later upgrade restores the longest-standing locked members first.
+- Every **invite** needs a free seat.
+- Free a seat by **deactivating** or deleting a member. See [Offboarding](/admin/offboarding).
+- **Pending invites** can be canceled to free their seat.
+- Need more room? [Upgrade your plan](/admin/billing/upgrade-or-cancel).
 
-## Monitor seats
+## After a downgrade
 
-Review seat usage in **Settings** before sending invitations or restoring deleted members. An invitation can be sent while pending, but acceptance is checked against the current seat limit. If the organization has no capacity, increase the plan or free a seat before the recipient tries again.
+If you have more members than your new plan allows, the **newest members over the limit are locked out** until you upgrade. The **owner is never locked**. Nothing is deleted.
 
-## Free a seat responsibly
-
-Open the member record and confirm ownership transfer before removing the person. Reassign active Tasks, review assignments, and testing responsibility when the work must continue. Removal frees the seat only after the member is no longer active; restoring the member later consumes a seat again.
-
-## Plan-locked members
-
-Plan locking is different from an Admin deactivation. A plan-locked member is restricted because capacity fell after a downgrade. When capacity returns, Flotick can restore that member without overriding a separate deliberate deactivation made by an Admin.
+<Card title="Plan enforcement" icon="scale" href="/admin/billing/plan-enforcement" horizontal>
+  See everything that happens on a downgrade.
+</Card>

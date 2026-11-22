@@ -1,30 +1,35 @@
 ---
-title: "Plan changes and retained data"
-description: "How Flotick applies lower limits without deleting organization data."
+title: "Plan enforcement and downgrades"
+description: "What happens when you reach a limit or move to a lower plan. Nothing is ever deleted."
+icon: "scale"
 ---
 
-Plan enforcement is non-destructive. A downgrade normally opens a seven-day grace window; the exact window can vary by deployment configuration.
+Plans set limits. When you downgrade or go over, Flotick **limits access, never deletes**. Upgrade, and everything comes back.
 
-## During grace
+## What happens on a downgrade
 
-- The current higher-plan access remains active.
-- The app shows the pending plan and deadline.
-- Admins can reduce members and active Projects or restore the higher plan.
+| Item | What happens |
+| --- | --- |
+| **Members over the limit** | The newest are locked out. The owner is never locked. |
+| **Projects over the limit** | They become **read-only**. |
+| **Features above your plan** | Switch off immediately. |
+| **Custom portal domain** | Switches off. |
+| **Past payslips** | Stay readable. |
+| **Saved permission overrides** | Kept, but not used. |
 
-## After enforcement
+## Restricted resources
 
-- New actions above the lower limits are blocked.
-- Excess newest non-Admin members are locked from signing in.
-- Excess newest active Projects become read-only.
-- Paid modules and advanced actions are hidden or blocked.
-- Stored records remain in the organization.
+A **Restricted resources** panel lists exactly what is locked, so you know what to upgrade for.
 
-The Admin is not plan-locked. Completed Projects do not count as active Projects.
+## At a limit
 
-## Restore access
+When you reach a limit (for example, 5 active Projects on Free), upgrade or free up room before adding more. Existing work is unaffected.
 
-Upgrade or reduce usage until it fits the plan. Flotick unlocks eligible members and Projects when capacity returns; retained work does not need to be recreated.
-
-Before enforcement, remove or deactivate members who no longer need access, complete Projects that are finished, and remove unused files when storage exceeds the next allowance. Do not permanently delete work solely to avoid a reversible plan lock.
-
-The billing workspace shows the pending plan, grace deadline, and restricted resources so the Admin can decide how to restore capacity.
+<CardGroup cols={2}>
+  <Card title="Plans" icon="layers" href="/admin/billing/plans">
+    Compare limits.
+  </Card>
+  <Card title="Seat management" icon="armchair" href="/admin/billing/seat-management">
+    Free up seats.
+  </Card>
+</CardGroup>

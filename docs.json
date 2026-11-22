@@ -2,16 +2,38 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "Flotick Docs",
-  "description": "Guides for planning work, running team operations, and using Orbit in Flotick.",
+  "description": "Run client work from one place: projects, clients, documents, team operations, and Orbit AI. Guides for every Flotick feature.",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#22C55E",
-    "dark": "#166534"
+    "primary": "#2563EB",
+    "light": "#60A5FA",
+    "dark": "#0A0A0A"
+  },
+  "appearance": {
+    "default": "system"
+  },
+  "background": {
+    "color": {
+      "light": "#FBFBFC",
+      "dark": "#010102"
+    }
+  },
+  "fonts": {
+    "heading": {
+      "family": "Hahmlet",
+      "weight": 500
+    },
+    "body": {
+      "family": "Figtree"
+    }
+  },
+  "icons": {
+    "library": "lucide"
   },
   "favicon": "/favicon.svg",
   "logo": {
     "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "dark": "/logo/dark.svg",
+    "href": "https://flotick.com"
   },
   "navbar": {
     "links": [
@@ -28,6 +50,7 @@
     "tabs": [
       {
         "tab": "Get started",
+        "icon": "rocket",
         "groups": [
           {
             "group": "Start here",
@@ -39,7 +62,7 @@
             ]
           },
           {
-            "group": "Access your organization",
+            "group": "Join Flotick",
             "pages": [
               "get-started/sign-up",
               "get-started/accept-invitation",
@@ -49,13 +72,14 @@
         ]
       },
       {
-        "tab": "Work management",
+        "tab": "Work",
+        "icon": "layout-dashboard",
         "groups": [
           {
-            "group": "Your work",
+            "group": "Your day",
             "pages": [
               "features/inbox",
-              "features/tasks",
+              "features/notifications",
               "features/personal-board"
             ]
           },
@@ -63,78 +87,174 @@
             "group": "Plan and deliver",
             "pages": [
               "features/projects",
+              "features/milestones",
+              "features/project-updates",
               "features/sprints",
-              "features/recurring-tasks"
-            ]
-          },
-          {
-            "group": "Collaborate",
-            "pages": [
+              "features/tasks",
               "features/comments",
-              "features/files",
-              "features/notifications",
-              "features/realtime"
+              "features/recurring-tasks",
+              "features/trash"
             ]
           },
           {
-            "group": "Developer workflows",
-            "pages": ["features/env-storage"]
+            "group": "Files and secrets",
+            "pages": [
+              "features/files",
+              "features/env-storage",
+              "features/project-credentials"
+            ]
           }
         ]
       },
       {
-        "tab": "Team operations",
+        "tab": "Clients and sales",
+        "icon": "handshake",
         "groups": [
           {
-            "group": "Time and time off",
+            "group": "Win work",
             "pages": [
-              "features/attendance",
-              "features/leave"
+              "clients/leads",
+              "clients/lead-autopilot",
+              "clients/lead-forms"
             ]
           },
           {
-            "group": "Administration",
+            "group": "Serve clients",
+            "pages": [
+              "clients/clients",
+              "clients/portal-access",
+              "clients/client-requests",
+              "clients/client-sharing",
+              "clients/meetings",
+              "clients/messages"
+            ]
+          },
+          {
+            "group": "Grow your business",
+            "pages": [
+              "grow/business-page",
+              "grow/reviews",
+              "grow/verified-tick",
+              "grow/refer-and-earn"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Documents",
+        "icon": "file-text",
+        "groups": [
+          {
+            "group": "Create and send",
+            "pages": [
+              "documents/overview",
+              "documents/editor",
+              "documents/sharing-and-signing",
+              "documents/quote-kickoff"
+            ]
+          },
+          {
+            "group": "Brand and defaults",
+            "pages": [
+              "documents/document-studio",
+              "documents/business-profile"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Team",
+        "icon": "users",
+        "groups": [
+          {
+            "group": "People",
             "pages": [
               "admin/members-and-roles",
+              "admin/offboarding",
               "admin/member-permissions",
-              "admin/departments",
-              "admin/attendance-policy",
-              "admin/leave-policy"
+              "admin/departments"
+            ]
+          },
+          {
+            "group": "Time, leave and pay",
+            "pages": [
+              "features/attendance",
+              "features/leave",
+              "admin/attendance-leave-policy",
+              "features/payroll"
             ]
           }
         ]
       },
       {
         "tab": "Insights and AI",
+        "icon": "sparkles",
         "groups": [
           {
-            "group": "Orbit",
+            "group": "Orbit AI",
             "pages": [
               "features/orbit",
               "features/ai-agent",
-              "features/ai-summaries",
-              "features/ai-drafting",
-              "features/ai-enhance"
+              "features/ai-writing",
+              "features/orbit-settings"
             ]
           },
           {
-            "group": "Analytics",
+            "group": "Analytics and reports",
             "pages": [
               "features/analytics",
-              "features/scheduled-reports"
+              "features/ai-summaries",
+              "features/scheduled-reports",
+              "features/founder-brief"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Client Portal",
+        "icon": "layout-template",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "portal/overview",
+              "portal/sign-in",
+              "portal/home"
+            ]
+          },
+          {
+            "group": "Everything your client sees",
+            "pages": [
+              "portal/projects",
+              "portal/files",
+              "portal/approvals",
+              "portal/requests",
+              "portal/documents",
+              "portal/meetings",
+              "portal/messages"
+            ]
+          },
+          {
+            "group": "Notifications and branding",
+            "pages": [
+              "portal/notifications",
+              "portal/roles-and-branding"
             ]
           }
         ]
       },
       {
         "tab": "Admin and account",
+        "icon": "settings",
         "groups": [
           {
             "group": "Organization settings",
             "pages": [
               "admin/organization-settings",
               "admin/workflow-policy",
-              "admin/labels"
+              "admin/labels",
+              "admin/domain-verification",
+              "admin/data-and-privacy"
             ]
           },
           {
@@ -151,29 +271,49 @@
             "pages": [
               "account/profile",
               "account/security-and-2fa",
-              "features/trash"
+              "account/preferences"
             ]
           }
         ]
       },
       {
         "tab": "Help",
+        "icon": "life-buoy",
         "groups": [
           {
-            "group": "Product help",
+            "group": "Get help",
             "pages": [
-              "resources/feature-requests",
-              "resources/feature-matrix",
-              "resources/security",
+              "resources/support",
               "resources/faq",
-              "resources/glossary",
-              "resources/support"
+              "resources/glossary"
+            ]
+          },
+          {
+            "group": "Reference",
+            "pages": [
+              "resources/feature-matrix",
+              "resources/keyboard-shortcuts",
+              "resources/mobile-app",
+              "resources/security"
             ]
           }
         ]
       }
     ]
   },
+  "redirects": [
+    { "source": "/features/realtime", "destination": "/features/notifications" },
+    { "source": "/features/ai-drafting", "destination": "/features/ai-writing" },
+    { "source": "/features/ai-enhance", "destination": "/features/ai-writing" },
+    { "source": "/features/task-dependencies", "destination": "/features/tasks" },
+    { "source": "/features/holidays", "destination": "/admin/attendance-leave-policy" },
+    { "source": "/features/shifts", "destination": "/admin/attendance-leave-policy" },
+    { "source": "/admin/attendance-policy", "destination": "/admin/attendance-leave-policy" },
+    { "source": "/admin/leave-policy", "destination": "/admin/attendance-leave-policy" },
+    { "source": "/resources/feature-requests", "destination": "/resources/support" },
+    { "source": "/resources/feedback", "destination": "/resources/support" },
+    { "source": "/quickstart", "destination": "/get-started/quickstart" }
+  ],
   "contextual": {
     "options": ["copy", "view", "chatgpt", "claude", "perplexity"]
   },

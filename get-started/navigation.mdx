@@ -1,35 +1,48 @@
 ---
-title: "Navigation and shortcuts"
-description: "Move through Flotick with the sidebar, command palette, and keyboard shortcuts."
+title: "Navigate Flotick"
+description: "Find your way around the sidebar, search, Quick Add, and the help menu."
+icon: "compass"
 ---
 
-The sidebar groups personal work, delivery, team operations, files, insights, and role-specific administration. Available destinations adapt to role, plan, and individual permission.
+<Badge color="green">All plans</Badge>
 
-## Search and commands
+## The sidebar
 
-Press <kbd>Ctrl</kbd> + <kbd>K</kbd> on Windows or <kbd>⌘</kbd> + <kbd>K</kbd> on macOS. The command palette finds destinations, accessible work, and available creation actions.
+The sidebar groups the app by what you are doing. Items you cannot access are hidden, and items on a higher plan show a plan badge.
 
-| Shortcut | Action |
+| Group | What is inside |
 | --- | --- |
-| `Ctrl/⌘ K` | Open command palette |
-| `Ctrl/⌘ N` | Create a Task |
-| `?` | Open shortcut help |
-| `G` then `H` | Go to Inbox |
-| `G` then `T` | Go to Tasks |
-| `G` then `S` | Go to Sprints |
-| `G` then `P` | Go to Projects |
-| `G` then `B` | Go to My Board |
-| `G` then `M` | Go to Team Members |
-| `G` then `A` | Go to Analytics |
+| **Work** | Inbox, Tasks, Sprints, Projects, Analytics |
+| **Clients** | Leads, Messages, Clients, Meetings, Documents |
+| **Team** | Attendance, Leave, My pay, Payroll, Members |
+| **Files** | Files, Project keys |
+| **Footer** | Settings, Public page, Refer and earn, Trash |
 
-Navigation shortcuts do not run while you are typing in a field.
+Some items appear only for Admins and Managers, such as Members and Payroll. **Attendance** and **Leave** are hidden for members whose job type is Contract.
 
-## Use the Project selector
+### Make it yours
 
-Choose **All Projects** for cross-Project triage or select one Project before using a Project-specific board, backlog, Analytics view, Env Storage workspace, or recurring schedule. Pages that require one Project prompt you to choose it.
+- Collapse the sidebar with `[`.
+- Reorder or hide sections in [Preferences](/account/preferences).
+- Use the **project scope chip** to view everything, or focus the whole app on one Project.
+- Use the **organization menu** to switch organizations, invite members, upgrade, or sign out.
 
-## Other navigation
+## Quick Add
 
-The resource area links to documentation, Help, feature requests, and the changelog. Your profile menu contains profile, appearance, Trash, and sign-out actions. Use the sidebar footer to choose **System**, **Light**, or **Dark** appearance.
+Press **+** in the sidebar header to create a Task fast. Choose **Individual task** for personal work, or **Sprint task** to add it to a Sprint. You need permission to create Tasks.
 
-If the connection drops, Flotick shows its offline state and reconnects when the network returns.
+## Search and command palette
+
+Press `Ctrl/⌘ K` or `/` to open search. It finds Projects, Sprints, Tasks, members, and pages, and can run commands. Results respect your permissions and private Projects.
+
+<Tip>
+The [Personal board](/features/personal-board) has no sidebar link. Open it with search or the `G` then `B` shortcut.
+</Tip>
+
+## Help menu and Orbit
+
+The bottom bar has two buttons. The **Flotick logo** opens the help menu: Docs, Contact us, Support and feature requests, Changelog, keyboard shortcuts, and the theme switch. The **Orbit button** opens the [AI assistant](/features/orbit), and the history button shows recent chats. On mobile, these are a floating button.
+
+<Card title="Keyboard shortcuts" icon="keyboard" href="/resources/keyboard-shortcuts" horizontal>
+  Press `?` in the app to see every shortcut, or read the full list here.
+</Card>

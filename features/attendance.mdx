@@ -1,31 +1,48 @@
 ---
 title: "Attendance"
-description: "Check in, check out, review attendance, and request corrections."
+description: "Daily check-in and check-out with a live timer, corrections, and team views."
+icon: "clock"
 ---
 
-## Record your day
+<Badge color="green">Check-in: all plans</Badge> <Badge color="blue">Team view and export: Starter+</Badge>
 
-<Steps>
-  <Step title="Check in">
-    Open **Attendance**, click **Check in**, and confirm your work type.
-  </Step>
-  <Step title="Check out">
-    Click **Check out**, add a work description, and save. Flotick calculates the recorded duration.
-  </Step>
-</Steps>
+Attendance records when your team works. Members check in and out themselves, and Managers see the whole picture.
 
-Use **Table** or **Calendar** view to review your history. A record can include check-in and check-out time, work type, description, status, and duration.
+## Check in and out
 
-[AI Enhance](/features/ai-enhance) can rewrite the work description before you save it.
+Open **Attendance** and choose **Check in**. A live **work timer** runs until you check out. When you check out, add a **work description**. Use **Enhance with AI** to polish it. See [AI writing helpers](/features/ai-writing).
 
-## Missed or incorrect attendance
+Choose your **work type**: **Office**, **Remote**, or **Hybrid**.
 
-Use **Forgot attendance** for a past entry when the organization policy allows it. Use **Regularization** to request a correction with the date, reason, requested times, work type, and description.
+## Views
 
-A request stays `Pending` until an authorized reviewer approves or rejects it. Approval creates or updates the attendance record. You can review your own requests and cancel an eligible pending request.
+| Tab | Who sees it |
+| --- | --- |
+| **Table** | Everyone, for their own records |
+| **Calendar** | Everyone |
+| **Team** | Admins and Managers (Starter+) |
 
-## Team attendance
+Switch between **organization** and **mine** scopes.
 
-On eligible plans, authorized leaders can use **Team Overview**, filter by member or department, and review team regularization requests. **My Requests** and **Team Requests** keep personal corrections separate from decisions awaiting review.
+## Smart handling
 
-The [attendance policy](/admin/attendance-policy) controls standard hours, overtime threshold, default work type, weekend requirements, and whether backdated entries are allowed.
+- **Late arrival** and **overtime** (over 8 hours) are detected automatically.
+- **Check-outs after midnight** are handled correctly.
+- **Corrections**: request a fix (regularization) and a Manager approves it.
+- **Backfill**: Admins can fill in forgotten days.
+- **Export** the data (Starter+).
+
+Approved [leave](/features/leave) is written into attendance automatically.
+
+<Note>
+Attendance is hidden for members whose job type is **Contract**.
+</Note>
+
+<CardGroup cols={2}>
+  <Card title="Attendance and leave policy" icon="settings-2" href="/admin/attendance-leave-policy">
+    Set hours, weekends, and rules.
+  </Card>
+  <Card title="Leave" icon="plane" href="/features/leave">
+    Request and approve time off.
+  </Card>
+</CardGroup>

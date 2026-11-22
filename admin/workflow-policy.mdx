@@ -1,20 +1,28 @@
 ---
-title: "Workflow configuration"
-description: "Set Task status colors, priority colors, and the organization story-point scale."
+title: "Workflow"
+description: "Customize Task statuses, transitions, priorities, and Sprint settings to match how you work."
+icon: "workflow"
 ---
 
-Workflow customization is available on Pro and Max. Admins manage it from **Settings → Workflow configuration**.
+<Badge color="blue">Starter+</Badge> <Badge color="gray">Admin or Manager</Badge>
 
-## What you can configure
+Every team works a little differently. Workflow lets you shape Tasks and Sprints to fit.
 
-| Area | Configuration |
-| --- | --- |
-| Task statuses | Color for each fixed workflow status |
-| Priorities | Color for `Critical`, `High`, `Medium`, and `Low` |
-| Story points | Fibonacci, linear, or T-shirt estimation scale |
+## What you can customize
 
-The status pipeline, priority keys, labels, and order remain fixed so boards, permissions, and Analytics stay consistent. Individual Tasks keep their separate three-stage workflow.
+- **Task statuses** and the **allowed moves** between them
+- **Priorities**
+- **Sprint length** and **story points**
+- **Departments**, on their own tab. See [Departments](/admin/departments)
 
-Use the live preview to review Task cards and board columns. Click **Save Changes** to publish the new appearance, or **Reset** to restore the default configuration.
+Open **Settings → Features → Workflow**.
 
-Departments are managed from the separate **Departments** tab. See [Departments](/admin/departments).
+<Warning>
+Changes apply to **future work only**. Existing Tasks keep what they have.
+</Warning>
+
+On Free, the standard workflow is used.
+
+<Card title="Tasks" icon="list-checks" href="/features/tasks" horizontal>
+  See how statuses are used day to day.
+</Card>

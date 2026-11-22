@@ -1,61 +1,66 @@
 ---
 title: "Tasks"
-description: "Create, assign, prioritize, schedule, and move work through individual or Sprint workflows."
+description: "Create, assign, prioritize, and move work through a simple or full workflow."
+icon: "list-checks"
 ---
+
+<Badge color="green">All plans</Badge> <Badge color="gray">Members can view, create, and edit</Badge>
+
+A Task is the basic unit of work. Flotick has two kinds, so you can pick the right amount of process.
+
+## Two kinds of Task
+
+| | **Sprint task** | **Individual task** |
+| --- | --- | --- |
+| Belongs to | A Sprint | No Sprint |
+| Who sees it | The team | Only you, the creator |
+| Flow | To do → In progress → Review → Testing → Done | To do → In progress → Completed |
+| Roles | Assignee, reviewer, tester, reporter | None |
+| Comments and files | ✓ | Not supported |
+| Subtasks | ✓ | ✓ |
 
 ## Task fields
 
-| Area | Available fields |
-| --- | --- |
-| Classification | `Epic`, `Story`, `Task`, `Bug`, or `Spike`; `Critical`, `High`, `Medium`, or `Low` priority |
-| Planning | Project, optional Sprint, story points, estimated hours, due date, and labels |
-| Detail | Description, considerations, attachments, subtasks, comments, and work logs |
-| Access | `Public` or `Private` visibility |
-| Responsibility | Assignee, reporter, reviewer, tester, and supported collaborator roles |
-
-A non-Epic Task can have one parent Epic in the same Project. The Epic shows child progress; deeper nesting is not supported.
-
-## Individual and Sprint Tasks
-
-An **individual Task** has no Sprint and uses `To Do → In Progress → Completed`. It does not use an assignee, reviewer, tester, or acceptance criteria. Recurring schedules are the exception: their generated individual Tasks can carry the configured assignee.
-
-A **Sprint Task** belongs to a Sprint, requires an assignee, and uses the organization's Sprint workflow. The default stages are `Backlog`, `Sprint Backlog`, `To Do`, `In Progress`, `Review`, `Testing`, `Blocked`, and `Done`.
-
-Private Tasks are limited to their participants and privileged roles.
-
-## Find and update work
-
-The Tasks page supports **List**, **Board**, **Calendar**, and single-Project **Backlog** views. Switch between all, assigned, created, and team scopes when your permissions allow it.
-
-Search and filter by status, priority, type, Project, Sprint, responsibility, label, and date. Select multiple rows to change status, priority, or Sprint, or move them to Trash. Backlog view also supports ranking work within a Project.
-
-<Note>
-Tasks in completed Sprints are hidden by default. Enable **Show completed sprint tasks** when you need them.
-</Note>
+Title, description, Project, Sprint, status, priority, type, estimate or story points, due date, labels, and milestone. A type can be **Epic**, which groups child Tasks and shows their progress. Each Task gets an ID like `PAY-T-142`.
 
 ## Create a Task
 
 <Steps>
   <Step title="Choose the Project">
-    Start from Inbox, Tasks, a Project, or a Sprint. Every Task belongs to a Project.
+    Start from the Inbox, Tasks, a Project, or a Sprint. You can also press **+** for [Quick Add](/get-started/navigation#quick-add).
   </Step>
-  <Step title="Choose individual or Sprint work">
-    Leave Sprint empty for individual work, or choose a Sprint to enable Sprint responsibility and workflow fields.
+  <Step title="Pick the kind">
+    Leave Sprint empty for an individual task, or choose a Sprint.
   </Step>
-  <Step title="Add planning detail">
-    Set type, priority, estimate, due date, labels, visibility, and an optional parent Epic.
-  </Step>
-  <Step title="Add execution context">
-    Add description, acceptance criteria where supported, considerations, files, subtasks, and comments.
+  <Step title="Add detail">
+    Set priority, type, estimate, due date, labels, and acceptance criteria.
   </Step>
 </Steps>
 
-You can use [AI-assisted drafting](/features/ai-drafting) to prepare editable Task content.
+Need a head start? [AI writing helpers](/features/ai-writing) can draft a Task from a title. You can also turn a [client request](/clients/client-requests) into a backlog Task.
 
-## Status, time, and history
+## Find and manage work
 
-Move a Task from its status control or by dragging it on a board. Flotick validates the destination against the applicable workflow.
+The Tasks page has **List**, **Board**, **Backlog**, and **Calendar** views. Filter by Project, status, priority, assignee, Epic, overdue, and dates. Then:
 
-Use **Log work** to record hours and an optional description. Task history records status and responsibility changes. Due dates power Calendar, overdue filters, Analytics, and Orbit risk questions; they do not prevent a status change.
+- **Bulk edit** many Tasks at once
+- **Drag** to rank or change status
+- See the Task's **history**
+- **Delete** to the Task trash (`/tasks/trash`) and restore later
 
-Deleting a Task moves it to [Trash](/features/trash). Create, edit, assign, and delete actions depend on role, permissions, visibility, and Project access.
+## Subtasks
+
+Break a Task into a simple checklist. Each item has a title and an optional note. Tick it to complete, and a progress bar shows done versus total. Needs permission to edit the Task.
+
+<Note>
+Members can delete Tasks only if they are Managers or have been granted permission. Tasks in a locked Project (after a downgrade) become read-only.
+</Note>
+
+<CardGroup cols={2}>
+  <Card title="Comments and mentions" icon="message-square" href="/features/comments">
+    Discuss work right on the Task.
+  </Card>
+  <Card title="Recurring tasks" icon="repeat" href="/features/recurring-tasks">
+    Automate repeating work.
+  </Card>
+</CardGroup>

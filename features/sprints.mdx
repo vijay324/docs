@@ -1,54 +1,50 @@
 ---
 title: "Sprints"
-description: "Plan time-boxed work, monitor scope, and carry unfinished Tasks forward."
+description: "Time-boxed rounds of work with goals, capacity, standups, and a retrospective."
+icon: "timer"
 ---
 
-A Sprint belongs to one Project and includes a goal, objectives, dates, capacity, visibility, members, Tasks, files, comments, and delivery metrics.
+<Badge color="green">All plans</Badge> <Badge color="gray">Run by Managers</Badge>
+
+A Sprint is a short, focused round of work inside a Project. It gives your team a goal, a deadline, and a clear picture of progress.
+
+## Create a Sprint
+
+Open **Sprints** and choose **Create**, or add one from a Project. Set:
+
+- **Project**, **title**, and **goal**
+- **Dates** and **capacity**
+- **Members** and attachments
+- Tasks **carried over** from earlier Sprints
 
 ## Lifecycle
 
-`Planning → Active → Review → Retrospective → Completed`
+Sprints move through **Planning → Active → Review → Completed**. A Project can have **one active Sprint** at a time. Only Admins and Managers move a Sprint between stages.
 
-Authorized members advance a Sprint through its lifecycle. Starting an active Sprint begins its scope ledger and delivery tracking.
+## Inside a Sprint
 
-## Create and plan a Sprint
-
-<Steps>
-  <Step title="Set the frame">
-    Choose a Project, title, goal, objectives, success criteria, start and end dates, and story-point capacity.
-  </Step>
-  <Step title="Set access">
-    Choose visibility, add Sprint members, and attach planning files.
-  </Step>
-  <Step title="Add work">
-    Create Sprint Tasks or move eligible Project backlog Tasks into the Sprint.
-  </Step>
-  <Step title="Start">
-    Review the commitment, then move the Sprint from `Planning` to `Active`.
-  </Step>
-</Steps>
-
-You can use [AI-assisted drafting](/features/ai-drafting) to prepare editable Sprint content.
-
-## Sprint workspace
-
-| Tab | What it contains |
+| Tab | What you get |
 | --- | --- |
-| Overview | Health, work board, carried work, and unassigned Tasks |
-| Insights | Commitment Coach, Auto Standup, and the active-Sprint scope ledger |
-| Members | Sprint membership and capacity context |
-| Files | Sprint attachments |
-| Comments | Sprint discussion |
-| Analytics | Burndown and Sprint delivery metrics |
+| **Overview** | Goal, dates, progress, and Tasks |
+| **Insights** | Commitment coaching and scope tracking |
+| **Members** | Who is on the Sprint |
+| **Files** | Sprint attachments |
+| **Comments** | Team discussion |
+| **Analytics** | Burndown and velocity |
 
-**Commitment Coach** compares committed points with capacity and highlights risk. **Auto Standup** prepares a daily summary from current Sprint activity; Admins and Managers can regenerate it. The **Scope ledger** records additions, removals, estimate changes, completion, and reopening while the Sprint is active.
+Also built in: **daily standups**, a **retrospective** after completion, and **carrying unfinished Tasks** forward.
 
-## Complete and carry work
+<Tip>
+AI coaching in the Insights tab uses [AI credits](/features/orbit#credits).
+</Tip>
 
-When unfinished Tasks remain, choose selected or all work and move it to another eligible Sprint or back to the Project backlog. Carried Tasks retain their source Sprint.
+Members can view Sprints by default and can be allowed to create and edit them.
 
-A Sprint supports one retrospective with what went well, what should improve, action items, and a rating. Keep it with the Sprint so the outcome is available during later planning.
-
-<Note>
-Velocity is based on story points completed in `Done`. Scope changes remain visible instead of being folded into the original commitment.
-</Note>
+<CardGroup cols={2}>
+  <Card title="Tasks" icon="list-checks" href="/features/tasks">
+    Add and manage Sprint work.
+  </Card>
+  <Card title="Analytics" icon="chart-no-axes-combined" href="/features/analytics">
+    Track velocity and delivery trends.
+  </Card>
+</CardGroup>

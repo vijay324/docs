@@ -1,49 +1,43 @@
 ---
 title: "Security"
-description: "Client-facing controls that protect accounts and organization data."
+description: "How Flotick protects accounts, secrets, messages, and your data."
+icon: "lock"
 ---
 
-## Account protection
+Your clients trust you with their work. Here is how Flotick helps you protect it.
 
-- Strong-password validation and secure password hashing
-- Password reset by time-limited email token
-- Temporary lockout after repeated failed sign-ins
-- TOTP two-factor authentication for Admins and Managers
-- Email verification for unfamiliar devices in protected sign-in flows
-- Google account linking without creating a duplicate member
-- Session refresh and sign-out controls
+## Sign-in protection
 
-## Organization access
+- **Two-factor authentication** with an authenticator app or email code, plus backup codes
+- **New-device verification** by email code
+- **Account lockout** after repeated failed sign-ins
+- **Session controls**: live session list and an option to block multiple sessions
+- **Email verification** for new accounts
 
-- Every signed-in request is scoped to an organization
-- Role-based permissions for Admin, Manager, and Member
-- Project membership and visibility checks
-- Paid-plan per-member permission overrides
-- Server-side validation even when an action is hidden in the interface
+See [Security and 2FA](/account/security-and-2fa).
 
-## Data protection
+## Secrets and sensitive data
 
-- HTTPS in transit in production
-- Encrypted sensitive fields, including supported Task content and environment secrets
-- Short-lived upload, view, and download access for files
-- Soft-delete recovery for major records
-- Rate limits on authentication, AI, upload, and high-volume actions
+- [Project keys](/features/env-storage) and [Project credentials](/features/project-credentials) are **encrypted**, and credential reveals are **logged**.
+- **Bank details** in your business profile are encrypted and masked.
+- **Meeting notes** are stored encrypted.
+- [Messages](/clients/messages) and attachments are **end-to-end encrypted**.
 
-For account-specific controls, see [Account security](/account/security-and-2fa). To report a security concern, email [support@flotick.com](mailto:support@flotick.com) with **Security** in the subject.
+## Access control
 
-## Your responsibilities
+- **Roles and permissions** limit what each person sees. See [Member permissions](/admin/member-permissions).
+- **Private Projects** are limited to their members.
+- **Orbit** only uses what you are allowed to see.
+- Clients only see what you share, and **never** your Task names or assignees.
 
-- Use a unique password and do not share it.
-- Enable two-factor authentication when it is available to your role.
-- Verify the organization slug and destination before adding files or secrets.
-- Use Env Storage for environment values instead of comments or attachments.
-- Review invitations, role changes, and plan changes carefully.
-- Sign out of shared devices and avoid trusting them for future verification.
+## Your data
 
-## What to report
+- **Trash** keeps deleted items for 30 days.
+- Admins can **export** all organization data, with secrets removed.
+- The owner can **request deletion**, with 30 days to restore.
 
-Report suspected unauthorized access, a lost device with an active session, an exposed secret, an invitation sent to the wrong person, or unexpected changes to account or organization access. Include the organization slug, affected account, time, and a safe description of the issue. Do not include the secret or verification code itself.
+See [Data and privacy](/admin/data-and-privacy).
 
-## Security limitations
+## Report a concern
 
-No service can eliminate all risk. Client-side controls, role restrictions, encryption, and temporary access URLs reduce exposure, but your organization remains responsible for choosing appropriate members, access levels, and data-handling practices.
+Email [support@flotick.com](mailto:support@flotick.com) with **Security** in the subject. Never send passwords, codes, or keys.
